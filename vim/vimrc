@@ -1,0 +1,91 @@
+:syn on
+:set softtabstop=2
+:set shiftwidth=2
+:set expandtab
+:set ai
+:set hls
+:set is
+":set guifont=-b&h-lucidatypewriter-medium-r-normal-*-*-100-*-*-m-*-iso8859-1
+:set guifont=bitstream\ vera\ sans\ mono\ 9
+":set guifont=monospace\ 8
+":set guifont=Terminus\ 9
+:set go=agimrLt
+:set number
+:set mouse=a
+:set incsearch
+:set hlsearch
+
+
+
+syntax enable
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+colorscheme solarized
+
+function! CPlusPlusComment()
+  map - 0i// <ESC>j
+  map _ :s/^\s*\/\/ \=//g<CR>j
+  set nocindent comments=:\/\/
+endfunction
+
+function! CComment()
+  map - $a */<ESC>0i/* <ESC><CR>
+  map _ :s/^\s*\/\* \=//g<CR>:s/ \=\*\/[ \t]*$//g<CR>j
+  set nocindent comments=sr:/*,mb:*,ex:*/,://
+endfunction
+
+function! PoundComment()
+  map - 0i# <ESC>j
+  map _ :s/^\s*# \=//g<CR>j
+  set comments=:#
+endfunction
+
+function! LaTeXComment()
+  map - 0i% <ESC>j
+  map _ :s/^\s*% \=//g<CR>j
+  set comments=:%
+endfunction  
+
+" Highlight all instances of word under cursor, when idle.
+" Useful when studying strange source code.
+" Type z/ to toggle highlighting on/off.
+nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+function! AutoHighlightToggle()
+  let @/ = ''
+  if exists('#auto_highlight')
+    au! auto_highlight
+    augroup! auto_highlight
+    setl updatetime=4000
+    echo 'Highlight current word: off'
+    return 0
+  else
+    augroup auto_highlight
+      au!
+      au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+    augroup end
+    setl updatetime=500
+    echo 'Highlight current word: ON'
+    return 1
+  endif
+endfunction
+
+autocmd BufEnter * doautocmd FileType
+
+if &filetype == ""
+  setfiletype text
+endif
+
+autocmd Filetype c                  call CComment()
+autocmd Filetype cpp                call CPlusPlusComment()
+autocmd Filetype java               call CPlusPlusComment()
+autocmd Filetype perl               call PoundComment()
+autocmd Filetype python             call PoundComment()
+autocmd Filetype csh                call PoundComment()
+autocmd Filetype sh                 call PoundComment()
+autocmd Filetype make               call PoundComment()
+autocmd Filetype conf               call PoundComment()
+autocmd Filetype tex		    call LaTeXComment()
+autocmd Filetype bbl		    call LaTeXComment()

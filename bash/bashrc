@@ -1,0 +1,64 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+
+#Source local Alias definitions
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+#bash completion-----------------------------------------------------------------
+# This function checks whether we have a given program on the system.
+#
+_have()
+{
+    # Completions for system administrator commands are installed as well in
+    # case completion is attempted via `sudo command ...'.
+    PATH=$PATH:/usr/sbin:/sbin:/usr/local/sbin type $1 &>/dev/null
+}
+
+# Backwards compatibility for compat completions that use have().
+# @deprecated should no longer be used; generally not needed with dynamically
+#             loaded completions, and _have is suitable for runtime use.
+have()
+{
+    unset -v have
+    _have $1 && have=yes
+}
+#bash completion-----------------------------------------------------------------
+
+export JAVA_OPTS="-server -Xms3072m -Xmx8192m"
+export MAVEN_OPTS="-Xms3072m -Xmx4096m -ea -Djava.library.path=./target/lib/"
+
+
+#Auto Completion
+>&2 echo "Scanning auto completion tools:"
+for each in $(find /etc/bash_completion.d/ -maxdepth 1 -type f | grep -v "\.sh$");
+do 
+  >&2 echo "Found bash completetion file, running: . $each"
+  . "$each"; 
+done;
+for each in $(find /etc/bash_completion.d/ -type f -name "*.sh");
+do
+  if [ -x $each ]; 
+  then 
+    >&2 echo "Found bash completetion script, running: . $each"
+    $each; 
+  fi
+done;
+>&2 echo "Scanning complete"
+
+
+#LINUX
+umask 0002
+export PS1="\n\[\033[0;33m\][\d \t \u@\H \w]\[\033[0m\]\n\[\033[1;30m\]\!\$\[\033[0m\] "
+
+
