@@ -1,1 +1,5 @@
 meld-1.4.0-1.el6.rf.noarch.rpm
+
+#http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+#https://centos.pkgs.org/7/repoforge-x86_64/foremost-1.5.7-1.el7.rf.x86_64.rpm.html
+foremost-1.5.7-1.el7.rf.x86_64.rpm
