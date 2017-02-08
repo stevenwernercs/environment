@@ -7,3 +7,5 @@ k4dirstat.x86_64          #directory management
 vlc
 fslint                    #directory management
 xbacklight                #programatically change screen brightness
+htop                      #top with more options
+wireshark-gnome           #need wireshark_arch as well
