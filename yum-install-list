@@ -1,4 +1,5 @@
 gvim
+gitk                      #git gui
 VirtualBox-5.1.x86_64
 maven
 screen
@@ -9,3 +10,7 @@ fslint                    #directory management
 xbacklight                #programatically change screen brightness
 htop                      #top with more options
 wireshark-gnome           #need wireshark_arch as well
+lm_sensors                #hardware sensor info
+hostapd
+wireless-tools            #for wireless cards
+xsane	#for lexmark printer
