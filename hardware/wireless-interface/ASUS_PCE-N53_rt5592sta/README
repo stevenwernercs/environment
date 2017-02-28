@@ -1,0 +1,5 @@
+1.	Follow ./LINUX instructions
+2.	When (1) fails follow ./external-sources/kernel-patch instructions
+3.	Driver should be installed, but nm (network manager) might not be working follow ./external-sources/Troubleshooting\ wireless.html
+
+you should have wpa supplicant running now

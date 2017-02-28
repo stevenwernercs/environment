@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://www.centos.org/forums/viewtopic.php?t=57187 -->
+<html dir="ltr" lang="en-gb" class="gr__centos_org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Network problem, no suitable device - CentOS</title>
+
+	<link rel="alternate" type="application/atom+xml" title="Feed - CentOS" href="http://www.centos.org/forums/feed.php">			<link rel="alternate" type="application/atom+xml" title="Feed - New Topics" href="http://www.centos.org/forums/feed.php?mode=topics">		<link rel="alternate" type="application/atom+xml" title="Feed - Forum - CentOS 7 - Networking Support" href="http://www.centos.org/forums/feed.php?f=50">	<link rel="alternate" type="application/atom+xml" title="Feed - Topic - Network problem, no suitable device" href="http://www.centos.org/forums/feed.php?f=50&amp;t=57187">	
+	<link rel="canonical" href="http://www.centos.org/forums/viewtopic.php?t=57187">
+
+<!--
+	phpBB style name: prosilver
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:
+-->
+
+<link href="./Network problem, no suitable device - CentOS_files/stylesheet.css" rel="stylesheet">
+<link href="./Network problem, no suitable device - CentOS_files/stylesheet(1).css" rel="stylesheet">
+<link href="./Network problem, no suitable device - CentOS_files/responsive.css" rel="stylesheet" media="all and (max-width: 700px)">
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/prosilver/theme/tweaks.css?assets_version=2" rel="stylesheet">
+<![endif]-->
+
+
+
+
+
+</head>
+<body id="phpbb" class="notouch section-viewtopic ltr hasjs" data-gr-c-s-loaded="true">
+
+
+<div id="wrap">
+	<a id="top" class="anchor" accesskey="t"></a>
+	<div id="page-header">
+		<div class="headerbar" role="banner">
+			<div class="inner">
+
+			<div id="site-description">
+				<a id="logo" class="logo" href="https://www.centos.org/forums/index.php?sid=5b5da92ec76686d7eea9b211888f90f6" title="Board index"><span class="imageset site_logo"></span></a>
+				<h1>CentOS</h1>
+				<p>The Community ENTerprise Operating System</p>
+				<p class="skiplink"><a href="https://www.centos.org/forums/viewtopic.php?t=57187#start_here">Skip to content</a></p>
+			</div>
+
+									<div id="search-box" class="search-box search-header" role="search">
+				<form action="https://www.centos.org/forums/search.php?sid=5b5da92ec76686d7eea9b211888f90f6" method="get" id="search">
+				<fieldset>
+					<input name="keywords" id="keywords" type="search" maxlength="128" title="Search for keywords" class="inputbox search tiny" size="20" value="" placeholder="Search…">
+					<button class="button icon-button search-icon" type="submit" title="Search">Search</button>
+					<a href="https://www.centos.org/forums/search.php?sid=5b5da92ec76686d7eea9b211888f90f6" class="button icon-button search-adv-icon" title="Advanced search">Advanced search</a>
+					<input type="hidden" name="sid" value="5b5da92ec76686d7eea9b211888f90f6">
+
+				</fieldset>
+				</form>
+			</div>
+			
+			</div>
+		</div>
+				<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-main" class="linklist bulletin" role="menubar">
+
+		<li id="quick-links" class="small-icon responsive-menu dropdown-container" data-skip-responsive="true">
+			<a href="https://www.centos.org/forums/viewtopic.php?t=57187#" class="responsive-menu-link dropdown-trigger dropdown-toggle">Quick links</a>
+			<div class="dropdown hidden">
+				<div class="pointer"><div class="pointer-inner"></div></div>
+				<ul class="dropdown-contents" role="menu">
+					
+											<li class="separator"></li>
+																								<li class="small-icon icon-search-unanswered"><a href="https://www.centos.org/forums/search.php?search_id=unanswered&amp;sid=5b5da92ec76686d7eea9b211888f90f6" role="menuitem">Unanswered posts</a></li>
+						<li class="small-icon icon-search-active"><a href="https://www.centos.org/forums/search.php?search_id=active_topics&amp;sid=5b5da92ec76686d7eea9b211888f90f6" role="menuitem">Active topics</a></li>
+						<li class="separator"></li>
+						<li class="small-icon icon-search"><a href="https://www.centos.org/forums/search.php?sid=5b5da92ec76686d7eea9b211888f90f6" role="menuitem">Search</a></li>
+					
+											<li class="separator"></li>
+												<li class="small-icon icon-team"><a href="https://www.centos.org/forums/memberlist.php?mode=team&amp;sid=5b5da92ec76686d7eea9b211888f90f6" role="menuitem">The team</a></li>										<li class="separator"></li>
+
+									</ul>
+			</div>
+		</li>
+
+				<li class="small-icon icon-faq" data-skip-responsive="true"><a href="https://www.centos.org/forums/faq.php?sid=5b5da92ec76686d7eea9b211888f90f6" rel="help" title="Frequently Asked Questions" role="menuitem">FAQ</a></li>
+						
+			<li class="small-icon icon-logout rightside" data-skip-responsive="true"><a href="https://www.centos.org/forums/ucp.php?mode=login&amp;sid=5b5da92ec76686d7eea9b211888f90f6" title="Login" accesskey="x" role="menuitem">Login</a></li>
+					<li class="small-icon icon-register rightside" data-skip-responsive="true"><a href="https://www.centos.org/forums/ucp.php?mode=register&amp;sid=5b5da92ec76686d7eea9b211888f90f6" role="menuitem">Register</a></li>
+						</ul>
+
+	<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+						<li class="small-icon icon-home breadcrumbs" style="max-width: 1125px;">
+									<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a href="https://www.centos.org/forums/index.php?sid=5b5da92ec76686d7eea9b211888f90f6" accesskey="h" data-navbar-reference="index" itemprop="url" title="Board index"><span itemprop="title">Board index</span></a></span>
+											<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="44"><a href="https://www.centos.org/forums/viewforum.php?f=44&amp;sid=5b5da92ec76686d7eea9b211888f90f6" itemprop="url" title="CentOS 7"><span itemprop="title">CentOS 7</span></a></span>
+															<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="50"><a href="https://www.centos.org/forums/viewforum.php?f=50&amp;sid=5b5da92ec76686d7eea9b211888f90f6" itemprop="url" title="CentOS 7 - Networking Support"><span itemprop="title">CentOS 7 - Networking Support</span></a></span>
+												</li>
+		
+					<li class="rightside responsive-search" style="display: none;"><a href="https://www.centos.org/forums/search.php?sid=5b5da92ec76686d7eea9b211888f90f6" title="View the advanced search options" role="menuitem">Search</a></li>
+			</ul>
+
+	</div>
+</div>
+	</div>
+
+	
+	<a id="start_here" class="anchor"></a>
+	<div id="page-body" role="main">
+		
+		
+<h2 class="topic-title"><a href="https://www.centos.org/forums/viewtopic.php?f=50&amp;t=57187&amp;sid=5b5da92ec76686d7eea9b211888f90f6">Network problem, no suitable device</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body -->
+<div style="display: none !important;">Issues related to configuring your network<br></div>
+
+
+<div class="action-bar top">
+
+	<div class="buttons">
+		
+			<a href="https://www.centos.org/forums/posting.php?mode=reply&amp;f=50&amp;t=57187&amp;sid=5b5da92ec76686d7eea9b211888f90f6" class="button icon-button reply-icon" title="Post a reply">
+			Post Reply		</a>
+	
+			</div>
+
+		<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button icon-button tools-icon dropdown-trigger dropdown-select dropdown-toggle"></span>
+		<div class="dropdown hidden">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																								<li class="small-icon icon-print"><a href="https://www.centos.org/forums/viewtopic.php?f=50&amp;t=57187&amp;sid=5b5da92ec76686d7eea9b211888f90f6&amp;view=print" title="Print view" accesskey="p">Print view</a></li>							</ul>
+		</div>
+	</div>
+	
+			<div class="search-box" role="search">
+			<form method="get" id="topic-search" action="https://www.centos.org/forums/search.php?sid=5b5da92ec76686d7eea9b211888f90f6">
+			<fieldset>
+				<input class="inputbox search tiny" type="search" name="keywords" id="search_keywords" size="20" placeholder="Search this topic…">
+				<button class="button icon-button search-icon" type="submit" title="Search">Search</button>
+				<a href="https://www.centos.org/forums/search.php?sid=5b5da92ec76686d7eea9b211888f90f6" class="button icon-button search-adv-icon" title="Advanced search">Advanced search</a>
+				<input type="hidden" name="t" value="57187">
+<input type="hidden" name="sf" value="msgonly">
+<input type="hidden" name="sid" value="5b5da92ec76686d7eea9b211888f90f6">
+
+			</fieldset>
+			</form>
+		</div>
+	
+			<div class="pagination">
+			3 posts
+							• Page <strong>1</strong> of <strong>1</strong>
+					</div>
+		</div>
+
+
+
+
+			<div id="p241206" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile241206">
+			<dt class="no-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://www.centos.org/forums/memberlist.php?mode=viewprofile&amp;u=104347&amp;sid=5b5da92ec76686d7eea9b211888f90f6" class="username">sureshnallusamy</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://www.centos.org/forums/search.php?author_id=104347&amp;sr=posts&amp;sid=5b5da92ec76686d7eea9b211888f90f6">1</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> 2016/03/28 04:15:56</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content241206">
+
+						<h3 class="first"><a href="https://www.centos.org/forums/viewtopic.php?t=57187#p241206">Network problem, no suitable device</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://www.centos.org/forums/posting.php?mode=quote&amp;f=50&amp;p=241206&amp;sid=5b5da92ec76686d7eea9b211888f90f6" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author"><a href="https://www.centos.org/forums/viewtopic.php?p=241206&amp;sid=5b5da92ec76686d7eea9b211888f90f6#p241206"><span class="imageset icon_post_target" title="Post">Post</span></a><span class="responsive-hide">by <strong><a href="https://www.centos.org/forums/memberlist.php?mode=viewprofile&amp;u=104347&amp;sid=5b5da92ec76686d7eea9b211888f90f6" class="username">sureshnallusamy</a></strong> » </span>2016/03/28 04:22:34 </p>
+			
+			
+			
+			<div class="content">I have a CentOS 7 64 bit running on a VM. It was working properly untill last week but suddenly the network in the VM stopped working. The error that I am seeing when I try to start the network is as below<br><br>Mar 27 21:09:01 localhost.localdomain systemd[1]: Starting LSB: Bring up/down networking...<br>-- Subject: Unit network.service has begun start-up<br>-- Defined-By: systemd<br>-- Support: <!-- m --><a class="postlink" href="http://lists.freedesktop.org/mailman/listinfo/systemd-devel">http://lists.freedesktop.org/mailman/li ... temd-devel</a><!-- m --><br>-- <br>-- Unit network.service has begun starting up.<br>Mar 27 21:09:01 localhost.localdomain network[3389]: Bringing up loopback interface:  [  OK  ]<br>Mar 27 21:09:01 localhost.localdomain network[3389]: Bringing up interface eno16777736:  Error: Connection activation failed: No suitable device found for this connection.<br>Mar 27 21:09:01 localhost.localdomain network[3389]: [FAILED]<br>Mar 27 21:09:01 localhost.localdomain network[3389]: Bringing up interface lo-old:  [  OK  ]<br>Mar 27 21:09:01 localhost.localdomain network[3389]: RTNETLINK answers: File exists<br>Mar 27 21:09:01 localhost.localdomain network[3389]: RTNETLINK answers: File exists<br>Mar 27 21:09:01 localhost.localdomain network[3389]: RTNETLINK answers: File exists<br>Mar 27 21:09:01 localhost.localdomain network[3389]: RTNETLINK answers: File exists<br>Mar 27 21:09:01 localhost.localdomain network[3389]: RTNETLINK answers: File exists<br>Mar 27 21:09:01 localhost.localdomain network[3389]: RTNETLINK answers: File exists<br>Mar 27 21:09:01 localhost.localdomain network[3389]: RTNETLINK answers: File exists<br>Mar 27 21:09:01 localhost.localdomain network[3389]: RTNETLINK answers: File exists<br>Mar 27 21:09:01 localhost.localdomain network[3389]: RTNETLINK answers: File exists<br>Mar 27 21:09:01 localhost.localdomain systemd[1]: network.service: control process exited, code=exited status=1<br>Mar 27 21:09:01 localhost.localdomain systemd[1]: Failed to start LSB: Bring up/down networking.<br><br><br>Below are my configurations:<br><br>[root@localhost network-scripts]# cat ifcfg-eno16777736 <br>TYPE=Ethernet<br>BOOTPROTO=dhcp<br>DEFROUTE=yes<br>PEERDNS=yes<br>PEERROUTES=yes<br>IPV4_FAILURE_FATAL=no<br>IPV6INIT=yes<br>IPV6_AUTOCONF=yes<br>IPV6_DEFROUTE=yes<br>IPV6_PEERDNS=yes<br>IPV6_PEERROUTES=yes<br>IPV6_FAILURE_FATAL=no<br>NAME=eno16777736<br>DEVICE=eno16777736<br>UUID=13756690-ac77-b776-4fc1-f5535cee6f16<br>ONBOOT=yes<br>NM_CONTROLLED=yes<br><br><br>Request somebody to help me to get this issue resolved. Let me know if you need more details. <br><br>Regards,<br>Suresh N</div>
+
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top"><a href="https://www.centos.org/forums/viewtopic.php?t=57187#top" class="top" title="Top">Top</a></div>
+		
+		</div>
+	</div>
+
+	<hr class="divider">
+				<div id="p241264" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile241264">
+			<dt class="no-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://www.centos.org/forums/memberlist.php?mode=viewprofile&amp;u=86053&amp;sid=5b5da92ec76686d7eea9b211888f90f6" class="username">giulix63</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://www.centos.org/forums/search.php?author_id=86053&amp;sr=posts&amp;sid=5b5da92ec76686d7eea9b211888f90f6">1306</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> 2014/05/14 10:06:37</dd>		
+		
+																<dd class="profile-custom-field profile-phpbb_location"><strong>Location:</strong> CE(S)T</dd>
+							
+							<dd class="profile-contact">
+				<strong>Contact:</strong>
+				<div class="dropdown-container dropdown-left">
+					<a href="https://www.centos.org/forums/viewtopic.php?t=57187#" class="dropdown-trigger dropdown-toggle"><span class="imageset icon_contact" title="Contact giulix63">Contact giulix63</span></a>
+					<div class="dropdown hidden">
+						<div class="pointer"><div class="pointer-inner"></div></div>
+						<div class="dropdown-contents contact-icons">
+																																								<div>
+																	<a href="http://www.giulix.it/" title="Website" class="last-cell">
+										<span class="contact-icon phpbb_website-icon">Website</span>
+									</a>
+																	</div>
+																					</div>
+					</div>
+				</div>
+			</dd>
+				
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content241264">
+
+						<h3><a href="https://www.centos.org/forums/viewtopic.php?t=57187#p241264">Re: Network problem, no suitable device</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://www.centos.org/forums/posting.php?mode=quote&amp;f=50&amp;p=241264&amp;sid=5b5da92ec76686d7eea9b211888f90f6" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author"><a href="https://www.centos.org/forums/viewtopic.php?p=241264&amp;sid=5b5da92ec76686d7eea9b211888f90f6#p241264"><span class="imageset icon_post_target" title="Post">Post</span></a><span class="responsive-hide">by <strong><a href="https://www.centos.org/forums/memberlist.php?mode=viewprofile&amp;u=86053&amp;sid=5b5da92ec76686d7eea9b211888f90f6" class="username">giulix63</a></strong> » </span>2016/03/29 08:35:12 </p>
+			
+			
+			
+			<div class="content">Why are you trying to start the network directly? It looks like NetworkManager is enabled on that system (NM_CONTROLLED=yes). It's its job to start the network. Reboot the system and post the output of the following commands run as root, please:<br><div class="codebox"><p>Code: <a href="https://www.centos.org/forums/viewtopic.php?t=57187#" onclick="selectCode(this); return false;">Select all</a></p><code>systemctl -l status NetworkManager<br>ip addr show<br>ip route show<br>cat /etc/resolv.conf<br></code></div><br>Then, if NetworkManager is up&amp;running, run<br><div class="codebox"><p>Code: <a href="https://www.centos.org/forums/viewtopic.php?t=57187#" onclick="selectCode(this); return false;">Select all</a></p><code>journalctl -b -lu NetworkManager &gt;nm.log<br></code></div><br>as root, upload nm.log <a href="http://pastebin.centos.org/" class="postlink">here</a> and post the link, please.</div>
+
+			
+									
+									<div id="sig241264" class="signature"><span style="font-size: 85%; line-height: 116%;">Root is evil: Do not use root (sudo) to run any of the commands specified in my posts unless explicitly indicated. Please, provide the necessary amount of context to understand your problem/question.</span></div>
+						</div>
+
+		</div>
+
+				<div class="back2top"><a href="https://www.centos.org/forums/viewtopic.php?t=57187#top" class="top" title="Top">Top</a></div>
+		
+		</div>
+	</div>
+
+	<hr class="divider">
+				<div id="p241266" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile241266">
+			<dt class="no-profile-rank has-avatar">
+				<div class="avatar-container">
+																<a href="https://www.centos.org/forums/memberlist.php?mode=viewprofile&amp;u=35850&amp;sid=5b5da92ec76686d7eea9b211888f90f6" class="avatar"><img class="avatar" src="./Network problem, no suitable device - CentOS_files/file.php" width="90" height="45" alt="User avatar"></a>														</div>
+								<a href="https://www.centos.org/forums/memberlist.php?mode=viewprofile&amp;u=35850&amp;sid=5b5da92ec76686d7eea9b211888f90f6" class="username">jlehtone</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://www.centos.org/forums/search.php?author_id=35850&amp;sr=posts&amp;sid=5b5da92ec76686d7eea9b211888f90f6">1616</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> 2007/12/11 08:17:33</dd>		
+		
+											<dd class="profile-custom-field profile-phpbb_location"><strong>Location:</strong> Finland</dd>
+							
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content241266">
+
+						<h3><a href="https://www.centos.org/forums/viewtopic.php?t=57187#p241266">Re: Network problem, no suitable device</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://www.centos.org/forums/posting.php?mode=quote&amp;f=50&amp;p=241266&amp;sid=5b5da92ec76686d7eea9b211888f90f6" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author"><a href="https://www.centos.org/forums/viewtopic.php?p=241266&amp;sid=5b5da92ec76686d7eea9b211888f90f6#p241266"><span class="imageset icon_post_target" title="Post">Post</span></a><span class="responsive-hide">by <strong><a href="https://www.centos.org/forums/memberlist.php?mode=viewprofile&amp;u=35850&amp;sid=5b5da92ec76686d7eea9b211888f90f6" class="username">jlehtone</a></strong> » </span>2016/03/29 10:25:25 </p>
+			
+			
+			
+			<div class="content">Furthermore, if NM is up, these incantations tell something too:<br><div class="codebox"><p>Code: <a href="https://www.centos.org/forums/viewtopic.php?t=57187#" onclick="selectCode(this); return false;">Select all</a></p><code>nmcli d<br>nmcli c s<br>nmcli c s -a</code></div><br>and<br><div class="codebox"><p>Code: <a href="https://www.centos.org/forums/viewtopic.php?t=57187#" onclick="selectCode(this); return false;">Select all</a></p><code>ip li</code></div></div>
+
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top"><a href="https://www.centos.org/forums/viewtopic.php?t=57187#top" class="top" title="Top">Top</a></div>
+		
+		</div>
+	</div>
+
+	<hr class="divider">
+	
+
+	<form id="viewtopic" method="post" action="https://www.centos.org/forums/viewtopic.php?f=50&amp;t=57187&amp;sid=5b5da92ec76686d7eea9b211888f90f6">
+	<fieldset class="display-options" style="margin-top: 0; ">
+				<label>Display posts from previous: <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+		<label>Sort by <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select></label> <label><select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select></label>
+		<input type="submit" name="sort" value="Go" class="button2">
+			</fieldset>
+	</form>
+	<hr>
+
+<div class="action-bar bottom">
+	<div class="buttons">
+		
+			<a href="https://www.centos.org/forums/posting.php?mode=reply&amp;f=50&amp;t=57187&amp;sid=5b5da92ec76686d7eea9b211888f90f6" class="button icon-button reply-icon" title="Post a reply">
+			Post Reply		</a>
+	
+			</div>
+
+		<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button icon-button tools-icon dropdown-trigger dropdown-select dropdown-toggle"></span>
+		<div class="dropdown hidden">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																								<li class="small-icon icon-print"><a href="https://www.centos.org/forums/viewtopic.php?f=50&amp;t=57187&amp;sid=5b5da92ec76686d7eea9b211888f90f6&amp;view=print" title="Print view" accesskey="p">Print view</a></li>							</ul>
+		</div>
+	</div>
+
+		
+	
+			<div class="pagination">
+			3 posts
+							• Page <strong>1</strong> of <strong>1</strong>
+					</div>
+		<div class="clear"></div>
+</div>
+
+
+	<p class="jumpbox-return"><a href="https://www.centos.org/forums/viewforum.php?f=50&amp;sid=5b5da92ec76686d7eea9b211888f90f6" class="left-box arrow-left" accesskey="r">Return to “CentOS 7 - Networking Support”</a></p>
+
+
+	<div class="dropdown-container dropdown-container-right dropdown-up dropdown-left dropdown-button-control" id="jumpbox">
+		<span title="Jump to" class="dropdown-trigger button dropdown-select dropdown-toggle">
+			Jump to		</span>
+		<div class="dropdown hidden">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																			<li><a href="https://www.centos.org/forums/viewforum.php?f=1&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS General Purpose</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=12&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS - FAQ &amp; Readme First</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=9&amp;sid=5b5da92ec76686d7eea9b211888f90f6">Announcements</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=10&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS Social</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=11&amp;sid=5b5da92ec76686d7eea9b211888f90f6">User Comments</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=40&amp;sid=5b5da92ec76686d7eea9b211888f90f6">Website Problems</a></li>
+																<li><a href="https://www.centos.org/forums/viewforum.php?f=44&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 7</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=47&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 7 - General Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=48&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 7 - Software Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=49&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 7 - Hardware Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=50&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 7 - Networking Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=51&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 7 - Security Support</a></li>
+																<li><a href="https://www.centos.org/forums/viewforum.php?f=3&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 6</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=13&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 6 - General Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=14&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 6 - Software Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=15&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 6 - Hardware Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=16&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 6 - Networking Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=17&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 6 - Security Support</a></li>
+																<li><a href="https://www.centos.org/forums/viewforum.php?f=4&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 5</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=19&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 5 - General Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=20&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 5 - Software Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=21&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 5 - Hardware Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=22&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 5 - Networking Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=23&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 5 - Server Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=24&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 5 - Security Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=25&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 5 - Webhosting Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=26&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 5 - X86_64,s390(x) and PowerPC Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=27&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 5 - Oracle Installation and Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=28&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 5 - Miscellaneous Questions</a></li>
+																<li><a href="https://www.centos.org/forums/viewforum.php?f=5&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 4</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=30&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 4 - General Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=31&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 4 - Software Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=32&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 4 - Hardware Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=33&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 4 - Networking Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=34&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 4 - Server Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=35&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 4 - Security Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=36&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 4 - Webhosting Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=37&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 4 - X86_64,s390(x) and PowerPC Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=38&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 4 - Oracle Installation and Support</a></li>
+																<li>&nbsp; &nbsp;<a href="https://www.centos.org/forums/viewforum.php?f=39&amp;sid=5b5da92ec76686d7eea9b211888f90f6">CentOS 4 - Miscellaneous Questions</a></li>
+										</ul>
+		</div>
+	</div>
+
+
+	<div class="stat-block online-list">
+		<h3>Who is online</h3>
+		<p>Users browsing this forum: No registered users and 1 guest</p>
+	</div>
+
+			</div>
+
+
+<div id="page-footer" role="contentinfo">
+	<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-footer" class="linklist bulletin" role="menubar">
+		<li class="small-icon icon-home breadcrumbs">
+									<span class="crumb"><a href="https://www.centos.org/forums/index.php?sid=5b5da92ec76686d7eea9b211888f90f6" data-navbar-reference="index" title="Board index">Board index</a></span>
+					</li>
+		
+				<li class="responsive-menu hidden rightside dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li><li class="rightside">All times are <abbr title="UTC">UTC</abbr></li>
+							<li class="small-icon icon-delete-cookies rightside"><a href="https://www.centos.org/forums/ucp.php?mode=delete_cookies&amp;sid=5b5da92ec76686d7eea9b211888f90f6" data-ajax="true" data-refresh="true" role="menuitem">Delete all board cookies</a></li>
+									<li class="small-icon icon-team rightside" data-last-responsive="true"><a href="https://www.centos.org/forums/memberlist.php?mode=team&amp;sid=5b5da92ec76686d7eea9b211888f90f6" role="menuitem">The team</a></li>					</ul>
+
+	</div>
+</div>
+
+	<div class="copyright">
+				Powered by <a href="https://www.phpbb.com/">phpBB</a>® Forum Software © phpBB Limited
+									</div>
+
+	<div id="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+		<div id="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+		<a href="https://www.centos.org/forums/viewtopic.php?t=57187#" class="alert_close"></a>
+		<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="https://www.centos.org/forums/viewtopic.php?t=57187#" class="alert_close"></a>
+		<div class="alert_text"></div>
+	</div>
+</div>
+
+</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+
+<script type="text/javascript" src="./Network problem, no suitable device - CentOS_files/jquery.min.js"></script>
+<script type="text/javascript" src="./Network problem, no suitable device - CentOS_files/core.js"></script>
+
+
+<script type="text/javascript" src="./Network problem, no suitable device - CentOS_files/forum_fn.js"></script>
+
+<script type="text/javascript" src="./Network problem, no suitable device - CentOS_files/ajax.js"></script>
+
+
+
+
+
+
+</body></html>

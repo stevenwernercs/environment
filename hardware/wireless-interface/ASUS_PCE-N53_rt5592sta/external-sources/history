@@ -1,0 +1,1000 @@
+  122  cd f8c299c5-dcf5-48a4-9778-d0623de82845/
+  123  ls
+  124  cd SETUP/
+  125  ls
+  126  cd ..
+  127  ls
+  128  cd ..
+  129  cp -r steve ~/Documents/
+  130  cp -r ./f8c299c5-dcf5-48a4-9778-d0623de82845/steve/ ~/Documents/
+  131  ls
+  132  cd f8c299c5-dcf5-48a4-9778-d0623de82845/
+  133  ls
+  134  cd ..
+  135  ls
+  136  cd f8c299c5-dcf5-48a4-9778-d0623de82845/
+  137  ls
+  138  cp -r ./SETUP/ ~/Documents/
+  139  ls
+  140  chmod -w /run/media/swerner/f8c299c5-dcf5-48a4-9778-d0623de82845
+  141  chmod -w /dev/sdb7 
+  142  sudo chmod -w /dev/sdb7 
+  143  sudo chmod a-w /dev/sdb7 
+  144  ls -la /dev/sdb7
+  145  cd ..
+  146  ls
+  147  cd 749925b5-52bc-435f-873c-d408e3b26152/
+  148  ls
+  149  cd lost+found/
+  150  ls
+  151  sudo ls lost+found/
+  152  sudo ls -la lost+found/
+  153  ls
+  154  du -h
+  155  sudo du -h
+  156  cd ..
+  157  ls
+  158  cd C9C9-DF0C/
+  159  ls
+  160  ls -la
+  161  du -h
+  162  cd ..
+  163  ls
+  164  ls -la
+  165  cd C981-1613/
+  166  ls
+  167  cd ..
+  168  ls
+  169  cd a9397b00-bba6-40d8-8320-0f3969d2abe2/
+  170  ls
+  171  mv Books/ /run/media/swerner/newman/
+  172  ls
+  173  du -f Video/
+  174  du -h Video/
+  175  mv Video/ /run/media/swerner/george/
+  176  ls -la /run/media/swerner/george/
+  177  chmod +w /run/media/swerner/george/
+  178  sudo chmod +w /run/media/swerner/george/
+  179  ls -la /run/media/swerner/george/
+  180  sudo chmod a+w /run/media/swerner/george/
+  181  ls -la /run/media/swerner/george/
+  182  sudo chmod 775 /run/media/swerner/george/
+  183  ls -la /run/media/swerner/george/
+  184  mv Video/ /run/media/swerner/george/
+  185  ls -la /run/media/swerner/george/
+  186  sudo chmod a+w /run/media/swerner/george/
+  187  mv Video/ /run/media/swerner/george/
+  188  ls
+  189  cd things\ to\ do/
+  190  ls
+  191  cd ..
+  192  ls
+  193  cd West\ Media/
+  194  ls
+  195  mv * /run/media/swerner/newman/
+  196  ls
+  197  cd ..
+  198  ls
+  199  rmdir West\ Media/
+  200  ls
+  201  cd ..
+  202  ls
+  203  cd kramer/
+  204  ls
+  205  cd ..
+  206  ls
+  207  cd george/
+  208  ls
+  209  cd ..
+  210  ls
+  211  cd f8c299c5-dcf5-48a4-9778-d0623de82845
+  212  ls
+  213  cd ..
+  214  ls
+  215  cd elaine
+  216  ls -la
+  217  cd ..
+  218  ls
+  219  cd C9C9-DF0C
+  220  ls
+  221  ls -la
+  222  cd ..
+  223  ls
+  224  cd a9397b00-bba6-40d8-8320-0f3969d2abe2
+  225  ls
+  226  cd ..
+  227  ls
+  228  cd C981-1613/
+  229  ls
+  230  ls -l
+  231  acd ..
+  232  ls
+  233  cd ..
+  234  ls
+  235  cd kramer/
+  236  ls
+  237  cd backups/
+  238  ls
+  239  cd ..
+  240  ls
+  241  cd ..
+  242  ls
+  243  cd jerry/
+  244  ls
+  245  cd ..
+  246  ls
+  247  cd george/
+  248  ls
+  249  cd Video/
+  250  ls
+  251  cd ..
+  252  ls
+  253  cd ..
+  254  l
+  255  ls
+  256  cd newman/
+  257  ls
+  258  cd Books/
+  259  ls
+  260  cd Downloads/o
+  261  cd Downloads/
+  262  ls
+  263  cd ..
+  264  ls
+  265  cd ..
+  266  ls
+  267  mv -u Books/* Audiobooks/
+  268  ls
+  269  cd Books/
+  270  ls
+  271  cd ..
+  272  ls
+  273  rmdir Books/
+  274  ls
+  275  cd ..
+  276  ls
+  277  df -h
+  278  ll /run/media/swerner/kramer
+  279  ll /run/media/swerner/kramer/backups/
+  280  ll -g /run/media/swerner/kramer/backups/
+  281  ll -h /run/media/swerner/kramer/backups/
+  282  VBoxManage internalcommands createrawvmdk -filename /run/media/swerner/kramer/vader.vmdk" -rawdisk /dev/sdc
+  283  VBoxManage internalcommands createrawvmdk -filename /run/media/swerner/kramer/vader.vmdk -rawdisk /dev/sdc
+  284  #VBoxManage internalcommands createrawvmdk -filename /run/media/swerner/kramer/vader.vmdk -rawdisk /dev/sdc
+  285  chmod +rw /dev/sdc
+  286  sudo chmod +rw /dev/sdc
+  287  #VBoxManage internalcommands createrawvmdk -filename /run/media/swerner/kramer/vader.vmdk -rawdisk /dev/sdc
+  288  VBoxManage internalcommands createrawvmdk -filename /run/media/swerner/kramer/vader.vmdk -rawdisk /dev/sdc
+  289  ls -la /dev/sdc
+  290  sudo chmod a+rw /dev/sdc
+  291  VBoxManage internalcommands createrawvmdk -filename /run/media/swerner/kramer/vader.vmdk -rawdisk /dev/sdc
+  292  ls -la /dev/sdc
+  293  sudo chmod a+rw /dev/sdc*
+  294  ls -la /dev/sdc*
+  295  VBoxManage internalcommands createrawvmdk -filename /run/media/swerner/kramer/vader.vmdk -rawdisk /dev/sdc
+  296  VBoxManage internalcommands createrawvmdk -filename /run/media/swerner/kramer/vader.vmdk -rawdisk /dev/sdc2
+  297  #VBoxManage internalcommands createrawvmdk -filename /run/media/swerner/kramer/vader.vmdk -rawdisk /dev/sdc2
+  298  ls -la /run/media/swerner/kramer/vader.vmdk
+  299  ls -la /run/media/swerner/kramer/
+  300  mkdir -p /run/media/swerner/kramer/vms/vader
+  301  sudo mkdir -p /run/media/swerner/kramer/vms/vader
+  302  chown -R swerner:wheel /run/media/swerner/kramer/vms
+  303  sudo chown -R swerner:wheel /run/media/swerner/kramer/vms
+  304  mv /run/media/swerner/kramer/backups/ /run/media/swerner/kramer/vms/vader/
+  305  #mv /run/media/swerner/kramer/backups/ /run/media/swerner/kramer/vms/vader/
+  306  ls -la backups
+  307  ls
+  308  sudo mv /run/media/swerner/kramer/backups/ /run/media/swerner/kramer/vms/vader/
+  309  cd /run/media/swerner/kramer/vms/vader/
+  310  ls
+  311  ls -la
+  312  cd backups/
+  313  ls
+  314  ls -la
+  315  mv windows_boot-105MB_2017-02-05_1519.img vader_windows_boot-105MB_2017-02-05_1519.img
+  316  mv windows_main-120GB_2017-02-05_1520.img vader_windows_main-120GB_2017-02-05_1520.img
+  317  chmod -w vader_windows_*
+  318  ls -la
+  319  cd ..
+  320  ls
+  321  VBoxManage internalcommands createrawvmdk -filename /run/media/swerner/kramer/vms/vader/vader.vmdk -rawdisk /dev/sdc2
+  322  ls
+  323  rm vader.vmdk 
+  324  VBoxManage internalcommands createrawvmdk -filename /run/media/swerner/kramer/vms/vader/vader.vmdk -rawdisk /dev/sdc
+  325  ls
+  326  cd /run/media/swerner/
+  327  ls
+  328  cd newman/
+  329  ls
+  330  cd Music/
+  331  ls
+  332  lc
+  333  cp -ur ZZTop/* ZZ\ Top/ && rm -rf ZZTop/
+  334  ls
+  335  cp -ur Zapp\ \&\ Roger/* Zapp\ and\ Roger/ && rm -rf Zapp\ \&\ Roger/
+  336  ls
+  337  cp -ur Youngbloods/* Youngbloodz && rm -rf Youngbloods/
+  338  lr
+  339  ls
+  340  cp -ur YOUNG\ BLOODZ/* Youngbloodz && rm -rf YOUNG\ BLOODZ/
+  341  ls
+  342  disks
+  343  gnome-disk-utility
+  344  disks
+  345  sudo yum install gnome-disk-utility
+  346  disks
+  347  gnome-disks 
+  348  cd /dev
+  349  ls
+  350  ls -la
+  351  cd /run/media/swerner/kramer/
+  352  ls
+  353  ls -la
+  354  mkdir backups
+  355  sudo mkdir backups
+  356  sudo chown swerner:swerner backups/
+  357  ls
+  358  ls -la
+  359  ls
+  360  cd backups/
+  361  ls
+  362  ls -la
+  363  rm windows-2017-02-05_1515.img
+  364  ls
+  365  sudo pip install pyacoustid
+  366  sudo yum install chromaprint
+  367  sudo yum install fpcalc
+  368  ls
+  369  cd Music/
+  370  ls
+  371  find -type d | wc -l
+  372  lr | tail
+  373  ls -lt | head
+  374  cd Duran\ Duran
+  375  ls
+  376  ls -la
+  377  cd Arena/
+  378  ls
+  379  ls -la
+  380  vlc *
+  381  htop
+  382  sudo yum install digikam
+  383  digikam 
+  384  cd 
+  385  ls
+  386  cd Pictures/
+  387  ls
+  388  cd resotred/
+  389  ls
+  390  cd restore/
+  391  ls
+  392  find Pictures/  -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > dupes.txt
+  393  find -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > dupes.txt
+  394  gvim dupes.txt 
+  395  while read line; do echo "$line"; done < dupes.txt 
+  396  while read md5 path; do ; echo "$md5==>$path"; done < dupes.txt 
+  397  while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  398  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $FILE_PATH"; done < dupes.txt 
+  399  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then echo "rm $FILE_PATH"; done < dupes.txt 
+  400  PREV_MD5=""; while read MD5 FILE_PATH; do if[ "$MD5" = "$PREV_MD5" ] then echo "rm $FILE_PATH"; done < dupes.txt 
+  401  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then ; echo "rm $FILE_PATH"; done < dupes.txt 
+  402  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then ; echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  403  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  404  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD5"; fi; done < dupes.txt 
+  405  PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  406  PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $FILE_PATH"; fi; done < dupes.txt 
+  407  #PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $FILE_PATH"; fi; done < dupes.txt 
+  408  while read md5 path; do ; echo "$md5==>$path"; done < dupes.txt 
+  409  while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  410  #while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  411  PREV_MD=""; while read MD5 DUP_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $DUP_PATH"; fi; done < dupes.txt 
+  412  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; done < dupes.txt 
+  413  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  414  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  415  echo "$MD5"
+  416  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" == "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  417  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" w= "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  418  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  419  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  420  grep 8b80c2495a1ab8236889c30dc66c666d dupes.txt | wc -l
+  421  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  422  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  423  sudo yum install digikam
+  424  digikam 
+  425  cd 
+  426  ls
+  427  cd Pictures/
+  428  ls
+  429  cd resotred/
+  430  ls
+  431  cd restore/
+  432  ls
+  433  find Pictures/  -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > dupes.txt
+  434  find -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > dupes.txt
+  435  gvim dupes.txt 
+  436  while read line; do echo "$line"; done < dupes.txt 
+  437  while read md5 path; do ; echo "$md5==>$path"; done < dupes.txt 
+  438  while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  439  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $FILE_PATH"; done < dupes.txt 
+  440  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then echo "rm $FILE_PATH"; done < dupes.txt 
+  441  PREV_MD5=""; while read MD5 FILE_PATH; do if[ "$MD5" = "$PREV_MD5" ] then echo "rm $FILE_PATH"; done < dupes.txt 
+  442  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then ; echo "rm $FILE_PATH"; done < dupes.txt 
+  443  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then ; echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  444  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  445  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD5"; fi; done < dupes.txt 
+  446  PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  447  PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $FILE_PATH"; fi; done < dupes.txt 
+  448  #PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $FILE_PATH"; fi; done < dupes.txt 
+  449  while read md5 path; do ; echo "$md5==>$path"; done < dupes.txt 
+  450  while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  451  #while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  452  PREV_MD=""; while read MD5 DUP_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $DUP_PATH"; fi; done < dupes.txt 
+  453  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; done < dupes.txt 
+  454  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  455  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  456  echo "$MD5"
+  457  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" == "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  458  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" w= "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  459  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  460  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  461  grep 8b80c2495a1ab8236889c30dc66c666d dupes.txt | wc -l
+  462  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  463  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  464  sudo yum install digikam
+  465  digikam 
+  466  cd 
+  467  ls
+  468  cd Pictures/
+  469  ls
+  470  cd resotred/
+  471  ls
+  472  cd restore/
+  473  ls
+  474  find Pictures/  -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > dupes.txt
+  475  find -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > dupes.txt
+  476  gvim dupes.txt 
+  477  while read line; do echo "$line"; done < dupes.txt 
+  478  while read md5 path; do ; echo "$md5==>$path"; done < dupes.txt 
+  479  while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  480  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $FILE_PATH"; done < dupes.txt 
+  481  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then echo "rm $FILE_PATH"; done < dupes.txt 
+  482  PREV_MD5=""; while read MD5 FILE_PATH; do if[ "$MD5" = "$PREV_MD5" ] then echo "rm $FILE_PATH"; done < dupes.txt 
+  483  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then ; echo "rm $FILE_PATH"; done < dupes.txt 
+  484  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then ; echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  485  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  486  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD5"; fi; done < dupes.txt 
+  487  PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  488  PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $FILE_PATH"; fi; done < dupes.txt 
+  489  #PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $FILE_PATH"; fi; done < dupes.txt 
+  490  while read md5 path; do ; echo "$md5==>$path"; done < dupes.txt 
+  491  while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  492  #while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  493  PREV_MD=""; while read MD5 DUP_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $DUP_PATH"; fi; done < dupes.txt 
+  494  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; done < dupes.txt 
+  495  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  496  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  497  echo "$MD5"
+  498  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" == "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  499  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" w= "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  500  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  501  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  502  grep 8b80c2495a1ab8236889c30dc66c666d dupes.txt | wc -l
+  503  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  504  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  505  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD5 $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  506  sudo yum install digikam
+  507  digikam 
+  508  cd 
+  509  ls
+  510  cd Pictures/
+  511  ls
+  512  cd resotred/
+  513  ls
+  514  cd restore/
+  515  ls
+  516  find Pictures/  -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > dupes.txt
+  517  find -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > dupes.txt
+  518  gvim dupes.txt 
+  519  while read line; do echo "$line"; done < dupes.txt 
+  520  while read md5 path; do ; echo "$md5==>$path"; done < dupes.txt 
+  521  while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  522  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $FILE_PATH"; done < dupes.txt 
+  523  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then echo "rm $FILE_PATH"; done < dupes.txt 
+  524  PREV_MD5=""; while read MD5 FILE_PATH; do if[ "$MD5" = "$PREV_MD5" ] then echo "rm $FILE_PATH"; done < dupes.txt 
+  525  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then ; echo "rm $FILE_PATH"; done < dupes.txt 
+  526  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then ; echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  527  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  528  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD5"; fi; done < dupes.txt 
+  529  PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  530  PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $FILE_PATH"; fi; done < dupes.txt 
+  531  #PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $FILE_PATH"; fi; done < dupes.txt 
+  532  while read md5 path; do ; echo "$md5==>$path"; done < dupes.txt 
+  533  while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  534  #while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  535  PREV_MD=""; while read MD5 DUP_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $DUP_PATH"; fi; done < dupes.txt 
+  536  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; done < dupes.txt 
+  537  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  538  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  539  echo "$MD5"
+  540  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" == "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  541  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" w= "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  542  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  543  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  544  grep 8b80c2495a1ab8236889c30dc66c666d dupes.txt | wc -l
+  545  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  546  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  547  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD5 $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  548  sudo yum install digikam
+  549  digikam 
+  550  cd 
+  551  ls
+  552  cd Pictures/
+  553  ls
+  554  cd resotred/
+  555  ls
+  556  cd restore/
+  557  ls
+  558  find Pictures/  -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > dupes.txt
+  559  find -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > dupes.txt
+  560  gvim dupes.txt 
+  561  while read line; do echo "$line"; done < dupes.txt 
+  562  while read md5 path; do ; echo "$md5==>$path"; done < dupes.txt 
+  563  while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  564  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $FILE_PATH"; done < dupes.txt 
+  565  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then echo "rm $FILE_PATH"; done < dupes.txt 
+  566  PREV_MD5=""; while read MD5 FILE_PATH; do if[ "$MD5" = "$PREV_MD5" ] then echo "rm $FILE_PATH"; done < dupes.txt 
+  567  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then ; echo "rm $FILE_PATH"; done < dupes.txt 
+  568  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then ; echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  569  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  570  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD5"; fi; done < dupes.txt 
+  571  PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  572  PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $FILE_PATH"; fi; done < dupes.txt 
+  573  #PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $FILE_PATH"; fi; done < dupes.txt 
+  574  while read md5 path; do ; echo "$md5==>$path"; done < dupes.txt 
+  575  while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  576  #while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  577  PREV_MD=""; while read MD5 DUP_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $DUP_PATH"; fi; done < dupes.txt 
+  578  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; done < dupes.txt 
+  579  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  580  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  581  echo "$MD5"
+  582  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" == "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  583  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" w= "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  584  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  585  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  586  grep 8b80c2495a1ab8236889c30dc66c666d dupes.txt | wc -l
+  587  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  588  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  589  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD5 $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  590  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "${MD5}" = "${PREV_MD5}" ]; then echo "rm ${MD5} ${DUP_PATH}"; fi; PREV_MD5="${MD5}"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  591  sudo yum install digikam
+  592  digikam 
+  593  cd 
+  594  ls
+  595  cd Pictures/
+  596  ls
+  597  cd resotred/
+  598  ls
+  599  cd restore/
+  600  ls
+  601  find Pictures/  -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > dupes.txt
+  602  find -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > dupes.txt
+  603  gvim dupes.txt 
+  604  while read line; do echo "$line"; done < dupes.txt 
+  605  while read md5 path; do ; echo "$md5==>$path"; done < dupes.txt 
+  606  while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  607  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $FILE_PATH"; done < dupes.txt 
+  608  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then echo "rm $FILE_PATH"; done < dupes.txt 
+  609  PREV_MD5=""; while read MD5 FILE_PATH; do if[ "$MD5" = "$PREV_MD5" ] then echo "rm $FILE_PATH"; done < dupes.txt 
+  610  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then ; echo "rm $FILE_PATH"; done < dupes.txt 
+  611  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ] then ; echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  612  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  613  PREV_MD5=""; while read MD5 FILE_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD5"; fi; done < dupes.txt 
+  614  PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $FILE_PATH"; fi; done < dupes.txt 
+  615  PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $FILE_PATH"; fi; done < dupes.txt 
+  616  #PREV_MD=""; while read MD FILE_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $FILE_PATH"; fi; done < dupes.txt 
+  617  while read md5 path; do ; echo "$md5==>$path"; done < dupes.txt 
+  618  while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  619  #while read md5 path; do echo "$md5==>$path"; done < dupes.txt 
+  620  PREV_MD=""; while read MD5 DUP_PATH; do if [ "$MD" = "$PREV_MD" ]; then echo "rm $MD $DUP_PATH"; fi; done < dupes.txt 
+  621  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; done < dupes.txt 
+  622  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  623  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  624  echo "$MD5"
+  625  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" == "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  626  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" w= "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  627  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  628  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < dupes.txt 
+  629  grep 8b80c2495a1ab8236889c30dc66c666d dupes.txt | wc -l
+  630  #PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  631  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  632  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "$MD5" = "$PREV_MD5" ]; then echo "rm $MD5 $DUP_PATH"; fi; PREV_MD5="$MD5"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  633  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "${MD5}" = "${PREV_MD5}" ]; then echo "rm ${MD5} ${DUP_PATH}"; fi; PREV_MD5="${MD5}"; done < <(cat dupes.txt | grep -vP "^\s*$")
+  634  bitcoin-qt 
+  635  sudo gparted
+  636  gvim projects/environment/notes 
+  637  sudo dpkg-reconfigure wireshark-common 
+  638  gvim ~/scripts/dimscreens.sh 
+  639  cd projects/environment/
+  640  ls
+  641  cd setup/
+  642  ls
+  643  cd yum-repos/
+  644  ls
+  645  cd ..
+  646  ls
+  647  cd tools/
+  648  ls
+  649  gvim rpm-list 
+  650  cd ..
+  651  ls
+  652  cd ..
+  653  ls
+  654  cd Documents/
+  655  sl
+  656  ls
+  657  cd restore/
+  658  ls
+  659  cd png/
+  660  ls
+  661  ls -la
+  662  ls
+  663  cd ppt
+  664  su root
+  665  ls
+  666  tail -f audit.txt 
+  667  ls
+  668  du -h
+  669  sudo chmod a+r .
+  670  ls
+  671  sudo chmod a+rx *
+  672  ls -l
+  673  ls
+  674  cd rar/
+  675  ls
+  676  ls -la
+  677  ls -lah
+  678  ls
+  679  cd ..
+  680  ls
+  681  cd docx
+  682  ls
+  683  ooffice 46039264.docx
+  684  ls
+  685  cd ..
+  686  ls
+  687  du -h
+  688  df -h
+  689  ls
+  690  sudo chown -R swerner:swerner *
+  691  chmod a-w *
+  692  chmod -R a-w *
+  693  ls
+  694  find -type f -exec md5sum '{}' ';' > md5s.txt
+  695  ls
+  696  wc -l md5s.txt 
+  697  head md5s.txt
+  698  cp md5s.txt  dups.txt
+  699  cat ~/Documents/md5-known-hashes.txt  >> dups.txt 
+  700  sort dups.txt -o dups.txt 
+  701  head dups.txt
+  702  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "${MD5}" = "${PREV_MD5}" ]; then echo "rm ${MD5} ${DUP_PATH}"; fi; PREV_MD5="${MD5}"; done < dupes.txt
+  703  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "${MD5}" = "${PREV_MD5}" ]; then echo "rm ${MD5} ${DUP_PATH}"; fi; PREV_MD5="${MD5}"; done < dups.txt
+  704  sort -u dups.txt -o dups.txt 
+  705  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "${MD5}" = "${PREV_MD5}" ]; then echo "rm ${MD5} ${DUP_PATH}"; fi; PREV_MD5="${MD5}"; done < dups.txt
+  706  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "${MD5}" = "${PREV_MD5}" ]; then echo "rm ${MD5} ${DUP_PATH}"; rm "${DUP_PATH}"; fi; PREV_MD5="${MD5}"; done < dups.txt
+  707  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "${MD5}" = "${PREV_MD5}" ]; then echo "rm ${MD5} ${DUP_PATH}"; \rm "${DUP_PATH}"; fi; PREV_MD5="${MD5}"; done < dups.txt
+  708  eog ./jpg/01184976.jpg ./jpg/196317200.jpg
+  709  PREV_MD5=""; while read MD5 DUP_PATH; do if [ "${MD5}" = "${PREV_MD5}" ]; then echo "rm ${MD5} ${DUP_PATH}"; \rm "${DUP_PATH}"; fi; PREV_MD5="${MD5}"; done < dups.txt
+  710  ls -la
+  711  chmod +w -R *
+  712  chmod +w -R * ; PREV_MD5=""; while read MD5 DUP_PATH; do if [ "${MD5}" = "${PREV_MD5}" ]; then echo "rm ${MD5} ${DUP_PATH}"; \rm "${DUP_PATH}"; fi; PREV_MD5="${MD5}"; done < dups.txt
+  713  ls
+  714  ls -la
+  715  df -h
+  716  du -h
+  717  vlc mov/234628800.mov 
+  718  chmod -R a-w *
+  719  ls
+  720  ls -la
+  721  oeg bmp/332513880.bmp
+  722  eog bmp/332513880.bmp
+  723  eog bmp/*
+  724  open .
+  725  nautilus .
+  726  bg
+  727  chmod -R +w *
+  728  ls
+  729  chmod -R +w bmp/
+  730  ls
+  731  nautilus jpg/
+  732  nautilus --browser jpg/
+  733  nautilus --browser png/
+  734  ls
+  735  find -type f -exec md5sum '{}' ';' > md5s-new.txt
+  736  cd /run/media/swerner/CentOS\ 7\ x86_64/
+  737  ls
+  738  sudo gparted
+  739  ls
+  740  dc -h
+  741  df -h
+  742  gnome-disks 
+  743  cd /drives/kramer/
+  744  ls
+  745  cd vms/
+  746  ls
+  747  cd vader/
+  748  ls
+  749  sudo yum install gcc-c++
+  750  sudo yum install kernel-devel
+  751  cd ..
+  752  ls
+  753  cd ..
+  754  ls
+  755  du -h
+  756  sudo gvim /etc/fstab 
+  757  ls /drives/
+  758  ls -la /drives/
+  759  sudo mkdir /drives/{newman,jerry,george,elaine}
+  760  ls -la
+  761  ls -la /drives/
+  762  sudo mount /drives/george
+  763  sudo mount /drives/jerry
+  764  sudo mount /drives/elaine
+  765  sudo mount /drives/newman
+  766  ls
+  767  cd /drives/
+  768  ls
+  769  ls -la
+  770  ls -la /dev/sd*
+  771  ls
+  772  ls -la
+  773  sudo 755 george/
+  774  sudo chmpd 755 george/
+  775  sudo chmod 755 george/
+  776  ls -la
+  777  cd george/
+  778  sl
+  779  ls
+  780  cd ..
+  781  ls
+  782  cd newman/
+  783  ls
+  784  ls -l
+  785  gvim /etc/fstab 
+  786  sudo gvim /etc/fstab 
+  787  sudo mount /drives/newman
+  788  sudo gparted
+  789  ls
+  790  cd /run/media/swerner/
+  791  ls
+  792  cd ASUS\ PCE-N53/
+  793  ls
+  794  cd Linux/
+  795  s
+  796  ls
+  797  mkdir /tmp/asus_wireless; tar xzf DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.tar.bz2 /tmp/asus_wireless
+  798  tar -xjvf DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.tar.bz2 /tmp/asus_wireless/
+  799  tar -jxvf DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.tar.bz2 /tmp/asus_wireless/
+  800  cp DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.tar.bz2 /tmp/asus_wireless/
+  801  cd /tmp/asus_wireless/
+  802  ls
+  803  tar -jxvf DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.tar.bz2 
+  804  ls
+  805  cd DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/
+  806  ls
+  807  cd os/linux/
+  808  ls
+  809  gvim config.mk 
+  810  ls
+  811  make
+  812  cd ..
+  813  ls
+  814  cd ..
+  815  ls
+  816  make
+  817  sudo make
+  818  sudo make clean; sudo make
+  819  ls
+  820  cd os/
+  821  ls
+  822  cd linux/
+  823  ls
+  824  gvim config.mk 
+  825  cd ..
+  826  ls
+  827  cd ..
+  828  ls
+  829  sudo make clean; sudo make install
+  830  sudo make clean; sudo make 
+  831  make -C tools
+  832  sudo make clean; sudo make 
+  833  make -C tools
+  834  gvim /tmp/asus_wireless/DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/../../os/linux/rt_linux.c
+  835  sudo make clean; sudo make 
+  836  cd /drives/newman/
+  837  ls
+  838  cd Music/
+  839  ls
+  840  cd 2Pac
+  841  ls
+  842  cd Makaveli\ 
+  843  cd Makaveli\ 2000/
+  844  ls
+  845  cd ..
+  846  ls
+  847  cd All\ Eyez\ on\ Me\ Disc\ 
+  848  ls
+  849  cd All\ Eyez\ on\ Me\ Disc\ 1/
+  850  ls
+  851  vlc 13\ I\ Ain\'t\ Mad\ at\ Cha.mp3 
+  852  cd ..
+  853  ls
+  854  vlc
+  855  vlc .
+  856  cd /tmp/
+  857  lr
+  858  cd asus_wireless/
+  859  ls
+  860  cd DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/
+  861  ls
+  862  sudo make clean; sudo make 
+  863  uname -a
+  864  lsb_release
+  865  lspci
+  866  lspci | grep -i wire
+  867  #wget http://gridlox.net/diff/rt5592sta_fix_64bit_3.8.patch
+  868  cd ..
+  869  wget http://gridlox.net/diff/rt5592sta_fix_64bit_3.8.patch
+  870  ls
+  871  cd DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/
+  872  ls
+  873  cd ..
+  874  ls
+  875  cp -r DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326 DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.og
+  876  ls
+  877  patch -p1 <rt5592sta_fix_64bit_3.8.patch DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/rt_linux.c 
+  878  ls
+  879  meld DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.og DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326
+  880  meld DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.og DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/
+  881  patch -p1 <rt5592sta_fix_64bit_3.8.patch DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/
+  882  meld DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.og DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326
+  883  patch -p1 <rt5592sta_fix_64bit_3.8.patch DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/
+  884  meld DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.og DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326
+  885  #patch -p1 <rt5592sta_fix_64bit_3.8.patch DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/rt_linux
+  886  meld DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.og/os/linux/ DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/
+  887  ls
+  888  meld DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/rt_linux.c*
+  889  ls
+  890  meld DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.og/os/linux/ DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/
+  891  meld DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/rt_linux.c DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/rt_
+  892  meld DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/rt_linux.c DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/rt_linux.c.orig 
+  893  rm DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/rt_linux.c.orig 
+  894  #patch -p1 <rt5592sta_fix_64bit_3.8.patch DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/rt_linux
+  895  man patch
+  896  gvim rt5592sta_fix_64bit_3.8.patch
+  897  patch -p1 <rt5592sta_fix_64bit_3.8.patch DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326
+  898  meld DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.og DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326
+  899  ls -la
+  900  cd DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326
+  901  lr
+  902  cd ..
+  903  patch -p1 rt5592sta_fix_64bit_3.8.patch DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326
+  904  patch -p1 rt5592sta_fix_64bit_3.8.patch DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/
+  905  cd DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326
+  906  ls
+  907  patch -p1 ../rt5592sta_fix_64bit_3.8.patch
+  908  patch -p1 <../rt5592sta_fix_64bit_3.8.patch
+  909  cd ..
+  910  meld DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.og DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326
+  911  ls
+  912  cd DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326
+  913  ls
+  914  sudo make clean; sudo make
+  915  sudo make install
+  916  modprobe
+  917  modprobe rt5592
+  918  modprobe rt5592sta
+  919  sudo modprobe rt5592sta
+  920  gvim  /etc/modprobe.d/blacklist.conf
+  921  not that it is going to make any difference) :
+  922  Blacklisting only rt2800pci is enough to prevent the other rt2xxx drivers from loading. They get loaded only as dependencies of rt2800pci.
+  923  rt2x00usb has no relevancy for you. It is a driver for ralink based USB adapters.
+  924  There is no driver called rt2860sta in your system, so no point in blacklisting it. It is just and 'alias' to the actual ralink drivers, like rt3090sta which you have already blacklisted.
+  925  Exactly one error during 'make' (regarding tftpboot) is normal and can be safely ignored. However, 'sudo' is a must with other commands (make install, modprobe...)
+  926  echo "https://ubuntuforums.org/showthread.php?t=2160399&p=12732190#post12732190" > reference
+  927  ls
+  928  mv reference ..
+  929  ls
+  930  cd ..
+  931  ls
+  932  gvim DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.rej 
+  933  rm DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.rej
+  934  echo -e "\n\npatch -p1 <../rt5592sta_fix_64bit_3.8.patch" >> reference 
+  935  echo -e "sudo make clean; sudo make;\nsudo install;\nsudo modprobe rt5592sta" >> reference 
+  936  cat reference
+  937  ls -la DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.tar.bz2
+  938  ls -lha DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326.tar.bz2
+  939  ls
+  940  cp -r reference rt5592sta_fix_64bit_3.8.patch /run/media/swerner/ASUS\ PCE-N53/Linux/ ~/projects/environment/ASUS_PCE-N53_rt5592sta/
+  941  ifconfig
+  942  ifconfig wlan0
+  943  modprobe -l |grep iwlwifi
+  944  modprobe #-l |grep iwlwifi
+  945  modprobe -h #-l |grep iwlwifi
+  946  sudo modprobe rt5592sta
+  947  sudo modprobe rt5592sta -v
+  948  sudo modprobe -v rt5592sta 
+  949  man modprobe
+  950  sudo modprobe --first-time rt5592sta 
+  951  ifconfig
+  952  ifconfig enp3s0 up
+  953  sudo ifconfig enp3s0 up
+  954  iwlist enp3s0 scan
+  955  #iwlist enp3s0 scan
+  956  which iwlist
+  957  nm-applet 
+  958  lshw -C network
+  959  ifconfig
+  960  gvim /etc/udev/rules.d/10-rename-network.rules
+  961  sudo gvim /etc/udev/rules.d/10-rename-network.rules
+  962  ifconfig
+  963  cp /etc/udev/rules.d/10-rename-network.rules  ~/projects/environment/ASUS_PCE-N53_rt5592sta/
+  964  gvim ~/projects/environment/ASUS_PCE-N53_rt5592sta/
+  965  gvim ~/projects/environment/ASUS_PCE-N53_rt5592sta/10-rename-network.rules 
+  966  ifconfig -a
+  967  gvim /tmp/asus_wireless/DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/os/linux/../../os/linux/pci_main_dev.c
+  968  sudo shutdown
+  969  ifconfig
+  970  ifconfig enp3s0 up
+  971  sudo ifconfig enp3s0 up
+  972  iwconfig
+  973   lspci | grep -i wifi
+  974   lspci 
+  975   lspci | grep asus
+  976   lspci
+  977  cat /var/lib/NetworkManager/NetworkManager.state
+  978  sudo cat /var/lib/NetworkManager/NetworkManager.state
+  979  sudo stop network-manager
+  980  network-manager
+  981  sudo yum install sensors-applet
+  982  sudo yum install lm_sensors
+  983  gvim ~/projects/environment/setup/tools/yum-install-list 
+  984  sensors-detect
+  985  sudo sensors-detect
+  986  iw
+  987  iw dev
+  988  cd /tmp/
+  989  ls
+  990  cd asus_wireless/
+  991  ls
+  992  sudo gvim /etc/rc.d/rc.local 
+  993  ls
+  994  meld DPO_GPL_RT5592STA_LinuxSTA_v2.6.0.0_20120326/RT2860STA.dat /etc/Wireless/RT2860STA/RT2860STA.dat 
+  995  ifconfig
+  996  ifconfig -a
+  997  ifconfig
+  998  ifconfig enp3s0 up
+  999  sudo ifconfig enp3s0 up
+ 1000  which iw
+ 1001  iw dev
+ 1002  iwconfig
+ 1003  ifconfig
+ 1004  iw enp3s0
+ 1005  ifconfig enp3s0 up
+ 1006  sudo ifconfig enp3s0 up
+ 1007  ifconfig enp3s0 up
+ 1008  ifconfig
+ 1009  sudo ifconfig enp3s0 down
+ 1010  ifconfig
+ 1011  sudo ifconfig enp3s0 up
+ 1012  ifconfig
+ 1013  iw dev
+ 1014  iw 
+ 1015  iw enp3s0 info
+ 1016  ifconfig
+ 1017  iw eno1 info
+ 1018  sudo yum install iwlist
+ 1019  iwlist
+ 1020   /etc/init.d/network restart
+ 1021  systemctl
+ 1022  sudo yum install hostapd -y
+ 1023  echo $?
+ 1024  echo $@
+ 1025* echo 
+ 1026  echo hostapd >> ~/projects/environment/setup/tools/yum-install-list 
+ 1027  hostapd start
+ 1028  hostapd /etc/hostapd/hostapd.conf 
+ 1029  cat /etc/hostapd/hostapd.conf 
+ 1030  sudo hostapd /etc/hostapd/hostapd.conf 
+ 1031  sudo cat /etc/hostapd/hostapd.conf 
+ 1032  ifconfig
+ 1033  sudo gvim /etc/hostapd/hostapd.conf 
+ 1034  iw phy
+ 1035  sudo hostapd /etc/hostapd/hostapd.conf 
+ 1036  wpa_supplicant
+ 1037  #wpa_supplicant -D wext -i 
+ 1038  ifconfig 
+ 1039  wpa_supplicant -D wext -i enp3s0 
+ 1040  wpa_supplicant -D wext -i enp3s0 -c poop
+ 1041  system-config-network-cmd
+ 1042  system-config-network
+ 1043  sudo yum install system-config-network
+ 1044  sudo system-config-network
+ 1045  sudo yum install system-network-config
+ 1046  sudo yum install system-config-network-tui
+ 1047  sudo yum search system-config-network
+ 1048  sudo yum search system-config-network*
+ 1049  sudo yum search system*network*
+ 1050  yum search system*network*
+ 1051  nmcli d
+ 1052  nmtui
+ 1053  sudo nmtui
+ 1054  service network restart
+ 1055  nmcli d
+ 1056  ifconfig
+ 1057  nmcli d
+ 1058  sudo nmtui
+ 1059  nmcli general status
+ 1060  nmcli connection show
+ 1061  ip link show
+ 1062  ifconfig -a
+ 1063  ip link show
+ 1064  nmcli connection show
+ 1065  nmcli device status
+ 1066  firewall-cmd --list-all
+ 1067  rpm -q NetworkManager-wifi
+ 1068  systemctl restart NetworkManager
+ 1069  nmcli dev wifi list
+ 1070  nmcli dev 
+ 1071  nmcli --ask dev wifi connect TestWifi
+ 1072  nmcli connection show
+ 1073  nmcli -h
+ 1074  nmcli dev 
+ 1075  nmcli de
+ 1076  nmcli d
+ 1077  nmcli 
+ 1078  nmcli device show
+ 1079  nmcli d
+ 1080  nmcli dev
+ 1081  nmcli device status
+ 1082  nmcli connection show
+ 1083  nmcli device status
+ 1084  nmcli con show
+ 1085  firewall-cmd --list-all
+ 1086  ifconfig -a
+ 1087  nmcli con show
+ 1088  nmcli device status
+ 1089  nmcli dev wifi list
+ 1090  nmcli radio wifi on
+ 1091  nmcli dev wifi list
+ 1092  nmcli radio wifi 
+ 1093  nmcli device status
+ 1094  nmcli dev wifi list
+ 1095  nmcli connection add type ethernet con-name myWireless1 ifname enp3s0
+ 1096  nmcli dev wifi list
+ 1097  nmcli device status
+ 1098  nmcli dev wifi list
+ 1099  nmcli device status
+ 1100  nmcli con up myWireless1
+ 1101  nmcli device status
+ 1102  ifconfig enp3s0 down && ifconfig enp3s0 up
+ 1103  sudo ifconfig enp3s0 down && ifconfig enp3s0 up
+ 1104  sudo ifconfig enp3s0 down; sudo ifconfig enp3s0 up
+ 1105  ifconfig enp3s0 down; ifconfig enp3s0 up
+ 1106  ifconfig eno1 down; ifconfig eno1 up
+ 1107  sudo ifconfig enp3s0 down; sudo ifconfig enp3s0 up
+ 1108  nmcli con up myWireless1
+ 1109  nmcli device status
+ 1110  nmcli connection add type ethernet con-name myWireless1 ifname enp3s0
+ 1111  nmcli device status
+ 1112  nmcli connection add type wifi con-name myWireless1 ifname enp3s0
+ 1113  nmcli connection add type wifi con-name myWireless1 ssid @VictoriaforTexas ifname enp3s0
+ 1114  nmcli device status
+ 1115  nmcli con up myWireless1
+ 1116  nmcli device status
+ 1117  nmcli connection add type wifi con-name myWireless2 ssid VoteVictoriaDistrict107 ifname enp3s0
+ 1118  nmcli device status
+ 1119  nmcli con up myWireless2
+ 1120  systemctl -l status NetworkManager
+ 1121  mkdir /tmp/wireless; history > /tmp/wireless/history

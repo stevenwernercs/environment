@@ -1,0 +1,2 @@
+define([],function(){function a(){chrometwo_ready(function(){var a="ActiveXObject"in window||window.StyleMedia;if(a){var b=document.querySelectorAll(".cp-chart-text"),c=document.querySelectorAll(".cp-chart-label");[].forEach.call(b,function(a){a.setAttribute("transform","translate(0,1)")}),[].forEach.call(c,function(a){a.setAttribute("transform","translate(0,3.8)")})}})}return{init:a}});
+//# sourceMappingURL=ieSVGfix.js.map

@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://www.certdepot.net/rhel7-get-started-nmcli/ -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths gr__certdepot_net" lang="en-US" prefix="og: http://ogp.me/ns#"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>RHEL7: How to get started with nmcli. - CertDepot</title>
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="https://www.certdepot.net/xmlrpc.php">
+
+		
+<!-- This site is optimized with the Yoast SEO plugin v4.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Here you will find RHEL 7 information for using the nmcli command.">
+<meta name="robots" content="noodp">
+<link rel="canonical" href="https://www.certdepot.net/rhel7-get-started-nmcli/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RHEL7: How to get started with nmcli. - CertDepot">
+<meta property="og:description" content="Here you will find RHEL 7 information for using the nmcli command.">
+<meta property="og:url" content="https://www.certdepot.net/rhel7-get-started-nmcli/">
+<meta property="og:site_name" content="CertDepot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Here you will find RHEL 7 information for using the nmcli command.">
+<meta name="twitter:title" content="RHEL7: How to get started with nmcli. - CertDepot">
+<meta name="twitter:site" content="@CertDepot">
+<meta name="twitter:creator" content="@CertDepot">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="CertDepot » Feed" href="https://www.certdepot.net/feed/">
+<link rel="alternate" type="application/rss+xml" title="CertDepot » Comments Feed" href="https://www.certdepot.net/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="CertDepot » RHEL7: How to get started with nmcli. Comments Feed" href="https://www.certdepot.net/rhel7-get-started-nmcli/feed/">
+		<script type="text/javascript" async="" defer="" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/piwik.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.certdepot.net\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./RHEL7_ How to get started with nmcli. - CertDepot_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="calp-general-css" href="./RHEL7_ How to get started with nmcli. - CertDepot_files/general.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-polls-css" href="./RHEL7_ How to get started with nmcli. - CertDepot_files/polls-css.css" type="text/css" media="all">
+<style id="wp-polls-inline-css" type="text/css">
+.wp-polls .pollbar {
+	margin: 1px;
+	font-size: 6px;
+	line-height: 8px;
+	height: 8px;
+	background-image: url('https://www.certdepot.net/wp-content/plugins/wp-polls/images/default/pollbg.gif');
+	border: 1px solid #c8c8c8;
+}
+
+</style>
+<link rel="stylesheet" id="wp-postratings-css" href="./RHEL7_ How to get started with nmcli. - CertDepot_files/postratings-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpProQuiz_front_style-css" href="./RHEL7_ How to get started with nmcli. - CertDepot_files/wpProQuiz_front.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpdiscuz-font-awesome-css" href="./RHEL7_ How to get started with nmcli. - CertDepot_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpdiscuz-frontend-css-css" href="./RHEL7_ How to get started with nmcli. - CertDepot_files/wpdiscuz.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-style-css" href="./RHEL7_ How to get started with nmcli. - CertDepot_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-child-style-css" href="./RHEL7_ How to get started with nmcli. - CertDepot_files/style.css" type="text/css" media="all">
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/jquery.js"></script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var calp_event = {"language":"en","ajaxurl":"https:\/\/www.certdepot.net\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/event.js"></script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/jquery.autogrowtextarea.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpdiscuzAjaxObj = {"url":"https:\/\/www.certdepot.net\/wp-admin\/admin-ajax.php","wpdiscuz_options":{"wc_hide_replies_text":"Hide Replies","wc_show_replies_text":"Show Replies","wc_msg_required_fields":"Please fill out required fields","wc_invalid_field":"Some of field value is invalid","wc_error_empty_text":"please fill out this field to comment","wc_error_url_text":"url is invalid","wc_error_email_text":"email address is invalid","wc_invalid_captcha":"Invalid Captcha Code","wc_login_to_vote":"You Must Be Logged In To Vote","wc_deny_voting_from_same_ip":"You are not allowed to vote for this comment","wc_self_vote":"You cannot vote for your comment","wc_vote_only_one_time":"You've already voted for this comment","wc_voting_error":"Voting Error","wc_held_for_moderate":"Comment awaiting moderation","wc_comment_edit_not_possible":"Sorry, this comment no longer possible to edit","wc_comment_not_updated":"Sorry, the comment was not updated","wc_comment_not_edited":"You've not made any changes","wc_new_comment_button_text":"new comment","wc_new_comments_button_text":"new comments","wc_new_reply_button_text":"new reply on your comment","wc_new_replies_button_text":"new replies on your comments","wc_msg_input_min_length":"Input is too short","wc_msg_input_max_length":"Input is too long","is_user_logged_in":false,"commentListLoadType":"0","commentListUpdateType":"0","commentListUpdateTimer":"30","liveUpdateGuests":"1","wc_comment_bg_color":"#FEFEFE","wc_reply_bg_color":"#F8F8F8","wordpress_comment_order":"asc","commentsVoteOrder":false,"wordpressThreadCommentsDepth":"5","wordpressIsPaginate":"","commentTextMaxLength":null,"storeCommenterData":100000,"isCaptchaInSession":true,"isGoodbyeCaptchaActive":false,"facebookAppID":"","version":"4.0.4","wc_post_id":1799,"loadLastCommentId":"42218","wc_captcha_show_for_guest":"1","wc_captcha_show_for_members":"0","is_email_field_required":"1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/wpdiscuz.js"></script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/responsive-modernizr.min.js"></script>
+<link rel="https://api.w.org/" href="https://www.certdepot.net/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.certdepot.net/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.certdepot.net/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.7.2">
+<link rel="shortlink" href="https://www.certdepot.net/?p=1799">
+<link rel="alternate" type="application/json+oembed" href="https://www.certdepot.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.certdepot.net%2Frhel7-get-started-nmcli%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.certdepot.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.certdepot.net%2Frhel7-get-started-nmcli%2F&amp;format=xml">
+<style type="text/css">#wpcomm .wc_new_comment{background:#00B38F;}#wpcomm .wc_new_reply{background:#00B38F;}#wpcomm .wc-form-wrapper{background:#F9F9F9;}#wpcomm select,#wpcomm input[type="text"],#wpcomm input[type="email"],#wpcomm input[type="url"],#wpcomm input[type="date"],#wpcomm input[type="color"]{border:#D9D9D9 1px solid;}#wpcomm .wc-comment .wc-comment-right{background:#FEFEFE;}#wpcomm .wc-reply .wc-comment-right{background:#F8F8F8;}#wpcomm .wc-comment-text{font-size:14px;color:#555;}#wpcomm .wc-blog-administrator > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-administrator > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-administrator > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-editor > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-editor > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-editor > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-author > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-author > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-author > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-contributor > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-contributor > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-contributor > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-subscriber > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-subscriber > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-subscriber > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-ai1ec_event_assistant > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-ai1ec_event_assistant > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-ai1ec_event_assistant > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-calp_event_assistant > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-calp_event_assistant > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-calp_event_assistant > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-post_author > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-post_author > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-post_author > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-guest > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-guest > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-guest > .wc-comment-left .wc-comment-label{background:#00B38F;}.wc-load-more-submit{border:1px solid #D9D9D9;}#wpcomm .wc-new-loaded-comment > .wc-comment-right{background:#FFFAD6;}.comments-area{width:auto;}.wpdiscuz-front-actions{background:#F9F9F9;}.wpdiscuz-subscribe-bar{background:#F9F9F9;}.wpdiscuz-sort-buttons{color:#bbbbbb;}.wpdiscuz-sort-button{color:#bbbbbb; cursor:pointer;}.wpdiscuz-sort-button:hover{color:#00B38F;cursor:pointer;}.wpdiscuz-sort-button-active{color:#00B38F!important;cursor:default!important;}#wpcomm .page-numbers{color:#555;border:#555 1px solid;}#wpcomm span.current{background:#555;}#wpcomm .wpdiscuz-readmore{cursor:pointer;color:#00B38F;} #wpcomm .wpdiscuz-textarea-wrap{border:#D9D9D9 1px solid;} .wpd-custom-field .wcf-pasiv-star, #wpcomm .wpdiscuz-item .wpdiscuz-rating > label {color: #DDDDDD;}#wpcomm .wpdiscuz-item .wpdiscuz-rating:not(:checked) > label:hover,.wpdiscuz-rating:not(:checked) > label:hover ~ label {   }#wpcomm .wpdiscuz-item .wpdiscuz-rating > input ~ label:hover, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label{color: #FFED85;} #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpcomm .wpdiscuz-item .wpdiscuz-rating > label:hover ~ input:checked ~ label, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked + label:hover ~ label, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover ~ label, .wpd-custom-field .wcf-activ-star, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label{ color:#FFD700;} #wpcomm .wc-cta-button:hover{border: 1px solid #00B38F!important; background:#00B38F!important; color:#fff!important;} #wpcomm .wc-cta-active{border: 1px solid #00B38F!important; background:#00B38F!important; color:#fff!important;}#wpcomm .wpf-cta:hover{color:#fff!important; background:#00B38F!important; border:1px solid #00B38F!important;}
+        
+#wpcomm .wpf-cta{ border: 1px solid #cccccc; color:#bbbbbb; }
+#wpcomm .wc-cta-button{ background:#888888; border:1px solid #888888; color:#ffffff;}
+#wpcomm .wc-cta-button-x{ background:#888888; border:1px solid #888888; color:#ffffff;}
+#wpcomm .wc-vote-link{border:1px solid #bbbbbb; color:#aaaaaa;}
+#wpcomm .wc-vote-result{border-top: 1px solid #bbbbbb; border-bottom: 1px solid #bbbbbb; color:#aaaaaa;}
+#wpcomm .wc-vote-result.wc-vote-result-like{border:1px solid #bbbbbb;}
+#wpcomm .wc-vote-result.wc-vote-result-dislike{border:1px solid #bbbbbb;}
+</style>
+			<!-- We need this for debugging -->
+<!-- Responsive 1.9.9.9 -->
+<!-- Responsive Child Theme 1.0.0 -->
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/si_captcha.js"></script>
+<!-- begin SI CAPTCHA Anti-Spam - login/register form style -->
+<style type="text/css">
+.si_captcha_small { width:175px; height:45px; padding-top:10px; padding-bottom:10px; }
+.si_captcha_large { width:250px; height:60px; padding-top:10px; padding-bottom:10px; }
+img#si_image_com { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_reg { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_log { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_side_login { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_checkout { border-style:none; margin:0; padding-right:5px; float:left; }
+.si_captcha_refresh { border-style:none; margin:0; vertical-align:bottom; }
+div#si_captcha_input { display:block; padding-top:15px; padding-bottom:5px; }
+label#si_captcha_code_label { margin:0; }
+input#si_captcha_code_input { width:65px; }
+p#si_captcha_code { clear: left; padding-top:10px; }
+</style>
+<!-- end SI CAPTCHA Anti-Spam - login/register form style -->
+	<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+<body class="page-template-default page page-id-1799 do-etfw wpdiscuz_4.0.4" data-gr-c-s-loaded="true">
+
+<div id="container" class="hfeed">
+
+	<div class="skip-container cf">
+		<a class="skip-link screen-reader-text focusable" href="https://www.certdepot.net/rhel7-get-started-nmcli/#content">↓ Skip to Main Content</a>
+	</div><!-- .skip-container -->
+	<div id="header">
+
+		
+		
+		
+		
+		
+			<div id="logo">
+				<span class="site-name"><a href="https://www.certdepot.net/" title="CertDepot" rel="home">CertDepot</a></span>
+				<span class="site-description">Everything you need to pass your RHCSA, RHCE, LFCS, LFCE and much more.</span>
+			</div><!-- end of #logo -->
+
+		
+			<div id="top-widget" class="top-widget">
+		
+		
+			<div id="search-2" class="widget_search"><form method="get" id="searchform" action="https://www.certdepot.net/">
+	<label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" class="field" name="s" id="s" placeholder="search here …">
+	<input type="submit" class="submit" name="submit" id="searchsubmit" value="Go">
+</form></div>
+		
+			</div><!-- end of #top-widget -->
+		<div class="main-nav"><div id="responsive_current_menu_item">RHEL7: How to get started with nmcli.</div><ul id="menu-menu-1" class="menu"><li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-35"><a href="https://www.certdepot.net/">Home</a></li>
+<li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="https://www.certdepot.net/about/">About</a></li>
+<li id="menu-item-3074" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3074"><a href="https://www.certdepot.net/rhel6/">RHEL6</a>
+<ul class="sub-menu">
+	<li id="menu-item-41" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41"><a href="https://www.certdepot.net/rhcsa-rhce-free-available-resources/">RHEL6 Free available resources</a></li>
+	<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="https://www.certdepot.net/rhcsa-rhce-book-review/">RHEL6 Book review</a></li>
+	<li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-39"><a href="https://www.certdepot.net/rhcsa/">RHEL6 RHCSA (EX200)</a>
+	<ul class="sub-menu">
+		<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://www.certdepot.net/redhat-certification-overview/">RHEL6 Red Hat Certification overview</a></li>
+		<li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42"><a href="https://www.certdepot.net/rhcsa-exam-objectives/">RHEL6 RHCSA Exam objectives</a></li>
+		<li id="menu-item-522" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-522"><a href="https://www.certdepot.net/rhcsa-other-requirements/">RHEL6 RHCSA Other requirements</a></li>
+		<li id="menu-item-2675" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2675"><a href="https://www.certdepot.net/rhcsa-rhce-faq/">RHEL6 RHCSA &amp; RHCE FAQ</a></li>
+		<li id="menu-item-1405" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1405"><a href="https://www.certdepot.net/rhcsa-quiz/">RHEL6 RHCSA Quiz</a></li>
+		<li id="menu-item-1027" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1027"><a href="https://www.certdepot.net/rhcsa-sample-exam-1/">RHEL6 RHCSA Sample exam 1</a></li>
+		<li id="menu-item-2559" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2559"><a href="https://www.certdepot.net/rhcsa-sample-exam-2/">RHEL6 RHCSA Sample exam 2</a></li>
+	</ul>
+</li>
+	<li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="https://www.certdepot.net/rhce/">RHEL6 RHCE (EX300)</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3949" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3949"><a href="https://www.certdepot.net/redhat-certification-overview/">RHEL6 Red Hat Certification overview</a></li>
+		<li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="https://www.certdepot.net/rhce-exam-objectives/">RHEL6 RHCE Exam objectives</a></li>
+		<li id="menu-item-509" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-509"><a href="https://www.certdepot.net/rhce-other-requirements/">RHEL6 RHCE Other requirements</a></li>
+		<li id="menu-item-3950" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3950"><a href="https://www.certdepot.net/rhcsa-rhce-faq/">RHEL6 RHCSA &amp; RHCE FAQ</a></li>
+		<li id="menu-item-1392" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1392"><a href="https://www.certdepot.net/rhce-quiz/">RHEL6 RHCE Quiz</a></li>
+		<li id="menu-item-2815" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2815"><a href="https://www.certdepot.net/rhce-sample-exam-1/">RHEL6 RHCE Sample exam 1</a></li>
+	</ul>
+</li>
+	<li id="menu-item-3908" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3908"><a href="https://www.certdepot.net/rhel6-lfcs/">RHEL6 LFCS</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3909" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3909"><a href="https://www.certdepot.net/rhel6-lfcs-exam-objectives/">RHEL6 LFCS Exam objectives</a></li>
+	</ul>
+</li>
+	<li id="menu-item-3913" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3913"><a href="https://www.certdepot.net/rhel6-lfce/">RHEL6 LFCE</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3912" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3912"><a href="https://www.certdepot.net/rhel6-lfce-exam-objectives/">RHEL6 LFCE Exam objectives</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-1476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1476"><a href="https://www.certdepot.net/rhel7/">RHEL7</a>
+<ul class="sub-menu">
+	<li id="menu-item-1874" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1874"><a href="https://www.certdepot.net/rhel7-free-available-resources/">RHEL7 Free available resources</a></li>
+	<li id="menu-item-5600" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5600"><a href="https://www.certdepot.net/rhel7-book-review/">RHEL7 Book review</a></li>
+	<li id="menu-item-3079" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3079"><a href="https://www.certdepot.net/rhel7-rhcsa-ex200/">RHEL7 RHCSA (EX200)</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3167"><a href="https://www.certdepot.net/rhel7-certification-overview/">RHEL7 Red Hat Certification overview</a></li>
+		<li id="menu-item-3080" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3080"><a href="https://www.certdepot.net/rhel7-rhcsa-exam-objectives/">RHEL7 RHCSA Exam objectives</a></li>
+		<li id="menu-item-3115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3115"><a href="https://www.certdepot.net/rhel7-rhcsa-whats-new/">RHEL7 RHCSA What’s new?</a></li>
+		<li id="menu-item-3514" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3514"><a href="https://www.certdepot.net/rhel7-rhcsa-requirements/">RHEL7 RHCSA Other requirements</a></li>
+		<li id="menu-item-7668" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7668"><a href="https://www.certdepot.net/rhel7-rhcsa-reasons-failure/">RHEL7 RHCSA Main reasons for failure</a></li>
+		<li id="menu-item-4876" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4876"><a href="https://www.certdepot.net/rhel7-rhcsa-quiz/">RHEL7 RHCSA Quiz</a></li>
+		<li id="menu-item-3807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3807"><a href="https://www.certdepot.net/rhel7-rhcsa-sample-exam-1/">RHEL7 RHCSA Sample exam 1</a></li>
+	</ul>
+</li>
+	<li id="menu-item-3103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3103"><a href="https://www.certdepot.net/rhel7-rhce-ex300/">RHEL7 RHCE (EX300)</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3955" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3955"><a href="https://www.certdepot.net/rhel7-certification-overview/">RHEL7 Red Hat Certification overview</a></li>
+		<li id="menu-item-3104" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3104"><a href="https://www.certdepot.net/rhel7-rhce-exam-objectives/">RHEL7 RHCE Exam objectives</a></li>
+		<li id="menu-item-3118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3118"><a href="https://www.certdepot.net/rhel7-rhce-whats-new/">RHEL7 RHCE What’s new?</a></li>
+		<li id="menu-item-3440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3440"><a href="https://www.certdepot.net/rhel7-rhce-requirements/">RHEL7 RHCE Other requirements</a></li>
+		<li id="menu-item-4971" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4971"><a href="https://www.certdepot.net/rhel7-rhce-quiz/">RHEL7 RHCE Quiz</a></li>
+	</ul>
+</li>
+	<li id="menu-item-6483" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6483"><a href="https://www.certdepot.net/rhel7-lfcs/">RHEL7 LFCS</a>
+	<ul class="sub-menu">
+		<li id="menu-item-6492" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6492"><a href="https://www.certdepot.net/rhel7-lfcs-exam-objectives/">RHEL7 LFCS Exam objectives</a></li>
+	</ul>
+</li>
+	<li id="menu-item-6487" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6487"><a href="https://www.certdepot.net/rhel7-lfce/">RHEL7 LFCE</a>
+	<ul class="sub-menu">
+		<li id="menu-item-6495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6495"><a href="https://www.certdepot.net/rhel7-lfce-exam-objectives/">RHEL7 LFCE Exam objectives</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1510" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1510"><a href="https://www.certdepot.net/rhel7-changes/">RHEL7 Changes</a></li>
+	<li id="menu-item-1477" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1477"><a href="https://www.certdepot.net/rhel7-quick-recipes/">RHEL7 Quick recipes</a></li>
+	<li id="menu-item-2932" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2932"><a href="https://www.certdepot.net/rhel7-advanced-recipes/">RHEL7 Advanced recipes</a></li>
+	<li id="menu-item-7194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7194"><a href="https://www.certdepot.net/rhel7-latest-tutorials/">RHEL7 Latest tutorials</a></li>
+</ul>
+</li>
+</ul><a id="responsive_menu_button"></a></div>
+		
+		
+	</div><!-- end of #header -->
+
+	<div id="wrapper" class="clearfix">
+
+<div id="content" class="grid col-620">
+
+	
+		
+			
+						<div id="post-1799" class="post-1799 page type-page status-publish hentry">
+				
+				
+	<h1 class="entry-title post-title">RHEL7: How to get started with nmcli.</h1>
+
+	<div class="post-meta">
+		<span class="meta-prep meta-prep-author posted">Last updated on </span><a href="https://www.certdepot.net/rhel7-get-started-nmcli/" title="RHEL7: How to get started with nmcli." rel="bookmark"><time class="timestamp updated" datetime="2016-11-28T11:14:40+00:00">November 28, 2016</time></a> (52,400 views) - <span class="vcard author author_name"><span class="fn">CertDepot</span></span>
+					<span class="comments-link">
+		<span class="mdash">—</span>
+				<a href="https://www.certdepot.net/rhel7-get-started-nmcli/#comments">4 Comments ↓</a>		</span>
+			</div><!-- end of .post-meta -->
+
+				<div class="post-entry">
+					<div id="fsb-social-bar" class="fsb-social-bar fsb-no-float" data-post-id="1799" data-socialite="true"><style type="text/css">            #fsb-social-bar { width: 100%; border-bottom: 1px solid #dbdbdb; border-top: 1px solid #dbdbdb; padding: 10px 0; margin: 0px 0 20px 0; float: left; background: #fff; position: relative; clear: both; }            #fsb-social-bar a { border: 0px !important }            #fsb-social-bar.fsb-fixed { position: fixed; top: -2px; z-index: 99999; }            #fsb-social-bar .fsb-title { display: block; float: left; margin: 3px 20px 0 0; font-size: 16px; font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: #333; }            #fsb-social-bar .fsb-share-facebook { width: 120px; float: left; padding: 3px 0 2px; height: 25px; }            #fsb-social-bar .fsb-share-facebook.fsb-hide-count { width: 44px; overflow: hidden; margin-right: 30px; }            #fsb-social-bar .fsb-share-twitter { float: left; width: 135px; padding: 3px 0 2px; height: 25px; }            #fsb-social-bar .fsb-share-twitter.fsb-hide-count { width: 61px; overflow: hidden; margin-right: 30px; }            #fsb-social-bar .fsb-share-google { float: left; width: 105px; padding: 3px 0 2px; height: 25px; }            #fsb-social-bar .fsb-share-google.fsb-hide-count { width: 33px; overflow: hidden; margin-right: 30px; }            #fsb-social-bar .fsb-share-linkedin { float: left; width: 135px; padding: 3px 0 2px; height: 25px; }            #fsb-social-bar .fsb-share-linkedin.fsb-hide-count { width: 61px; overflow: hidden; margin-right: 30px; }            #fsb-social-bar .fsb-share-pinterest { float: left; width: 115px; padding: 3px 0 2px; height: 25px;}            #fsb-social-bar .fsb-share-pinterest.fsb-hide-count { width: 43px; overflow: hidden; margin-right: 30px; }            #fsb-social-bar .socialite { display: block; position: relative; background: url(https://www.certdepot.net/wp-content/plugins/floating-social-bar/images/fsb-sprite.png) no-repeat scroll 0 0; }            #fsb-social-bar .socialite-loaded { background: none !important; }            #fsb-social-bar .fsb-service-title { display: none; }            #fsb-social-bar a { color: #333; text-decoration: none; font-size: 12px; font-family: Arial, Helvetica, sans-serif; }            #fsb-social-bar .fsb-twitter { width: 105px; height: 25px; background-position: -13px -10px; line-height: 25px; vertical-align: middle; }            #fsb-social-bar .fsb-twitter .fsb-count { width: 30px; text-align: center; display: inline-block; margin: 0px 0 0 69px; color: #333; }            #fsb-social-bar .fsb-google { width: 75px; height: 25px; background-position: -136px -10px; line-height: 25px; vertical-align: middle; }            #fsb-social-bar .fsb-google .fsb-count { width: 30px; text-align: center; display: inline-block; margin: 0px 0 0 41px; color: #333; }            #fsb-social-bar .fsb-google .socialite-button { margin: 0 !important; }            #fsb-social-bar .fsb-share-google .socialite-loaded .socialite-button{padding: 2px 0 0}            #fsb-social-bar .fsb-facebook { width: 89px; height: 25px; background-position: -231px -10px; line-height: 25px; vertical-align: middle; }            #fsb-social-bar .fsb-facebook .fsb-count { width: 30px; text-align: center; display: inline-block; margin: 0px 0 0 52px; color: #333; }            #fsb-social-bar .fsb-facebook .socialite-button { margin: 0 !important;}            #fsb-social-bar .fsb-share-facebook .socialite-loaded .socialite-button {padding: 2px 0 0}            #fsb-social-bar .fsb-linkedin { width: 105px; height: 25px; background-position: -347px -10px; line-height: 25px; vertical-align: middle; }            #fsb-social-bar .fsb-linkedin .fsb-count { width: 30px; text-align: center; display: inline-block; margin: 0px 0 0 70px; color: #333; }            #fsb-social-bar .fsb-linkedin .socialite-button { margin: 0 !important; }            #fsb-social-bar .fsb-pinterest { width: 88px; height: 25px; background-position: -484px -10px; line-height: 25px; vertical-align: middle; }            #fsb-social-bar .fsb-pinterest .fsb-count { width: 30px; text-align: center; display: inline-block; margin: 0px 0 0 50px; color: #333; }            #fsb-social-bar .fsb-pinterest .socialite-button { margin: 0 !important; }            .fsb-clear { clear: both; }            .fsb-clear:after { clear:both; content:; display:block; height:0; line-height:0; overflow:auto; visibility:hidden; zoom:1; }            @media (max-width: 768px) { #fsb-social-bar.fsb-fixed { position: relative !important; top: auto !important; } }        </style><span class="fsb-title">Share this link</span><div class="fsb-share-twitter fsb-hide-count"><a href="https://twitter.com/share?original_referer=https%3A%2F%2Fwww.certdepot.net%2F&amp;source=tweetbutton&amp;text=RHEL7%3A+How+to+get+started+with+nmcli.&amp;url=https%3A%2F%2Fwww.certdepot.net%2Frhel7-get-started-nmcli%2F&amp;via=CertDepot" class="socialite twitter fsb-twitter" data-fsb-service="twitter" rel="nofollow" target="_blank" title="Be the first one to tweet this article!"><span class="fsb-service-title">Twitter</span><span class="fsb-count">0</span></a></div><div class="fsb-share-facebook fsb-hide-count"><a href="http://www.facebook.com/sharer.php?u=https://www.certdepot.net/rhel7-get-started-nmcli/" class="socialite facebook fsb-facebook" data-fsb-service="facebook" data-href="https://www.certdepot.net/rhel7-get-started-nmcli/" data-send="false" data-layout="button_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><span class="fsb-service-title">Facebook</span><span class="fsb-count">0</span></a></div><div class="fsb-share-google fsb-hide-count"><a href="https://plus.google.com/share?url=https://www.certdepot.net/rhel7-get-started-nmcli/" class="socialite googleplus fsb-google" data-fsb-service="google" data-size="medium" data-href="https://www.certdepot.net/rhel7-get-started-nmcli/" rel="nofollow" target="_blank"><span class="fsb-service-title">Google+</span><span class="fsb-count">0</span></a></div><div class="fsb-share-linkedin fsb-hide-count"><a href="https://www.linkedin.com/cws/share?url=https://www.certdepot.net/rhel7-get-started-nmcli/" class="socialite linkedin fsb-linkedin" data-fsb-service="linkedin" data-size="medium" data-href="https://www.certdepot.net/rhel7-get-started-nmcli/" rel="nofollow" target="_blank"><span class="fsb-service-title">LinkedIn</span><span class="fsb-count">0</span></a></div></div><div class="fsb-clear"></div><h2>Presentation</h2>
+<p><strong>nmcli</strong> stands for <strong>N</strong>etwork<strong> M</strong>anager<strong> C</strong>ommand<strong> L</strong>ine<strong> I</strong>nterface.</p>
+<p>With the <strong>N</strong>etwork <strong>M</strong>anager <strong>T</strong>ext <strong>U</strong>ser <strong>I</strong>nterface command called <strong>nmtui</strong>, it is part of the <a href="https://wiki.gnome.org/Projects/NetworkManager">NetworkManager</a> component in charge of the network subsystem (the <strong>NetworkManager</strong> changelog is available <a href="https://cgit.freedesktop.org/NetworkManager/NetworkManager/tree/NEWS">here</a>).</p>
+<p><strong>nmcli</strong> is a new way to integrate network configuration into scripts.</p>
+<p>Five domains are available:</p>
+<ul>
+<li><strong>general</strong>: it deals with NetworkManager’s general status and operations,</li>
+<li><strong>networking</strong>: it’s about overall networking control,</li>
+<li><strong>radio</strong>: it manages NetworkManager radio switches,</li>
+<li><strong>connection</strong>: it’s all about NetworkManager’s connections,</li>
+<li><strong>device</strong>: it deals with devices managed by NetworkManager.</li>
+</ul>
+<p>In addition, the display can be altered by some options: <strong>-p</strong> to get a nice output, <strong>-t</strong> to get a minimal one.<br>
+Shortcuts are intensively used: <strong>g</strong> for general, <strong>n</strong> for networking, etc.<br>
+It’s time to see what we can expect from this command.</p>
+<h2>General</h2>
+<p>To get a general status, type:</p>
+<pre># <strong>nmcli general</strong>
+STATE CONNECTIVITY WIFI-HW WIFI WWAN-HW WWAN
+connected full enabled enabled enabled disabled
+</pre>
+<p>To get the same result in a better output, type:</p>
+<pre># <strong>nmcli -p g</strong>
+==============================================================
+NetworkManager status
+==============================================================
+STATE CONNECTIVITY WIFI-HW WIFI WWAN-HW WWAN
+--------------------------------------------------------------
+connected full enabled enabled enabled disabled</pre>
+<p>To get some informations about the permissions, type:</p>
+<pre># <strong>nmcli g permissions</strong>
+PERMISSION VALUE
+org.freedesktop.NetworkManager.enable-disable-network yes
+org.freedesktop.NetworkManager.enable-disable-wifi yes
+org.freedesktop.NetworkManager.enable-disable-wwan yes
+org.freedesktop.NetworkManager.enable-disable-wimax yes
+org.freedesktop.NetworkManager.sleep-wake yes
+org.freedesktop.NetworkManager.network-control yes
+org.freedesktop.NetworkManager.wifi.share.protected yes
+org.freedesktop.NetworkManager.wifi.share.open yes
+org.freedesktop.NetworkManager.settings.modify.system yes
+org.freedesktop.NetworkManager.settings.modify.own yes
+org.freedesktop.NetworkManager.settings.modify.hostname yes
+</pre>
+<p>To get some informations about the level of logging, type:</p>
+<pre># <strong>nmcli g logging</strong>
+LEVEL DOMAINS
+
+WARN PLATFORM,RFKILL,ETHER,WIFI,BT,MB,DHCP4,DHCP6,PPP,IP4,IP6,AUTOIP4,DNS,VPN, SHARING,SUPPLICANT,AGENTS,SETTINGS,SUSPEND,CORE,DEVICE,OLPC,WIMAX,INFINIBAND,FIR EWALL,ADSL,BOND,VLAN,BRIDGE,TEAM,CONCHECK,DCB
+</pre>
+<p>To get the server hostname, type:</p>
+<pre># <strong>nmcli g hostname</strong>
+server.example.com</pre>
+<p>To assign a new hostname (here <strong>desktop.example.com</strong>) to the server, type:</p>
+<pre># <strong>nmcli g hostname desktop.example.com</strong></pre>
+<h2>Networking</h2>
+<p>To know if you are connected, type:</p>
+<pre># <strong>nmcli networking</strong>
+enabled
+</pre>
+<p>Note: you can stop all connectivity by typing: <code># <strong>nmcli n off</strong></code></p>
+<p>To know the kind of connectivity you’ve got, type:</p>
+<pre># <strong>nmcli n connectivity</strong>
+full
+</pre>
+<p>Note: the other values can be: <strong>none</strong> if you don’t get any connectivity, <strong>portal</strong> if you are behind a captive portal and can’t reach the full Internet, <strong>limited</strong> if you are connected to a host but without access to the Internet, <strong>unknown</strong> if your status can’t be defined.</p>
+<h2>Radio</h2>
+<p>To get the general status of radio, type:</p>
+<pre># <strong>nmcli radio</strong>
+WIFI-HW WIFI WWAN-HW WWAN
+enabled enabled enabled disabled
+</pre>
+<p>To get the status of wifi, type:</p>
+<pre># <strong>nmcli radio wifi</strong>
+enabled
+</pre>
+<p>Note: Wifi can be enabled or disabled by adding respectively <strong>on</strong> and <strong>off</strong> to the previous command.</p>
+<p>To get the status of mobile broadband, type:</p>
+<pre># <strong>nmcli radio wwan</strong>
+disabled
+</pre>
+<h2>Connection</h2>
+<p>To get the list of all the available network configurations, type:</p>
+<pre># <strong>nmcli connection</strong>
+NAME UUID TYPE TIMESTAMP-REAL
+eth0 94aaedf1-ca71-4789-87c8-88e5367125d5 802-3-ethernet Tue 28 Jan 2014 02:40:18 AM CET
+eth0 914d2052-f0fd-4a05-86b7-405512427101 802-3-ethernet <strong>never</strong>
+EEE 9a3642f0-600d-43f9-b9ce-7e555dd7b45d 802-11-wireless Tue 28 Jan 2014 01:01:58 PM CET
+</pre>
+<p>To display details about the network configuration that has <strong>never</strong> been used, type:</p>
+<pre># <strong>nmcli c show configured</strong> <strong>914d2052-f0fd-4a05-86b7-405512427101</strong>
+connection.id: eth0
+connection.uuid: <strong>914d2052-f0fd-4a05-86b7-405512427101</strong>
+connection.interface-name: eth0
+connection.type: 802-3-ethernet
+connection.autoconnect: yes
+connection.timestamp: 0
+connection.read-only: no
+connection.permissions:
+connection.zone: --
+connection.master: --
+connection.slave-type: --
+connection.secondaries:
+connection.gateway-ping-timeout: 0
+802-3-ethernet.port: --
+802-3-ethernet.speed: 0
+802-3-ethernet.duplex: --
+802-3-ethernet.auto-negotiate: yes
+802-3-ethernet.mac-address: 52:54:00:8A:45:52
+802-3-ethernet.cloned-mac-address: --
+802-3-ethernet.mac-address-blacklist:
+802-3-ethernet.mtu: auto
+802-3-ethernet.s390-subchannels:
+802-3-ethernet.s390-nettype: --
+802-3-ethernet.s390-options:
+ipv4.method: manual
+ipv4.dns: 192.168.1.1
+ipv4.dns-search:
+ipv4.addresses: { ip = 192.168.1.2/24, gw = 192.168.1.1 }
+ipv4.routes:
+ipv4.ignore-auto-routes: no
+ipv4.ignore-auto-dns: no
+ipv4.dhcp-client-id: --
+ipv4.dhcp-send-hostname: yes
+ipv4.dhcp-hostname: --
+ipv4.never-default: no
+ipv4.may-fail: yes
+ipv6.method: ignore
+ipv6.dns:
+ipv6.dns-search:
+ipv6.addresses:
+ipv6.routes:
+ipv6.ignore-auto-routes: no
+ipv6.ignore-auto-dns: no
+ipv6.never-default: no
+ipv6.may-fail: yes
+ipv6.ip6-privacy: -1 (unknown)
+ipv6.dhcp-hostname: --
+</pre>
+<p>To delete this network configuration, type:</p>
+<pre># <strong>nmcli c delete</strong> <strong>914d2052-f0fd-4a05-86b7-405512427101</strong></pre>
+<p>To get the list of the active network configurations, type:</p>
+<pre># <strong>nmcli c show active</strong>
+NAME UUID DEVICES DEFAULT VPN MASTER-PATH
+eth0 94aaedf1-ca71-4789-87c8-88e5367125d5 eth0 no no --
+</pre>
+<p>Note: It would have been possible to activate the previous network configuration before removal by typing:</p>
+<pre># <strong>nmcli c up</strong> <strong>914d2052-f0fd-4a05-86b7-405512427101</strong></pre>
+<p>To get more information about connection management, go to the page about <a title="RHEL7: Configure IPv4 addresses and perform basic IPv4 troubleshooting." href="https://www.certdepot.net/rhel7-configure-ipv4-addresses/">configuring IPv4 addresses</a>.</p>
+<p>You can also edit any kind of connection in an interactive way:</p>
+<pre># <strong>nmcli c edit 914d2052-f0fd-4a05-86b7-405512427101
+</strong>
+===| nmcli interactive connection editor |===
+
+Editing existing '802-3-ethernet' connection: '914d2052-f0fd-4a05-86b7-405512427101'
+
+Type 'help' or '?' for available commands.
+Type 'describe [&lt;setting&gt;.&lt;prop&gt;]' for detailed property description.
+
+You may edit the following settings: connection, 802-3-ethernet (ethernet), 802-1x, ipv4, ipv6, dcb
+nmcli&gt;</pre>
+<h2>Device</h2>
+<p>To get the list of all the devices, type:</p>
+<pre># <strong>nmcli device</strong>
+DEVICE TYPE STATE
+eth0 ethernet connected
+wlp3s0 wifi disconnected
+lo loopback unmanaged
+</pre>
+<p>To get details about all the devices, type:</p>
+<pre># <strong>nmcli d show</strong>
+GENERAL.DEVICE: eth0
+GENERAL.TYPE: ethernet
+GENERAL.VENDOR: Red Hat, Inc
+GENERAL.PRODUCT: Virtio network device
+GENERAL.DRIVER: virtio_net
+GENERAL.DRIVER-VERSION: 1.0.0
+GENERAL.FIRMWARE-VERSION:
+GENERAL.HWADDR: 52:54:00:8A:45:52
+GENERAL.STATE: 100 (connected)
+GENERAL.REASON: 0 (No reason given)
+GENERAL.UDI: /sys/devices/pci0000:00/0000:00:03.0/virtio0/net/eth0
+GENERAL.IP-IFACE: eth0
+GENERAL.NM-MANAGED: yes
+GENERAL.AUTOCONNECT: yes
+GENERAL.FIRMWARE-MISSING: no
+GENERAL.CONNECTION: /org/freedesktop/NetworkManager/ActiveConnection/0
+CAPABILITIES.CARRIER-DETECT: yes
+CAPABILITIES.SPEED: unknown
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: /org/freedesktop/NetworkManager/Settings/{1}
+CONNECTIONS.AVAILABLE-CONNECTIONS[1]: 94aaedf1-ca71-4789-87c8-88e5367125d5 | eth0
+WIRED-PROPERTIES.CARRIER: on
+IP4.ADDRESS[1]: ip = 192.168.1.2/24, gw = 0.0.0.0
+IP4.ROUTE[1]: dst = 169.254.0.0/16, nh = 0.0.0.0, mt = 1002
+IP6.ADDRESS[1]: ip = fe80::5054:ff:fe8a:4552/64, gw = ::
+
+GENERAL.DEVICE: wlp3s0
+GENERAL.TYPE: wifi
+GENERAL.VENDOR: Realtek Semiconductor Co., Ltd.
+GENERAL.PRODUCT: RTL8191SEvB Wireless LAN Controller
+GENERAL.DRIVER: rtl8192se
+GENERAL.DRIVER-VERSION: 3.10.0-54.0.1.el7.x86_64
+GENERAL.FIRMWARE-VERSION: N/A
+GENERAL.HWADDR: B4:82:FE:90:41:45
+GENERAL.STATE: 30 (disconnected)
+GENERAL.REASON: 42 (The supplicant is now available)
+GENERAL.UDI: /sys/devices/pci0000:00/0000:00:1c.1/0000:03:00.0/net/wlp3s0
+GENERAL.IP-IFACE:
+GENERAL.NM-MANAGED: yes
+GENERAL.AUTOCONNECT: yes
+GENERAL.FIRMWARE-MISSING: no
+GENERAL.CONNECTION: not connected
+CAPABILITIES.CARRIER-DETECT: no
+CAPABILITIES.SPEED: unknown
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS:
+WIFI-PROPERTIES.WEP: yes
+WIFI-PROPERTIES.WPA: yes
+WIFI-PROPERTIES.WPA2: yes
+WIFI-PROPERTIES.TKIP: yes
+WIFI-PROPERTIES.CCMP: yes
+WIFI-PROPERTIES.AP: yes
+WIFI-PROPERTIES.ADHOC: yes
+AP[1].*:
+AP[1].SSID: AAA
+AP[1].MODE: Infra
+AP[1].CHAN: 1
+AP[1].RATE: 54 MB/s
+AP[1].SIGNAL: 10
+AP[1].BARS: ▂___
+AP[1].SECURITY: WPA1
+AP[2].*:
+AP[2].SSID: BBB
+AP[2].MODE: Infra
+AP[2].CHAN: 11
+AP[2].RATE: 54 MB/s
+AP[2].SIGNAL: 100
+AP[2].BARS: ▂▄▆█
+AP[2].SECURITY: WPA1
+AP[3].*:
+AP[3].SSID: CCC
+AP[3].MODE: Infra
+AP[3].CHAN: 11
+AP[3].RATE: 54 MB/s
+AP[3].SIGNAL: 100
+AP[3].BARS: ▂▄▆█
+AP[3].SECURITY: WPA2 802.1X
+AP[4].*:
+AP[4].SSID: DDD
+AP[4].MODE: Infra
+AP[4].CHAN: 6
+AP[4].RATE: 54 MB/s
+AP[4].SIGNAL: 100
+AP[4].BARS: ▂▄▆█
+AP[4].SECURITY: WPA1 WPA2
+AP[5].*:
+AP[5].SSID: EEE
+AP[5].MODE: Infra
+AP[5].CHAN: 11
+AP[5].RATE: 54 MB/s
+AP[5].SIGNAL: 100
+AP[5].BARS: ▂▄▆█
+AP[5].SECURITY: WEP
+
+GENERAL.DEVICE: lo
+GENERAL.TYPE: loopback
+GENERAL.VENDOR: --
+GENERAL.PRODUCT: --
+GENERAL.DRIVER: unknown
+GENERAL.DRIVER-VERSION:
+GENERAL.FIRMWARE-VERSION:
+GENERAL.HWADDR: (unknown)
+GENERAL.STATE: 10 (unmanaged)
+GENERAL.REASON: 0 (No reason given)
+GENERAL.UDI: /sys/devices/virtual/net/lo
+GENERAL.IP-IFACE: lo
+GENERAL.NM-MANAGED: no
+GENERAL.AUTOCONNECT: yes
+GENERAL.FIRMWARE-MISSING: no
+GENERAL.CONNECTION: not connected
+CAPABILITIES.CARRIER-DETECT: yes
+CAPABILITIES.SPEED: unknown
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS:
+IP4.ADDRESS[1]: ip = 127.0.0.1/8, gw = 0.0.0.0
+IP6.ADDRESS[1]: ip = ::1/128, gw = ::
+</pre>
+<p>To get the list of available wifi access points, type:</p>
+<pre># <strong>nmcli d wifi</strong>
+* SSID MODE CHAN RATE SIGNAL BARS SECURITY
+AAA Infra 11 54 MB/s 55 ▂▄__ WPA2 802.1X
+BBB Infra 11 54 MB/s 54 ▂▄__ WPA1
+CCC Infra 1 54 MB/s 49 ▂▄__ WPA1
+DDD Infra 11 54 MB/s 44 ▂▄__ WPA1 802.1X
+EEE Infra 11 54 MB/s 92 ▂▄▆█ WEP
+</pre>
+<p>To connect to a wifi access point specified by a SSID (here <strong>EEE</strong>), type:</p>
+<pre># <strong>nmcli d wifi connect&nbsp;EEE password '12345678901234567890123456'</strong></pre>
+<p>To request that NetworkManager rescans for available access points, type:</p>
+<pre># <strong>nmcli d wifi rescan</strong></pre>
+<p>Sources: <strong>nmcli</strong> and <strong>nmcli-examples</strong> man pages.</p>
+<h2>Additional Resources</h2>
+<p>You can also read this <a href="https://www.hogarthuk.com/?q=node/8">article about NetworkManager by James Hogarth</a>.<br>
+You can browse the <a href="https://developer.gnome.org/NetworkManager/">official NetworkManager documentation</a> (easier than man pages).<br>
+<a href="https://blogs.gnome.org/lkundrak/">Lubomir Rintel’s blog</a> provides news about <strong>NetworkManager</strong> evolutions.</p>
+									</div><!-- end of .post-entry -->
+
+				
+
+<div class="post-edit"></div>
+							</div><!-- end of #post-1799 -->
+			<div id="post-ratings-1799" class="post-ratings" data-nonce="70c9ff4023"><img id="rating_1799_1" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/rating_on.gif" alt="1 Star" title="1 Star" onmouseover="current_rating(1799, 1, &#39;1 Star&#39;);" onmouseout="ratings_off(4.6, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;"><img id="rating_1799_2" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/rating_on.gif" alt="2 Stars" title="2 Stars" onmouseover="current_rating(1799, 2, &#39;2 Stars&#39;);" onmouseout="ratings_off(4.6, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;"><img id="rating_1799_3" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/rating_on.gif" alt="3 Stars" title="3 Stars" onmouseover="current_rating(1799, 3, &#39;3 Stars&#39;);" onmouseout="ratings_off(4.6, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;"><img id="rating_1799_4" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/rating_on.gif" alt="4 Stars" title="4 Stars" onmouseover="current_rating(1799, 4, &#39;4 Stars&#39;);" onmouseout="ratings_off(4.6, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;"><img id="rating_1799_5" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/rating_half.gif" alt="5 Stars" title="5 Stars" onmouseover="current_rating(1799, 5, &#39;5 Stars&#39;);" onmouseout="ratings_off(4.6, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;"> (<strong>5</strong> votes, average: <strong>4.60</strong> out of 5)<br><span class="post-ratings-text" id="ratings_1799_text"></span></div><div id="post-ratings-1799-loading" class="post-ratings-loading">
+            <img src="./RHEL7_ How to get started with nmcli. - CertDepot_files/loading.gif" width="16" height="16" class="post-ratings-image">Loading...</div>			
+						    <div class="wpdiscuz_top_clearing"></div>
+                    <div id="comments" class="comments-area">
+                    <div id="respond" style="width: 0;height: 0;clear: both;margin: 0;padding: 0;"></div>
+                            <h3 id="wc-comment-header">Leave a Reply</h3>
+                <div id="wpcomm" class="wpdiscuz_unauth">
+                            <div class="wc-comment-bar">
+                    <p class="wc-comment-title">
+                        <span class="wc_header_text_count">4</span> Comments on "RHEL7: How to get started with nmcli."                    </p>
+                    <div class="wpdiscuz_clear"></div>
+                </div>
+                                    <div class="wc_social_plugin_wrapper">
+                            </div>
+                            <div class="wpdiscuz-subscribe-bar">
+                                            <form action="https://www.certdepot.net/wp-admin/admin-ajax.php?action=addSubscription" method="post" id="wpdiscuz-subscribe-form">
+                            <div class="wpdiscuz-subscribe-form-intro">Notify of </div>
+                            <div class="wpdiscuz-subscribe-form-option" style="width:40%;">
+                                <select class="wpdiscuz_select" name="wpdiscuzSubscriptionType">
+                                                                            <option value="post">new follow-up comments</option>
+                                                                                                                <option value="all_comment">new replies to my comments</option>
+                                                                    </select>
+                            </div>
+                                                            <div class="wpdiscuz-item wpdiscuz-subscribe-form-email">
+                                    <input id="" class="email" type="email" name="wpdiscuzSubscriptionEmail" required="required" value="" placeholder="Email">
+                                </div>
+                                                        <div class="wpdiscuz-subscribe-form-button">
+                                <input id="wpdiscuz_subscription_button" type="submit" value="›" name="wpdiscuz_subscription_button">
+                            </div> 
+                            <input type="hidden" id="wpdiscuz_subscribe_form_nonce" name="wpdiscuz_subscribe_form_nonce" value="255c5bdb19"><input type="hidden" name="_wp_http_referer" value="/rhel7-get-started-nmcli/">                            <input type="hidden" value="1799" name="wpdiscuzSubscriptionPostId">
+                        </form>
+                                        <div class="wpdiscuz_clear"></div>
+                                    </div>
+                        <div class="wc-form-wrapper wc-main-form-wrapper" id="wc-main-form-wrapper-0_0">
+            <div class="wpdiscuz-comment-message" style="display: block;"></div>
+                                        <p class="wc-must-login">
+                    You must be <a rel="nofollow" href="https://www.certdepot.net/wp-login.php?redirect_to=https%3A%2F%2Fwww.certdepot.net%2Frhel7-get-started-nmcli%2F">logged in</a> to post a comment.                </p>
+                        </div>
+                <div id="wpdiscuz_hidden_secondary_form" style="display: none;">
+                    <div class="wc-form-wrapper wc-secondary-form-wrapper" id="wc-secondary-form-wrapper-wpdiscuzuniqueid" style="display: none;">
+            <div class="wpdiscuz-comment-message" style="display: block;"></div>
+                            <div class="wc-secondary-forms-social-content"></div>
+                                        <p class="wc-must-login">
+                    You must be <a rel="nofollow" href="https://www.certdepot.net/wp-login.php?redirect_to=https%3A%2F%2Fwww.certdepot.net%2Frhel7-get-started-nmcli%2F">logged in</a> to post a comment.                </p>
+                        </div>
+                </div>
+                    
+
+                        
+                                    <div class="wpdiscuz-front-actions">
+                        <div class="wpdiscuz-sort-buttons" style="font-size:14px;">Sort by: &nbsp;
+                            <span class="wpdiscuz-sort-button wpdiscuz-date-sort-desc">newest</span> | 
+                            <span class="wpdiscuz-sort-button wpdiscuz-date-sort-asc wpdiscuz-sort-button-active">oldest</span>
+                                                    </div>
+                    </div>
+                
+                                <div id="wcThreadWrapper" class="wc-thread-wrapper">
+                    <div id="wc-comm-26933_0" class="wc-comment wc-blog-subscriber wc_comment_level-1"><div class="wc-comment-left"><img alt="Sam" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/18a1fc1837b4f54f5b04f835dce43c0f" srcset="https://secure.gravatar.com/avatar/18a1fc1837b4f54f5b04f835dce43c0f?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo" height="64" width="64"><div class="wc-blog-subscriber wc-comment-label"><span>Member</span></div></div><div id="comment-26933" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author">Sam</div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fa fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://www.certdepot.net/rhel7-get-started-nmcli/#comment-26933"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>I had an issue with dates to dns. Any way the reload didn’t work. I was testing this using a virtual client!<br>
+Note: suggest not doing through an network client ie ssh!<br>
+# nmcli con mod “Wired connection1” ipv4.dns 192.168.1.1<br>
+# nmcli con down “Wired connection1”<br>
+# nmcli con up “Wired connection1”</p>
+<p>Note: it may be an idea placing a reference from the /rhel7-debug-network-services/ to this page !</p>
+<p>sam</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="fa fa-clock-o" aria-hidden="true"></i>1 year 9 months ago</div><div class="wc-toggle"><i class="fa fa-chevron-up" aria-hidden="true" title="Hide Replies"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-26933_0" style="clear:both"></div><div id="wc-comm-42212_26933" class="wc-comment wc-reply wc-blog-subscriber wc_comment_level-2"><div class="wc-comment-left"><img alt="twostep" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/ef4adaf8177b86b96192da2dd8a4c2bc" srcset="https://secure.gravatar.com/avatar/ef4adaf8177b86b96192da2dd8a4c2bc?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo" height="64" width="64"><div class="wc-blog-subscriber wc-comment-label"><span>Member</span></div></div><div id="comment-42212" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author">twostep</div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fa fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://www.certdepot.net/rhel7-get-started-nmcli/#comment-42212"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>Try this:<br>
+nmcli device disconnect [dev_name]<br>
+nmcli connection up [con_name]</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="fa fa-clock-o" aria-hidden="true"></i>5 months 24 days ago</div><div class="wc-toggle wpdiscuz-hidden"><i class="fa fa-chevron-up" aria-hidden="true" title="Hide Replies"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-42212_26933" style="clear:both"></div></div></div><div id="wc-comm-42211_0" class="wc-comment wc-blog-subscriber wc_comment_level-1"><div class="wc-comment-left"><img alt="twostep" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/ef4adaf8177b86b96192da2dd8a4c2bc" srcset="https://secure.gravatar.com/avatar/ef4adaf8177b86b96192da2dd8a4c2bc?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo" height="64" width="64"><div class="wc-blog-subscriber wc-comment-label"><span>Member</span></div></div><div id="comment-42211" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author">twostep</div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fa fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://www.certdepot.net/rhel7-get-started-nmcli/#comment-42211"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>where is the base command:<br>
+nmcli connection edit [con_name]?<br>
+It is the main advantage of nmcli vs text files.</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="fa fa-clock-o" aria-hidden="true"></i>5 months 24 days ago</div><div class="wc-toggle"><i class="fa fa-chevron-up" aria-hidden="true" title="Hide Replies"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-42211_0" style="clear:both"></div><div id="wc-comm-42218_42211" class="wc-comment wc-reply wc-blog-post_author wc_comment_level-2"><div class="wc-comment-left"><a href="https://www.certdepot.net/author/gilles/" target="_blank"><img alt="CertDepot" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/d69733aca1120e7820693c107a7f9cba" srcset="https://secure.gravatar.com/avatar/d69733aca1120e7820693c107a7f9cba?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo" height="64" width="64"></a><div class="wc-blog-post_author wc-comment-label"><span>Author</span></div></div><div id="comment-42218" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author"><a rel="nofollow" href="https://www.certdepot.net/author/gilles/" target="_blank">CertDepot</a></div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fa fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://www.certdepot.net/rhel7-get-started-nmcli/#comment-42218"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>I don’t know whether it’s the main advantage but you are right, I should have mentioned it.<br>
+I will try to add it in the tutorial.<br>
+Thanks.</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="fa fa-clock-o" aria-hidden="true"></i>5 months 23 days ago</div><div class="wc-toggle wpdiscuz-hidden"><i class="fa fa-chevron-up" aria-hidden="true" title="Hide Replies"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-42218_42211" style="clear:both"></div></div></div>                
+                    <div class="wpdiscuz-comment-pagination">
+                                            </div>
+                </div>
+                <div class="wpdiscuz_clear"></div>
+                                                                                </div>
+        </div>
+        <div class="wpdiscuz-loading-bar wpdiscuz-loading-bar-unauth"><img class="wpdiscuz-loading-bar-img" alt="wpDiscuz" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/loading(1).gif" width="32" height="25"></div>
+        			
+		
+</div><!-- end of #content -->
+
+
+	<div id="widgets" class="grid col-300 fit">
+		
+		<div id="calp_agenda_widget-2" class="widget-wrapper widget_calp_agenda_widget">
+<div class="calp-agenda-widget-view" id="calp_agenda_widget-2-view">
+    <div class="calp-widget-loading"></div>
+    <div class="calp-widget-title">
+
+        <h2>
+            <img src="./RHEL7_ How to get started with nmcli. - CertDepot_files/widget_icon.png">
+        Upcoming Events (CET)        </h2>
+    </div>
+    
+			<ol>
+							<li class="calp-date ">
+					<h3 class="calp-date-title">
+						<div class="calp-month">Feb</div>
+						<div class="calp-day">20</div>
+						<div class="calp-weekday">Mon</div>
+					</h3>
+					<ol class="calp-date-events">
+																					<li class="calp-event
+									calp-event-id-7721									calp-event-instance-id-125									">
+
+																		<input type="hidden" class="calp-post-id" value="7721">
+									<a href="https://www.certdepot.net/calendar/#action=calp_agenda&amp;calp_item_id=125">
+																					<span class="calp-event-time">
+												5:00 pm</span>
+											
+										                                        
+                                        <span class="calp-widget-details">- View Details</span>
+                                        
+                                        <br>
+										<span class="calp-event-title">
+                                            vanVugt: Free online class on Managing Cache Only DNS										</span>
+									</a>
+
+								</li>
+																		</ol>
+				</li>
+					</ol>
+	
+        
+    <div class="calp-subscribe-buttons">
+        
+                
+                  
+    </div>
+
+</div>
+
+</div><div id="randomtext-4" class="widget-wrapper randomtext"><div class="widget-title"><h3>RHCSA7: Task of the day</h3></div>Allowed time: 10 minutes.
+<br>Set up a default configuration HTTP server with SELinux in Enforcing mode and active firewalld configuration.</div><div id="randomtext-5" class="widget-wrapper randomtext"><div class="widget-title"><h3>RHCE7: Task of the day</h3></div>Allowed time: 8 minutes. <br>Set up an iScsi target based on a fileio backstore of 100MB called /opt/shareddata with CHAP authentication (username=usr/password=pwd), xfs filesystem and standard firewall configuration.</div><div id="polls-widget-4" class="widget-wrapper widget_polls-widget"><div class="widget-title"><h3>Poll for favorite RHEL 7 book</h3></div><div id="polls-3" class="wp-polls">
+	<form id="polls_form_3" class="wp-polls-form" action="https://www.certdepot.net/index.php" method="post">
+		<p style="display: none;"><input type="hidden" id="poll_3_nonce" name="wp-polls-nonce" value="ecb9884e3c"></p>
+		<p style="display: none;"><input type="hidden" name="poll_id" value="3"></p>
+		<p style="text-align: center;"><strong>What is your favorite RHEL 7 book to prepare RHCSA &amp; RHCE exams?</strong></p><div id="polls-3-ans" class="wp-polls-ans"><ul class="wp-polls-ul">
+		<li><input type="radio" id="poll-answer-14" name="poll_3" value="14"> <label for="poll-answer-14">Asghar Ghori’s book</label></li>
+		<li><input type="radio" id="poll-answer-15" name="poll_3" value="15"> <label for="poll-answer-15">Sander van Vugt's book</label></li>
+		<li><input type="radio" id="poll-answer-16" name="poll_3" value="16"> <label for="poll-answer-16">Jang/Orsaria's book</label></li>
+		<li><input type="radio" id="poll-answer-18" name="poll_3" value="18"> <label for="poll-answer-18">Andrew Mallett's book</label></li>
+		<li><input type="radio" id="poll-answer-38" name="poll_3" value="38"> <label for="poll-answer-38">Others</label></li>
+		<li><input type="radio" id="poll-answer-39" name="poll_3" value="39"> <label for="poll-answer-39">None</label></li>
+		</ul><p style="text-align: center;"><input type="button" name="vote" value="   Vote   " class="Buttons" onclick="poll_vote(3);"></p><p style="text-align: center;"><a href="https://www.certdepot.net/rhel7-get-started-nmcli/#ViewPollResults" onclick="poll_result(3); return false;" title="View Results Of This Poll">View Results</a></p></div>
+	</form>
+</div>
+<div id="polls-3-loading" class="wp-polls-loading"><img src="./RHEL7_ How to get started with nmcli. - CertDepot_files/loading(2).gif" width="16" height="16" alt="Loading ..." title="Loading ..." class="wp-polls-image">&nbsp;Loading ...</div>
+</div><div id="polls-widget-5" class="widget-wrapper widget_polls-widget"><div class="widget-title"><h3>Poll for most difficult RHCSA 7 topic</h3></div><div id="polls-4" class="wp-polls">
+	<form id="polls_form_4" class="wp-polls-form" action="https://www.certdepot.net/index.php" method="post">
+		<p style="display: none;"><input type="hidden" id="poll_4_nonce" name="wp-polls-nonce" value="f950830ab1"></p>
+		<p style="display: none;"><input type="hidden" name="poll_id" value="4"></p>
+		<p style="text-align: center;"><strong>What do you think is the most difficult RHCSA 7 topic?</strong></p><div id="polls-4-ans" class="wp-polls-ans"><ul class="wp-polls-ul">
+		<li><input type="radio" id="poll-answer-19" name="poll_4" value="19"> <label for="poll-answer-19">Systemd</label></li>
+		<li><input type="radio" id="poll-answer-20" name="poll_4" value="20"> <label for="poll-answer-20">LVM</label></li>
+		<li><input type="radio" id="poll-answer-21" name="poll_4" value="21"> <label for="poll-answer-21">Kickstart</label></li>
+		<li><input type="radio" id="poll-answer-22" name="poll_4" value="22"> <label for="poll-answer-22">SELinux</label></li>
+		<li><input type="radio" id="poll-answer-23" name="poll_4" value="23"> <label for="poll-answer-23">LDAP</label></li>
+		<li><input type="radio" id="poll-answer-24" name="poll_4" value="24"> <label for="poll-answer-24">ACL</label></li>
+		<li><input type="radio" id="poll-answer-25" name="poll_4" value="25"> <label for="poll-answer-25">Automounter</label></li>
+		<li><input type="radio" id="poll-answer-26" name="poll_4" value="26"> <label for="poll-answer-26">Others</label></li>
+		</ul><p style="text-align: center;"><input type="button" name="vote" value="   Vote   " class="Buttons" onclick="poll_vote(4);"></p><p style="text-align: center;"><a href="https://www.certdepot.net/rhel7-get-started-nmcli/#ViewPollResults" onclick="poll_result(4); return false;" title="View Results Of This Poll">View Results</a></p></div>
+	</form>
+</div>
+<div id="polls-4-loading" class="wp-polls-loading"><img src="./RHEL7_ How to get started with nmcli. - CertDepot_files/loading(2).gif" width="16" height="16" alt="Loading ..." title="Loading ..." class="wp-polls-image">&nbsp;Loading ...</div>
+</div><div id="polls-widget-6" class="widget-wrapper widget_polls-widget"><div class="widget-title"><h3>Poll for most difficult RHCE 7 topic</h3></div><div id="polls-5" class="wp-polls">
+	<form id="polls_form_5" class="wp-polls-form" action="https://www.certdepot.net/index.php" method="post">
+		<p style="display: none;"><input type="hidden" id="poll_5_nonce" name="wp-polls-nonce" value="09845e76b2"></p>
+		<p style="display: none;"><input type="hidden" name="poll_id" value="5"></p>
+		<p style="text-align: center;"><strong>What do you think is the most difficult RHCE 7 topic?</strong></p><div id="polls-5-ans" class="wp-polls-ans"><ul class="wp-polls-ul">
+		<li><input type="radio" id="poll-answer-27" name="poll_5" value="27"> <label for="poll-answer-27">Networking</label></li>
+		<li><input type="radio" id="poll-answer-28" name="poll_5" value="28"> <label for="poll-answer-28">Firewalld</label></li>
+		<li><input type="radio" id="poll-answer-29" name="poll_5" value="29"> <label for="poll-answer-29">Kerberos</label></li>
+		<li><input type="radio" id="poll-answer-30" name="poll_5" value="30"> <label for="poll-answer-30">iSCSI</label></li>
+		<li><input type="radio" id="poll-answer-31" name="poll_5" value="31"> <label for="poll-answer-31">Apache</label></li>
+		<li><input type="radio" id="poll-answer-32" name="poll_5" value="32"> <label for="poll-answer-32">DNS</label></li>
+		<li><input type="radio" id="poll-answer-33" name="poll_5" value="33"> <label for="poll-answer-33">NFS</label></li>
+		<li><input type="radio" id="poll-answer-34" name="poll_5" value="34"> <label for="poll-answer-34">Samba</label></li>
+		<li><input type="radio" id="poll-answer-35" name="poll_5" value="35"> <label for="poll-answer-35">Postfix</label></li>
+		<li><input type="radio" id="poll-answer-36" name="poll_5" value="36"> <label for="poll-answer-36">MariaDB</label></li>
+		<li><input type="radio" id="poll-answer-37" name="poll_5" value="37"> <label for="poll-answer-37">Others</label></li>
+		</ul><p style="text-align: center;"><input type="button" name="vote" value="   Vote   " class="Buttons" onclick="poll_vote(5);"></p><p style="text-align: center;"><a href="https://www.certdepot.net/rhel7-get-started-nmcli/#ViewPollResults" onclick="poll_result(5); return false;" title="View Results Of This Poll">View Results</a></p></div>
+	</form>
+</div>
+<div id="polls-5-loading" class="wp-polls-loading"><img src="./RHEL7_ How to get started with nmcli. - CertDepot_files/loading(2).gif" width="16" height="16" alt="Loading ..." title="Loading ..." class="wp-polls-image">&nbsp;Loading ...</div>
+</div><div id="recently_updated_pages-2" class="widget-wrapper Recently_Updated_Pages"><div class="widget-title"><h3>Recently Updated Pages</h3></div><ul><li class="page_item page-item-3291"><a href="https://www.certdepot.net/rhel7-configure-apache-private-directories/" title="RHEL7: Configure Apache access restrictions on directories.">RHEL7: Configure Apache access restrictions on directories.</a></li><li class="page_item page-item-5780"><a href="https://www.certdepot.net/rhel7-get-started-cgroups/" title="RHEL7: How to get started with CGroups.">RHEL7: How to get started with CGroups.</a></li><li class="page_item page-item-1870"><a href="https://www.certdepot.net/rhel7-free-available-resources/" title="RHEL7 Free available resources">RHEL7 Free available resources</a></li><li class="page_item page-item-5013"><a href="https://www.certdepot.net/rhel7-get-started-grub2/" title="RHEL7: How to get started with GRUB2.">RHEL7: How to get started with GRUB2.</a></li><li class="page_item page-item-7499"><a href="https://www.certdepot.net/rhel7-deal-https-wordpress/" title="RHEL7: How to deal with HTTPS in WordPress.">RHEL7: How to deal with HTTPS in WordPress.</a></li><li class="page_item page-item-1469"><a href="https://www.certdepot.net/rhel7-set-ntp-service/" title="RHEL7: How to set up the NTP service.">RHEL7: How to set up the NTP service.</a></li><li class="page_item page-item-1608"><a href="https://www.certdepot.net/rhel7-get-started-systemd/" title="RHEL7: How to get started with Systemd.">RHEL7: How to get started with Systemd.</a></li><li class="page_item page-item-617"><a href="https://www.certdepot.net/selinux-set-enforcing-and-permissive-modes/" title="SELINUX: Set enforcing and permissive modes for SELinux.">SELINUX: Set enforcing and permissive modes for SELinux.</a></li><li class="page_item page-item-4304"><a href="https://www.certdepot.net/rhel7-set-lab/" title="RHEL7: Set up a lab.">RHEL7: Set up a lab.</a></li><li class="page_item page-item-1541"><a href="https://www.certdepot.net/rhel7-get-started-firewalld/" title="RHEL7: How to get started with Firewalld.">RHEL7: How to get started with Firewalld.</a></li></ul></div><div id="recent-comments-2" class="widget-wrapper widget_recent_comments"><div class="widget-title"><h3>Recent Comments</h3></div><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">CertDepot</span> on <a href="https://www.certdepot.net/about/#comment-43029">About</a></li><li class="recentcomments"><span class="comment-author-link">CertDepot</span> on <a href="https://www.certdepot.net/rhel7-rhcsa-exam-objectives/#comment-43028">RHEL7 RHCSA Exam objectives</a></li><li class="recentcomments"><span class="comment-author-link">CertDepot</span> on <a href="https://www.certdepot.net/rhel7-configure-apache-private-directories/#comment-43027">RHEL7: Configure Apache access restrictions on directories.</a></li><li class="recentcomments"><span class="comment-author-link">CertDepot</span> on <a href="https://www.certdepot.net/rhel7-configure-apache-private-directories/#comment-43026">RHEL7: Configure Apache access restrictions on directories.</a></li><li class="recentcomments"><span class="comment-author-link">spawn</span> on <a href="https://www.certdepot.net/rhel7-rhcsa-exam-objectives/#comment-43025">RHEL7 RHCSA Exam objectives</a></li></ul></div><div id="archives-2" class="widget-wrapper widget_archive"><div class="widget-title"><h3>Archives</h3></div>		<ul>
+			<li><a href="https://www.certdepot.net/2017/02/">February 2017</a></li>
+	<li><a href="https://www.certdepot.net/2017/01/">January 2017</a></li>
+	<li><a href="https://www.certdepot.net/2016/12/">December 2016</a></li>
+	<li><a href="https://www.certdepot.net/2016/11/">November 2016</a></li>
+	<li><a href="https://www.certdepot.net/2016/10/">October 2016</a></li>
+	<li><a href="https://www.certdepot.net/2016/09/">September 2016</a></li>
+	<li><a href="https://www.certdepot.net/2016/08/">August 2016</a></li>
+	<li><a href="https://www.certdepot.net/2016/07/">July 2016</a></li>
+	<li><a href="https://www.certdepot.net/2016/06/">June 2016</a></li>
+	<li><a href="https://www.certdepot.net/2016/05/">May 2016</a></li>
+	<li><a href="https://www.certdepot.net/2016/04/">April 2016</a></li>
+	<li><a href="https://www.certdepot.net/2016/03/">March 2016</a></li>
+	<li><a href="https://www.certdepot.net/2016/02/">February 2016</a></li>
+	<li><a href="https://www.certdepot.net/2016/01/">January 2016</a></li>
+	<li><a href="https://www.certdepot.net/2015/12/">December 2015</a></li>
+	<li><a href="https://www.certdepot.net/2015/11/">November 2015</a></li>
+	<li><a href="https://www.certdepot.net/2015/10/">October 2015</a></li>
+	<li><a href="https://www.certdepot.net/2015/09/">September 2015</a></li>
+	<li><a href="https://www.certdepot.net/2015/08/">August 2015</a></li>
+	<li><a href="https://www.certdepot.net/2015/07/">July 2015</a></li>
+	<li><a href="https://www.certdepot.net/2015/06/">June 2015</a></li>
+	<li><a href="https://www.certdepot.net/2015/05/">May 2015</a></li>
+	<li><a href="https://www.certdepot.net/2015/04/">April 2015</a></li>
+	<li><a href="https://www.certdepot.net/2015/03/">March 2015</a></li>
+	<li><a href="https://www.certdepot.net/2015/02/">February 2015</a></li>
+	<li><a href="https://www.certdepot.net/2015/01/">January 2015</a></li>
+	<li><a href="https://www.certdepot.net/2014/12/">December 2014</a></li>
+	<li><a href="https://www.certdepot.net/2014/11/">November 2014</a></li>
+	<li><a href="https://www.certdepot.net/2014/10/">October 2014</a></li>
+	<li><a href="https://www.certdepot.net/2014/09/">September 2014</a></li>
+	<li><a href="https://www.certdepot.net/2014/08/">August 2014</a></li>
+	<li><a href="https://www.certdepot.net/2014/07/">July 2014</a></li>
+	<li><a href="https://www.certdepot.net/2014/06/">June 2014</a></li>
+	<li><a href="https://www.certdepot.net/2014/05/">May 2014</a></li>
+	<li><a href="https://www.certdepot.net/2014/04/">April 2014</a></li>
+	<li><a href="https://www.certdepot.net/2014/03/">March 2014</a></li>
+	<li><a href="https://www.certdepot.net/2014/02/">February 2014</a></li>
+	<li><a href="https://www.certdepot.net/2014/01/">January 2014</a></li>
+	<li><a href="https://www.certdepot.net/2013/12/">December 2013</a></li>
+	<li><a href="https://www.certdepot.net/2013/11/">November 2013</a></li>
+	<li><a href="https://www.certdepot.net/2013/10/">October 2013</a></li>
+	<li><a href="https://www.certdepot.net/2013/09/">September 2013</a></li>
+		</ul>
+		</div><div id="meta-2" class="widget-wrapper widget_meta"><div class="widget-title"><h3>Meta</h3></div>			<ul>
+			<li><a rel="nofollow" href="https://www.certdepot.net/wp-login.php?action=register">Register</a></li>			<li><a rel="nofollow" href="https://www.certdepot.net/wp-login.php">Log in</a></li>
+			<li><a href="https://www.certdepot.net/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://www.certdepot.net/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</div>
+			</div><!-- end of #widgets -->
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+<div id="footer" class="clearfix">
+	
+	<div id="footer-wrapper">
+
+		
+		<div class="grid col-940">
+
+			<div class="grid col-540">
+							</div><!-- end of col-540 -->
+
+			<div class="grid col-380 fit">
+				<ul class="social-icons"><li class="twitter-icon"><a href="https://twitter.com/CertDepot"><img src="./RHEL7_ How to get started with nmcli. - CertDepot_files/twitter-icon.png" width="24" height="24" alt="Twitter"></a></li></ul><!-- .social-icons -->			</div><!-- end of col-380 fit -->
+
+		</div><!-- end of col-940 -->
+		
+                This website is not affiliated or endorsed by Red Hat or VMware. The website content is only free for non-commercial use. Website hosted by OVH, 2 rue Kellermann, 59100 Roubaix, France.
+		<div class="grid col-300 copyright">
+			© 2017<a href="https://www.certdepot.net/" title="CertDepot">
+				CertDepot			</a>
+		</div><!-- end of .copyright -->
+
+		<div class="grid col-300 scroll-top"><a href="https://www.certdepot.net/rhel7-get-started-nmcli/#scroll-top" title="scroll to top">↑</a></div>
+
+		<div class="grid col-300 fit powered">
+			<a href="http://cyberchimps.com/responsive-theme/" title="Responsive Theme">
+				Responsive Theme</a>
+			powered by <a href="http://wordpress.org/" title="WordPress">
+				WordPress</a>
+		</div><!-- end .powered -->
+
+	</div><!-- end #footer-wrapper -->
+
+	</div><!-- end #footer -->
+
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/jquery.tinyscrollbar.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"https:\/\/www.certdepot.net\/wp-admin\/admin-ajax.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"1","show_fading":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/polls-js.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ratingsL10n = {"plugin_url":"https:\/\/www.certdepot.net\/wp-content\/plugins\/wp-postratings","ajax_url":"https:\/\/www.certdepot.net\/wp-admin\/admin-ajax.php","text_wait":"Please rate only 1 item at a time.","image":"stars","image_ext":"gif","max":"5","show_loading":"1","show_fading":"1","custom":"0"};
+var ratings_mouseover_image=new Image();ratings_mouseover_image.src="https://www.certdepot.net/wp-content/plugins/wp-postratings/images/stars/rating_over.gif";;
+/* ]]> */
+</script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/postratings-js.js"></script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/jquery.form.min.js"></script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/responsive-scripts.min.js"></script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/wp-embed.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var fsb = {"ajax":"https:\/\/www.certdepot.net\/wp-admin\/admin-ajax.php","nonce":"f4e5dd4c29"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./RHEL7_ How to get started with nmcli. - CertDepot_files/fsb.js"></script>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.certdepot.net/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript>&lt;p&gt;&lt;img src="//www.certdepot.net/piwik/piwik.php?idsite=1" style="border:0;" alt="" /&gt;&lt;/p&gt;</noscript>
+<!-- End Piwik Code -->
+
+
+</body></html>

@@ -1,0 +1,432 @@
+
+<!-- saved from url=(0031)https://srobb.net/wireless.html -->
+<html class="gr__srobb_net"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+
+<title>Troubleshooting wireless</title>
+<link rel="stylesheet" href="./Troubleshooting wireless_files/main.css" type="text/css">
+</head>
+
+<body data-gr-c-s-loaded="true">
+<center><h2>Troubleshooting Wireless Linux Network Connections</h2></center><p>
+
+Often, a Linux installation will actually be able to use a particular
+wireless card, but the GUI tools will not be working correctly. While
+many of these tools are great when they work, as Linux becomes more like
+Windows, it runs into similar problems--GUI tools that are broken and
+hiding what the system is doing.  </p><p>
+
+
+(By request, I've added a brief section for wired connections at the end
+of the article.)
+
+
+Often, if it seems that you've correctly installed your wireless
+drivers, it can be worthwhile to troubleshoot from the command line.  
+I will use Fedora as an example, because it is the distribution I know
+best.  I am not sure how to do all of this in Ubuntu, but hopefully,
+those who are experienced with Ubuntu will be able to adapt.  </p><p>
+
+This article assumes that you have the proper drivers, or at least think
+you do, but still cannot get wireless working. </p><p>
+
+If you don't have the drivers or modules (see below) then the best thing
+to do is post on the forum for your distribution with a thread title
+like "Can't get &lt;CARD NAME&gt; working.  </p><p>
+
+Many newcomers post something like, "Wireless help," and wonder why they
+don't get answers.  The reason is that many people most likely to be
+able to help are quite busy and if they see that, they'll simply ignore
+it.  They will also ignore things like Laptop (Model) wireless, because
+the majority of laptop manufacturers constantly change hardware.  For 
+example, the Asus 1000HE sometimes has an Atheros wireless card, but
+might also have a Realink card.  If you post with something like Asus
+1000HE, it might be ignored by someone who doesn't want to bother
+playing 20 questions.  If you don't put your wireless card model in the
+thread title, you are making it much less likely that someone will
+consider you worth helping.  (See <a href="http://www.catb.org/~esr/faqs/smart-questions.html">How to ask
+questions the smart way</a> if this isn't clear to you.)</p><p>
+
+
+Both Fedora and Ubuntu use Gnome as their default desktop.  (So, you KDE
+users will also have to modify the information below.  At some point or
+another, I hope to make this more complete, but at present, this is a
+summary of posts I frequently make on Fedora Forums, so it will be
+rather Fedora/Gnome centric.)</p><p>
+
+NetworkManager, sometimes called NetworkMangler, is great when it works.
+However, it often seems to be broken.  So, this article is primarily
+about taking it out of the picture to see if the card is the problem or
+if the GUI card manager is the problem.  </p><p>
+
+It runs its own versions of DHCP and WPA, so the first thing to do is
+take it out of the picture.  In Ubuntu, I believe you can disable it in
+the services configuration GUI, in Fedora, it can be done, as root or
+with root privilege with (in CentOS-6.x and older)
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>chkconfig NetworkManager off
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+With the new systemd, default from Fedora 17, I think, (maybe 16), one should use the systemd 
+command.  (I don't know if the chkconfig ones still work--they did for awhile, to give backwards
+compatibility.)
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>systemctl disable NetworkManager.service
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+
+Rather than try to determine what other things it might have started,
+the easiest thing to do at this point is reboot. As mentioned above,
+Linux is becoming more like Windows.</p><p>
+
+After reboot, again become root (unless you've setup <a href="https://srobb.net/rhsudo.html">sudo</a>), to run the various commands.</p><p>
+
+Hopefully, you know what card you have and what module it uses.  For
+example, my Acer4720z has the AR5007EG card, seen in lspci as AR242x,
+and uses the ath5k module.  First ensure that the module is listed. 
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>lsmod |grep ath
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+
+This should show you that you have module ath5k.  (NOTE:  The above is
+for the Atheros 5007EG card, not for every wireless card.  You will have
+to determine your card and what module should be loaded.)</p><p>
+
+If I see this, great.  If not, insert the module. 
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>modprobe ath5k
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+Hopefully, you will be returned to a command prompt. If you get
+something like FATAL, module not found, then you will have to track down
+the module for your card, and figure out how to get it working.  That is
+beyond the scope of this article, but as mentioned above, there's a good
+chance that your distrbution's forums might be able to help.</p><p>
+
+Next, see if the card is up.  The chances are that NetworkManager
+(henceforth referred to as NM) was controlling it, so it may not be up.
+Run the command
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>ifconfig wlan0
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+(That is assuming the card is called wlan0.  Sometimes it is called
+eth1, ath0, etc.  Hopefully, you know how your system is naming it.)</p><p>
+You should see something similar to 
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>link encap:Ethernet  HWaddr XX:XX:XX:XX:XX:XX
+UP BROADCAST RUNNING 
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+and a lot of other information.  You are specifically looking for the
+word UP.  If it doesn't appear, (which is likely if it was being
+controlled by NM), then activate it with 
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+ifconfig wlan0 up
+
+</td>
+</tr>
+</tbody></table>
+</p><p>
+Hopefully, you will simply be returned to a command prompt. If you get
+something like no such device, again, you will have to ask on your
+distribution's forums. </p><p>
+
+
+
+Once you have run the command, use ifconfig wlan0 once again to make
+sure that the word UP appears in the configuration.  If not, run the
+ifconfig wlan0 up again.  If it still doesn't show as up after that,
+there is some other hardware issue, again, beyond the scope of this
+article.</p><p>
+
+
+Nowadays, ifconfig is deprecated in favor of the <a href="https://srobb.net/ip.html">ip
+command,</a>.  In that case, you can use
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>ip a
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+which will list devices.  It will also show if wlan0 or whatever the device
+name may be is up or down. with state UP or state DOWN in the output.</p><p>
+
+Now to see if your system can actually use the card.  Run the following
+command.
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>iwlist wlan0 scan
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+It should show a list of networks in your area.  If it does, then you
+are almost certainly in good shape and will be able to get the card to
+work.   (Although not always--sometimes, for whatever reason, a
+particular distribution will simply not work properly with a particular
+card.  However, in my experience, if you do get results from the above
+command, you can almost always get the card working if you avoid the GUI
+tools.)</p><p>
+
+If you get a message such as interface doesn't support scanning, then
+there's a good chance there's a hardware switch or hotkey on the machine
+that is turned off.  In most cases, the LEDs indicating that your
+wireless is on don't work with Linux.  As many machines (such as most
+Acers) don't have a switch with a set on/off position, you may have to
+press the key or hit the switch a few times to make sure that it is on.
+For example, the 4720z has a little button above the keyboard.  Press it
+and run the command again.  You may have to do it more than once, but
+hopefully, if you do it a few times, eventually the iwlist line will
+give you results.</p><p>
+
+Now that we've determined the card is working and recognized by the
+system, try to connect.  For purposes of this article, we will say your
+SSID (the name you set on your wireless access point or wireless router)
+is MYNETWORK.  For purposes of testing, if you have it set to be a
+hidden network, unhide it.  (Most Linksys wireless routers hide the
+network name by default.)</p><p>
+
+If your network has no encryption, that is, if it is an open network,
+you should be able to connect to the wireless router with 
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>iwconfig wlan0 essid mynetwork
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+There should be some information and eventually, it should show that it
+is connected. Open another terminal and see if you can get an address
+for it. 
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>dhclient wlan0
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+You should soon see that it has an address.</p><p>
+
+(Some distributions use dhcpcd rather than dhclient.  Use the command
+for your distribution.)</p><p>
+
+If you use wep encryption and have a password of 1234 then the
+command would be
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>iwconfig wlan0 essid mynetwork key s:1234
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+The s: indicates that you're using an ASCII string rather than the hex
+key (which would be a series of letters and numbers, probably separated
+by hyphens.)  Otherwise, the procedure is the same as above. </p><p>
+
+If using wpa or wpa2, the procedure is slightly different.  You don't
+have to unhide a hidden network to try the following.  Again, using an
+SSID of mynetwork and password of 1234, first run the following command. 
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>wpa_passphrase mynetwork 1234 &gt; wpa.conf
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+You should now have a file called wpa.conf that looks like 
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>network={
+        ssid="mynetwork"
+        #psk="1234"
+        psk=ee9a5cd2e36d4056464787fdb24c7b9168fea5d9050711c5fc44cf322569e4e
+}
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+
+If you have a hidden network then add a line above the ssid line
+so that it reads
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>network={
+	scan_ssid=1
+        ssid="mynetwork"
+        #psk="1234"
+        psk=ee9a5cd2e36d4056464787fdb24c7b9168fea5d9050711c5fc44cf322569e4e
+}
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+Then try to connect with 
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>wpa_supplicant -Dwext -iwlan0 -cwpa.conf
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+The -D is for the driver, wext being the standard wireless driver, the
+-i is for the card.  If your card is eth1 rather than wlan0, use that
+for the -i portion.  The -c refers to the configuration file that you
+just created. </p><p>
+Again, the hope is that you will see you are connected. If so, then once
+again, try to get an address with dhclient. </p><p>
+
+If these tests work, then you know that the trouble isn't with the
+distribution identifying your card, and that the trouble is more likely
+to be with its GUI configuration tools.  </p><p>
+
+If that's the case, you can try to fix that.  Often, an update will fix
+what is broken, but not always.  The other option is to continue to use
+command line tools to activate and use your wireless.  For RedHat based
+systems, I have a <a href="https://srobb.net/rhwireless.html">page</a> on using 
+wpa_supplicant, that has a link to a more detailed page on it.  The
+information, while RH system-centric, should be applicable to most
+distributions. </p><p> 
+
+If some of these tests fail, then, to repeat myself, the problem is more
+likely to be with the drivers for the card, and you are most likely to
+get help by posting on your distribution's forums, remembering to put
+the card model in the subject line of your post.</p><p>
+</p><h3> Wired Connections</h3>
+Once again, remove NetworkManager from the picture with 
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>chkconfig NetworkManager off
+</pre>
+</td>
+</tr>
+</tbody></table>
+<p>
+Reboot and see if you can bring up your card.  Fedora is, I believe,
+planning to change the name from the familar eth0 to something like pci0
+or the like, a solution which a slashdot comment called overcomplicated
+and unnecessary, which, IMNSHO, describes a great many Fedora decisions.
+However, let us assume for the moment that the card is called eth0.
+We'll do this in a series of commands, which gives us more of a chance
+to see if anything's wrong.   That is, rather than ifup, which will, in
+theory bring up the card and give it a dhcp address, we'll separate the
+steps.
+
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>ifconfig up eth0
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+If your card normally gets its address through a DHCP server, now run 
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>dhclient -v eth0
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+The -v is for verbose.  (It's not mentioned in the man page, but this is
+a Linux man page so one doesn't expect it to be done well), and may give
+you a hint about what, if anything is going wrong. </p><p>
+If you don't use DHCP but give it a static IP address, you can use the
+ip command, which is supposed to replace ifconfig.  I have a <a href="https://srobb.net/ip.html">page about it</a>, but the syntax is quite simple.  It's
+probably necessary to first bring up eth0 with ifconfig eth0 up.  Then,
+assuming you have a 192.168.1.x network, with a router of 192.168.1.1,
+and plan to give the machine the address of 192.168.1.20 
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>ip addr add 192.168.1.20/24 dev eth0
+ip route add 192.168.1.0/24 dev eth0
+ip route add default via 192.168.1.1	 
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+If you've been using a static address, your /etc/resolv.conf probably
+already has entries, otherwise, add a DNS server.  You can always use
+opendns.  If you need to add an entry, the syntax is
+<table border="0" bgcolor="#E8E8E8">
+<tbody><tr>
+<td>
+<pre>nameserver 208.67.222.222
+</pre>
+</td>
+</tr>
+</tbody></table>
+</p><p>
+(That entry is for opendns' server.)
+
+</p><center><script language="JavaScript">
+if (Date.parse(document.lastModified) > 0) {
+document.write ('<b>last modified: </b>' + document.lastModified +'<p>');
+}
+document.write('<b> url:</b>' + document.location.href + '</font><p>');
+</script><b>last modified: </b>07/26/2016 09:59:54<p><b> url:</b>https://srobb.net/wireless.html</p><p>
+</p><hr width="60%" align="center"><p>
+
+
+
+
+
+</p></center></body></html>

@@ -1,0 +1,1399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0152)https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common" class="chrometwo supports flexbox cssanimations csstransforms csstransforms3d chrometwoComplete gr__access_redhat_com legacy-portal" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><!--[if IEMobile]><meta http-equiv="cleartype" content="on"><![endif]--><!-- metaInclude --><meta name="avalon-host-info" content="kcs03.web.prod.ext.phx2.redhat.com"><meta name="avalon-version" content="2574217"><meta name="cp-chrome-build-date" content="2017-02-17T19:13:15.249Z"><meta name="viewport" content="width=device-width, initial-scale=1"><!-- Chrome, Firefox OS and Opera --><meta name="theme-color" content="#000000"><!-- Windows Phone --><meta name="msapplication-navbutton-color" content="#000000"><!-- iOS Safari --><meta name="apple-mobile-web-app-status-bar-style" content="#000000"><link rel="manifest" href="https://access.redhat.com/webassets/avalon/j/manifest.json"><!-- cssInclude --><link rel="shortcut icon" href="https://access.redhat.com/webassets/avalon/g/favicon.ico"><link media="all" rel="stylesheet" type="text/css" href="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/legacy.css"><link media="all" rel="stylesheet" type="text/css" href="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/bootstrap.css"><link media="all" rel="stylesheet" type="text/css" href="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/main.css"><link media="all" rel="stylesheet" type="text/css" href="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/components.css"><link media="all" rel="stylesheet" type="text/css" href="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/pages.css"><link href="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/chosen.css" rel="stylesheet" type="text/css"><!--[if lte IE 9]><link media="all" rel="stylesheet" type="text/css" href="https://access.redhat.com/chrome_themes/nimbus/css/ie.css" /><![endif]--><noscript>&lt;style type="text/css" media="screen"&gt; .primary-nav { display: block; } &lt;/style&gt;</noscript><!-- /cssInclude --><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]><script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script><script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><script src="https://access.redhat.com/chrome_themes/nimbus/js/ie8.js"></script><![endif]--><title>2.3.&nbsp;Using the NetworkManager Command Line Tool, nmcli</title><meta name="generator" content="publican v4.3.2"><meta name="package" content="Red_Hat_Enterprise_Linux-Networking_Guide-7-en-US-0.9-30"><link rel="stylesheet" type="text/css" href="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/chrome.css"><link rel="stylesheet" type="text/css" href="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/db4.css"><link rel="stylesheet" type="text/css" href="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/brand.css"><link rel="stylesheet" type="text/css" href="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/print.css" media="print"><link rel="stylesheet" type="text/css" href="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/site_overrides.css"><script type="text/javascript" src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/labels.js"></script><script type="text/javascript" src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/highlight.pack.js"></script><link rel="home" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/index.html" title="Networking Guide"><link rel="up" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_IP_Networking.html" title="Chapter 2. Configure IP Networking"><link rel="prev" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Text_User_Interface_nmtui.html" title="2.2. Using the Text User Interface, nmtui"><link rel="next" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Command_Line_Interface.html" title="2.4. Using the Command Line Interface (CLI)"><link rel="copyright" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ln-idp17782424.html" title="Legal Notice"><link rel="stylesheet" href="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/chrometwo.css"><script src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/require.js"></script><script type="text/javascript" src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/toc.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://access.redhat.com/webassets/avalon/j/lib/require-css/require.css.min.js" src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/require.css.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ieSVGfix" src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/ieSVGfix.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="dtm" src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/dtm.js"></script><script type="text/javascript" id="s_s:0:Integrate:s_2_Integrate_Demandbase_get_0" defer="" src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/ip.js"></script></head><body class="chrometwo  en loggedOut" data-gr-c-s-loaded="true"><div id="page-wrap" class="page-wrap"><div class="top-page-wrap"><!--googleoff: all--><header class="masthead" id="masthead"><!-- Accessibility Nav & Header --><div class="accessibility-nav sr-only"><a href="https://access.redhat.com/"><h1>Red Hat <span>Customer </span><span>Portal</span></h1></a><p><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#cp-main">Skip to main content</a></p><nav aria-labelledby="accessibility-nav-heading"><h2 id="accessibility-nav-heading">Main Navigation</h2><ul><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Products &amp; Services</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products">View All Products</a></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Infrastructure and Management</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products/red-hat-enterprise-linux/">Red Hat Enterprise Linux</a></li><li><a href="https://access.redhat.com/products/red-hat-virtualization/">Red Hat Virtualization</a></li><li><a href="https://access.redhat.com/products/identity-management/">Red Hat Identity Management</a></li><li><a href="https://access.redhat.com/products/red-hat-directory-server/">Red Hat Directory Server</a></li><li><a href="https://access.redhat.com/products/red-hat-certificate-system/">Red Hat Certificate System</a></li><li><a href="https://access.redhat.com/products/red-hat-satellite/">Red Hat Satellite</a></li><li><a href="https://access.redhat.com/products/red-hat-subscription-management/">Red Hat Subscription Management</a></li><li><a href="https://access.redhat.com/products/red-hat-update-infrastructure/">Red Hat Update Infrastructure</a></li><li><a href="https://access.redhat.com/insights/info/?intcmp=mm|p|im|rhaijan2016&amp;">Red Hat Insights</a></li><li><a href="https://access.redhat.com/products/ansible-tower-red-hat/">Ansible Tower by Red Hat</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Cloud Computing</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products/red-hat-cloudforms/">Red Hat CloudForms</a></li><li><a href="https://access.redhat.com/products/red-hat-openstack-platform/">Red Hat OpenStack Platform</a></li><li><a href="https://access.redhat.com/products/red-hat-cloud-infrastructure/">Red Hat Cloud Infrastructure</a></li><li><a href="https://access.redhat.com/products/red-hat-cloud-suite/">Red Hat Cloud Suite</a></li><li><a href="https://access.redhat.com/products/red-hat-openshift-container-platform/">Red Hat OpenShift Container Platform</a></li><li><a href="https://access.redhat.com/products/openshift-online-red-hat/">Red Hat OpenShift Online</a></li><li><a href="https://access.redhat.com/products/openshift-dedicated-red-hat/">Red Hat OpenShift Dedicated</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Storage</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products/red-hat-storage/">Red Hat Gluster Storage</a></li><li><a href="https://access.redhat.com/products/red-hat-ceph-storage/">Red Hat Ceph Storage</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>JBoss Development and Management</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform/">Red Hat JBoss Enterprise Application Platform</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-data-grid/">Red Hat JBoss Data Grid</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-web-server/">Red Hat JBoss Web Server</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-portal/">Red Hat JBoss Portal</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-operations-network/">Red Hat JBoss Operations Network</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-developer-studio/">Red Hat JBoss Developer Studio</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>JBoss Integration and Automation</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-data-virtualization/">Red Hat JBoss Data Virtualization</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-fuse/">Red Hat JBoss Fuse</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-a-mq/">Red Hat JBoss A-MQ</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-bpm-suite/">Red Hat JBoss BPM Suite</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-brms/">Red Hat JBoss BRMS</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Mobile</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products/red-hat-mobile-application-platform/">Red Hat Mobile Application Platform</a></li></ul></li><li class="heading">Services</li><li><a href="https://access.redhat.com/products/Consulting/">Consulting</a></li><li><a href="https://access.redhat.com/support/offerings/tam/">Technical Account Management</a></li><li><a href="https://access.redhat.com/products/training-certifications/">Training &amp; Certifications</a></li><li><a href="https://access.redhat.com/products/Red_Hat_Enterprise_Linux/Developer/">Red Hat Enterprise Linux Developer Program</a></li><li class="heading">Support</li><li><a class="cta-link" href="https://access.redhat.com/support/">Get Support</a></li><li><a href="https://access.redhat.com/support/offerings/production/">Production Support</a></li><li><a href="https://access.redhat.com/support/offerings/developer/">Development Support</a></li><li><a href="https://access.redhat.com/support/policy/update_policies/">Product Life Cycle &amp; Update Policies</a></li><li class="heading">Knowledge</li><li><a class="cta-link" href="https://access.redhat.com/search/">Search</a></li><li><a href="https://access.redhat.com/documentation/">Documentation</a></li><li><a href="https://access.redhat.com/search/#/knowledgebase">Knowledgebase</a></li><li><a href="https://access.redhat.com/search/#/videos">Videos</a></li><li><a href="https://access.redhat.com/search/#/discussions">Discussions</a></li><li class="heading">Ecosystem</li><li><a class="cta-link" href="https://access.redhat.com/ecosystem/search/#/ecosystem">Browse Certified Solutions</a></li><li><a href="https://access.redhat.com/ecosystem/">Overview</a></li><li><a href="https://access.redhat.com/ecosystem/partner-resources">Partner Resources</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Tools</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li class="heading">Red Hat Insights</li><li><a href="https://access.redhat.com/insights/info/?intcmp=mm|t|c1|rhaidec2015&amp;">Learn More</a></li><li class="heading">Red Hat Access Labs</li><li><a href="https://access.redhat.com/labs/">Explore Labs</a></li><li><a href="https://access.redhat.com/labs/#?type=config">Configuration</a></li><li><a href="https://access.redhat.com/labs/#?type=deploy">Deployment</a></li><li><a href="https://access.redhat.com/labs/#?type=troubleshoot">Troubleshooting</a></li><li><a href="https://access.redhat.com/labs/#?type=security">Security</a></li><li class="heading">Additional Tools</li><li><a href="https://access.redhat.com/products/red-hat-access/">Red Hat Access plug-ins</a></li><li><a href="https://access.redhat.com/tools/satcert/">Red Hat Satellite Certificate Tool</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Security</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/security/">Product Security Center</a></li><li class="heading">Security Updates</li><li><a href="https://access.redhat.com/security/security-updates/#/security-advisories">Security Advisories</a></li><li><a href="https://access.redhat.com/security/security-updates/#/cve">Red Hat CVE Database</a></li><li><a href="https://access.redhat.com/security/security-updates/#/security-labs">Security Labs</a></li><li class="heading">Resources</li><li><a href="https://access.redhat.com/security/overview/">Overview</a></li><li><a href="https://access.redhat.com/blogs/product-security">Security Blog</a></li><li><a href="https://www.redhat.com/security/data/metrics/">Security Measurement</a></li><li><a href="https://access.redhat.com/security/updates/classification/">Severity Ratings</a></li><li><a href="https://access.redhat.com/security/updates/backporting/">Backporting Policies</a></li><li><a href="https://access.redhat.com/security/team/key/">Product Signing (GPG) Keys</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Community</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li class="heading">Discussions</li><li><a href="https://access.redhat.com/discussions?product=25&amp;category=All&amp;tags=All">Red Hat Enterprise Linux</a></li><li><a href="https://access.redhat.com/discussions?product=8163&amp;category=All&amp;tags=All">Red Hat Virtualization</a></li><li><a href="https://access.redhat.com/discussions?product=36&amp;category=All&amp;tags=All">Red Hat Satellite</a></li><li><a href="https://access.redhat.com/discussions?product=22&amp;category=All&amp;tags=All">Customer Portal</a></li><li><a href="https://access.redhat.com/groups/">Private Groups</a></li><li><a href="https://access.redhat.com/discussions?keyword=&amp;name=&amp;product=All&amp;category=All&amp;tags=All">All Discussions</a></li><li><a href="https://access.redhat.com/node/add/discussion">Start a Discussion</a></li><li class="heading">Blogs</li><li><a href="https://access.redhat.com/blogs/767163">Customer Portal</a></li><li><a href="https://access.redhat.com/blogs/766093">Red Hat Product Security</a></li><li><a href="https://access.redhat.com/blogs/759303">Red Hat Access Labs</a></li><li><a href="https://access.redhat.com/blogs/insights/">Red Hat Insights</a></li><li><a href="https://access.redhat.com/blogs/">All Blogs</a></li><li class="heading">Customer Events</li><li><a href="https://access.redhat.com/convergence/">Red Hat Convergence</a></li><li><a href="http://www.redhat.com/summit/">Red Hat Summit</a></li><li class="heading">Stories</li><li><a href="https://access.redhat.com/subscription-value/">Red Hat Subscription Value</a></li><li><a href="https://access.redhat.com/you-asked-we-acted/">You Asked. We Acted.</a></li><li><a href="http://www.redhat.com/en/open-source">Open Source Communities</a></li></ul></li><li><a href="https://access.redhat.com/management/">Subscriptions</a></li><li><a href="https://access.redhat.com/downloads/">Downloads</a></li><li><a href="https://access.redhat.com/support/cases/">Support Cases</a></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Account</span></a><ul class="utility mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li class="mobile-accountLinksLoggedOut unauthenticated" style="display: block;"><a href="https://access.redhat.com/login?redirectTo=https%3A%2F%2Faccess.redhat.com%2Fdocumentation%2Fen-US%2FRed_Hat_Enterprise_Linux%2F7%2Fhtml%2FNetworking_Guide%2Fsec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="accessibility-accountLogin">Log In</a></li><li class="mobile-accountLinksLoggedOut unauthenticated" style="display: block;"><a href="https://www.redhat.com/wapps/ugc/register.html">Register</a></li><li class="mobile-accountLinksLoggedIn authenticated"><div class="account-info" id="accessibility-accountUser"><div class="account-name"><strong id="accessibility-userFullName"></strong></div><div class="account-org"><span id="accessibility-userOrg"></span></div><div class="account-number mobile-accountNumber"><span class="property">Red Hat Account Number:</span><span class="value"></span></div></div></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://www.redhat.com/wapps/ugc/protected/personalInfo.html">Account Details</a></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://www.redhat.com/wapps/ugc/protected/prefs.html">Newsletter and Contact Preferences</a></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://www.redhat.com/wapps/ugc/protected/usermgt/userList.html">User Management</a></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://www.redhat.com/wapps/ugc/protected/account.html">Account Maintenance</a></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://access.redhat.com/user">My Profile</a></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://access.redhat.com/user" id="accessibility-userNotificationsLink">Notifications</a></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://access.redhat.com/help/">Help</a></li><li class="logout mobile-accountLinksLoggedIn authenticated"><a href="https://www.redhat.com/wapps/sso/logout.html?redirect=https://access.redhat.com/logout">Log Out</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Language</span></a><ul class="utility mm-hide" id="accessibility-localesMenu"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/changeLanguage?language=en&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="accessibility-en">English</a></li><li><a href="https://access.redhat.com/changeLanguage?language=es&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="accessibility-es">español</a></li><li><a href="https://access.redhat.com/changeLanguage?language=de&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="accessibility-de">Deutsch</a></li><li><a href="https://access.redhat.com/changeLanguage?language=it&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="accessibility-it">italiano</a></li><li><a href="https://access.redhat.com/changeLanguage?language=ko&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="accessibility-ko">한국어</a></li><li><a href="https://access.redhat.com/changeLanguage?language=fr&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="accessibility-fr">français</a></li><li><a href="https://access.redhat.com/changeLanguage?language=ja&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="accessibility-ja">日本語</a></li><li><a href="https://access.redhat.com/changeLanguage?language=pt&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="accessibility-pt">português</a></li><li><a href="https://access.redhat.com/changeLanguage?language=zh_CN&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="accessibility-zh_CN">中文 (中国)</a></li><li><a href="https://access.redhat.com/changeLanguage?language=ru&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="accessibility-ru">русский</a></li></ul></li></ul></nav></div><!-- Mobile Header --><nav class="mobile-nav-bar hidden-sm hidden-md hidden-lg" aria-hidden="true"><button id="menu-btn" class="menu menu-white" type="button" aria-label="Toggle Navigation"><span class="lines"></span></button><a class="logo" href="https://access.redhat.com/"><span class="logo-crop"><img src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/l_redhat-lg.png" alt="Red Hat Logo" title="Red Hat"></span><span class="site-title"><span>Customer </span><span>Portal</span></span></a><button class="btn btn-search btn-utility" data-target="#site-search"><span class="web-icon-search"></span><span class="link-text">Search</span></button></nav><!-- Mobile Menu Drawer --><div class="nav-drawer-backdrop"></div><div class="nav-drawer mobile-nav-drawer hidden-sm hidden-md hidden-lg" aria-hidden="true"><nav class="nav-container"><ul><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Products &amp; Services</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products">View All Products</a></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Infrastructure and Management</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products/red-hat-enterprise-linux/">Red Hat Enterprise Linux</a></li><li><a href="https://access.redhat.com/products/red-hat-virtualization/">Red Hat Virtualization</a></li><li><a href="https://access.redhat.com/products/identity-management/">Red Hat Identity Management</a></li><li><a href="https://access.redhat.com/products/red-hat-directory-server/">Red Hat Directory Server</a></li><li><a href="https://access.redhat.com/products/red-hat-certificate-system/">Red Hat Certificate System</a></li><li><a href="https://access.redhat.com/products/red-hat-satellite/">Red Hat Satellite</a></li><li><a href="https://access.redhat.com/products/red-hat-subscription-management/">Red Hat Subscription Management</a></li><li><a href="https://access.redhat.com/products/red-hat-update-infrastructure/">Red Hat Update Infrastructure</a></li><li><a href="https://access.redhat.com/insights/info/?intcmp=mm|p|im|rhaijan2016&amp;">Red Hat Insights</a></li><li><a href="https://access.redhat.com/products/ansible-tower-red-hat/">Ansible Tower by Red Hat</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Cloud Computing</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products/red-hat-cloudforms/">Red Hat CloudForms</a></li><li><a href="https://access.redhat.com/products/red-hat-openstack-platform/">Red Hat OpenStack Platform</a></li><li><a href="https://access.redhat.com/products/red-hat-cloud-infrastructure/">Red Hat Cloud Infrastructure</a></li><li><a href="https://access.redhat.com/products/red-hat-cloud-suite/">Red Hat Cloud Suite</a></li><li><a href="https://access.redhat.com/products/red-hat-openshift-container-platform/">Red Hat OpenShift Container Platform</a></li><li><a href="https://access.redhat.com/products/openshift-online-red-hat/">Red Hat OpenShift Online</a></li><li><a href="https://access.redhat.com/products/openshift-dedicated-red-hat/">Red Hat OpenShift Dedicated</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Storage</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products/red-hat-storage/">Red Hat Gluster Storage</a></li><li><a href="https://access.redhat.com/products/red-hat-ceph-storage/">Red Hat Ceph Storage</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>JBoss Development and Management</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform/">Red Hat JBoss Enterprise Application Platform</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-data-grid/">Red Hat JBoss Data Grid</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-web-server/">Red Hat JBoss Web Server</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-portal/">Red Hat JBoss Portal</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-operations-network/">Red Hat JBoss Operations Network</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-developer-studio/">Red Hat JBoss Developer Studio</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>JBoss Integration and Automation</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-data-virtualization/">Red Hat JBoss Data Virtualization</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-fuse/">Red Hat JBoss Fuse</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-a-mq/">Red Hat JBoss A-MQ</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-bpm-suite/">Red Hat JBoss BPM Suite</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-brms/">Red Hat JBoss BRMS</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Mobile</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/products/red-hat-mobile-application-platform/">Red Hat Mobile Application Platform</a></li></ul></li><li class="heading">Services</li><li><a href="https://access.redhat.com/products/Consulting/">Consulting</a></li><li><a href="https://access.redhat.com/support/offerings/tam/">Technical Account Management</a></li><li><a href="https://access.redhat.com/products/training-certifications/">Training &amp; Certifications</a></li><li><a href="https://access.redhat.com/products/Red_Hat_Enterprise_Linux/Developer/">Red Hat Enterprise Linux Developer Program</a></li><li class="heading">Support</li><li><a class="cta-link" href="https://access.redhat.com/support/">Get Support</a></li><li><a href="https://access.redhat.com/support/offerings/production/">Production Support</a></li><li><a href="https://access.redhat.com/support/offerings/developer/">Development Support</a></li><li><a href="https://access.redhat.com/support/policy/update_policies/">Product Life Cycle &amp; Update Policies</a></li><li class="heading">Knowledge</li><li><a class="cta-link" href="https://access.redhat.com/search/">Search</a></li><li><a href="https://access.redhat.com/documentation/">Documentation</a></li><li><a href="https://access.redhat.com/search/#/knowledgebase">Knowledgebase</a></li><li><a href="https://access.redhat.com/search/#/videos">Videos</a></li><li><a href="https://access.redhat.com/search/#/discussions">Discussions</a></li><li class="heading">Ecosystem</li><li><a class="cta-link" href="https://access.redhat.com/ecosystem/search/#/ecosystem">Browse Certified Solutions</a></li><li><a href="https://access.redhat.com/ecosystem/">Overview</a></li><li><a href="https://access.redhat.com/ecosystem/partner-resources">Partner Resources</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Tools</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li class="heading">Red Hat Insights</li><li><a href="https://access.redhat.com/insights/info/?intcmp=mm|t|c1|rhaidec2015&amp;">Learn More</a></li><li class="heading">Red Hat Access Labs</li><li><a href="https://access.redhat.com/labs/">Explore Labs</a></li><li><a href="https://access.redhat.com/labs/#?type=config">Configuration</a></li><li><a href="https://access.redhat.com/labs/#?type=deploy">Deployment</a></li><li><a href="https://access.redhat.com/labs/#?type=troubleshoot">Troubleshooting</a></li><li><a href="https://access.redhat.com/labs/#?type=security">Security</a></li><li class="heading">Additional Tools</li><li><a href="https://access.redhat.com/products/red-hat-access/">Red Hat Access plug-ins</a></li><li><a href="https://access.redhat.com/tools/satcert/">Red Hat Satellite Certificate Tool</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Security</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/security/">Product Security Center</a></li><li class="heading">Security Updates</li><li><a href="https://access.redhat.com/security/security-updates/#/security-advisories">Security Advisories</a></li><li><a href="https://access.redhat.com/security/security-updates/#/cve">Red Hat CVE Database</a></li><li><a href="https://access.redhat.com/security/security-updates/#/security-labs">Security Labs</a></li><li class="heading">Resources</li><li><a href="https://access.redhat.com/security/overview/">Overview</a></li><li><a href="https://access.redhat.com/blogs/product-security">Security Blog</a></li><li><a href="https://www.redhat.com/security/data/metrics/">Security Measurement</a></li><li><a href="https://access.redhat.com/security/updates/classification/">Severity Ratings</a></li><li><a href="https://access.redhat.com/security/updates/backporting/">Backporting Policies</a></li><li><a href="https://access.redhat.com/security/team/key/">Product Signing (GPG) Keys</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Community</span></a><ul class="mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li class="heading">Discussions</li><li><a href="https://access.redhat.com/discussions?product=25&amp;category=All&amp;tags=All">Red Hat Enterprise Linux</a></li><li><a href="https://access.redhat.com/discussions?product=8163&amp;category=All&amp;tags=All">Red Hat Virtualization</a></li><li><a href="https://access.redhat.com/discussions?product=36&amp;category=All&amp;tags=All">Red Hat Satellite</a></li><li><a href="https://access.redhat.com/discussions?product=22&amp;category=All&amp;tags=All">Customer Portal</a></li><li><a href="https://access.redhat.com/groups/">Private Groups</a></li><li><a href="https://access.redhat.com/discussions?keyword=&amp;name=&amp;product=All&amp;category=All&amp;tags=All">All Discussions</a></li><li><a href="https://access.redhat.com/node/add/discussion">Start a Discussion</a></li><li class="heading">Blogs</li><li><a href="https://access.redhat.com/blogs/767163">Customer Portal</a></li><li><a href="https://access.redhat.com/blogs/766093">Red Hat Product Security</a></li><li><a href="https://access.redhat.com/blogs/759303">Red Hat Access Labs</a></li><li><a href="https://access.redhat.com/blogs/insights/">Red Hat Insights</a></li><li><a href="https://access.redhat.com/blogs/">All Blogs</a></li><li class="heading">Customer Events</li><li><a href="https://access.redhat.com/convergence/">Red Hat Convergence</a></li><li><a href="http://www.redhat.com/summit/">Red Hat Summit</a></li><li class="heading">Stories</li><li><a href="https://access.redhat.com/subscription-value/">Red Hat Subscription Value</a></li><li><a href="https://access.redhat.com/you-asked-we-acted/">You Asked. We Acted.</a></li><li><a href="http://www.redhat.com/en/open-source">Open Source Communities</a></li></ul></li><li><a href="https://access.redhat.com/management/">Subscriptions</a></li><li><a href="https://access.redhat.com/downloads/">Downloads</a></li><li><a href="https://access.redhat.com/support/cases/">Support Cases</a></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Account</span></a><ul class="utility mm-hide"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li class="mobile-accountLinksLoggedOut unauthenticated" style="display: block;"><a href="https://access.redhat.com/login?redirectTo=https%3A%2F%2Faccess.redhat.com%2Fdocumentation%2Fen-US%2FRed_Hat_Enterprise_Linux%2F7%2Fhtml%2FNetworking_Guide%2Fsec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="mobile-accountLogin">Log In</a></li><li class="mobile-accountLinksLoggedOut unauthenticated" style="display: block;"><a href="https://www.redhat.com/wapps/ugc/register.html">Register</a></li><li class="mobile-accountLinksLoggedIn authenticated"><div class="account-info" id="mobile-accountUser"><div class="account-name"><strong id="mobile-userFullName"></strong></div><div class="account-org"><span id="mobile-userOrg"></span></div><div class="account-number mobile-accountNumber"><span class="property">Red Hat Account Number:</span><span class="value"></span></div></div></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://www.redhat.com/wapps/ugc/protected/personalInfo.html">Account Details</a></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://www.redhat.com/wapps/ugc/protected/prefs.html">Newsletter and Contact Preferences</a></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://www.redhat.com/wapps/ugc/protected/usermgt/userList.html">User Management</a></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://www.redhat.com/wapps/ugc/protected/account.html">Account Maintenance</a></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://access.redhat.com/user">My Profile</a></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://access.redhat.com/user" id="mobile-userNotificationsLink">Notifications</a></li><li class="mobile-accountLinksLoggedIn authenticated"><a href="https://access.redhat.com/help/">Help</a></li><li class="logout mobile-accountLinksLoggedIn authenticated"><a href="https://www.redhat.com/wapps/sso/logout.html?redirect=https://access.redhat.com/logout">Log Out</a></li></ul></li><li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="has-subnav"><span>Language</span></a><ul class="utility mm-hide" id="mobile-localesMenu"><li aria-hidden="true"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#" class="back">Back</a></li><li><a href="https://access.redhat.com/changeLanguage?language=en&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="mobile-en" class="selected">English</a></li><li><a href="https://access.redhat.com/changeLanguage?language=es&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="mobile-es">español</a></li><li><a href="https://access.redhat.com/changeLanguage?language=de&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="mobile-de">Deutsch</a></li><li><a href="https://access.redhat.com/changeLanguage?language=it&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="mobile-it">italiano</a></li><li><a href="https://access.redhat.com/changeLanguage?language=ko&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="mobile-ko">한국어</a></li><li><a href="https://access.redhat.com/changeLanguage?language=fr&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="mobile-fr">français</a></li><li><a href="https://access.redhat.com/changeLanguage?language=ja&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="mobile-ja">日本語</a></li><li><a href="https://access.redhat.com/changeLanguage?language=pt&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="mobile-pt">português</a></li><li><a href="https://access.redhat.com/changeLanguage?language=zh_CN&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="mobile-zh_CN">中文 (中国)</a></li><li><a href="https://access.redhat.com/changeLanguage?language=ru&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="mobile-ru">русский</a></li></ul></li></ul></nav></div><!-- White Utility Menu for large screens --><div class="utility-wrap" aria-hidden="true"><div class="utility-container"><div class="utility-bar visible-sm visible-md visible-lg"><div role="navigation" class="top-nav"><ul><li id="nav-subscription" data-portal-tour-1="1"><a class="top-nav-subscriptions" href="https://access.redhat.com/management/">Subscriptions</a></li><li id="nav-downloads" data-portal-tour-1="2"><a class="top-nav-downloads" href="https://access.redhat.com/downloads/">Downloads</a></li><li id="nav-support" data-portal-tour-1="3"><a class="top-nav-support-cases" href="https://access.redhat.com/support/cases/">Support Cases</a></li></ul></div><div role="navigation" class="utility-nav"><ul><li><a class="btn-search" data-target="#site-search" title="Search"><span class="web-icon-search"></span><span class="link-text">Search</span></a></li><li><a class="btn-profile" data-target="#account-info" data-portal-tour-1="4a" title="Account"><span class="web-icon-user"></span><span class="link-text">Account</span><span class="account-user" id="accountUserName"></span></a></li><li><a class="btn-language" data-target="#language" data-portal-tour-1="6" title="Language"><span class="web-icon-globe"></span><span class="link-text">Language</span></a></li></ul></div></div><!-- Utility Tray --><div class="utility-tray-container"><div class="utility-tray"><div id="site-search" class="utility-link site-search"><div class="content"><form class="ng-pristine ng-valid topSearchForm" id="topSearchForm" name="topSearchForm" action="https://access.redhat.com/search/browse/search/" method="get" enctype="application/x-www-form-urlencoded"><div class="input-group"><input class="form-control searchField" id="topSearchInput" name="keyword" value="" placeholder="Enter Your Search Term" type="text"><span class="input-group-btn"><button type="submit" class="btn btn-primary">Search</button></span></div></form></div></div><div id="account-info" class="utility-link account-info"><div class="content"><!-- Account Unauthenticated --><div id="accountLinksLoggedOut" class="unauthenticated" style="display: block;"><h2 class="utility-header">Log in to Your Red Hat Account</h2><div class="row col-border-row"><div class="col-sm-6 col-border"><p><a href="https://access.redhat.com/login?redirectTo=https%3A%2F%2Faccess.redhat.com%2Fdocumentation%2Fen-US%2FRed_Hat_Enterprise_Linux%2F7%2Fhtml%2FNetworking_Guide%2Fsec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" id="accountLogin" class="btn btn-primary">Log In</a></p><p>Your Red Hat account gives you access to your profile, preferences, and services, depending on your status.</p></div><div class="col-sm-6 col-border col-border-left"><p><a href="https://www.redhat.com/wapps/ugc/register.html" class="btn btn-primary">Register</a></p><p>If you are a new customer, register now for access to product evaluations and purchasing capabilities. </p><strong>Need access to an account?</strong><p>If your company has an existing Red Hat account, your organization administrator can grant you access.</p><p><a href="https://access.redhat.com/support/contact/customerService/">If you have any questions, please contact customer service.</a></p></div></div></div><!-- Account Authenticated --><div id="accountLinksLoggedIn" class="authenticated"><h2 class="utility-header"><span id="userFirstName"></span></h2><div class="row col-border-row"><div class="col-sm-6 col-border col-border-right"><div class="account-info" id="accountUser"><div class="avatar"><!-- placeholder--></div><div class="account-name"><strong id="userFullName"></strong></div><div class="account-org"><span id="userOrg"></span></div><div class="account-number accountNumber"><span class="property">Red Hat Account Number:</span><span class="value"></span></div></div><div class="row account-settings"><div class="col-md-6" data-portal-tour-1="4"><h3>Red Hat Account</h3><ul class="reset"><li><a href="https://www.redhat.com/wapps/ugc/protected/personalInfo.html">Account Details</a></li><li><a href="https://www.redhat.com/wapps/ugc/protected/prefs.html">Newsletter and Contact Preferences</a></li><li><a href="https://www.redhat.com/wapps/ugc/protected/usermgt/userList.html">User Management</a></li><li><a href="https://www.redhat.com/wapps/ugc/protected/account.html">Account Maintenance</a></li></ul></div><div class="col-md-6" data-portal-tour-1="5"><h3>Customer Portal</h3><ul class="reset"><li><a href="https://access.redhat.com/user">My Profile</a></li><li><a href="https://access.redhat.com/user" id="userNotificationsLink">Notifications</a></li><li><a href="https://access.redhat.com/help/">Help</a></li></ul></div></div></div><div class="col-sm-6 col-border"><p>For your security, if you’re on a public computer and have finished using your Red Hat services, please be sure to log out.</p><p><a href="https://www.redhat.com/wapps/sso/logout.html?redirect=https://access.redhat.com/logout" id="accountLogout" class="btn btn-primary">Log Out</a></p></div></div></div></div></div><div id="language" class="utility-link language"><div class="content"><h2 class="utility-header">Select Your Language</h2><div class="row" id="localesMenu"><div class="col-sm-4"><ul class="reset"><li><a href="https://access.redhat.com/changeLanguage?language=en&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" data-lang="en" id="en" class="selected">English</a></li><li><a href="https://access.redhat.com/changeLanguage?language=es&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" data-lang="es" id="es">español</a></li><li><a href="https://access.redhat.com/changeLanguage?language=de&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" data-lang="de" id="de">Deutsch</a></li><li><a href="https://access.redhat.com/changeLanguage?language=it&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" data-lang="it" id="it">italiano</a></li><li><a href="https://access.redhat.com/changeLanguage?language=ko&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" data-lang="ko" id="ko">한국어</a></li></ul></div><div class="col-sm-4"><ul class="reset"><li><a href="https://access.redhat.com/changeLanguage?language=fr&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" data-lang="fr" id="fr">français</a></li><li><a href="https://access.redhat.com/changeLanguage?language=ja&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" data-lang="ja" id="ja">日本語</a></li><li><a href="https://access.redhat.com/changeLanguage?language=pt&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" data-lang="pt" id="pt">português</a></li><li><a href="https://access.redhat.com/changeLanguage?language=zh_CN&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" data-lang="zh_CN" id="zh_CN">中文 (中国)</a></li><li><a href="https://access.redhat.com/changeLanguage?language=ru&amp;redirectTo=https%3A//access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html" data-lang="ru" id="ru">русский</a></li></ul></div></div></div></div></div></div></div></div><div id="scroll-anchor"></div><!-- Main Menu for large screens --><div class="header-nav visible-sm visible-md visible-lg" aria-hidden="true"><div id="header-nav"><div class="container"><div class="row"><div class="col-xs-12"><a href="https://access.redhat.com/" class="logo"><span class="logo-crop"><img src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/l_redhat-lg.png" alt="Red Hat"></span><span class="site-title"><span>Customer </span><span>Portal</span></span></a><nav class="primary-nav" style="display: block;"><ul><li id="nav-products" class="on"><a class="products" data-link="mega" data-target="products-menu" href="https://access.redhat.com/products/" id="products-menu">Products &amp; Services</a></li><li id="nav-tools"><a class="tools" data-link="mega" data-target="tools-menu" href="https://access.redhat.com/labs/" id="tools-menu">Tools</a></li><li id="nav-security"><a class="security" data-link="mega" data-target="security-menu" href="https://access.redhat.com/security/" id="security-menu">Security</a></li><li id="nav-community"><a class="community" data-link="mega" data-target="community-menu" href="https://access.redhat.com/community/" id="community-menu">Community</a></li></ul></nav></div></div></div></div></div><!-- Main Mega Menu for large screens --><div class="mega-wrap visible-sm visible-md visible-lg" aria-hidden="true"><nav class="mega"><div class="container"><div class="mega-menu-wrap"><!-- Products Menu --><div aria-labelledby="products-menu" class="products-menu mega-menu" data-eh="mega-menu" role="navigation" style="height: 512px;"><div class="row"><div class="col-md-6 col-sm-8"><div class="root clearfix" data-portal-tour-1="7"><ul class="subnav subnav-root"><li data-target="infrastructure-menu" class="active"><a href="https://access.redhat.com/products/">Infrastructure and Management</a></li><li data-target="cloud-menu"><a href="https://access.redhat.com/products/">Cloud Computing</a></li><li data-target="storage-menu"><a href="https://access.redhat.com/products/">Storage</a></li><li data-target="jboss-dev-menu"><a href="https://access.redhat.com/products/">JBoss Development and Management</a></li><li data-target="jboss-int-menu"><a href="https://access.redhat.com/products/">JBoss Integration and Automation</a></li><li data-target="mobile-products-menu"><a href="https://access.redhat.com/products/">Mobile</a></li></ul><div class="subnav subnav-child" data-eh="subnav-child" data-menu-local="infrastructure-menu" style="display: block; height: 394px;"><ul><li><a href="https://access.redhat.com/products/red-hat-enterprise-linux/">Red Hat Enterprise Linux</a></li><li><a href="https://access.redhat.com/products/red-hat-virtualization/">Red Hat Virtualization</a></li><li><a href="https://access.redhat.com/products/identity-management/">Red Hat Identity Management</a></li><li><a href="https://access.redhat.com/products/red-hat-directory-server/">Red Hat Directory Server</a></li><li><a href="https://access.redhat.com/products/red-hat-certificate-system/">Red Hat Certificate System</a></li><li><a href="https://access.redhat.com/products/red-hat-satellite/">Red Hat Satellite</a></li><li><a href="https://access.redhat.com/products/red-hat-subscription-management/">Red Hat Subscription Management</a></li><li><a href="https://access.redhat.com/products/red-hat-update-infrastructure/">Red Hat Update Infrastructure</a></li><li><a href="https://access.redhat.com/products/red-hat-insights/">Red Hat Insights</a></li><li><a href="https://access.redhat.com/products/ansible-tower-red-hat/">Ansible Tower by Red Hat</a></li></ul></div><div class="subnav subnav-child" data-eh="subnav-child" data-menu-local="cloud-menu" style="height: 394px;"><ul><li><a href="https://access.redhat.com/products/red-hat-cloudforms/">Red Hat CloudForms</a></li><li><a href="https://access.redhat.com/products/red-hat-openstack-platform/">Red Hat OpenStack Platform</a></li><li><a href="https://access.redhat.com/products/red-hat-cloud-infrastructure/">Red Hat Cloud Infrastructure</a></li><li><a href="https://access.redhat.com/products/red-hat-cloud-suite/">Red Hat Cloud Suite</a></li><li><a href="https://access.redhat.com/products/red-hat-openshift-container-platform/">Red Hat OpenShift Container Platform</a></li><li><a href="https://access.redhat.com/products/openshift-online-red-hat/">Red Hat OpenShift Online</a></li><li><a href="https://access.redhat.com/products/openshift-dedicated-red-hat/">Red Hat OpenShift Dedicated</a></li></ul></div><div class="subnav subnav-child" data-eh="subnav-child" data-menu-local="storage-menu" style="height: 394px;"><ul><li><a href="https://access.redhat.com/products/red-hat-storage/">Red Hat Gluster Storage</a></li><li><a href="https://access.redhat.com/products/red-hat-ceph-storage/">Red Hat Ceph Storage</a></li></ul></div><div class="subnav subnav-child" data-eh="subnav-child" data-menu-local="jboss-dev-menu" style="height: 394px;"><ul><li><a href="https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform/">Red Hat JBoss Enterprise Application Platform</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-data-grid/">Red Hat JBoss Data Grid</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-web-server/">Red Hat JBoss Web Server</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-portal/">Red Hat JBoss Portal</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-operations-network/">Red Hat JBoss Operations Network</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-developer-studio/">Red Hat JBoss Developer Studio</a></li></ul></div><div class="subnav subnav-child" data-eh="subnav-child" data-menu-local="jboss-int-menu" style="height: 394px;"><ul><li><a href="https://access.redhat.com/products/red-hat-jboss-data-virtualization/">Red Hat JBoss Data Virtualization</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-fuse/">Red Hat JBoss Fuse</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-a-mq/">Red Hat JBoss A-MQ</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-bpm-suite/">Red Hat JBoss BPM Suite</a></li><li><a href="https://access.redhat.com/products/red-hat-jboss-brms/">Red Hat JBoss BRMS</a></li></ul></div><div class="subnav subnav-child" data-eh="subnav-child" data-menu-local="mobile-products-menu" style="height: 394px;"><ul><li><a href="https://access.redhat.com/products/red-hat-mobile-application-platform/">Red Hat Mobile Application Platform</a></li></ul></div></div><a href="https://access.redhat.com/products" class="btn btn-primary">View All Products</a></div><div class="col-md-6 col-sm-4 pull-right" data-portal-tour-1="8"><div class="row"><div class="col-md-6"><h3 class="nav-title">Support</h3><ul><li><a href="https://access.redhat.com/support/" class="cta-link">Get Support</a></li><li><a href="https://access.redhat.com/support/offerings/production/">Production Support</a></li><li><a href="https://access.redhat.com/support/offerings/developer/">Development Support</a></li><li><a href="https://access.redhat.com/support/policy/update_policies/">Product Life Cycle &amp; Update Policies</a></li></ul><h3 class="nav-title">Services</h3><ul><li><a href="https://access.redhat.com/products/Consulting/">Consulting</a></li><li><a href="https://access.redhat.com/support/offerings/tam/">Technical Account Management</a></li><li><a href="https://access.redhat.com/products/training-certifications/">Training &amp; Certifications</a></li><li><a href="https://access.redhat.com/products/Red_Hat_Enterprise_Linux/Developer/">Red Hat Enterprise Linux Developer Program</a></li></ul></div><div class="col-md-6"><h3 class="nav-title">Knowledge</h3><ul><li><a href="https://access.redhat.com/search/" class="cta-link">Search</a></li><li><a href="https://access.redhat.com/documentation/">Documentation</a></li><li><a href="https://access.redhat.com/search/#/knowledgebase">Knowledgebase</a></li><li><a href="https://access.redhat.com/search/#/videos">Videos</a></li><li><a href="https://access.redhat.com/search/#/discussions">Discussions</a></li></ul><h3 class="nav-title">Ecosystem</h3><ul><li><a href="https://access.redhat.com/ecosystem/search/#/ecosystem" class="cta-link">Browse Certified Solutions</a></li><li><a href="https://access.redhat.com/ecosystem">Overview</a></li><li><a href="https://access.redhat.com/ecosystem/partner-resources">Partner Resources</a></li></ul></div></div></div></div></div><!-- Tools Menu --><div aria-labelledby="tools-menu" class="tools-menu mega-menu" data-eh="mega-menu" role="navigation" style="height: 512px;"><div class="row" data-portal-tour-1="9"><div class="col-sm-12"><div class="row"><div class="col-sm-4"><h2 class="nav-title">Red Hat Access Labs</h2><p class="text-white">To help you use Red Hat products to their full potential, our engineers have developed a powerful set of tools to support your ongoing success.</p><p class="push-top"><a href="https://access.redhat.com/labs/" class="btn btn-primary">Explore Labs</a></p><ul class="list-flat"><li class="more-link"><a href="https://access.redhat.com/labs/#?type=config">Configuration</a></li><li class="more-link"><a href="https://access.redhat.com/labs/#?type=deploy">Deployment</a></li><li class="more-link"><a href="https://access.redhat.com/labs/#?type=troubleshoot">Troubleshooting</a></li><li class="more-link"><a href="https://access.redhat.com/labs/#?type=security">Security</a></li></ul></div><div class="col-sm-4"><h3 class="nav-title">Additional Tools</h3><ul><li><a href="https://access.redhat.com/products/red-hat-access/">Red Hat Access plug-ins</a></li><li><a href="https://access.redhat.com/tools/satcert/">Red Hat Satellite Certificate Tool</a></li></ul></div><div class="col-sm-4"><div class="card card-dark-grey"><h2 class="nav-title text-white">Red Hat Insights</h2><p class="text-white">Increase visibility into IT operations to detect and resolve technical issues before they impact your business.</p><ul class="list-flat"><li class="more-link"><a href="https://access.redhat.com/insights/info/?intcmp=mm|t|c1|rhaidec2015&amp;">Learn More</a></li></ul></div></div></div></div></div></div><!-- Security Menu --><div aria-labelledby="security-menu" class="security-menu mega-menu" data-eh="mega-menu" role="navigation" style="height: 512px;"><div class="row"><div class="col-sm-12 basic" data-portal-tour-1="10"><div class="row"><div class="col-sm-4"><h3 class="nav-title">Red Hat Product Security Center</h3><p class="text-white">Engage with our Red Hat Product Security team, access security updates, and ensure your environments are not exposed to any known security vulnerabilities.</p><p><a href="https://access.redhat.com/security/" class="btn btn-primary">Product Security Center</a></p></div><div class="col-sm-4"><h3 class="nav-title">Security Updates</h3><ul><li><a href="https://access.redhat.com/security/security-updates/#/security-advisories">Security Advisories</a></li><li><a href="https://access.redhat.com/security/security-updates/#/cve">Red Hat CVE Database</a></li><li><a href="https://access.redhat.com/security/security-updates/#/security-labs">Security Labs</a></li></ul><p class="text-white">Keep your systems secure with Red Hat's specialized responses for high-priority security vulnerabilities.</p><ul><li class="more-link"><a href="https://access.redhat.com/security/vulnerability">View Responses</a></li></ul></div><div class="col-sm-4"><h3 class="nav-title">Resources</h3><ul><li><a href="https://access.redhat.com/security/overview/">Overview</a></li><li><a href="https://access.redhat.com/blogs/product-security">Security Blog</a></li><li><a href="https://www.redhat.com/security/data/metrics/">Security Measurement</a></li><li><a href="https://access.redhat.com/security/updates/classification/">Severity Ratings</a></li><li><a href="https://access.redhat.com/security/updates/backporting/">Backporting Policies</a></li><li><a href="https://access.redhat.com/security/team/key/">Product Signing (GPG) Keys</a></li></ul></div></div></div></div></div><!-- Community Menu --><div aria-labelledby="community-menu" class="community-menu mega-menu" data-eh="mega-menu" role="navigation" style="height: 512px;"><div class="row"><div class="col-sm-12 basic" data-portal-tour-1="11"><div class="row"><div class="col-sm-3"><h3 class="nav-title">Discussions</h3><ul><li><a href="https://access.redhat.com/discussions?product=25&amp;category=All&amp;tags=All">Red Hat Enterprise Linux</a></li><li><a href="https://access.redhat.com/discussions?product=8163&amp;category=All&amp;tags=All">Red Hat Virtualization</a></li><li><a href="https://access.redhat.com/discussions?product=36&amp;category=All&amp;tags=All">Red Hat Satellite</a></li><li><a href="https://access.redhat.com/discussions?product=22&amp;category=All&amp;tags=All">Customer Portal</a></li><li><a href="https://access.redhat.com/groups/">Private Groups</a></li><li class="more-link"><a href="https://access.redhat.com/discussions?keyword=&amp;name=&amp;product=All&amp;category=All&amp;tags=All">All Discussions</a></li><li class="more-link"><a href="https://access.redhat.com/node/add/discussion">Start a Discussion</a></li></ul></div><div class="col-sm-3"><h3 class="nav-title">Blogs</h3><ul><li><a href="https://access.redhat.com/blogs/767163">Customer Portal</a></li><li><a href="https://access.redhat.com/blogs/766093">Red Hat Product Security</a></li><li><a href="https://access.redhat.com/blogs/759303">Red Hat Access Labs</a></li><li><a href="https://access.redhat.com/blogs/insights/">Red Hat Insights</a></li><li class="more-link"><a href="https://access.redhat.com/blogs/">All Blogs</a></li></ul></div><div class="col-sm-3"><h3 class="nav-title">Customer Events</h3><ul><li><a href="https://access.redhat.com/convergence/">Red Hat Convergence</a></li><li><a href="http://www.redhat.com/summit/">Red Hat Summit</a></li></ul></div><div class="col-sm-3"><h3 class="nav-title">Stories</h3><ul><li><a href="https://access.redhat.com/subscription-value/">Red Hat Subscription Value</a></li><li><a href="https://access.redhat.com/you-asked-we-acted/">You Asked. We Acted.</a></li><li><a href="http://www.redhat.com/en/open-source">Open Source Communities</a></li></ul></div></div></div><!--<a href="https://access.redhat.com/community/" class="btn btn-primary">Explore Community</a>--></div></div></div></div></nav></div><!--[if IE 8]><div class="portal-messages"><div class="alert alert-warning alert-portal alert-w-icon"><span class="icon-warning alert-icon" aria-hidden="true"></span>
+                    You are using an unsupported web browser. Update to a supported browser for the best experience. <a href="/announcements/2120951">Read the announcement</a>.
+                </div></div><![endif]--><!--[if IE 9]><div class="portal-messages"><div class="alert alert-warning alert-portal alert-w-icon"><span class="icon-warning alert-icon" aria-hidden="true"></span>
+                    As of March 1, 2016, the Red Hat Customer Portal will no longer support Internet Explorer 9. See our new <a href="/help/browsers">browser support policy</a> for more information.
+                </div></div><![endif]--><div id="site-section"></div><div class="breadcrumbs"><div id="breadcrumbs" class="container"><a href="https://access.redhat.com/support/">Support</a><a href="https://access.redhat.com/documentation/en-US/index.html">Product Documentation</a><div id="product_menu"><div>Red Hat Enterprise Linux</div><ul id="product_menu_list" class="hidden">
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Fuse_ESB/index.html">Fuse ESB</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Fuse_ESB_Enterprise/index.html">Fuse ESB Enterprise</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Fuse_IDE/index.html">Fuse IDE</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Fuse_Management_Console/index.html">Fuse Management Console</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Fuse_Message_Broker/index.html">Fuse Message Broker</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Fuse_MQ_Enterprise/index.html">Fuse MQ Enterprise</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_A-MQ/index.html">JBoss A-MQ</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Communications_Platform/index.html">JBoss Communications Platform</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Data_Grid/index.html">JBoss Data Grid</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Enterprise_Application_Platform/index.html">JBoss Enterprise Application Platform</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Enterprise_Application_Platform_Common_Criteria_Certification/index.html">JBoss Enterprise Application Platform Common Criteria Certification</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Enterprise_BRMS_Platform/index.html">JBoss Enterprise BRMS Platform</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Enterprise_Data_Services/index.html">JBoss Enterprise Data Services</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Enterprise_Portal_Platform/index.html">JBoss Enterprise Portal Platform</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Enterprise_SOA_Platform/index.html">JBoss Enterprise SOA Platform</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Enterprise_Web_Platform/index.html">JBoss Enterprise Web Platform</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Enterprise_Web_Server/index.html">JBoss Enterprise Web Server</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Fuse/index.html">JBoss Fuse</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Operations_Network/index.html">JBoss Operations Network</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/index.html">JBoss Portal Platform</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Web_Framework_Kit/index.html">JBoss Web Framework Kit</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/OpenShift_Enterprise/index.html">OpenShift Enterprise</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/OpenShift_Online/index.html">OpenShift Online</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Application_Stack/index.html">Red Hat Application Stack</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Ceph_Storage/index.html">Red Hat Ceph Storage</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Certificate_System/index.html">Red Hat Certificate System</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Certificate_System_Common_Criteria_Certification/index.html">Red Hat Certificate System Common Criteria Certification</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_CloudForms/index.html">Red Hat CloudForms</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Customer_Portal/index.html">Red Hat Customer Portal</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Developer_Toolset/index.html">Red Hat Developer Toolset</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Directory_Server/index.html">Red Hat Directory Server</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/index.html">Red Hat Enterprise Linux</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux_Atomic_Host/index.html">Red Hat Enterprise Linux Atomic Host</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux_for_Real_Time/index.html">Red Hat Enterprise Linux for Real Time</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux_Hardware_Certification/index.html">Red Hat Enterprise Linux Hardware Certification</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/index.html">Red Hat Enterprise Linux OpenStack Platform</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform_Certification/index.html">Red Hat Enterprise Linux OpenStack Platform Certification</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform_Certification_Test_Suite/index.html">Red Hat Enterprise Linux OpenStack Platform Certification Test Suite</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_MRG/index.html">Red Hat Enterprise MRG</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Virtualization/index.html">Red Hat Enterprise Virtualization</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Hardware_Certification/index.html">Red Hat Hardware Certification</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_HPC_Solution/index.html">Red Hat HPC Solution</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_A-MQ/index.html">Red Hat JBoss A-MQ</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_BPM_Suite/index.html">Red Hat JBoss BPM Suite</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_BRMS/index.html">Red Hat JBoss BPM Suite </a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Data_Grid/index.html">Red Hat JBoss Data Grid</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Data_Virtualization/index.html">Red Hat JBoss Data Virtualization</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/index.html">Red Hat JBoss Developer Studio</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/index.html">Red Hat JBoss Developer Studio Integration Stack</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Enterprise_Application_Platform_Common_Criteria_Certification/index.html">Red Hat JBoss Enterprise Application Platform Common Criteria Certification</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Fuse/index.html">Red Hat JBoss Fuse</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Fuse_Service_Works/index.html">Red Hat JBoss Fuse Service Works</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Migration_Toolkit/index.html">Red Hat JBoss Migration Toolkit</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Operations_Network/index.html">JBoss Operations Network </a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Portal/index.html">Red Hat JBoss Portal</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Web_Framework_Kit/index.html">Red Hat JBoss Web Framework Kit</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Web_Server/index.html">Red Hat JBoss Web Server</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Network/index.html">Red Hat Network</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Network_Satellite/index.html">Red Hat Network Satellite</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_OpenStack_Certification_Test_Suite/index.html">Red Hat OpenStack Certification Test Suite</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Satellite/index.html">Red Hat Satellite</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Software_Collections/index.html">Red Hat Software Collections</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Software_Test_Suite/index.html">Red Hat Software Test Suite</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Storage/index.html">Red Hat Gluster Storage </a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Subscription_Asset_Manager/index.html">Red Hat Subscription Asset Manager</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Subscription_Management/index.html">Red Hat Subscription Management</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Update_Infrastructure/index.html">Red Hat Update Infrastructure</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/v7_Hardware_Certification_Test_Suite/index.html">v7 Hardware Certification Test Suite</a></li>
+</ul></div><div id="version_menu"><div>7</div><ul id="version_menu_list" class="hidden">
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7-Beta/index.html">7.3 Beta </a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/index.html">7</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6-Beta/index.html">6.9 Beta </a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/index.html">6.8 </a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/5/index.html">5</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/4/index.html">4</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/3/index.html">3</a></li>
+  <li><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/2.1/index.html">2.1</a></li>
+</ul></div><div id="book_menu"><div>Networking Guide</div><ul id="book_menu_list" class="hidden">
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/7.0_Release_Notes/index.html">7.0 Release Notes</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/7.1_Release_Notes/index.html">7.1 Release Notes</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/7.2_Release_Notes/index.html">7.2 Release Notes</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/7.3_Release_Notes/index.html">7.3 Release Notes</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1328953">Building a Simple Apache Web Server in a Container</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1330533">Building a Simple Database Server in a Container</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1189123">Common administrative commands</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1351473">Converting virtual machines from other hypervisors to KVM with virt-v2v</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1353773">Creating a Kubernetes Cluster to Run Docker Formatted Container Images</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Desktop_Migration_and_Administration_Guide/index.html">Desktop Migration and Administration Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Developer_Guide/index.html">Developer Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/DM_Multipath/index.html">DM Multipath</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/rhel-atomic-cloud-init-faq">Frequently Asked Questions about cloud-init</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1198103">Get Started Orchestrating Containers with Kubernetes</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/881893">Get Started with Docker Formatted Container Images on Red Hat Systems</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/rhel-atomic-getting-started">Getting Started with Red Hat Enterprise Linux Atomic Host</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Global_File_System_2/index.html">Global File System 2</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/High_Availability_Add-On_Administration/index.html">High Availability Add-On Administration</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/High_Availability_Add-On_Overview/index.html">High Availability Add-On Overview</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/High_Availability_Add-On_Reference/index.html">High Availability Add-On Reference</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1211223">How do I migrate from Red Hat Enterprise Linux 5 to 7?</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/index.html">Installation Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1353593">Introduction to Linux Containers</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Kernel_Crash_Dump_Guide/index.html">Kernel Crash Dump Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/labs/linterfordockerfile/">Linter for Dockerfile</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1365153">Linux Containers with libvirt-lxc (deprecated)</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Linux_Domain_Identity_Authentication_and_Policy_Guide/index.html">Linux Domain Identity, Authentication, and Policy Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Load_Balancer_Administration/index.html">Load Balancer Administration</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Logical_Volume_Manager_Administration/index.html">Logical Volume Manager Administration</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Migration_Planning_Guide/index.html">Migration Planning Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/index.html">Networking Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Package_Manifest/index.html">Package Manifest</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Performance_Tuning_Guide/index.html">Performance Tuning Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Power_Management_Guide/index.html">Power Management Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Resource_Management_Guide/index.html">Resource Management Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1342703">Running Super Privileged Containers on Red Hat Enterprise Linux Atomic Host</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/index.html">Security Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/SELinux_Users_and_Administrators_Guide/index.html">SELinux User's and Administrator's Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1365163">Starting a Container using systemd</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/index.html">Storage Administration Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System-Level_Authentication_Guide/index.html">System-Level Authentication Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/index.html">System Administrator's Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/SystemTap_Beginners_Guide/index.html">SystemTap Beginners Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/SystemTap_Tapset_Reference/index.html">SystemTap Tapset Reference</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1432533">Troubleshooting Kubernetes</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1346583">Using the Red Hat Enterprise Linux Atomic rsyslog Container Image</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1362143">Using the Red Hat Enterprise Linux Atomic System Activity Data Collector (sadc) Container Image</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        <a class="external" href="https://access.redhat.com/articles/1336853">Using the Red Hat Enterprise Linux Atomic Tools Container Image</a>
+
+
+    </li>
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Deployment_and_Administration_Guide/index.html">Virtualization Deployment and Administration Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Getting_Started_Guide/index.html">Virtualization Getting Started Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Security_Guide/index.html">Virtualization Security Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Tuning_and_Optimization_Guide/index.html">Virtualization Tuning and Optimization Guide</a>
+
+
+    </li>
+    
+    
+    <li>
+        
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Windows_Integration_Guide/index.html">Windows Integration Guide</a>
+
+
+    </li>
+    
+</ul></div><div class="docs_right_menu"><div id="book_format_menu"><div>Formats<i class="fa fa-caret-down"></i></div>
+<ul id="book_format_menu_list">
+    <li>
+	
+    
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/index.html">html</a>
+
+
+    </li>
+    <li>
+	
+    
+
+
+
+        <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html-single/Networking_Guide/index.html">html-single</a>
+
+
+    </li>
+    <li>
+	
+    
+
+
+
+        <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/epub/Networking_Guide/Red_Hat_Enterprise_Linux-7-Networking_Guide-en-US.epub">epub</a>
+
+
+    </li>
+    <li>
+	
+    
+
+
+
+        <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/pdf/Networking_Guide/Red_Hat_Enterprise_Linux-7-Networking_Guide-en-US.pdf">pdf</a>
+
+
+    </li>
+</ul>
+
+</div><div id="book_lang_menu"><div>English<i class="fa fa-caret-down"></i></div>
+<ul id="book_lang_menu_list">
+  <li>
+    
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/fr-FR/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/index.html">Français</a>
+
+
+  </li>
+  <li>
+    
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/ja-JP/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/index.html">日本語</a>
+
+
+  </li>
+  <li>
+    
+    
+
+
+
+
+
+
+
+        
+			
+        	<a href="https://access.redhat.com/site/documentation/zh-CN/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/index.html">简体中文</a>
+
+
+  </li>
+</ul>
+
+</div></div></div></div></header><!--googleon: all--><main id="cp-main" class="portal-content-area"><div id="cp-content" class="main-content"><div id="legacy-portal"><div class="content-area"><div id="legacy-container" class="legacy-container"><div id="content"><div id="main"><div id="chromed-app-content"><div id="navigation" style="top: 0px !important; height: 848px; position: fixed"><div class="toc" style="top: 0px !important; height: 848px;"><dl><dt><span class="part"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/part-IP_Networking.html">I. IP Networking</a></span></dt><dd><dl><dt><span class="chapter"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Introduction_to_RHEL_Networking.html">1. Introduction to Red Hat Enterprise Linux Networking</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Introduction_to_RHEL_Networking.html#sec-How_this_Book_is_Structured">1.1. How this Book is Structured</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-IP_Networks_versus_non-IP_Networks.html">1.2. IP Networks versus non-IP Networks</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Introduction_to_NetworkManager.html">1.3. Introduction to NetworkManager</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Installing_NetworkManager.html">1.4. Installing NetworkManager</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Installing_NetworkManager.html#sec-The_NetworkManager_Daemon">1.4.1. The NetworkManager Daemon</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Installing_NetworkManager.html#sec-Interacting_with_NetworkManager">1.4.2. Interacting with NetworkManager</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Networking_Config_Using_nmtui.html">1.5. Network Configuration Using a Text User Interface (nmtui)</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Config_Using_nmcli.html">1.6. Network Configuration Using NetworkManager's CLI (nmcli)</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Config_Using_CLI.html">1.7. Network Configuration Using the Command-Line Interface (CLI)</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-NetworkManager_and_the_Network_Scripts.html">1.8. NetworkManager and the Network Scripts</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Configuration_Using_sysconfig_Files.html">1.9. Network Configuration Using sysconfig Files</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Introduction_to_RHEL_Networking-additional_resources.html">1.10. Additional Resources</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Introduction_to_RHEL_Networking-additional_resources.html#sec-Introduction_to_RHEL_Networking-docs-inst">1.10.1. Installed Documentation</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_IP_Networking.html">2. Configure IP Networking</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_IP_Networking.html#sec-Static_and_Dynamic_Interface_Settings">2.1. Static and Dynamic Interface Settings</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_IP_Networking.html#sec-When_to_Use_Static_Network_Interface_Settings">2.1.1. When to Use Static Network Interface Settings</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_IP_Networking.html#sec-When_to_Use_Dynamic_Interface_Settings">2.1.2. When to Use Dynamic Interface Settings</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_IP_Networking.html#sec-Selecting_Network_Configuration_Methods">2.1.3. Selecting Network Configuration Methods</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Text_User_Interface_nmtui.html">2.2. Using the Text User Interface, nmtui</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html">2.3. Using the NetworkManager Command Line Tool, nmcli</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#sec-Understanding_the_nmcli_Options">2.3.1. Understanding the nmcli Options</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#sec-Connecting_to_a_Network_Using_nmcli">2.3.2. Connecting to a Network Using nmcli</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#sec-Configuring_Static_Routes_Using_nmcli">2.3.3. Configuring Static Routes Using nmcli</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Command_Line_Interface.html">2.4. Using the Command Line Interface (CLI)</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Command_Line_Interface.html#sec-Configuring_a_Network_Interface_Using_ifcg_Files">2.4.1. Configuring a Network Interface Using ifcfg Files</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Command_Line_Interface.html#sec-Configuring_a_Network_Interface_Using_ip_commands">2.4.2. Configuring a Network Interface Using ip Commands</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Command_Line_Interface.html#sec-Static-Routes_and_the_Default_Gateway">2.4.3. Static Routes and the Default Gateway</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Command_Line_Interface.html#sec-Configuring_Static_Routes_in_ifcfg_files">2.4.4. Configuring Static Routes in ifcfg files</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Command_Line_Interface.html#sec-Configuring_a_VPN">2.4.5. Configuring a VPN</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_NetworkManager_with_the_GNOME_Graphical_User_Interface.html">2.5. Using NetworkManager with the GNOME Graphical User Interface</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_NetworkManager_with_the_GNOME_Graphical_User_Interface.html#sec-Connecting_to_a_Network_Using_a_GUI">2.5.1. Connecting to a Network Using a GUI</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_NetworkManager_with_the_GNOME_Graphical_User_Interface.html#sec-Configuring_New_and_Editing_Existing_Connections">2.5.2. Configuring New and Editing Existing Connections</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_NetworkManager_with_the_GNOME_Graphical_User_Interface.html#sec-Connecting_to_a_Network_Automatically">2.5.3. Connecting to a Network Automatically</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_NetworkManager_with_the_GNOME_Graphical_User_Interface.html#sec-System-wide_and_Private_Connection_Profiles">2.5.4. System-wide and Private Connection Profiles</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_NetworkManager_with_the_GNOME_Graphical_User_Interface.html#sec-Configuring_a_Wired_Ethernet_Connection">2.5.5. Configuring a Wired (Ethernet) Connection</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_NetworkManager_with_the_GNOME_Graphical_User_Interface.html#sec-Configuring_a_Wi-Fi_Connection">2.5.6. Configuring a Wi-Fi Connection</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_NetworkManager_with_the_GNOME_Graphical_User_Interface.html#sec-Establishing_a_VPN_Connection">2.5.7. Establishing a VPN Connection</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_NetworkManager_with_the_GNOME_Graphical_User_Interface.html#sec-Establishing_a_Mobile_Broadband_Connection">2.5.8. Establishing a Mobile Broadband Connection</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_NetworkManager_with_the_GNOME_Graphical_User_Interface.html#sec-Establishing_a_DSL_Connection">2.5.9. Establishing a DSL Connection</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_NetworkManager_with_the_GNOME_Graphical_User_Interface.html#sec-Configuring_Connection_Settings">2.5.10. Configuring Connection Settings</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_Networking-additional_resources.html">2.6. Additional Resources</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_Networking-additional_resources.html#sec-Configure_Networking-docs-inst">2.6.1. Installed Documentation</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_Networking-additional_resources.html#sec-Configure_Networking_Online_Documentation">2.6.2. Online Documentation</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Host_Names.html">3. Configure Host Names</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Host_Names.html#sec_Understanding_Host_Names">3.1. Understanding Host Names</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Host_Names.html#sec-Recommended_Naming_Practices">3.1.1. Recommended Naming Practices</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_Host_Names_Using_the_Text_User_Interface_nmtui.html">3.2. Configuring Host Names Using Text User Interface, nmtui</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec_Configuring_Host_Names_Using_hostnamectl.html">3.3. Configuring Host Names Using hostnamectl</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec_Configuring_Host_Names_Using_hostnamectl.html#sec_View_All_the_Host_Names">3.3.1. View All the Host Names</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec_Configuring_Host_Names_Using_hostnamectl.html#sec_Set_All_the_Host_Names">3.3.2. Set All the Host Names</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec_Configuring_Host_Names_Using_hostnamectl.html#sec_Set_a_Particular_Host_Name">3.3.3. Set a Particular Host Name</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec_Configuring_Host_Names_Using_hostnamectl.html#sec_Clear_a_Particular_Host_Name">3.3.4. Clear a Particular Host Name</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec_Configuring_Host_Names_Using_hostnamectl.html#sec_Changing_Host_Names_Remotely">3.3.5. Changing Host Names Remotely</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_Host_Names_Using_nmcli.html">3.4. Configuring Host Names Using nmcli</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-additional_resources.html">3.5. Additional Resources</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-additional_resources.html#sec-hostnamectl-docs-inst">3.5.1. Installed Documentation</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Network_Bonding.html">4. Configure Network Bonding</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Network_Bonding.html#sec-Bond-Understanding_the_Default_Behavior_of_Master_and_Slave_Interfaces">4.1. Understanding the Default Behavior of Master and Slave Interfaces</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_Bonding_Using_the_Text_User_Interface_nmtui.html">4.2. Configure Bonding Using the Text User Interface, nmtui</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bonding_Using_the_NetworkManager_Command_Line_Tool_nmcli.html">4.3. Using the NetworkManager Command Line Tool, nmcli</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bonding_Using_the_Command_Line_Interface.html">4.4. Using the Command Line Interface (CLI)</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bonding_Using_the_Command_Line_Interface.html#sec-Check_if_Bonding_Kernel_Module_is_Installed">4.4.1. Check if Bonding Kernel Module is Installed</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bonding_Using_the_Command_Line_Interface.html#sec-Create_a_Channel_Bonding_Interface">4.4.2. Create a Channel Bonding Interface</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bonding_Using_the_Command_Line_Interface.html#sec-Creating_SLAVE_Interfaces">4.4.3. Creating SLAVE Interfaces</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bonding_Using_the_Command_Line_Interface.html#sec-Activating_a_Channel_Bond">4.4.4. Activating a Channel Bond</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bonding_Using_the_Command_Line_Interface.html#sec-Creating_Multiple_Bonds">4.4.5. Creating Multiple Bonds</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_Channel_Bonding.html">4.5. Using Channel Bonding</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_Channel_Bonding.html#s3-modules-bonding-directives">4.5.1. Bonding Module Directives</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Creating_a_Bond_Connection_Using_a_GUI.html">4.6. Creating a Bond Connection Using a GUI</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Creating_a_Bond_Connection_Using_a_GUI.html#sec-Establishing_a_Bond_Connection">4.6.1. Establishing a Bond Connection</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_Network_Bonding-additional_resources.html">4.7. Additional Resources</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_Network_Bonding-additional_resources.html#sec-Configure_Network_Bonding-docs-inst">4.7.1. Installed Documentation</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_Network_Bonding-additional_resources.html#sec-Configure_Network_Bonding_Online_Documentation">4.7.2. Online Documentation</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Network_Teaming.html">5. Configure Network Teaming</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Network_Teaming.html#sec-Understanding_Network_Teaming">5.1. Understanding Network Teaming</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Team-Understanding_the_Default_Behavior_of_Master_and_Slave_Interfaces.html">5.2. Understanding the Default Behavior of Master and Slave Interfaces</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Comparison_of_Network_Teaming_to_Bonding.html">5.3. Comparison of Network Teaming to Bonding</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Understanding_the_Network_Teaming_Daemon_and_the_Runners.html">5.4. Understanding the Network Teaming Daemon and the "Runners"</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Install_the_Network_Teaming_Daemon.html">5.5. Install the Network Teaming Daemon</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Converting_a_Bond_to_a_Team.html">5.6. Converting a Bond to a Team</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Selecting_Interfaces_to_Use_as_Port_for_a_Network_Team.html">5.7. Selecting Interfaces to Use as Ports for a Network Team</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Selecting_Network_Team_Configuration_Methods.html">5.8. Selecting Network Team Configuration Methods</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using_the_Text_User_Interface_nmtui.html">5.9. Configure a Network Team Using the Text User Interface, nmtui</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html">5.10. Configure a Network Team Using the Command Line</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html#sec-Configure_Network_Teaming_Using_nmcli">5.10.1. Configure Network Teaming Using nmcli</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html#sec-Creating_a_Network_Team_Using_teamd">5.10.2. Creating a Network Team Using teamd</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html#sec-Creating_a_Network_Team_Using_ifcfg_Files">5.10.3. Creating a Network Team Using ifcfg Files</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html#sec-Add_a_port_to_a_Network_Team_Using_iputils">5.10.4. Add a Port to a Network Team Using iputils</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html#sec-Listing_the_ports_of_a_Team_Using_teamnl">5.10.5. Listing the ports of a Team Using teamnl</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html#sec-Configuring_Options_of_a_Team_Using_teamnl">5.10.6. Configuring Options of a Team Using teamnl</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html#sec-Add_an_address_to_a_Network_Team_Using_iputils">5.10.7. Add an Address to a Network Team Using iputils</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html#sec-Bring_Up_an_interface_to_a_Network_Team_Using_iputils">5.10.8. Bring up an Interface to a Network Team Using iputils</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html#sec-Viewing_the_Active_Ports_of_a_Team_Using_teamnl">5.10.9. Viewing the Active Port Options of a Team Using teamnl</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html#sec-Setting_the_Active_Ports_of_a_Team_Using_teamnl">5.10.10. Setting the Active Port Options of a Team Using teamnl</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Controlling_teamd_with_teamdctl.html">5.11. Controlling teamd with teamdctl</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Controlling_teamd_with_teamdctl.html#sec-Add_a_port_to_a_Network_Team">5.11.1. Add a Port to a Network Team</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Controlling_teamd_with_teamdctl.html#sec-Remove_a_Port_From_a_Network_Team">5.11.2. Remove a Port From a Network Team</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Controlling_teamd_with_teamdctl.html#sec-Apply_a_Configuration_to_a_Port_in_a_Network_Team">5.11.3. Apply a Configuration to a Port in a Network Team</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Controlling_teamd_with_teamdctl.html#sec-View_the_Configuration_of_a_Port_in_a_Network_Team">5.11.4. View the Configuration of a Port in a Network Team</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_teamd_Runners.html">5.12. Configure teamd Runners</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_teamd_Runners.html#sec-Configure_the_broadcast_Runner">5.12.1. Configure the broadcast Runner</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_teamd_Runners.html#sec-Configure_the_random_Runner">5.12.2. Configure the random Runner</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_teamd_Runners.html#sec-Configure_the_roundrobin_Runner">5.12.3. Configure the roundrobin Runner</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_teamd_Runners.html#sec-Configure_the_activebackup_Runner">5.12.4. Configure the activebackup Runner</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_teamd_Runners.html#sec-Configure_the_loadbalance_Runner">5.12.5. Configure the loadbalance Runner</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_teamd_Runners.html#sec-Configure_the_LACP_Runner">5.12.6. Configure the LACP (802.3ad) Runner</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_teamd_Runners.html#sec-Configure_Monitoring_of_the_Link_State">5.12.7. Configure Monitoring of the Link State</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_teamd_Runners.html#sec-Configure_Port_Selection_Override">5.12.8. Configure Port Selection Override</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_teamd_Runners.html#sec-Configure_BPF-based_Tx_Port_Selectors_for_Hash_Computation_Algorithm">5.12.9. Configure BPF-based Tx Port Selectors</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Creating_a_Network_Team_Using_a_GUI.html">5.13. Creating a Network Team Using a GUI</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Creating_a_Network_Team_Using_a_GUI.html#sec-Establishing_a_Team_Connection">5.13.1. Establishing a Team Connection</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Teaming-additional_resources.html">5.14. Additional Resources</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Teaming-additional_resources.html#sec-teamd-docs-inst">5.14.1. Installed Documentation</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Teaming-additional_resources.html#sec-teamd_docs-online">5.14.2. Online Documentation</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Network_Bridging.html">6. Configure Network Bridging</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Network_Bridging.html#sec-Configure_Bridging_Using_the_Text_User_Interface_nmtui">6.1. Configure Bridging Using the Text User Interface, nmtui</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bridging_Using_the_NetworkManager_Command_Line_Tool_nmcli.html">6.2. Using the NetworkManager Command Line Tool, nmcli</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bridging_Using_the_Command_Line_Interface.html">6.3. Using the Command Line Interface (CLI)</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bridging_Using_the_Command_Line_Interface.html#sec-Check_if_Bridging_Kernel_Module_is_Installed">6.3.1. Check if Bridging Kernel Module is Installed</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bridging_Using_the_Command_Line_Interface.html#sec-Create_a_Network_Bridge">6.3.2. Create a Network Bridge</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bridging_Using_the_Command_Line_Interface.html#sec-Network_Bridge_with_Bond">6.3.3. Network Bridge with Bond</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_Network_Bridging_Using_a_GUI.html">6.4. Configure Network Bridging Using a GUI</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_Network_Bridging_Using_a_GUI.html#sec-Establishing_a_Bridge_Connection">6.4.1. Establishing a Bridge Connection</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bridging-additional_resources.html">6.5. Additional Resources</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Bridging-additional_resources.html#sec-Network_Bridging-docs-inst">6.5.1. Installed Documentation</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_802_1Q_VLAN_Tagging.html">7. Configure 802.1Q VLAN tagging</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_802_1Q_VLAN_Tagging.html#sec-Selecting_VLAN_Interface_Configuration_Methods">7.1. Selecting VLAN Interface Configuration Methods</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_802_1Q_VLAN_Tagging_Using_the_Text_User_Interface_nmtui.html">7.2. Configure 802.1Q VLAN tagging Using the Text User Interface, nmtui</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_802_1Q_VLAN_Tagging_Using_the_Command_Line_Tool_nmcli.html">7.3. Configure 802.1Q VLAN Tagging Using the Command Line Tool, nmcli</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_802_1Q_VLAN_Tagging_Using_the_Command_Line.html">7.4. Configure 802.1Q VLAN Tagging Using the Command Line</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_802_1Q_VLAN_Tagging_Using_the_Command_Line.html#sec-Setting_Up_802.1Q_VLAN_Tagging_Using_ifcfg_Files">7.4.1. Setting Up 802.1Q VLAN Tagging Using ifcfg Files</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_802_1Q_VLAN_Tagging_Using_the_Command_Line.html#sec-Configure_802_1Q_VLAN_Tagging_ip_Commands">7.4.2. Configure 802.1Q VLAN Tagging Using ip Commands</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_802_1Q_VLAN_Tagging_Using_a_GUI.html">7.5. Configure 802.1Q VLAN Tagging Using a GUI</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_802_1Q_VLAN_Tagging_Using_a_GUI.html#sec-Establishing_a_VLAN_Connection">7.5.1. Establishing a VLAN Connection</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_802_1Q_VLAN_Tagging-additional_resources.html">7.6. Additional Resources</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_802_1Q_VLAN_Tagging-additional_resources.html#sec-Configure_802_1Q_VLAN_Tagging-docs-inst">7.6.1. Installed Documentation</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Consistent_Network_Device_Naming.html">8. Consistent Network Device Naming</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Consistent_Network_Device_Naming.html#sec-Naming_Schemes_Hierarchy">8.1. Naming Schemes Hierarchy</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Understanding_the_Device_Renaming_Procedure.html">8.2. Understanding the Device Renaming Procedure</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Understanding_the_Predictable_Network_Interface_Device_Names.html">8.3. Understanding the Predictable Network Interface Device Names</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Naming_Scheme_for_Network_Devices_Available_for_Linux_on_System_z.html">8.4. Naming Scheme for Network Devices Available for Linux on System z</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Naming_Scheme_for_VLAN_Interfaces.html">8.5. Naming Scheme for VLAN Interfaces</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Consistent_Network_Device_Naming_Using_biosdevname.html">8.6. Consistent Network Device Naming Using biosdevname</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Consistent_Network_Device_Naming_Using_biosdevname.html#sec-Consistent_Network_Device_Naming-System_Requirements">8.6.1. System Requirements</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Consistent_Network_Device_Naming_Using_biosdevname.html#sec-Consistent_Network_Device_Naming-Enabling_and_Disabling">8.6.2. Enabling and Disabling the Feature</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Consistent_Network_Device_Naming-Notes.html">8.7. Notes for Administrators</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Controlling_the_Selection_of_Network_Device_Names.html">8.8. Controlling the Selection of Network Device Names</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Disabling_Consistent_Network_Device_Naming.html">8.9. Disabling Consistent Network Device Naming</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec_Troubleshooting_Network_Device_Naming.html">8.10. Troubleshooting Network Device Naming</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Consistent_Network_Device_Naming-additional_resources.html">8.11. Additional Resources</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Consistent_Network_Device_Naming-additional_resources.html#sec-Consistent_Network_Device_Naming-docs-inst">8.11.1. Installed Documentation</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Consistent_Network_Device_Naming-additional_resources.html#sec-Consistent_Network_Device_Naming_Online_Documentation">8.11.2. Online Documentation</a></span></dt></dl></dd></dl></dd></dl></dd><dt><span class="part"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/part-InfiniBand_and_RDMA_Networking.html">II. InfiniBand and RDMA Networking</a></span></dt><dd><dl><dt><span class="chapter"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_InfiniBand_and_RDMA_Networks.html">9. Configure InfiniBand and RDMA Networks</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_InfiniBand_and_RDMA_Networks.html#sec-Understanding_InfiniBand_and_RDMA_technologies">9.1. Understanding InfiniBand and RDMA technologies</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-InfiniBand_and_RDMA_related_software_packages.html">9.2. InfiniBand and RDMA related software packages</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_the_Base_RDMA_Subsystem.html">9.3. Configuring the Base RDMA Subsystem</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_the_Base_RDMA_Subsystem.html#sec-The_RDMA_Package_Installation">9.3.1. The RDMA package Installation</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_the_Base_RDMA_Subsystem.html#sec-Configuration_of_the_rdma.conf_file">9.3.2. Configuration of the rdma.conf file</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_the_Base_RDMA_Subsystem.html#sec-Usage_of_70-persistent-ipoib.rules">9.3.3. Usage of 70-persistent-ipoib.rules</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_the_Base_RDMA_Subsystem.html#sec-Relaxing_memlock_restrictions_for_users">9.3.4. Relaxing memlock restrictions for users</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_the_Base_RDMA_Subsystem.html#sec-Configuring_Mellanox_cards_for_Ethernet_operation">9.3.5. Configuring Mellanox cards for Ethernet operation</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_the_Subnet_Manager.html">9.4. Configuring the Subnet Manager</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_the_Subnet_Manager.html#sec-Determining_Necessity">9.4.1. Determining Necessity</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_the_Subnet_Manager.html#sec-Configuring_the_opensm_master_configuration_file">9.4.2. Configuring the opensm master configuration file</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_the_Subnet_Manager.html#sec-Configuring_the_opensm_startup_options">9.4.3. Configuring the opensm startup options</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_the_Subnet_Manager.html#sec-Creating_a_P_Key_definition">9.4.4. Creating a P_Key definition</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_the_Subnet_Manager.html#sec-Enabling_opensm">9.4.5. Enabling opensm</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Testing_Early_InfiniBand_RDMA_operation.html">9.5. Testing Early InfiniBand RDMA operation</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_IPoIB.html">9.6. Configuring IPoIB</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_IPoIB.html#sec-Understanding_the_role_of_IPoIB">9.6.1. Understanding the role of IPoIB</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_IPoIB.html#sec-Understanding_IPoIB_communication_modes">9.6.2. Understanding IPoIB communication modes</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_IPoIB.html#sec-Understanding_IPoIB_hardware_addresses">9.6.3. Understanding IPoIB hardware addresses</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_IPoIB.html#sec-Understanding_InfiniBand_P_Key_subnets">9.6.4. Understanding InfiniBand P_Key subnets</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_InfiniBand_Using_the_Text_User_Interface_nmtui.html">9.7. Configure InfiniBand Using the Text User Interface, nmtui</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_IPoIB_Using_the_NetworkManager_command_line_tool_nmcli.html">9.8. Configure IPoIB using the command-line tool, nmcli</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_IPoIB_Using_the_command_line.html">9.9. Configure IPoIB Using the command line</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Testing_an_RDMA_network_after_IPoIB_is_configured.html">9.10. Testing an RDMA network after IPoIB is configured</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_IPoIB_Using_a_GUI.html">9.11. Configure IPoIB Using a GUI</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_IPoIB_Using_a_GUI.html#sec-Configuring_the_InfiniBand_Tab">9.11.1. Configuring the InfiniBand Tab</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_InfiniBand_and_RDMA_Networks-additional_resources.html">9.12. Additional Resources</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_InfiniBand_and_RDMA_Networks-additional_resources.html#sec-Configure_InfiniBand_and_RDMA_Networks-docs-inst">9.12.1. Installed Documentation</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_InfiniBand_and_RDMA_Networks-additional_resources.html#sec-Configure_InfiniBand_and_RDMA_Networks_Online_Documentation">9.12.2. Online Documentation</a></span></dt></dl></dd></dl></dd></dl></dd><dt><span class="part"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/part-Servers.html">III. Servers</a></span></dt><dd><dl><dt><span class="chapter"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-DHCP_Servers.html">10. DHCP Servers</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-DHCP_Servers.html#sec-dhcp-why">10.1. Why Use DHCP?</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-dhcp-configuring-server.html">10.2. Configuring a DHCP Server</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-dhcp-configuring-server.html#config-file">10.2.1. Configuration File</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-dhcp-configuring-server.html#lease-database">10.2.2. Lease Database</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-dhcp-configuring-server.html#idp16807424">10.2.3. Starting and Stopping the Server</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/dhcp-relay-agent.html">10.3. DHCP Relay Agent</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/dhcp-relay-agent.html#sec-Configure_dhcrelay_as_a_DHCPv4_and_BOOTP_relay_agent">10.3.1. Configure dhcrelay as a DHCPv4 and BOOTP relay agent</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/dhcp-relay-agent.html#sec-Configure_dhcrelay_as_a_DHCPv6_relay_agent">10.3.2. Configure dhcrelay as a DHCPv6 relay agent</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_a_Multihomed_DHCP_Server.html">10.4. Configuring a Multihomed DHCP Server</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configuring_a_Multihomed_DHCP_Server.html#sec-dns_Host_Configuration">10.4.1. Host Configuration</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-dhcp_for_ipv6_dhcpv6.html">10.5. DHCP for IPv6 (DHCPv6)</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-dhcp-additional-resources.html">10.6. Additional Resources</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-dhcp-additional-resources.html#sec-dhcp-installed-docs">10.6.1. Installed Documentation</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-DNS_Servers.html">11. DNS Servers</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-DNS_Servers.html#sec-Introduction_to_DNS">11.1. Introduction to DNS</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-DNS_Servers.html#sec-dns-introduction-zones">11.1.1. Nameserver Zones</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-DNS_Servers.html#sec-dns-introduction-nameservers">11.1.2. Nameserver Types</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-DNS_Servers.html#sec-dns-introduction-bind">11.1.3. BIND as a Nameserver</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-BIND.html">11.2. BIND</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-BIND.html#sec-bind-empty-zones">11.2.1. Empty Zones</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-BIND.html#sec-bind-namedconf">11.2.2. Configuring the named Service</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-BIND.html#sec-bind-zone">11.2.3. Editing Zone Files</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-BIND.html#sec-bind-rndc">11.2.4. Using the rndc Utility</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-BIND.html#sec-bind-dig">11.2.5. Using the dig Utility</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-BIND.html#sec-bind-features">11.2.6. Advanced Features of BIND</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-BIND.html#sec-bind-mistakes">11.2.7. Common Mistakes to Avoid</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-BIND.html#sec-bind-additional-resources">11.2.8. Additional Resources</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Squid_Server.html">12. Squid</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Squid_Server.html#sec-squid-intro">12.1. Introduction to Squid</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-squid-install-run.html">12.2. Installing and Running Squid</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-squid-configuration.html">12.3. Squid configuration</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-squid-configuration.html#sec-basic-config">12.3.1. Basic Configuration and /etc/squid/squid.conf</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-squid-configuration.html#sec-squid-proxy-config">12.3.2. Configuring Squid as an HTTP proxy server</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-squid-authentication.html">12.4. Squid Authentication</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-squid-authentication.html#sec-authentication-ldap">12.4.1. Authentication with LDAP</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-squid-authentication.html#sec-authentication-kerberos">12.4.2. Authentication with Kerberos</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-use-squid.html">12.5. Using Squid for Restricting Access</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-use-squid.html#sec-block-port-number">12.5.1. Restricting Access by Blocking a Port</a></span></dt><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-use-squid.html#sec-restricting-access-specific-sites">12.5.2. Restricting Access by Blocking Specific Sites or Addresses</a></span></dt></dl></dd><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/s-squid-additional-resources.html">12.6. Additional Resources: Installed Documentation</a></span></dt></dl></dd></dl></dd><dt><span class="appendix"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/app-Revision_History.html">A. Revision History</a></span></dt><dd><dl><dt><span class="section"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/app-Revision_History.html#pref-Acknowledgments">A.1. Acknowledgments</a></span></dt></dl></dd><dt><span class="index"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ix01.html">Index</a></span></dt></dl></div><button class="menu-toggle"><span></span></button></div><ul class="docnav top"><li class="previous"><a accesskey="p" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Text_User_Interface_nmtui.html"><strong>Prev</strong></a></li><li class="doctoc"><div class="toc"><select class="pageSelect"><option value="index.html" class="menu-level-0">Document Home</option><option value="sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#sec-Understanding_the_nmcli_Options" class="menu-level-0">2.3.1. Understanding the nmcli Options</option><option value="sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#sec-Connecting_to_a_Network_Using_nmcli" class="menu-level-0">2.3.2. Connecting to a Network Using nmcli</option><option value="sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#sec-Configuring_Static_Routes_Using_nmcli" class="menu-level-0">2.3.3. Configuring Static Routes Using nmcli</option></select></div></li><li class="next"><a accesskey="n" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Command_Line_Interface.html"><strong>Next</strong></a></li></ul><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="sec-Using_the_NetworkManager_Command_Line_Tool_nmcli">
+      ⁠</a>2.3.&nbsp;Using the NetworkManager Command Line Tool, nmcli</h2></div></div></div><div class="para">
+			The command‐line tool <span class="application"><strong>nmcli</strong></span> can be used by both users and scripts for controlling <span class="application"><strong>NetworkManager</strong></span>. The basic format of a command is as follows: <pre class="synopsis">nmcli <code class="option">OPTIONS</code> OBJECT { <code class="command">COMMAND</code> | help }</pre> where OBJECT can be one of <code class="literal">general</code>, <code class="literal">networking</code>, <code class="literal">radio</code>, <code class="literal">connection</code>, or <code class="literal">device</code>. The most used options are: <code class="option">-t, --terse</code> for use in scripts, the <code class="option">-p, --pretty</code> option for users, and the <code class="option">-h, --help</code> option. Command completion has been implemented for <span class="application"><strong>nmcli</strong></span>, so remember to press <span class="keycap"><strong>Tab</strong></span> whenever you are unsure of the command options available. See the <code class="filename">nmcli(1)</code> man page for a complete list of the options and commands. To list a quick overview of configuration on the known network devices, use the <code class="command">nmcli device</code> command without arguments.
+		</div><div class="para">
+			The <span class="application"><strong>nmcli</strong></span> tool has some built-in context-sensitive help. For example, issue the following two commands and notice the difference: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli help</code>
+Usage: nmcli [OPTIONS] OBJECT { COMMAND | help }
+
+OPTIONS
+  -t[erse]                                   terse output
+  -p[retty]                                  pretty output
+  -m[ode] tabular|multiline                  output mode
+  -f[ields] &lt;field1,field2,...&gt;|all|common   specify fields to output
+  -e[scape] yes|no                           escape columns separators in values
+  -n[ocheck]                                 don't check nmcli and NetworkManager versions
+  -a[sk]                                     ask for missing parameters
+  -w[ait] &lt;seconds&gt;                          set timeout waiting for finishing operations
+  -v[ersion]                                 show program version
+  -h[elp]                                    print this help
+
+OBJECT
+  g[eneral]       NetworkManager's general status and operations
+  n[etworking]    overall networking control
+  r[adio]         NetworkManager radio switches
+  c[onnection]    NetworkManager's connections
+  d[evice]        devices managed by NetworkManager
+  a[gent]         NetworkManager secret agent or polkit agent
+  m[onitor]       monitor NetworkManager changes</pre>
+			 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli general help</code>
+Usage: nmcli general { COMMAND | help }
+
+  COMMAND := { status | hostname | permissions | logging }
+
+  status
+
+  hostname [&lt;hostname&gt;]
+
+  permissions
+
+  logging [level &lt;log level&gt;] [domains &lt;log domains&gt;]</pre>
+			 In the second example above the help is related to the object <code class="literal">general</code>.
+		</div><div class="para">
+			The <code class="filename">nmcli-examples(5)</code> man page has many useful examples. A brief selection is shown here:
+		</div><div class="para">
+			To show the overall status of <span class="application"><strong>NetworkManager</strong></span>: <pre class="synopsis">nmcli general status</pre> To control <span class="application"><strong>NetworkManager</strong></span> logging: <pre class="synopsis">nmcli general logging</pre> To show all connections: <pre class="synopsis">nmcli connection show</pre> To show only currently active connections, add the <code class="option">-a, --active</code> option as follows: <pre class="synopsis">nmcli connection show --active</pre> To show devices recognized by <span class="application"><strong>NetworkManager</strong></span> and their state: <pre class="synopsis">nmcli device status</pre>
+		</div><div class="para">
+			Commands can be shortened and some options omitted. For example the command: <pre class="synopsis">nmcli connection modify id '<em class="replaceable">MyCafe</em>' 802-11-wireless.mtu 1350</pre> Can be reduced to the following command: <pre class="synopsis">nmcli con mod <em class="replaceable">MyCafe</em> 802-11-wireless.mtu 1350</pre> The <code class="option">id</code> option can be omitted because the connection ID (name) is unambiguous for <span class="application"><strong>nmcli</strong></span> in this case. As you become familiar with the commands, further abbreviations can be made. For example: <pre class="synopsis">nmcli connection add type ethernet</pre> can be reduced to: <pre class="synopsis">nmcli c a type eth</pre> <div class="note"><div class="admonition_header"><p><strong>Note</strong></p></div><div class="admonition"><div class="para">
+					Remember to use tab completion when in doubt.
+				</div></div></div>
+
+		</div><h3><a id="bh-Starting_and_Stopping_an_Interface_Using_nmcli">
+      ⁠</a>Starting and Stopping an Interface Using nmcli</h3><div class="para">
+			The <span class="application"><strong>nmcli</strong></span> tool can be used to start and stop any network interface, including masters. For example: 
+<pre class="screen">nmcli con up id bond0
+nmcli con up id port0
+nmcli dev disconnect bond0
+nmcli dev disconnect ens3</pre>
+
+		</div><div class="note"><div class="admonition_header"><p><strong>Note</strong></p></div><div class="admonition"><div class="para">
+				It is recommended to use <code class="command">nmcli dev disconnect <em class="replaceable">iface-name</em></code> rather than <code class="command">nmcli con down id <em class="replaceable">id-string</em></code> because disconnection places the interface into a <span class="quote">“<span class="quote">manual</span>”</span> mode, in which no automatic connection will be started until the user tells <span class="application"><strong>NetworkManager</strong></span> to start a connection or until an external event like a carrier change, hibernate, or sleep, occurs.
+			</div></div></div><h3><a id="bh-The_nmcli_Interactive_Connection_Editor">
+      ⁠</a>The nmcli Interactive Connection Editor</h3><div class="para">
+			The <span class="application"><strong>nmcli</strong></span> tool has an interactive connection editor. To use it, enter the following command: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con edit</code></pre>
+			 You will be prompted to enter a valid connection type from the list displayed. After entering a connection type you will be placed at the <span class="application"><strong>nmcli</strong></span> prompt. If you are familiar with the connection types you can add a valid connection <code class="option">type</code> option to the <code class="command">nmcli con edit</code> command and be taken straight to the <span class="application"><strong>nmcli</strong></span> prompt. The format is as follows for editing an existing connection profile: <pre class="synopsis">nmcli con edit [id | uuid | path] <em class="replaceable">ID</em></pre> For adding and editing a new connection profile, the following format applies: <pre class="synopsis">nmcli con edit [type <em class="replaceable">new-connection-type</em>] [con-name <em class="replaceable">new-connection-name</em>]</pre>
+		</div><div class="para">
+			Type <code class="command">help</code> at the <span class="application"><strong>nmcli</strong></span> prompt to see a list of valid commands. Use the <code class="command">describe</code> command to get a description of settings and their properties. The format is as follows: <pre class="synopsis">describe <em class="replaceable">setting.property</em></pre> For example: 
+<pre class="screen">nmcli&gt; <code class="command">describe team.config</code></pre>
+
+		</div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sec-Understanding_the_nmcli_Options">
+      ⁠</a>2.3.1.&nbsp;Understanding the nmcli Options</h3></div></div></div><div class="para">
+				Many of the <span class="application"><strong>nmcli</strong></span> commands are self-explanatory, however a few command options are worth a moments study:
+			</div><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="option">type</code> — The connection type.</span></dt><dd><div class="para">
+							Allowed values are: <code class="literal">adsl</code>, <code class="literal">bond</code>, <code class="literal">bond-slave</code>, <code class="literal">bridge</code>, <code class="literal">bridge-slave</code>, <code class="literal">bluetooth</code>, <code class="literal">cdma</code>, <code class="literal">ethernet</code>, <code class="literal">gsm</code>, <code class="literal">infiniband</code>, <code class="literal">olpc-mesh</code>, <code class="literal">team</code>, <code class="literal">team-slave</code>, <code class="literal">vlan</code>, <code class="literal">wifi</code>, <code class="literal">wimax</code>.
+						</div><div class="para">
+							Each connection type has type-specific command options. Press <span class="keycap"><strong>Tab</strong></span> to see a list of them or see the <code class="literal">TYPE_SPECIFIC_OPTIONS</code> list in the <code class="filename">nmcli(1)</code> man page. The <code class="option">type</code> option is applicable after the following: <code class="command">nmcli connection add</code> and <code class="command">nmcli connection edit</code>.
+						</div></dd><dt><span class="term"><code class="option">con-name</code> — The name assigned to a connection profile.</span></dt><dd><div class="para">
+							If you do not specify a connection name, one will be generated as follows: <pre class="synopsis"> <code class="literal">type</code>-ifname[-number]</pre>
+						</div><div class="para">
+							The connection name is the name of a <em class="firstterm">connection profile</em> and should not be confused with the interface name that denotes a device (<span class="interface">wlan0</span>, <span class="interface">ens3</span>, <span class="interface">em1</span>, and so on). Users can however name the connections after interfaces, but they are not the same thing. There can be multiple connection profiles available for a device. This is particularly useful for mobile devices or when switching a network cable back and forth between different devices. Rather than edit the configuration, create different profiles and apply them to the interface as needed. The <code class="option">id</code> option also refers to the connection profile name.
+						</div></dd><dt><span class="term"><code class="option">id</code> — An identification string assigned by the user to a connection profile.</span></dt><dd><div class="para">
+							The ID can be used in <code class="command">nmcli connection</code> commands to identify a connection. The NAME field in the output always denotes the connection ID (name). It refers to the same connection profile name that the <code class="command">con-name</code> does.
+						</div></dd><dt><span class="term"><code class="option">uuid</code> — A unique identification string assigned by the system to a connection profile.</span></dt><dd><div class="para">
+							The UUID can be used in <code class="command">nmcli connection</code> commands to identify a connection.
+						</div></dd></dl></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sec-Connecting_to_a_Network_Using_nmcli">
+      ⁠</a>2.3.2.&nbsp;Connecting to a Network Using nmcli</h3></div></div></div><div class="para">
+				To list the currently available network connections, issue a command as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con show</code>
+NAME              UUID                                  TYPE            DEVICE
+Auto Ethernet     9b7f2511-5432-40ae-b091-af2457dfd988  802-3-ethernet  --
+ens3              fb157a65-ad32-47ed-858c-102a48e064a2  802-3-ethernet  ens3
+MyWiFi            91451385-4eb8-4080-8b82-720aab8328dd  802-11-wireless wlan0</pre>
+				 Note that the NAME field in the output always denotes the connection ID (name). It is not the interface name even though it might look the same. In the second connection shown above, <code class="literal">ens3</code> in the NAME field is the connection ID given by the user to the profile applied to the interface <span class="interface">ens3</span>. In the last connection shown, the user has assigned the connection ID <code class="literal">MyWiFi</code> to the interface <span class="interface">wlan0</span>.
+			</div><div class="para">
+				Adding an Ethernet connection means creating a configuration profile which is then assigned to a device. Before creating a new profile, review the available devices as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli dev status</code>
+DEVICE  TYPE      STATE         CONNECTION
+ens3    ethernet  disconnected  --
+ens9    ethernet  disconnected  --
+lo      loopback  unmanaged     --</pre>
+
+			</div><h4><a id="Adding_a_Dynamic_Ethernet_Connection">
+      ⁠</a>Adding a Dynamic Ethernet Connection</h4><div class="para">
+				To add an Ethernet configuration profile with dynamic <code class="systemitem">IP</code> configuration, allowing <code class="systemitem">DHCP</code> to assign the network configuration, a command in the following format can be used: <pre class="synopsis">nmcli connection add type ethernet con-name <em class="replaceable">connection-name</em> ifname <em class="replaceable">interface-name</em></pre>
+			</div><div class="para">
+				For example, to create a dynamic connection profile named <em class="replaceable">my-office</em>, issue a command as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con add type ethernet con-name <em class="replaceable">my-office</em> ifname <em class="replaceable">ens3</em></code>
+Connection 'my-office' (fb157a65-ad32-47ed-858c-102a48e064a2) successfully added.</pre>
+				 <span class="application"><strong>NetworkManager</strong></span> will set its internal parameter <code class="option">connection.autoconnect</code> to <code class="literal">yes</code>. <span class="application"><strong>NetworkManager</strong></span> will also write out settings to <code class="filename">/etc/sysconfig/network-scripts/ifcfg-my-office</code> where the ONBOOT directive will be set to <code class="literal">yes</code>.
+			</div><div class="para">
+				Note that manual changes to the ifcfg file will not be noticed by <span class="application"><strong>NetworkManager</strong></span> until the interface is next brought up. See <a class="xref" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Configuration_Using_sysconfig_Files.html">Section&nbsp;1.9, “Network Configuration Using sysconfig Files”</a> for more information on using configuration files.
+			</div><div class="para">
+				To bring up the Ethernet connection, issue a command as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con up <em class="replaceable">my-office</em></code>
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/5)</pre>
+				 Review the status of the devices and connections: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli device status</code>
+DEVICE  TYPE      STATE         CONNECTION
+ens3    ethernet  connected     my-office
+ens9    ethernet  disconnected  --
+lo      loopback  unmanaged     --</pre>
+
+			</div><div class="para">
+				To change the host name sent by a host to a <code class="systemitem">DHCP</code> server, modify the <code class="option">dhcp-hostname</code> property as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con modify my-office <em class="replaceable">my-office</em> ipv4.dhcp-hostname <em class="replaceable">host-name</em> ipv6.dhcp-hostname <em class="replaceable">host-name</em></code></pre>
+
+			</div><div class="para">
+				To change the <code class="systemitem">IPv4</code> client ID sent by a host to a <code class="systemitem">DHCP</code> server, modify the <code class="option">dhcp-client-id</code> property as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con modify my-office <em class="replaceable">my-office</em> ipv4.dhcp-client-id <em class="replaceable">client-ID-string</em></code></pre>
+				 There is no <code class="option">dhcp-client-id</code> property for <code class="systemitem">IPv6</code>, <span class="application"><strong>dhclient</strong></span> creates an identifier for <code class="systemitem">IPv6</code>. See the <code class="filename">dhclient(8)</code> man page for details.
+			</div><div class="para">
+				To ignore the <code class="systemitem">DNS</code> servers sent to a host by a <code class="systemitem">DHCP</code> server, modify the <code class="option">ignore-auto-dns</code> property as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con modify my-office <em class="replaceable">my-office</em> ipv4.ignore-auto-dns <em class="replaceable">yes</em> ipv6.ignore-auto-dns <em class="replaceable">yes</em></code></pre>
+
+			</div><div class="para">
+				See the <code class="filename">nm-settings(5)</code> man page for more information on properties and their settings.
+			</div><div class="example"><a id="ex-Configuring_a_Dynamic_Ethernet_Connection_Using_the_Interactive_Editor">
+      ⁠</a><p class="title"><strong>Example&nbsp;2.1.&nbsp;Configuring a Dynamic Ethernet Connection Using the Interactive Editor</strong></p><div class="example-contents"><div class="para">
+					To configure a dynamic Ethernet connection using the interactive editor, issue commands as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con edit type ethernet con-name <em class="replaceable">ens3</em></code>
+
+===| nmcli interactive connection editor |===
+
+Adding a new '802-3-ethernet' connection
+
+Type 'help' or '?' for available commands.
+Type 'describe [&lt;setting&gt;.&lt;prop&gt;]' for detailed property description.
+
+You may edit the following settings: connection, 802-3-ethernet (ethernet), 802-1x, ipv4, ipv6, dcb
+nmcli&gt; describe ipv4.method
+
+=== [method] ===
+[NM property description]
+IPv4 configuration method.  If 'auto' is specified then the appropriate automatic method (DHCP, PPP, etc) is used for the interface and most other properties can be left unset.  If 'link-local' is specified, then a link-local address in the 169.254/16 range will be assigned to the interface.  If 'manual' is specified, static IP addressing is used and at least one IP address must be given in the 'addresses' property.  If 'shared' is specified (indicating that this connection will provide network access to other computers) then the interface is assigned an address in the 10.42.x.1/24 range and a DHCP and forwarding DNS server are started, and the interface is NAT-ed to the current default network connection.  'disabled' means IPv4 will not be used on this connection.  This property must be set.
+
+nmcli&gt; set ipv4.method auto
+nmcli&gt; save
+Saving the connection with 'autoconnect=yes'. That might result in an immediate activation of the connection.
+Do you still want to save? [yes] yes
+Connection 'ens3' (090b61f7-540f-4dd6-bf1f-a905831fc287) successfully saved.
+nmcli&gt; quit
+~]$</pre>
+					 The default action is to save the connection profile as persistent. If required, the profile can be held in memory only, until the next restart, by means of the <code class="command">save temporary</code> command.
+				</div></div></div><h4><a id="Adding_a_Static_Ethernet_Connection">
+      ⁠</a>Adding a Static Ethernet Connection</h4><div class="para">
+				To add an Ethernet connection with static <code class="systemitem">IPv4</code> configuration, a command in the following format can be used: <pre class="synopsis">nmcli connection add type ethernet con-name <em class="replaceable">connection-name</em> ifname <em class="replaceable">interface-name</em> ip4 <em class="replaceable">address</em> gw4 <em class="replaceable">address</em></pre> <code class="systemitem">IPv6</code> address and gateway information can be added using the <code class="option">ip6</code> and <code class="option">gw6</code> options.
+			</div><div class="para">
+				For example, a command to create a static Ethernet connection with only <code class="systemitem">IPv4</code> address and gateway is as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con add type ethernet con-name <em class="replaceable">test-lab</em> ifname <em class="replaceable">ens9</em> ip4 10.10.10.10/24 \</code>
+<code class="command">gw4 10.10.10.254</code></pre>
+				 Optionally, at the same time specify <code class="systemitem">IPv6</code> address and gateway for the device as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con add type ethernet con-name <em class="replaceable">test-lab</em> ifname <em class="replaceable">ens9</em> ip4 10.10.10.10/24 \</code>
+<code class="command">gw4 10.10.10.254 ip6 abbe::cafe gw6 2001:db8::1</code>
+Connection 'test-lab' (05abfd5e-324e-4461-844e-8501ba704773) successfully added.</pre>
+				 <span class="application"><strong>NetworkManager</strong></span> will set its internal parameter <code class="option">ipv4.method</code> to <code class="literal">manual</code> and <code class="option">connection.autoconnect</code> to <code class="literal">yes</code>. <span class="application"><strong>NetworkManager</strong></span> will also write out settings to <code class="filename">/etc/sysconfig/network-scripts/ifcfg-my-office</code> where the corresponding BOOTPROTO will be set to <code class="literal">none</code> and ONBOOT will be set to <code class="literal">yes</code>.
+			</div><div class="para">
+				Note that manual changes to the ifcfg file will not be noticed by <span class="application"><strong>NetworkManager</strong></span> until the interface is next brought up. See <a class="xref" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Network_Configuration_Using_sysconfig_Files.html">Section&nbsp;1.9, “Network Configuration Using sysconfig Files”</a> for more information on using configuration files.
+			</div><div class="para">
+				To set two <code class="systemitem">IPv4</code> <code class="systemitem">DNS</code> server addresses: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con mod <em class="replaceable">test-lab</em> ipv4.dns "8.8.8.8 8.8.4.4"</code></pre>
+				 Note that this will replace any previously set <code class="systemitem">DNS</code> servers. To set two <code class="systemitem">IPv6</code> <code class="systemitem">DNS</code> server addresses: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con mod <em class="replaceable">test-lab</em> ipv6.dns "2001:4860:4860::8888 2001:4860:4860::8844"</code></pre>
+				 Note that this will replace any previously set <code class="systemitem">DNS</code> servers. Alternatively, to add additional <code class="systemitem">DNS</code> servers to any previously set, use the <code class="literal">+</code> prefix as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con mod <em class="replaceable">test-lab</em> +ipv4.dns "8.8.8.8 8.8.4.4"</code></pre>
+				 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con mod <em class="replaceable">test-lab</em> +ipv6.dns "2001:4860:4860::8888 2001:4860:4860::8844"</code></pre>
+
+			</div><div class="para">
+				To bring up the new Ethernet connection, issue a command as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con up <em class="replaceable">test-lab</em> ifname <em class="replaceable">ens9</em></code>
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/6)</pre>
+				 Review the status of the devices and connections: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli device status</code>
+DEVICE  TYPE      STATE      CONNECTION
+ens3    ethernet  connected  my-office
+ens9    ethernet  connected  test-lab
+lo      loopback  unmanaged  --</pre>
+
+			</div><div class="para">
+				To view detailed information about the newly configured connection, issue a command as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli -p con show <em class="replaceable">test-lab</em></code>
+===============================================================================
+                     Connection profile details (test-lab)
+===============================================================================
+connection.id:                          test-lab
+connection.uuid:                        05abfd5e-324e-4461-844e-8501ba704773
+connection.interface-name:              ens9
+connection.type:                        802-3-ethernet
+connection.autoconnect:                 yes
+connection.timestamp:                   1410428968
+connection.read-only:                   no
+connection.permissions:                 
+connection.zone:                        --
+connection.master:                      --
+connection.slave-type:                  --
+connection.secondaries:                 
+connection.gateway-ping-timeout:        0
+<em class="lineannotation"><span class="lineannotation">[output truncated]</span></em></pre>
+				 The use of the <code class="option">-p, --pretty</code> option adds a title banner and section breaks to the output.
+			</div><div class="example"><a id="ex-Configuring_a_Static_Ethernet_Connection_Using_the_Interactive_Editor">
+      ⁠</a><p class="title"><strong>Example&nbsp;2.2.&nbsp;Configuring a Static Ethernet Connection Using the Interactive Editor</strong></p><div class="example-contents"><div class="para">
+					To configure a static Ethernet connection using the interactive editor, issue commands as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con edit type ethernet con-name <em class="replaceable">ens3</em></code>
+
+===| nmcli interactive connection editor |===
+
+Adding a new '802-3-ethernet' connection
+
+Type 'help' or '?' for available commands.
+Type 'describe [&gt;setting&lt;.&gt;prop&lt;]' for detailed property description.
+
+You may edit the following settings: connection, 802-3-ethernet (ethernet), 802-1x, ipv4, ipv6, dcb
+nmcli&gt; set ipv4.addresses 192.168.122.88/24
+Do you also want to set 'ipv4.method' to 'manual'? [yes]: yes
+nmcli&gt;
+nmcli&gt; save temporary
+Saving the connection with 'autoconnect=yes'. That might result in an immediate activation of the connection.
+Do you still want to save? [yes] no
+nmcli&gt; save
+Saving the connection with 'autoconnect=yes'. That might result in an immediate activation of the connection.
+Do you still want to save? [yes] yes
+Connection 'ens3' (704a5666-8cbd-4d89-b5f9-fa65a3dbc916) successfully saved.
+nmcli&gt; quit
+~]$</pre>
+					 The default action is to save the connection profile as persistent. If required, the profile can be held in memory only, until the next restart, by means of the <code class="command">save temporary</code> command.
+				</div></div></div><h4><a id="Locking_a_Profile_to_a_Specific_Device">
+      ⁠</a>Locking a Profile to a Specific Device</h4><div class="para">
+				To lock a profile to a specific interface device, the commands used in the examples above include the interface name. For example: <pre class="synopsis">nmcli connection add type ethernet con-name <em class="replaceable">connection-name</em> ifname <em class="replaceable">interface-name</em></pre> To make a profile usable for all compatible Ethernet interfaces, issue a command as follows: <pre class="synopsis">nmcli connection add type ethernet con-name <em class="replaceable">connection-name</em> ifname "*"</pre> Note that you have to use the <code class="option">ifname</code> argument even if you do not want to set a specific interface. Use the wildcard character <code class="literal">*</code> to specify that the profile can be used with any compatible device.
+			</div><div class="para">
+				To lock a profile to a specific MAC address, use a command in the following format: <pre class="synopsis">nmcli connection add type ethernet con-name "<em class="replaceable">connection-name</em>" ifname "*" mac 00:00:5E:00:53:00</pre> 
+			</div><h4><a id="Adding_a_Wi-Fi_Connection">
+      ⁠</a>Adding a Wi-Fi Connection</h4><div class="para">
+				To view the available Wi-Fi access points, issue a command as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli dev wifi list</code>
+  SSID            MODE  CHAN  RATE     SIGNAL  BARS  SECURITY
+  FedoraTest     Infra  11    54 MB/s  98      ▂▄▆█  WPA1
+  Red Hat Guest  Infra  6     54 MB/s  97      ▂▄▆█  WPA2
+  Red Hat        Infra  6     54 MB/s  77      ▂▄▆_  WPA2 802.1X
+* Red Hat        Infra  40    54 MB/s  66      ▂▄▆_  WPA2 802.1X
+  VoIP           Infra  1     54 MB/s  32      ▂▄__  WEP
+  MyCafe         Infra  11    54 MB/s  39      ▂▄__  WPA2</pre>
+
+			</div><div class="para">
+				To create a Wi-Fi connection profile with static <code class="systemitem">IP</code> configuration, but allowing automatic <code class="systemitem">DNS</code> address assignment, issue a command as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con add con-name <em class="replaceable">MyCafe</em> ifname wlan0 type wifi ssid MyCafe \</code>
+<code class="command">ip4 192.168.100.101/24 gw4 192.168.100.1</code></pre>
+				 To set a WPA2 password, for example <span class="quote">“<span class="quote">caffeine</span>”</span>, issue commands as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con modify <em class="replaceable">MyCafe</em> wifi-sec.key-mgmt wpa-psk</code>
+~]$&nbsp;<code class="command">nmcli con modify <em class="replaceable">MyCafe</em> wifi-sec.psk caffeine</code></pre>
+				 See the <em class="citetitle"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/">Red&nbsp;Hat Enterprise&nbsp;Linux&nbsp;7 Security Guide</a></em> for information on password security.
+			</div><div class="para">
+				To change Wi-Fi state, issue a command in the following format: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli radio wifi [<span class="optional">on | off </span>]</code></pre>
+
+			</div><h4><a id="Changing_a_Specific_Property">
+      ⁠</a>Changing a Specific Property</h4><div class="para">
+				To check a specific property, for example <code class="literal">mtu</code>, issue a command as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli connection show id '<em class="replaceable">MyCafe</em>' | grep mtu</code>
+802-11-wireless.mtu:                     auto</pre>
+				 To change the property of a setting, issue a command as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli connection modify id '<em class="replaceable">MyCafe</em>' 802-11-wireless.mtu 1350</code></pre>
+				 To verify the change, issue a command as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli connection show id '<em class="replaceable">MyCafe</em>' | grep mtu</code>
+802-11-wireless.mtu:                     1350</pre>
+
+			</div><div class="para">
+				Note that <span class="application"><strong>NetworkManager</strong></span> refers to parameters such as <code class="literal">802-3-ethernet</code> and <code class="literal">802-11-wireless</code> as the setting, and <code class="literal">mtu</code> as a property of the setting. See the <code class="filename">nm-settings(5)</code> man page for more information on properties and their settings.
+			</div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sec-Configuring_Static_Routes_Using_nmcli">
+      ⁠</a>2.3.3.&nbsp;Configuring Static Routes Using nmcli</h3></div></div></div><div class="para">
+				To configure static routes using the <span class="application"><strong>nmcli</strong></span> tool, the command line or the interactive editor mode can be used.
+			</div><div class="example"><a id="ex-Configuring_Static_Routes_Using_nmcli">
+      ⁠</a><p class="title"><strong>Example&nbsp;2.3.&nbsp;Configuring Static Routes Using nmcli</strong></p><div class="example-contents"><div class="para">
+					To configure a static route for an existing Ethernet connection using the command line, enter a command as follows: 
+<pre class="screen">~]# <code class="command">nmcli connection modify eth0 +ipv4.routes "192.168.122.0/24 10.10.10.1"</code></pre>
+					 This will direct traffic for the <code class="systemitem">192.168.122.0/24</code> subnet to the gateway at <code class="systemitem">10.10.10.1</code>
+				</div></div></div><div class="example"><a id="ex-Configuring_Static_Routes_Using_nmcli_Editor">
+      ⁠</a><p class="title"><strong>Example&nbsp;2.4.&nbsp;Configuring Static Routes Using nmcli Editor</strong></p><div class="example-contents"><div class="para">
+					To configure a static route for an Ethernet connection using the interactive editor, issue commands as follows: 
+<pre class="screen">~]$&nbsp;<code class="command">nmcli con edit type ethernet con-name <em class="replaceable">ens3</em></code>
+
+===| nmcli interactive connection editor |===
+
+Adding a new '802-3-ethernet' connection
+
+Type 'help' or '?' for available commands.
+Type 'describe [&gt;setting&lt;.&gt;prop&lt;]' for detailed property description.
+
+You may edit the following settings: connection, 802-3-ethernet (ethernet), 802-1x, ipv4, ipv6, dcb
+nmcli&gt; set ipv4.routes 192.168.122.0/24 10.10.10.1
+nmcli&gt;
+nmcli&gt; save persistent
+Saving the connection with 'autoconnect=yes'. That might result in an immediate activation of the connection.
+Do you still want to save? [yes] yes
+Connection 'ens3' (704a5666-8cbd-4d89-b5f9-fa65a3dbc916) successfully saved.
+nmcli&gt; quit
+~]$</pre>
+
+				</div></div></div></div></div><ul class="docnav bottom"><li class="previous"><a accesskey="p" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Text_User_Interface_nmtui.html"><strong>Prev</strong></a></li><li class="doctoc"><div class="toc"><select class="pageSelect"><option value="index.html" class="menu-level-0">Document Home</option><option value="sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#sec-Understanding_the_nmcli_Options" class="menu-level-0">2.3.1. Understanding the nmcli Options</option><option value="sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#sec-Connecting_to_a_Network_Using_nmcli" class="menu-level-0">2.3.2. Connecting to a Network Using nmcli</option><option value="sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#sec-Configuring_Static_Routes_Using_nmcli" class="menu-level-0">2.3.3. Configuring Static Routes Using nmcli</option></select></div></li><li class="next"><a accesskey="n" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_Command_Line_Interface.html"><strong>Next</strong></a></li></ul></div></div></div></div></div></div><div id="legacy-portal"><div class="content-area"><div id="legacy-container" class="legacy-container"></div></div></div></div></main></div><!--googleoff: all--><div id="to-top"><a class="btn_slideto affix" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Using_the_NetworkManager_Command_Line_Tool_nmcli.html#masthead" aria-label="Back to Top"><span class="web-icon-upload"></span></a></div><footer class="footer-main"><div class="container footer-top"><div class="row"><div class="col-sm-2 brand"><img src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/l_redhat-reverse.png" alt="Red Hat"></div><div role="navigation" class="col-sm-2"><h3>Quick Links</h3><ul><li><a class="download-software" href="https://access.redhat.com/downloads/">Downloads</a></li><li><a class="manage-subscriptions" href="https://access.redhat.com/management/subscriptions/#active">Subscriptions</a></li><li><a class="support-cases" href="https://access.redhat.com/support">Support Cases</a></li><li><a class="customer-service" href="https://access.redhat.com/support/customer-service">Customer Service</a></li><li><a class="quick-docs" href="https://access.redhat.com/documentation">Product Documentation</a></li></ul></div><div role="navigation" class="col-sm-2"><h3>Help</h3><ul><li><a class="contact-us" href="https://access.redhat.com/support/contact/">Contact Us</a></li><li><a class="login-problems" href="https://access.redhat.com/help/login_assistance">Log-in Assistance</a></li><li><a class="accessibility" href="https://access.redhat.com/help/accessibility/">Accessibility</a></li><li><a class="browser-support-policy" href="https://access.redhat.com/help/browsers/">Browser Support Policy</a></li></ul></div><div role="navigation" class="col-sm-2"><h3>Site Info</h3><ul><li><a class="recognition" href="https://access.redhat.com/recognition/">Awards and Recognition</a></li><li><a class="colophon" href="https://access.redhat.com/help/colophon/">Colophon</a></li><li><a class="cp-faqs" href="https://access.redhat.com/articles/33844">Customer Portal FAQ</a></li></ul></div><div role="navigation" class="col-sm-2"><h3>About</h3><ul><li><a href="https://access.redhat.com/subscription-value" class="subscription-value">Red Hat Subscription Value</a></li><li><a href="https://www.redhat.com/about/" class="about-red-hat">About Red Hat</a></li><li><a href="http://jobs.redhat.com/" class="about-jobs">Red Hat Jobs</a></li></ul></div><div role="navigation" class="col-sm-2"><h3>Related Sites</h3><ul><li><a href="https://www.redhat.com/" class="red-hat-com">RedHat.com</a></li><li><a href="https://www.jboss.org/" class="jboss-org">JBoss.org</a></li><li><a href="https://www.openshift.com/" class="openshift-com">OpenShift.com</a></li><li><a href="http://developers.redhat.com/" class="red-hat-developers">Developers.RedHat.com</a></li><li><a href="https://partnercenter.force.com/" class="partner-connect">Red Hat Partner Connect</a></li></ul></div></div></div><div class="anchor"><div class="container"><div class="row"><div class="col-sm-4 social"><a href="http://www.redhat.com/summit/" class="summit"><img src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/l_summit.png" alt="Red Hat Summit"></a><a href="http://www.devnation.org/" class="devnation"><img src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/devnation-logo.png" alt="DevNation"></a><a href="https://twitter.com/RedHatSupport" class="sm-icon twitter"><span class="nicon-twitter"></span><span class="offscreen">Twitter</span></a><a href="https://www.facebook.com/RedHatSupport" class="sm-icon facebook"><span class="nicon-facebook"></span><span class="offscreen">Facebook</span></a><a href="https://plus.google.com/100456039940694908045/posts" class="sm-icon googleplus"><span class="nicon-googleplus"></span><span class="offscreen">Google+</span></a></div><div class="col-sm-8 legal"><div role="navigation" class="legal-nav"><ul><li><a href="http://www.redhat.com/en/about/privacy-policy" class="privacy-policy">Privacy Policy</a></li><li><a href="https://access.redhat.com/help/terms/" class="terms-of-use">Customer Portal Terms of Use</a></li><li><a href="http://www.redhat.com/en/about/all-policies-guidelines" class="all-policies">All Policies and Guidelines</a></li></ul></div><small class="copyright">Copyright © 2017 Red Hat, Inc.</small></div></div></div></div></footer><!--googleon: all--></div><script src="./2.3. Using the NetworkManager Command Line Tool, nmcli_files/respond.min.js" type="text/javascript"></script></body></html>

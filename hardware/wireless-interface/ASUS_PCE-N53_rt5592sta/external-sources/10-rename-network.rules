@@ -1,0 +1,3 @@
+#http://askubuntu.com/questions/689501/how-to-rename-network-interface-in-15-10
+#‘/etc/udev/rules.d/10-rename-network.rules’
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="f0:79:59:e6:08:ee", NAME="wlan0" 

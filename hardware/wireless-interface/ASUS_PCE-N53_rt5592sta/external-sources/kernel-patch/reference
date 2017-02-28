@@ -1,0 +1,7 @@
+https://ubuntuforums.org/showthread.php?t=2160399&p=12732190#post12732190
+
+
+patch -p1 <../rt5592sta_fix_64bit_3.8.patch
+sudo make clean; sudo make;
+sudo install;
+sudo modprobe rt5592sta
