@@ -13,4 +13,5 @@ wireshark-gnome           #need wireshark_arch as well
 lm_sensors                #hardware sensor info
 hostapd
 wireless-tools            #for wireless cards
+thunderbird		  #email
 xsane	#for lexmark printer
