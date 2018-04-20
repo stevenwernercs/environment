@@ -68,7 +68,6 @@ alias gitready='~/scripts/gitready.sh'
 #alias xmind='~/_~/apps/Visualization/xmind/XMind_Linux_64bit/XMind &'
 #alias protege='sh ~/_~/apps/Protege-5.0.0-beta-17/run.sh'
 #alias eclipse='~/_~/apps/eclipse/eclipse'
-#alias batt='echo "landed @ git-battelle-arb"; cd ~/projects/git-battelle-abr/'
 
 alias chrome='google-chrome &'
 alias tor='cd ~/apps/browser/tor/latest/; ./start-tor-browser.desktop'
