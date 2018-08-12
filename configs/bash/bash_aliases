@@ -3,6 +3,21 @@
 function ls_recent {
   ls -lrst "$@"
 }
+function ls_recent_single_element {
+  ls -lrst "$@"
+  echo -e "\t Most Recent: $RECENT"
+  RECENT="$(ls -rt1 "$@" | tail -1)"
+  if [ -d "$RECENT" ]
+  then
+    echo "cd $RECENT"
+    cd "$RECENT"
+    ls 
+  elif [ -e "$RECENT" ]
+  then
+    echo "gvim $RECENT"
+    gvim "$RECENT"    
+  fi
+}
 function cat_dir {
   for each in "$@"
   do
@@ -57,6 +72,11 @@ function mkdir_cp {
   fi
   \cp -iv "${@}"
 }
+randpw_lefthanded() {
+  </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c8; echo "";
+}
+#reqiured for the parameters.config to point to the correct library directory in the Lymba projects.
+export platform=`uname -s -m|tr ' ' '-'`
 
 
 # aliases-------------------------------------------------------------------------------
@@ -78,10 +98,17 @@ alias pwdP='pwd -P'
 alias cat='cat_dir';
 alias cdl='cd_ls';
 alias lr='ls_recent';
+alias lr1='ls_recent_single_element';
 alias lc='ls_count';
 alias mv='mkdir_mv';
 alias cp='mkdir_cp';
 alias cdr='cd_rebase';
+alias pwdP='pwd -P'
+alias win='rdesktop -u Steve 192.168.1.234 -g1270x938'
+alias ly_deploy='mvn deploy -DaltDeploymentRepository=lymba::default::http://ly69:8080/repository/lymba/'
+alias ly_skip_deploy='mvn deploy -DskipTests -DaltDeploymentRepository=lymba::default::http://ly69:8080/repository/lymba/'
+alias mvn_package_with_deps='mvn clean compile assembly:single'
+alias randpw_lefthanded='randpw_lefthanded'
 
 alias grep="grep --color"
 alias egrep="egrep --color"

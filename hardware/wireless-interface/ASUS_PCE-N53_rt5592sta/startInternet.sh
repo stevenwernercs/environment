@@ -11,4 +11,4 @@ ifconfig enp3s0 up
 iwlist enp3s0 scan
 
 sudo dhclient enp3s0 &
-sudo wpa_supplicant -Dwext -ienp3s0 -c/etc/wpa_supplicant/wpa-VictoriaforTexas.conf
+sudo wpa_supplicant -Dwext -ienp3s0 -c/etc/wpa_supplicant/wpa-BernieSanders2020.conf

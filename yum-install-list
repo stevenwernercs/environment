@@ -16,3 +16,12 @@ wireless-tools            #for wireless cards
 thunderbird		  #email
 xsane	#for lexmark printer
 tree
+httpd
+php
+texlive texlive-latex texlive-xetex
+texlive-collection-latex
+texlive-collection-latexrecommended
+texlive-xetex-def
+texlive-collection-xetex
+texlive-collection-latexextra   #Only if needed:
+textlive textlive-*.noarch      #Only if needed:
