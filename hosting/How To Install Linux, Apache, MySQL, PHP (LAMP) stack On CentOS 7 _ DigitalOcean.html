@@ -1,0 +1,3806 @@
+<!DOCTYPE html>
+<!-- saved from url=(0109)https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7 -->
+<html lang="en" class="gr__digitalocean_com" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 | DigitalOcean</title>
+
+<meta name="description" content="In this guide, we&#39;ll get a LAMP stack installed on an CentOS 7 VPS. A &#39;LAMP&#39; stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web apps. This term is actually an acronym which">
+<meta name="keywords" content="Getting Started LAMP Stack">
+
+<meta name="og:title" content="How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 | DigitalOcean">
+<meta name="og:description" content="In this guide, we&#39;ll get a LAMP stack installed on an CentOS 7 VPS. A &#39;LAMP&#39; stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web apps. This term is actually an acronym which">
+<meta name="og:site_name" content="DigitalOcean">
+<meta name="og:type" content="article">
+<meta name="og:image" content="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/LAMP_tw.png?1430247969">
+
+<meta name="twitter:site" content="DigitalOcean">
+<meta name="twitter:title" content="How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 | DigitalOcean">
+<meta name="twitter:description" content="In this guide, we&#39;ll get a LAMP stack installed on an CentOS 7 VPS. A &#39;LAMP&#39; stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web apps. This term is actually an acronym which">
+<meta name="twitter:creator" content="DigitalOcean">
+<meta name="twitter:card" content="photo">
+<meta name="twitter:url" content="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7">
+<meta name="twitter:image" content="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/LAMP_tw.png?1430247969">
+
+  <link rel="canonical" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7">
+
+
+    <link rel="stylesheet" media="all" href="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/application-b382140d72736182fb5af28c690553a9.css">
+
+    
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="3Y1tDFgEC5TJlP9cEx4KXQ2hpwZZ+WHoq1/Pbh8MABxCip0hB9PRzokBM8Ynq8F2mRVeKdle2QdOw3SKZReYeA==">
+    
+<link rel="stylesheet" type="text/css" href="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/cookieconsent.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.js"></script>
+<style>
+  .cc-window {font-family: proxima-nova, 'proxima nova', 'helvetica neue', helvetica, arial, sans-serif; font-size: 13px; line-height: 17px}
+  .cc-bottom {bottom: 20px}
+  .cc-right {right: 20px}
+  .cc-window a {text-decoration: none}
+  .cc-window.cc-floating {max-width: 461px; padding: 20px 35px 20px 20px;}
+  .cc-floating .cc-message {margin-bottom: 0;}
+  .cc-floating .cc-message a {color: #0069ff;}
+  .cc-message .cc-compliance {position: absolute; top: 5px; right: 0; font-weight: bold; font-size: 15px;}
+  .cc-message .cc-compliance .cc-btn {border-width: 0; color: #999;}
+  .cc-message + .cc-compliance {display: none;}
+  @media only screen and (min-width: 420px) {
+    .cc-window {font-size: 14px; line-height: 20px; border-radius: 4px;}
+    .cc-message .cc-compliance {top: 1px; right: 1px;}
+  }
+</style>
+
+<script>
+//<![CDATA[
+
+  window.cookieConsentDomain = '.digitalocean.com';
+
+//]]>
+</script>
+<script>
+//<![CDATA[
+
+  window.cookiesToSet = ["first_landing_page=/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7; expires=Mon, 12 Nov 2018 17:15:27 +0000; path=/; domain=.digitalocean.com","last_landing_page=/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7; path=/; domain=.digitalocean.com","referrer=https://www.google.com/; expires=Mon, 12 Nov 2018 17:15:27 +0000; path=/; domain=.digitalocean.com"];
+
+//]]>
+</script>
+<script src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/cookieConsent-89d6863747262b1b5edf227746928473.js"></script>
+
+    <script src="https://d2wy8f7a9ursnm.cloudfront.net/v4/bugsnag.min.js"></script>
+
+<script>
+  window.Bugsnag = bugsnag({
+    apiKey: '9ffc01bc3e1fa7891bfd20909d1bfb0e',
+    logger: null
+  })
+</script>
+
+<script type="text/javascript">
+  window.cookieConsent.promise.then(function () {
+    if(window.analytics=window.analytics||[],window.analytics.included)window.console&&console.error&&console.error("analytics.js included twice");else{window.analytics.included=!0,window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(a){return function(){var n=Array.prototype.slice.call(arguments);return n.unshift(a),window.analytics.push(n),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(a){var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+a+"/analytics.min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(n,t)},window.analytics.SNIPPET_VERSION="2.0.9",
+      window.analytics.load("puo3uv968t")}
+    window.analytics.page();
+  });
+</script>
+
+
+<!-- Google Tag Manager -->
+<script>
+window.cookieConsent.promise.then(function () {
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KHWBBT');
+});
+</script>
+<!-- End Google Tag Manager -->
+
+
+      <script src="https://use.typekit.net/izu1uqu.js"></script>
+      <script>try{Typekit.load({ async: true });}catch(e){}</script>
+      <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.digitalocean.com/community/tutorials/feed">
+    <script>
+      window.comApp = {
+        prefix: '/community',
+        svgIconPath: 'https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg',
+        railsEnv: 'production',
+        rootUrl: 'https://www.digitalocean.com/community'
+      };
+    </script>
+      <script src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/forms2.min.js"></script>
+
+    <script src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/application-521c96ef4e6e740886874d297935983c.js"></script>
+  <style>.fluidvids {width: 100%; max-width: 100%; position: relative;}.fluidvids-item {position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;}</style><script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=694818843983011"></script><link id="mktoForms2BaseStyle" rel="stylesheet" type="text/css" href="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/forms2.css"><link id="mktoForms2ThemeStyle" rel="stylesheet" type="text/css" href="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/forms2-theme-simple.css"></head>
+  <body class="feature-filter-bar feature-upvotes tutorials-controller tutorial-single" data-env="production" data-prefix="/community" data-user-id="" data-facebook-app-id="694818843983011" data-completed-tutorial-id="" data-tutorial-id="1261" data-js="tutorial" data-gr-c-s-loaded="true">
+    
+
+    <div class="outside_viewport">
+        <div id="contents-modal" class="modal fade mini-modal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Contents</h1>
+          <button class="close-button icon icon-close-light" data-dismiss="modal" aria-label="close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="table-of-contents-modal tocify"><ul id="tocify-header0" class="tocify-header"><li class="tocify-item tocify-focus" data-unique="prerequisites"><a>Prerequisites</a></li></ul><ul id="tocify-header1" class="tocify-header"><li class="tocify-item" data-unique="step-one-—-install-apache"><a>Step One — Install Apache</a></li></ul><ul id="tocify-header2" class="tocify-header"><li class="tocify-item" data-unique="step-two-—-install-mysql-(mariadb)"><a>Step Two — Install MySQL (MariaDB)</a></li></ul><ul id="tocify-header3" class="tocify-header"><li class="tocify-item" data-unique="step-three-—-install-php"><a>Step Three — Install PHP</a></li></ul><ul id="tocify-header4" class="tocify-header"><li class="tocify-item" data-unique="step-four-—-test-php-processing-on-your-web-server"><a>Step Four — Test PHP Processing on your Web Server</a></li></ul><ul id="tocify-header5" class="tocify-header"><li class="tocify-item" data-unique="conclusion"><a>Conclusion</a></li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="share-modal" class="modal fade mini-modal" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1>Share</h1>
+        <button type="button" class="close-button icon icon-close-light" aria-label="close" data-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="social-sharing social-sharing-container">
+          <ul class="top ">
+            <li class="shareBtn" id="sbTwitter">
+              <a href="http://twitter.com/share?text=How%20To%20Install%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20stack%20On%20CentOS%207&amp;url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=twshare" class="share-icon share-popup" title="Share on Twitter">
+                <span class="sIcon icon-bird"></span>
+              </a>
+              <a href="http://twitter.com/share?text=How%20To%20Install%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20stack%20On%20CentOS%207&amp;url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=twshare" class="share-link share-popup" title="Share on Twitter">
+                Twitter
+              </a>
+            </li>
+            <li class="shareBtn" id="sbFacebook">
+              <a class="share-icon facebook-share" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=fbshare" onclick="" title="Share on Facebook">
+                <span class="sIcon icon-facebook-B"></span>
+              </a>
+
+              <a class="share-link facebook-share" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=fbshare" onclick="" title="Share on Facebook">
+                Facebook
+              </a>
+            </li>
+            <li class="shareBtn" id="sbGoogle">
+              <a href="https://plus.google.com/share?url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=gpshare" class="share-icon share-popup" title="Share on Google+">
+                <span class="sIcon icon-google-plus-B"></span>
+              </a>
+              <a href="https://plus.google.com/share?url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=gpshare" class="share-link share-popup" title="Share on Google+">
+                Google+
+              </a>
+            </li>
+            <li class="shareBtn" id="sbYC">
+              <a href="https://news.ycombinator.com/submitlink?t=How%20To%20Install%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20stack%20On%20CentOS%207&amp;u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=hnshare" class="share-icon share-popup" target="_blank" title="Submit to Hacker News">
+                <span class="sIcon icon-hacker-news"></span>
+              </a>
+              <a href="https://news.ycombinator.com/submitlink?t=How%20To%20Install%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20stack%20On%20CentOS%207&amp;u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=hnshare" class="share-link share-popup" target="_blank" title="Submit to Hacker News">
+                Hacker News
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="table-of-contents has-init" style="top: 196px;">
+    <div data-js="tableOfContentsDesktop" class="tocify"><ul id="tocify-header0" class="tocify-header"><li class="tocify-item tocify-focus" data-unique="prerequisites"><a>Prerequisites</a></li></ul><ul id="tocify-header1" class="tocify-header"><li class="tocify-item" data-unique="step-one-—-install-apache"><a>Step One — Install Apache</a></li></ul><ul id="tocify-header2" class="tocify-header"><li class="tocify-item" data-unique="step-two-—-install-mysql-(mariadb)"><a>Step Two — Install MySQL (MariaDB)</a></li></ul><ul id="tocify-header3" class="tocify-header"><li class="tocify-item" data-unique="step-three-—-install-php"><a>Step Three — Install PHP</a></li></ul><ul id="tocify-header4" class="tocify-header"><li class="tocify-item" data-unique="step-four-—-test-php-processing-on-your-web-server"><a>Step Four — Test PHP Processing on your Web Server</a></li></ul><ul id="tocify-header5" class="tocify-header"><li class="tocify-item" data-unique="conclusion"><a>Conclusion</a></li></ul></div>
+    <button type="button" class="Button--reset Tutorial-button " data-js="markAsComplete" data-tutorialinteraction="" data-tutorialsingle=""><svg class="svg-icon svg-icon-completed"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-completed"></use></svg><span>Mark as Complete</span></button>
+  </div>
+  
+  <div id="share-modal" class="modal fade mini-modal" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1>Share</h1>
+        <button type="button" class="close-button icon icon-close-light" aria-label="close" data-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="social-sharing social-sharing-container">
+          <ul class="bottom ">
+            <li class="shareBtn" id="sbTwitter">
+              <a href="http://twitter.com/share?text=How%20To%20Install%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20stack%20On%20CentOS%207&amp;url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=twshare" class="share-icon share-popup" title="Share on Twitter">
+                <span class="sIcon icon-bird"></span>
+              </a>
+              <a href="http://twitter.com/share?text=How%20To%20Install%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20stack%20On%20CentOS%207&amp;url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=twshare" class="share-link share-popup" title="Share on Twitter">
+                Twitter
+              </a>
+            </li>
+            <li class="shareBtn" id="sbFacebook">
+              <a class="share-icon facebook-share" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=fbshare" onclick="" title="Share on Facebook">
+                <span class="sIcon icon-facebook-B"></span>
+              </a>
+
+              <a class="share-link facebook-share" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=fbshare" onclick="" title="Share on Facebook">
+                Facebook
+              </a>
+            </li>
+            <li class="shareBtn" id="sbGoogle">
+              <a href="https://plus.google.com/share?url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=gpshare" class="share-icon share-popup" title="Share on Google+">
+                <span class="sIcon icon-google-plus-B"></span>
+              </a>
+              <a href="https://plus.google.com/share?url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=gpshare" class="share-link share-popup" title="Share on Google+">
+                Google+
+              </a>
+            </li>
+            <li class="shareBtn" id="sbYC">
+              <a href="https://news.ycombinator.com/submitlink?t=How%20To%20Install%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20stack%20On%20CentOS%207&amp;u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=hnshare" class="share-icon share-popup" target="_blank" title="Submit to Hacker News">
+                <span class="sIcon icon-hacker-news"></span>
+              </a>
+              <a href="https://news.ycombinator.com/submitlink?t=How%20To%20Install%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20stack%20On%20CentOS%207&amp;u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7&amp;utm_medium=community&amp;utm_source=hnshare" class="share-link share-popup" target="_blank" title="Submit to Hacker News">
+                Hacker News
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div id="newsletter-signup-dialog" class="newsletter-signups-dialog reveal" data-newsletter-signup-dialog="" data-article-target=".content-body">
+  <div class="form-message">
+  <div class="pull-right">
+    <a href="javascript:;" class="newsletter-signups-dialog-dismiss" data-newsletter-signup-dismiss="">×</a>
+
+  </div>
+  <h4 class="newsletter-signups-dialog-title">
+    Sign up for our newsletter.
+  </h4>
+  <p class="newsletter-signups-dialog-description">
+    Get the latest tutorials on SysAdmin and open source topics.
+  </p>
+  <form class="newsletter-signup" id="new_newsletter_signup" data-newsletter-signup="true" action="https://www.digitalocean.com/community/newsletter" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
+
+  <input data-newsletter-signup-field="url" type="hidden" name="newsletter_signup[url]" id="newsletter_signup_url">
+  <input data-newsletter-signup-field="title" type="hidden" name="newsletter_signup[title]" id="newsletter_signup_title">
+
+  <div class="newsletter-signup-ajax-error" data-newsletter-signup-ajax-error=""></div>
+
+
+  <div class="form-group">
+    <input placeholder="Enter your email address" required="required" class="field" type="email" name="newsletter_signup[email]" id="newsletter_signup_email">
+  </div>
+
+  <button data-disable-with="Sign Up" class="button blue-button">
+    Sign Up
+  </button>
+
+</form>
+
+</div>
+
+<div class="thanks-message hidden" data-newsletter-signup-successful=""> 
+  <div class="pull-right"> 
+    <a href="javascript:;" class="newsletter-signups-dialog-dismiss icon icon-close-light" data-newsletter-signup-dismiss=""></a> 
+  </div> 
+
+  <span class="newsletter-signups-dialog-success"> 
+    Thanks for signing up! 
+  </span> 
+</div>
+
+</div>
+
+
+      
+    </div>
+
+      
+      
+<header class="unified-nav-shims__header">
+  <div class="UnifiedMobileNav " role="banner">
+  <a class="UnifiedMobileNav-spaceRight" href="https://www.digitalocean.com/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="172" height="29" role="img" aria-labelledby="pr7papa6jt9por7boqlgcihgy7gr569"><title id="pr7papa6jt9por7boqlgcihgy7gr569">DigitalOcean home</title><g class="UnifiedNav-logoSVG" fill-rule="evenodd"><path d="M14.4942 29v-5.5674c5.9572 0 10.5633-5.8478 8.2892-12.059-.8425-2.3006-2.693-4.1355-5.0126-4.9706-6.262-2.2534-12.1564 2.3135-12.1573 8.2207 0 0-.0006.0014-.0014.0014H0C0 5.2123 9.1687-2.1167 19.1138.9624c4.3459 1.3457 7.7993 4.7708 9.1561 9.081C31.3742 19.9068 23.985 29 14.4942 29"></path><path d="M14.507 23.4468H8.9103v-5.549s.0005-.0011.0011-.0011h5.5949c.0006 0 .0009.0006.0009.0006v5.5495M8.9093 27.7118H4.6105l-.0012-.0012v-4.2638h4.3009v4.2638l-.0009.0012M4.6125 23.4468H1.0088c-.0015 0-.0026-.0012-.0026-.0012v-3.5724s.0011-.0025.0026-.0025h3.601c.0015 0 .0027.0011.0027.0011v3.575M43.2806 9.6357h1.649c1.8346 0 3.345.358 4.49 1.0647 1.2714.7603 1.9164 2.2069 1.9164 4.2991 0 2.1554-.6465 3.6671-1.9207 4.4942h-.0008c-1.0971.7196-2.5981 1.0846-4.462 1.0846h-1.6719V9.6357zm8.324-1.0736c-1.6598-1.142-3.7252-1.721-6.1387-1.721h-5.2537V23.373h5.2537c2.4074 0 4.4737-.6113 6.1407-1.8157.907-.6382 1.6197-1.5304 2.1185-2.651.4962-1.1144.7479-2.4288.7479-3.9067 0-1.4605-.2517-2.758-.7482-3.857-.4988-1.104-1.212-1.972-2.1202-2.5804zM58.1303 6.6376c-.5051 0-.9403.1777-1.2906.5254-.3546.335-.5346.7597-.5346 1.2618 0 .501.1791.9322.532 1.2825.3529.35.788.528 1.2932.528.5042 0 .9394-.178 1.2928-.528.3535-.3508.5324-.7821.5324-1.2825 0-.5015-.18-.926-.5324-1.2592-.3534-.3503-.7886-.528-1.2928-.528M56.6247 23.3729h2.9538V11.7294h-2.9538zM69.5321 19.5787c-.5162.5814-1.1793.8635-2.0264.8635-.8471 0-1.5064-.282-2.015-.863-.5065-.5777-.7637-1.3439-.7637-2.2773 0-.9479.2572-1.7238.764-2.3058.502-.576 1.1796-.8683 2.0147-.8683.8465 0 1.5096.284 2.0262.8695.5142.582.7751 1.3573.7751 2.3046 0 .9328-.2609 1.6988-.7749 2.2768zm.775-6.8767c-.8908-.7858-1.8858-1.2444-2.9614-1.2444-1.6305 0-2.9859.5598-4.0276 1.662-1.0555 1.0932-1.5907 2.5006-1.5907 4.1823 0 1.644.5269 3.0464 1.568 4.1709 1.0498 1.088 2.4123 1.6396 4.0503 1.6396 1.139 0 2.1182-.3144 2.9157-.9356v.268c0 .9662-.2608 1.7176-.7751 2.234-.5137.5154-1.226.7764-2.1173.7764-1.3637 0-2.2183-.5314-3.2589-1.9262l-2.0115 1.917.0542.0754c.4346.605 1.1 1.197 1.9785 1.7594.8787.5603 1.9832.8447 3.2832.8447 1.7536 0 3.1726-.5363 4.2172-1.5933 1.0506-1.0628 1.5835-2.486 1.5835-4.2286V11.7294H70.307v.9726zM75.7434 23.3729h2.9541V11.7294h-2.9541zM77.249 6.6376c-.5052 0-.94.1777-1.2906.5254-.3547.335-.5344.7597-.5344 1.2618 0 .501.1789.9322.532 1.2825.353.35.7878.528 1.293.528.5045 0 .9396-.178 1.2928-.528.3535-.3508.5323-.7821.5323-1.2825 0-.5015-.1797-.926-.5323-1.2592-.3532-.3503-.7883-.528-1.2929-.528M85.1724 8.5831h-2.9082v3.1463h-1.6888v2.6702h1.6888v4.8365c0 1.5134.3047 2.5964.9064 3.2181.6031.6247 1.6741.9414 3.1831.9414.48 0 .963-.0156 1.4354-.0463l.133-.0088v-2.6683l-1.013.0526c-.7033 0-1.1728-.1226-1.3961-.3637-.226-.245-.3406-.7636-.3406-1.5404v-4.421h2.7497v-2.6703h-2.7497V8.583M101.7735 23.3729h2.9544V6.8412h-2.9544zM134.5728 19.2094c-.5286.5874-1.0693 1.0966-1.4855 1.3613v.0005c-.4085.2599-.924.3918-1.532.3918-.8703 0-1.5703-.3144-2.1405-.9621-.567-.644-.8545-1.4716-.8545-2.4613s.2838-1.8162.8436-2.4556c.5625-.6434 1.2588-.9562 2.1285-.9562.9515 0 1.9548.5869 2.8145 1.5947l1.9525-1.8568c-1.273-1.6433-2.897-2.4081-4.8352-2.4081-1.622 0-3.028.5862-4.1788 1.7411-1.1446 1.147-1.7251 2.6074-1.7251 4.3409 0 1.7335.58 3.1977 1.7234 4.352 1.1447 1.1557 2.5514 1.7417 4.1805 1.7417 2.139 0 3.8651-.9158 5.029-2.5935l-1.9204-1.8304M140.2405 16.0973c.1422-.5567.401-1.0207.7714-1.381.4005-.3906.9214-.5885 1.5489-.5885.716 0 1.2702.2019 1.6474.6014.3495.3696.5467.8296.588 1.368h-4.5557zm6.4569-2.7414c-.4191-.5788-.9896-1.0448-1.6965-1.3854-.7047-.3404-1.526-.513-2.441-.513-1.6489 0-2.9982.6037-4.0113 1.7946-.9836 1.182-1.4818 2.651-1.4818 4.3665 0 1.7648.547 3.2253 1.6254 4.341 1.0727 1.1105 2.5083 1.6737 4.267 1.6737 1.992 0 3.627-.799 4.8587-2.3752l.0666-.0847-1.9273-1.837c-.1789.2139-.4317.4561-.6628.6722-.2918.273-.5659.4842-.8588.6289-.4415.218-.9369.3255-1.4907.3255-.8187 0-1.4964-.2388-2.0147-.71-.4847-.4403-.768-1.0345-.843-1.7683h7.8265l.0264-1.0693c0-.7569-.1038-1.4862-.3088-2.1677a6.312 6.312 0 0 0-.934-1.8918zM152.797 18.9234c.3352-.2318.8085-.3483 1.4073-.3483.7112 0 1.4654.1413 2.2426.421v1.1421c-.6421.592-1.4996.8922-2.5499.8922-.5114 0-.909-.1126-1.1822-.3355-.2683-.218-.3985-.4955-.3985-.847 0-.3994.1571-.7022.4808-.9245zm5.2452-6.3229h-.0003c-.8952-.758-2.1328-1.143-3.678-1.143-.9829 0-1.902.2144-2.7336.6324-.7691.387-1.5245 1.0275-2.0043 1.8662l.0298.0358 1.8917 1.796c.7791-1.2322 1.6454-1.66 2.7941-1.66.6172 0 1.1298.1643 1.5234.4881.3916.3216.5819.7304.5819 1.249v.5652c-.7324-.221-1.4629-.333-2.1738-.333-1.47 0-2.6663.3432-3.555 1.0193-.9.6852-1.3562 1.665-1.3562 2.9125 0 1.094.3847 1.9829 1.1461 2.6433.7677.6372 1.7275.961 2.8524.961 1.1246 0 2.177-.4495 3.132-1.2191v.9587h2.9089v-7.4852c0-1.4173-.4572-2.523-1.3591-3.2872zM170.7656 12.8285c-.8227-.9092-1.9791-1.371-3.4371-1.371-1.172 0-2.1236.3338-2.8357.9926v-.7207h-2.897v11.6435h2.954v-6.4215c0-.8823.2119-1.5828.6293-2.0826.4162-.4987.989-.741 1.75-.741.6691 0 1.1765.2167 1.5506.662.3759.4474.5662 1.0638.5662 1.8335v6.7496H172v-6.7496c0-1.6127-.415-2.889-1.2344-3.7948M92.8158 18.9234c.3351-.2318.8087-.3483 1.4075-.3483.7112 0 1.4652.1413 2.2426.421v1.1421c-.6421.592-1.4998.8922-2.5502.8922-.5114 0-.9087-.1126-1.1819-.3355-.2683-.218-.3988-.4955-.3988-.847 0-.3994.1574-.7022.4808-.9245zm5.2451-6.3229h-.0003c-.8952-.758-2.1328-1.143-3.6776-1.143-.983 0-1.902.2144-2.7337.6324-.7694.387-1.5247 1.0275-2.0043 1.8662l.0295.0358 1.8917 1.796c.7792-1.2322 1.6458-1.66 2.7941-1.66.6172 0 1.1298.1643 1.5234.4881.3916.3216.5822.7304.5822 1.249v.5652c-.7327-.221-1.4631-.333-2.174-.333-1.47 0-2.6664.3432-3.555 1.0193-.8999.6852-1.3562 1.665-1.3562 2.9125 0 1.094.3847 1.9829 1.1463 2.6433.7677.6372 1.7272.961 2.8524.961 1.1246 0 2.1766-.4495 3.1318-1.2191v.9587H99.42v-7.4852c0-1.4173-.457-2.523-1.359-3.2872zM115.4464 9.5808c-3.0682 0-5.5645 2.4755-5.5645 5.5188s2.4963 5.5188 5.5645 5.5188c3.0682 0 5.5645-2.4755 5.5645-5.5188s-2.4963-5.5188-5.5645-5.5188zm0 14.0408c-4.7383 0-8.5928-3.8228-8.5928-8.522 0-4.6994 3.8545-8.5223 8.5928-8.5223 4.738 0 8.5925 3.8229 8.5925 8.5223 0 4.6992-3.8545 8.522-8.5925 8.522z"></path></g></svg>
+
+</a>
+
+  <button class="UnifiedMobileNav-toggleButton" type="button" aria-label="Open navigation" data-unified-mobile-nav-trigger-open="">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="UnifiedMobileNav-toggleButtonSVG UnifiedMobileNav-openButtonSVG"><g transform="translate(0 1)" fill-rule="evenodd"><rect width="24" height="3.5" rx="1.75"></rect><rect y="9" width="24" height="3.5" rx="1.75"></rect><rect y="18" width="24" height="3.5" rx="1.75"></rect></g></svg>
+
+  </button>
+
+  <nav class="UnifiedMobileNav-popUp" role="navigation" aria-hidden="true" data-unified-mobile-nav-popup="">
+  <button class="UnifiedMobileNav-toggleButton UnifiedMobileNav-popUpCloseButton" type="button" aria-label="Close navigation" data-unified-mobile-nav-trigger-close="">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="UnifiedMobileNav-toggleButtonSVG UnifiedMobileNav-closeButtonSVG"><path d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fill-rule="evenodd"></path></svg>
+
+  </button>
+
+  <div class="UnifiedMobileNav-section">
+    <ul class="UnifiedMobileNav-list">
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-primaryLink" href="https://www.digitalocean.com/products/droplets/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" aria-hidden="true" class="UnifiedMobileNav-productIcon"><g stroke="#0069FF" stroke-width="2" fill="none" fill-rule="evenodd"><path d="M22.6 41.2C14.2 41.2 7 34.3 7 25.8 7 12.9 22.6 4.2 22.6 4.2s15.6 9 15.6 21.7c0 8.4-7.1 15.3-15.6 15.3z"></path><path d="M22.6 30.8c-2.9 0-5.2-2.3-5.2-5.2 0-4 5.2-7.8 5.2-7.8s5.2 3.7 5.2 7.8c0 2.9-2.3 5.2-5.2 5.2z"></path></g></svg>
+
+
+          Droplets
+</a>      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-primaryLink" href="https://www.digitalocean.com/products/spaces/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" aria-hidden="true" class="UnifiedMobileNav-productIcon"><g transform="translate(4 4)" fill="#0069FF" fill-rule="nonzero"><path d="M6.5 7.6c.4 0 .7-.1 1-.3.3-.3.5-.6.5-1s-.1-.7-.3-1c-.2-.3-.6-.5-1-.5h-.1c-.7 0-1.4.6-1.4 1.3 0 .4.1.7.3 1 .3.3.6.5 1 .5zM2.7 13.3c.8 0 1.4-.5 1.5-1.3 0-.4-.1-.7-.3-1-.2-.3-.6-.5-1-.5h-.1c-.7 0-1.4.6-1.4 1.3 0 .4.1.7.3 1 .2.3.6.4 1 .5zM2.8 18.6c0-.4-.1-.7-.3-1-.2-.3-.6-.5-1-.5h-.1c-.3 0-.7.1-.9.3-.3.2-.5.6-.5 1s.1.7.3 1c.2.3.6.5 1 .5.8.1 1.5-.5 1.5-1.3zM2.8 23.9c-.4 0-.8.1-1 .3-.3.2-.5.6-.5 1s.1.7.3 1c.2.3.6.5 1 .5s.7-.1 1-.3c.3-.2.5-.6.5-1 .1-.8-.5-1.5-1.3-1.5zM6.7 29.6c-.8 0-1.5.6-1.5 1.3 0 .4.1.7.3 1 .2.3.6.5 1 .5s.7-.1 1-.3c.3-.2.5-.6.5-1s-.1-.7-.3-1c-.2-.3-.6-.4-1-.5zM12.4 33.3c-.4 0-.8.1-1 .3-.3.2-.5.6-.5 1s.1.7.3 1c.2.3.6.5 1 .5s.7-.1 1-.3c.3-.2.5-.6.5-1s-.1-.7-.3-1c-.3-.3-.6-.5-1-.5z"></path><circle cx="25.1" cy="27" r="1.4"></circle><circle cx="28.8" cy="21.8" r="1.4"></circle><circle cx="28.9" cy="15.5" r="1.4"></circle><circle cx="25" cy="10.1" r="1.4"></circle><path d="M12.3 3.8c.8 0 1.4-.5 1.5-1.3.1-.8-.6-1.5-1.3-1.5h-.1c-.3 0-.7.1-.9.3-.3.2-.5.6-.5 1s.1.7.3 1c.2.3.6.5 1 .5zM18.6 30.1v-2.4c-4.9-.2-8.9-4.2-8.9-9.2 0-5 3.9-9 8.9-9.2V6.9c-6.2.2-11.3 5.3-11.3 11.6s5.1 11.4 11.3 11.6zM19.2 0v2.4c8.8.2 15.9 7.4 15.9 16.2 0 8.8-7.1 16-15.9 16.2v2.4c10.1-.2 18.3-8.5 18.3-18.6C37.5 8.5 29.3.2 19.2 0z"></path></g></svg>
+
+
+          Spaces
+</a>      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-primaryLink" href="https://www.digitalocean.com/products/kubernetes/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" aria-hidden="true" class="UnifiedMobileNav-productIcon"><path fill="none" stroke="#0069FF" stroke-width="2" d="M36.779 23.119c0 7.962-6.454 14.416-14.416 14.416-7.962 0-14.416-6.454-14.416-14.416 0-7.962 6.454-14.417 14.416-14.417 7.962 0 14.416 6.455 14.416 14.417zm-9.212.031c0 2.844-2.306 5.151-5.151 5.151-2.845 0-5.151-2.307-5.151-5.151 0-2.845 2.306-5.151 5.151-5.151 2.845 0 5.151 2.306 5.151 5.151zm-5.153-5.291V3.435v14.424zM6.999 10.598l11.22 9.136-11.22-9.136zm30.833 0l-11.219 9.136 11.219-9.136zm4.001 16.795l-14.11-3.095 14.11 3.095zM3 27.393l14.11-3.095L3 27.393zM31.2 41l-6.405-13.343L31.2 41zm-17.558 0l6.304-13.343L13.642 41z"></path></svg>
+
+
+          Kubernetes
+</a>      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-primaryLink" href="https://www.digitalocean.com/products/tools-and-integrations/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" aria-hidden="true" class="UnifiedMobileNav-productIcon"><g stroke="#0069FF" stroke-width="2" fill="none" fill-rule="evenodd"><path d="M8.4 7.5h28.4c1 0 1.9.8 1.9 1.9v26.2c0 1-.8 1.9-1.9 1.9H8.4c-1 0-1.9-.8-1.9-1.9V9.4c0-1.1.8-1.9 1.9-1.9zM22.4 17.7h4.4M12.4 17.7h7.7M22.4 28.4h4.4M12.4 28.4h7.7M28.9 23.1h3.8M18.3 23.1h8.5M12.4 23.1H16"></path></g></svg>
+
+
+          Tools &amp; Integrations
+</a>      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-primaryLink" href="https://developers.digitalocean.com/documentation/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" class="UnifiedMobileNav-productIcon"><g stroke="#0069FF" fill="none" fill-rule="evenodd"><path d="M3.4 17.5h12.2c.8 0 1.5-.7 1.5-1.5V3.8c0-.7-.6-1.3-1.3-1.3H6c-.7 0-1.3.6-1.3 1.3V16c.1.9-.5 1.5-1.3 1.5S2 16.9 2 16.1v-5h2.8M14.3 9H7.8M14.3 11.5H7.8M14.3 14H7.8M4.8 5.4H17"></path></g></svg>
+
+
+          API Documentation
+</a>      </li>
+    </ul>
+  </div>
+
+  <div class="UnifiedMobileNav-section">
+    <ul class="UnifiedMobileNav-list UnifiedMobileNav--columned">
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/community">Community</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/community/tutorials">Tutorials</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/community/questions">Q&amp;A</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/community/projects">Projects</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.meetup.com/pro/digitalocean/?utm_source=do_community/">Meetups</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/customers/">Customers</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/pricing/">Pricing</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/docs/">Docs</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/company/contact/">Support</a>
+      </li>
+
+        <li class="UnifiedMobileNav-ListItem">
+          <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/community/auth/digitalocean">Login</a>
+        </li>
+    </ul>
+  </div>
+
+  <div class="UnifiedMobileNav-section">
+    <form action="https://www.digitalocean.com/community/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+      <input type="text" name="q" id="q" aria-label="Search Community" placeholder="Search Community" autocomplete="off" spellcheck="false" class="UnifiedMobileNav-searchInput" data-algolia-application-id="6ZHEUVKJ88" data-algolia-api-key="c5470567eae7fa1177d43222e18ba086" data-unified-nav-search-input="true">
+</form>
+      <a class="UnifiedMobileNav-button--primary UnifiedMobileNav-button--fullWidth unified-nav-shims__mobile-sign-up-button" href="https://www.digitalocean.com/community/auth/digitalocean?display=sessionless+register">Sign Up</a>
+  </div>
+</nav>
+
+</div>
+
+  <div class="UnifiedNav " data-unified-nav="">
+  <nav class="unified-nav-shims__container" role="navigation">
+    <ul class="UnifiedNav-list">
+      <li clas="UnifiedNav-listItem">
+        <a class="UnifiedNav-siteLogo" href="https://www.digitalocean.com/">
+          <svg width="172" height="29" xmlns="http://www.w3.org/2000/svg"><title>DigitalOcean home</title><g class="UnifiedNav-logoSVG" fill-rule="evenodd"><path d="M14.4942 29v-5.5674c5.9572 0 10.5633-5.8478 8.2892-12.059-.8425-2.3006-2.693-4.1355-5.0126-4.9706-6.262-2.2534-12.1564 2.3135-12.1573 8.2207 0 0-.0006.0014-.0014.0014H0C0 5.2123 9.1687-2.1167 19.1138.9624c4.3459 1.3457 7.7993 4.7708 9.1561 9.081C31.3742 19.9068 23.985 29 14.4942 29"></path><path d="M14.507 23.4468H8.9103v-5.549s.0005-.0011.0011-.0011h5.5949c.0006 0 .0009.0006.0009.0006v5.5495M8.9093 27.7118H4.6105l-.0012-.0012v-4.2638h4.3009v4.2638l-.0009.0012M4.6125 23.4468H1.0088c-.0015 0-.0026-.0012-.0026-.0012v-3.5724s.0011-.0025.0026-.0025h3.601c.0015 0 .0027.0011.0027.0011v3.575M43.2806 9.6357h1.649c1.8346 0 3.345.358 4.49 1.0647 1.2714.7603 1.9164 2.2069 1.9164 4.2991 0 2.1554-.6465 3.6671-1.9207 4.4942h-.0008c-1.0971.7196-2.5981 1.0846-4.462 1.0846h-1.6719V9.6357zm8.324-1.0736c-1.6598-1.142-3.7252-1.721-6.1387-1.721h-5.2537V23.373h5.2537c2.4074 0 4.4737-.6113 6.1407-1.8157.907-.6382 1.6197-1.5304 2.1185-2.651.4962-1.1144.7479-2.4288.7479-3.9067 0-1.4605-.2517-2.758-.7482-3.857-.4988-1.104-1.212-1.972-2.1202-2.5804zM58.1303 6.6376c-.5051 0-.9403.1777-1.2906.5254-.3546.335-.5346.7597-.5346 1.2618 0 .501.1791.9322.532 1.2825.3529.35.788.528 1.2932.528.5042 0 .9394-.178 1.2928-.528.3535-.3508.5324-.7821.5324-1.2825 0-.5015-.18-.926-.5324-1.2592-.3534-.3503-.7886-.528-1.2928-.528M56.6247 23.3729h2.9538V11.7294h-2.9538zM69.5321 19.5787c-.5162.5814-1.1793.8635-2.0264.8635-.8471 0-1.5064-.282-2.015-.863-.5065-.5777-.7637-1.3439-.7637-2.2773 0-.9479.2572-1.7238.764-2.3058.502-.576 1.1796-.8683 2.0147-.8683.8465 0 1.5096.284 2.0262.8695.5142.582.7751 1.3573.7751 2.3046 0 .9328-.2609 1.6988-.7749 2.2768zm.775-6.8767c-.8908-.7858-1.8858-1.2444-2.9614-1.2444-1.6305 0-2.9859.5598-4.0276 1.662-1.0555 1.0932-1.5907 2.5006-1.5907 4.1823 0 1.644.5269 3.0464 1.568 4.1709 1.0498 1.088 2.4123 1.6396 4.0503 1.6396 1.139 0 2.1182-.3144 2.9157-.9356v.268c0 .9662-.2608 1.7176-.7751 2.234-.5137.5154-1.226.7764-2.1173.7764-1.3637 0-2.2183-.5314-3.2589-1.9262l-2.0115 1.917.0542.0754c.4346.605 1.1 1.197 1.9785 1.7594.8787.5603 1.9832.8447 3.2832.8447 1.7536 0 3.1726-.5363 4.2172-1.5933 1.0506-1.0628 1.5835-2.486 1.5835-4.2286V11.7294H70.307v.9726zM75.7434 23.3729h2.9541V11.7294h-2.9541zM77.249 6.6376c-.5052 0-.94.1777-1.2906.5254-.3547.335-.5344.7597-.5344 1.2618 0 .501.1789.9322.532 1.2825.353.35.7878.528 1.293.528.5045 0 .9396-.178 1.2928-.528.3535-.3508.5323-.7821.5323-1.2825 0-.5015-.1797-.926-.5323-1.2592-.3532-.3503-.7883-.528-1.2929-.528M85.1724 8.5831h-2.9082v3.1463h-1.6888v2.6702h1.6888v4.8365c0 1.5134.3047 2.5964.9064 3.2181.6031.6247 1.6741.9414 3.1831.9414.48 0 .963-.0156 1.4354-.0463l.133-.0088v-2.6683l-1.013.0526c-.7033 0-1.1728-.1226-1.3961-.3637-.226-.245-.3406-.7636-.3406-1.5404v-4.421h2.7497v-2.6703h-2.7497V8.583M101.7735 23.3729h2.9544V6.8412h-2.9544zM134.5728 19.2094c-.5286.5874-1.0693 1.0966-1.4855 1.3613v.0005c-.4085.2599-.924.3918-1.532.3918-.8703 0-1.5703-.3144-2.1405-.9621-.567-.644-.8545-1.4716-.8545-2.4613s.2838-1.8162.8436-2.4556c.5625-.6434 1.2588-.9562 2.1285-.9562.9515 0 1.9548.5869 2.8145 1.5947l1.9525-1.8568c-1.273-1.6433-2.897-2.4081-4.8352-2.4081-1.622 0-3.028.5862-4.1788 1.7411-1.1446 1.147-1.7251 2.6074-1.7251 4.3409 0 1.7335.58 3.1977 1.7234 4.352 1.1447 1.1557 2.5514 1.7417 4.1805 1.7417 2.139 0 3.8651-.9158 5.029-2.5935l-1.9204-1.8304M140.2405 16.0973c.1422-.5567.401-1.0207.7714-1.381.4005-.3906.9214-.5885 1.5489-.5885.716 0 1.2702.2019 1.6474.6014.3495.3696.5467.8296.588 1.368h-4.5557zm6.4569-2.7414c-.4191-.5788-.9896-1.0448-1.6965-1.3854-.7047-.3404-1.526-.513-2.441-.513-1.6489 0-2.9982.6037-4.0113 1.7946-.9836 1.182-1.4818 2.651-1.4818 4.3665 0 1.7648.547 3.2253 1.6254 4.341 1.0727 1.1105 2.5083 1.6737 4.267 1.6737 1.992 0 3.627-.799 4.8587-2.3752l.0666-.0847-1.9273-1.837c-.1789.2139-.4317.4561-.6628.6722-.2918.273-.5659.4842-.8588.6289-.4415.218-.9369.3255-1.4907.3255-.8187 0-1.4964-.2388-2.0147-.71-.4847-.4403-.768-1.0345-.843-1.7683h7.8265l.0264-1.0693c0-.7569-.1038-1.4862-.3088-2.1677a6.312 6.312 0 0 0-.934-1.8918zM152.797 18.9234c.3352-.2318.8085-.3483 1.4073-.3483.7112 0 1.4654.1413 2.2426.421v1.1421c-.6421.592-1.4996.8922-2.5499.8922-.5114 0-.909-.1126-1.1822-.3355-.2683-.218-.3985-.4955-.3985-.847 0-.3994.1571-.7022.4808-.9245zm5.2452-6.3229h-.0003c-.8952-.758-2.1328-1.143-3.678-1.143-.9829 0-1.902.2144-2.7336.6324-.7691.387-1.5245 1.0275-2.0043 1.8662l.0298.0358 1.8917 1.796c.7791-1.2322 1.6454-1.66 2.7941-1.66.6172 0 1.1298.1643 1.5234.4881.3916.3216.5819.7304.5819 1.249v.5652c-.7324-.221-1.4629-.333-2.1738-.333-1.47 0-2.6663.3432-3.555 1.0193-.9.6852-1.3562 1.665-1.3562 2.9125 0 1.094.3847 1.9829 1.1461 2.6433.7677.6372 1.7275.961 2.8524.961 1.1246 0 2.177-.4495 3.132-1.2191v.9587h2.9089v-7.4852c0-1.4173-.4572-2.523-1.3591-3.2872zM170.7656 12.8285c-.8227-.9092-1.9791-1.371-3.4371-1.371-1.172 0-2.1236.3338-2.8357.9926v-.7207h-2.897v11.6435h2.954v-6.4215c0-.8823.2119-1.5828.6293-2.0826.4162-.4987.989-.741 1.75-.741.6691 0 1.1765.2167 1.5506.662.3759.4474.5662 1.0638.5662 1.8335v6.7496H172v-6.7496c0-1.6127-.415-2.889-1.2344-3.7948M92.8158 18.9234c.3351-.2318.8087-.3483 1.4075-.3483.7112 0 1.4652.1413 2.2426.421v1.1421c-.6421.592-1.4998.8922-2.5502.8922-.5114 0-.9087-.1126-1.1819-.3355-.2683-.218-.3988-.4955-.3988-.847 0-.3994.1574-.7022.4808-.9245zm5.2451-6.3229h-.0003c-.8952-.758-2.1328-1.143-3.6776-1.143-.983 0-1.902.2144-2.7337.6324-.7694.387-1.5247 1.0275-2.0043 1.8662l.0295.0358 1.8917 1.796c.7792-1.2322 1.6458-1.66 2.7941-1.66.6172 0 1.1298.1643 1.5234.4881.3916.3216.5822.7304.5822 1.249v.5652c-.7327-.221-1.4631-.333-2.174-.333-1.47 0-2.6664.3432-3.555 1.0193-.8999.6852-1.3562 1.665-1.3562 2.9125 0 1.094.3847 1.9829 1.1463 2.6433.7677.6372 1.7272.961 2.8524.961 1.1246 0 2.1766-.4495 3.1318-1.2191v.9587H99.42v-7.4852c0-1.4173-.457-2.523-1.359-3.2872zM115.4464 9.5808c-3.0682 0-5.5645 2.4755-5.5645 5.5188s2.4963 5.5188 5.5645 5.5188c3.0682 0 5.5645-2.4755 5.5645-5.5188s-2.4963-5.5188-5.5645-5.5188zm0 14.0408c-4.7383 0-8.5928-3.8228-8.5928-8.522 0-4.6994 3.8545-8.5223 8.5928-8.5223 4.738 0 8.5925 3.8229 8.5925 8.5223 0 4.6992-3.8545 8.522-8.5925 8.522z"></path></g></svg>
+
+</a>      </li>
+
+      <li class="UnifiedNav-listItem UnifiedNav-listItem--extraSpace" data-unified-nav-dropdown-component="">
+        <a class="UnifiedNav-link" data-unified-nav-dropdown-trigger="true" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#">
+          Products
+
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="UnifiedNavDropdown-chevron">
+  <path d="M31.296 7.68c-.256-.32-.704-.512-1.216-.512-.448 0-.896.192-1.216.512L16 20.736 3.2 7.68c-.256-.32-.704-.512-1.216-.512-.448 0-.896.192-1.216.448S.256 8.32.256 8.768c0 .512.192.96.512 1.28L14.72 24.32c.32.32.704.512 1.152.512.256 0 .512-.064.768-.192.128-.064.256-.128.384-.128l.128-.064 14.016-14.336c.768-.64.704-1.728.128-2.432z"></path>
+</svg>
+
+</a>
+        <div class="UnifiedNavDropdown" data-unified-nav-dropdown-content="">
+  <ul class="UnifiedNavDropdown-list">
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/products/droplets/">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/droplets-8c0da195b507fa4eedeca0ceb242910b.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Droplets
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Scalable compute services.
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/products/spaces/">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/spaces-2e58e376eb8351928201edb669534578.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Spaces
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Simple object storage.
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/products/kubernetes/">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/kubernetes-f2d12fcd6216cb404dac3a41cfd7a6d3.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Kubernetes
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Coming soon.
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/products/tools-and-integrations/">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/Tools-Integrations-24294946903162aa4238a2c62d51b267.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Tools &amp; Integrations
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Automate your infrastructure.
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--borderedTop UnifiedNavDropdown-item--interactive">
+      <a href="https://developers.digitalocean.com/documentation/">
+        <div class="UnifiedNavDropdown-link UnifiedNavDropdown-link--centered UnifiedNavDropdown-link--small">
+          <div class="UnifiedNavDropdown-link-icon">
+            <img alt="" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/Documentation-264262b8b0785ce36dd159e115ad0759.svg">
+          </div>
+          <span class="UnifiedNavDropdown-link-content">
+            API Documentation
+          </span>
+        </div>
+</a>    </li>
+  </ul>
+</div>
+
+      </li>
+
+      <li class="UnifiedNav-listItem">
+        <a class="UnifiedNav-link" href="https://www.digitalocean.com/customers/">Customers</a>
+      </li>
+
+      <li class="UnifiedNav-listItem" data-unified-nav-dropdown-component="">
+        <a class="UnifiedNav-link UnifiedNav-link--community" data-unified-nav-dropdown-trigger="true" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#">
+          <span class="UnifiedNav-linkText">Community</span>
+
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="UnifiedNavDropdown-chevron">
+  <path d="M31.296 7.68c-.256-.32-.704-.512-1.216-.512-.448 0-.896.192-1.216.512L16 20.736 3.2 7.68c-.256-.32-.704-.512-1.216-.512-.448 0-.896.192-1.216.448S.256 8.32.256 8.768c0 .512.192.96.512 1.28L14.72 24.32c.32.32.704.512 1.152.512.256 0 .512-.064.768-.192.128-.064.256-.128.384-.128l.128-.064 14.016-14.336c.768-.64.704-1.728.128-2.432z"></path>
+</svg>
+
+</a>
+        <div class="UnifiedNavDropdown" data-unified-nav-dropdown-content="">
+  <ul class="UnifiedNavDropdown-list">
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/community">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/CommunityOverview-1019dcfb0f684b3302e471081336a21a.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Community Overview
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Connect, share and learn
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/community/tutorials">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/Tutorials-b6da4f195d0a2a0138b8fd170c36f1bb.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Tutorials
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          DevOps and development guides
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/community/questions">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/QandA-3e0367f422de8278d660c770f3bb7709.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Questions &amp; Answers
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Development and systems Q&amp;A
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/community/projects">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/Projects-f56d9a0622a9e104071806947dae4d69.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Projects
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Community-built integrations
+        </p>
+      </div>
+    </div>
+</a></li>
+
+  </ul>
+  <div class="UnifiedNavDropdown-split">
+    <dl class="UnifiedNavDropdown-splitSection">
+      <dt class="UnifiedNavDropdown-splitSection-label">
+        Get Involved
+      </dt>
+      <dd class="UnifiedNavDropdown-splitSection-linkLine">
+        <a class="UnifiedNavDropdown-splitSection-link" href="https://www.digitalocean.com/write-for-donations">Write for DOnations</a>
+      </dd>
+      <dd class="UnifiedNavDropdown-splitSection-linkLine">
+        <a target="_blank" class="UnifiedNavDropdown-splitSection-link" href="https://www.meetup.com/pro/digitalocean/?utm_source=do_community/">Join us at a Meetup</a>
+      </dd>
+    </dl>
+    <dl class="UnifiedNavDropdown-splitSection">
+      <dt class="UnifiedNavDropdown-splitSection-label">
+        Featured Post
+      </dt>
+      <dd class="UnifiedNavDropdown-splitSection-linkLine">
+        <a class="UnifiedNavDropdown-splitSection-link" href="https://www.digitalocean.com/community/tutorials/an-introduction-to-kubernetes">An Introduction to Kubernetes</a>
+        <p class="UnifiedNavDropdown-splitSection-extraText">
+          by Justin Ellingwood
+        </p>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+      </li>
+
+      <li class="UnifiedNav-listItem UnifiedNav-spaceRight">
+        <a class="UnifiedNav-link" href="https://www.digitalocean.com/pricing/">Pricing</a>
+      </li>
+
+      <li class="UnifiedNav-listItem UnifiedNav-listItem--extraSpace">
+        <div class="UnifiedNavSearch-wrap">
+          <div class="UnifiedNavSearch" data-unified-nav-search-component="">
+            <a class="UnifiedNavSearch-link" data-unified-nav-search-trigger="true" href="https://www.digitalocean.com/community/search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="UnifiedNavSearch-icon">
+  <g transform="translate(1 1)" fill="currentColor" fill-rule="evenodd">
+    <path d="M6,12 C2.6862915,12 0,9.3137085 0,6 C0,2.6862915 2.6862915,0 6,0 C9.3137085,0 12,2.6862915 12,6 C12,9.3137085 9.3137085,12 6,12 Z M6,10 C8.209139,10 10,8.209139 10,6 C10,3.790861 8.209139,2 6,2 C3.790861,2 2,3.790861 2,6 C2,8.209139 3.790861,10 6,10 Z" fill-rule="nonzero"></path>
+    <rect transform="rotate(-45 11.828 11.828)" x="10.828" y="8.828" width="2" height="6" rx="1"></rect>
+  </g>
+</svg>
+
+</a>            <div class="UnifiedNavSearch-box" data-unified-nav-search-box="">
+              <form action="https://www.digitalocean.com/community/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+                <input type="text" name="q" id="q" title="Search" placeholder="Search" autocomplete="off" spellcheck="false" class="header-search__input UnifiedNavSearch-input" data-algolia-application-id="6ZHEUVKJ88" data-algolia-api-key="c5470567eae7fa1177d43222e18ba086" data-unified-nav-search-input="true">
+</form>              <button class="UnifiedNavSearch-closeButton" data-unified-nav-search-close="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-labelledby="183az3p5ym36khhupb94tfrjif5lz85" class="UnifiedNavSearch-closeIcon"><title id="183az3p5ym36khhupb94tfrjif5lz85">Close search</title>
+  <g transform="rotate(45 6.293 8.707)" fill="currentColor" fill-rule="evenodd">
+    <rect x="-1" y="6" width="16" height="2" rx="1"></rect>
+    <rect x="6" y="-1" width="2" height="16" rx="1"></rect>
+  </g>
+</svg>
+
+              </button>
+            </div>
+          </div>
+          <div class="search-results-dropdown dropdown" data-root-path="https://www.digitalocean.com/community">
+  <div class="container">
+    <div class="header-search-results-list"></div>
+
+    <div id="btn-wrap">
+      <a class="more-search-results" data-search-path="/community/search" href="https://www.digitalocean.com/community/search">
+        <span class="icon-mag"></span>
+        View All Results
+</a>    </div>
+  </div>
+</div>
+
+<script type="text/template" id="autocomplete-hits-template">
+  <div class="inner-search">
+    <ul>
+        {{#hits}}
+          <li>
+            <span class='icon icon-{{type}}'></span>
+            <a href='{{url}}'>{{title}}</a>
+          </li>
+        {{/hits}}
+    </ul>
+  </div>
+</script>
+
+        </div>
+      </li>
+
+      <li class="UnifiedNav-listItem">
+        <a class="UnifiedNav-link UnifiedNav-link--docs" href="https://www.digitalocean.com/docs/">
+          <span class="UnifiedNav-linkText">Docs</span>
+</a>      </li>
+
+      <li class="UnifiedNav-listItem" data-unified-nav-dropdown-component="">
+        <a class="UnifiedNav-link" data-unified-nav-dropdown-trigger="true" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#">
+          Support
+
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="UnifiedNavDropdown-chevron">
+  <path d="M31.296 7.68c-.256-.32-.704-.512-1.216-.512-.448 0-.896.192-1.216.512L16 20.736 3.2 7.68c-.256-.32-.704-.512-1.216-.512-.448 0-.896.192-1.216.448S.256 8.32.256 8.768c0 .512.192.96.512 1.28L14.72 24.32c.32.32.704.512 1.152.512.256 0 .512-.064.768-.192.128-.064.256-.128.384-.128l.128-.064 14.016-14.336c.768-.64.704-1.728.128-2.432z"></path>
+</svg>
+
+</a>
+        <div class="UnifiedNavDropdown UnifiedNavDropdown--small UnifiedNavDropdown--right" data-unified-nav-dropdown-content="">
+  <ul class="UnifiedNavDropdown-list">
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/docs/">
+    <div class="UnifiedNavDropdown-link UnifiedNavDropdown-link--small">
+      <div class="UnifiedNavDropdown-link-icon UnifiedNavDropdown-link-icon">
+        <img alt="" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/documentation-ef55fa74bbda23e1bc80f47bc87d1946.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Documentation
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/company/contact/">
+    <div class="UnifiedNavDropdown-link UnifiedNavDropdown-link--small">
+      <div class="UnifiedNavDropdown-link-icon UnifiedNavDropdown-link-icon">
+        <img alt="" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/Support-e610eba9184efb6701d0da90b5a8d86b.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Contact Support
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://status.digitalocean.com/">
+    <div class="UnifiedNavDropdown-link UnifiedNavDropdown-link--small">
+      <div class="UnifiedNavDropdown-link-icon UnifiedNavDropdown-link-icon">
+        <img alt="" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/Network-Status-b981a587ed9cd13e5d9e26c8ed8d9ef7.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Network Status
+        </p>
+      </div>
+    </div>
+</a></li>
+
+  </ul>
+</div>
+
+      </li>
+
+        <li class="UnifiedNav-listItem">
+          <a class="UnifiedNav-link" id="log-in" href="https://www.digitalocean.com/community/auth/digitalocean">Log In</a>
+        </li>
+
+        <li class="UnifiedNav-listItem">
+          <a class="UnifiedNav-button" id="sign-up" href="https://www.digitalocean.com/community/auth/digitalocean?display=sessionless+register">Sign Up</a>
+        </li>
+    </ul>
+  </nav>
+</div>
+
+
+  <div class="legacy-header ">
+    <div class="flash-container">
+      
+    </div>
+
+    <div class="wrapper">
+      
+    </div>
+  </div>
+</header>
+
+
+      
+
+      <div class="wrapper layout-wrapper">
+
+        
+
+
+
+
+
+
+
+
+
+<div class="section-content section-content-growable content Tutorial-content content-has-mobile-image">
+  <div class="postable-info-bar-container">
+  <div class="postable-info-bar">
+    <div class="author-byline">
+      
+    </div>
+
+    <div class="right-section">
+      
+
+
+      <div class="section-item section-item-subscribe">
+  <span class="opt-in-switch off signed-out-subscribe">
+    <span class="subscribe-label">
+      <span class="icon icon-subscribe"></span>
+      <span class="subscription-label subscribe">Subscribe</span>
+      <span class="icon icon-subscribed"></span>
+      <span class="subscription-label subscribed">Subscribed</span>
+    </span>
+    <a data-toggle="modal" data-target="#sign-in-modal" class="mini-switch-container" href="javascript:void(0);"><div class="mini-switch off signed-out-subscribe"><div class="switch-handle"></div></div></a>
+  </span>
+</div>
+
+<div class="section-item social-sharing-item">
+  <div class="sharing">
+  <a class="share-button" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#" data-toggle="modal" data-target="#share-modal">
+    <span class="icon icon-share-square"></span>
+    <span class="share-button-text">Share</span>
+  </a>
+</div>
+
+</div>
+
+        <div class="section-item table-of-contents-triggers"><div class="toc-trigger-mobile" data-toggle="modal" data-target="#contents-modal">
+  <a href="javascript:void(0);">
+    <span class="icon icon-contents"></span>
+    <span class="title">Contents</span>
+    <span class="icon icon-arrow-down"></span>
+  </a>
+</div>
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+    <img alt="How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7" title="How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7" class="tutorial-image-mobile" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/LAMP_tw.png">
+
+  <div class="container tutorial-header">
+      <img alt="How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7" title="How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7" class="tutorial-image" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/LAMP_tw.png">
+
+      <div class="info-cta">
+    <a class="icon-close-light" href="javascript:void();"></a>
+    We hope you find this tutorial helpful. In addition to guides like this one, we provide simple cloud infrastructure for developers. <a href="https://www.digitalocean.com/?utm_medium=community&amp;utm_source=community_gencta&amp;utm_campaign=needaserver&amp;utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7">
+        Learn more →
+</a>  </div>
+
+
+    <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="1261" data-upvotable-type="Tutorial"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">105</span></button>
+
+    <h1 class="content-title Tutorial-header">
+      <button type="button" class="Button--reset Tutorial-headerButton " data-toggle="tooltip" title="" data-js="markAsComplete" data-tutorialinteraction="" data-tutorialsingle="" data-original-title="Mark as Complete">
+        <svg class="svg-icon svg-icon-completed"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-completed"></use></svg>
+      </button> How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7
+    </h1>
+
+    <span class="meta-section timestamp"><span class="tutorial-date-text">Posted</span><span class="tutorial-date">July 21, 2014</span></span>
+
+    <span class="meta-section pageviews"><span class="icon icon-eye v-mid"></span><span class="views-count v-mid">992.2k</span><span class="sr-only"> views</span></span>
+
+    <span class="meta-section tags">
+      <a class="tag" href="https://www.digitalocean.com/community/tags/lamp-stack?type=tutorials">LAMP Stack</a> <a class="tag" href="https://www.digitalocean.com/community/tags/getting-started?type=tutorials">Getting Started</a>
+      <a class="tag" href="https://www.digitalocean.com/community/tags/centos?type=tutorials">CentOS</a>
+    </span>
+  </div>
+
+  <div class="tutorial-authors">
+    <div class="postable-info-bar-container">
+  <ul class="postable-info-bar">
+      <li class="author-byline">
+        <a href="https://www.digitalocean.com/community/users/manicas">
+            <div class="tutorial-author-avatar">
+              <div class="mod-avatar mod-avatar-small"><img alt="manicas" class="avatar avatar-small" src="https://secure.gravatar.com/avatar/695da9dd73504edfc622c9be380cb3cb?secure=true&amp;d=identicon" width="80" height="80"><span class="mod-star" title="" data-toggle="tooltip" data-container="body" data-original-title="MOD"><span class="mod-star-icon"></span></span></div>
+            </div>
+
+          <div class="author-and-date">
+            <div class="tutorial-author">
+              <div class="by">By: </div>
+              Mitchell Anicas
+            </div>
+          </div>
+</a>      </li>
+  </ul>
+</div>
+
+  </div>
+
+    <div class="container versioned-tutorial-group-navigation" data-versioned-tutorial-group-navigation="" style="height: 59px;">
+  <div class="versioned-tutorial-group-navigation__header" data-versioned-tutorial-group-navigation-header="">
+    <h5 class="versioned-tutorial-group-navigation__heading">
+      Not using <strong>CentOS 7</strong>? Choose a different version:
+    </h5>
+    <span class="versioned-tutorial-group-navigation__arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105.565 60.872"><path d="M2.526 46.087c-3.37 3.382-3.37 8.868 0 12.246 3.37 3.386 8.832 3.386 12.202 0l43.384-43.547c3.37-3.382 3.37-8.87 0-12.246-3.37-3.386-8.833-3.386-12.202 0L2.526 46.087z" fill="#fff"></path><path d="M90.835 58.333c3.37 3.386 8.833 3.386 12.202 0 3.37-3.378 3.37-8.864 0-12.246L59.654 2.54c-3.37-3.386-8.832-3.386-12.202 0-3.37 3.377-3.37 8.864 0 12.246l43.383 43.547z" fill="#fff"></path></svg>
+
+    </span>
+  </div>
+  <div class="versioned-tutorial-group-navigation__body" data-versioned-tutorial-group-navigation-body="">
+    <ul class="versioned-tutorial-group-navigation__list">
+    <li class="versioned-tutorial-group-navigation__list-item">
+  <a class="versioned-tutorial-group-navigation__link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04">
+    Ubuntu 18.04
+    <span class="icon-arrow-down versioned-tutorial-group-navigation__link-arrow"></span>
+</a></li>
+<li class="versioned-tutorial-group-navigation__list-item">
+  <a class="versioned-tutorial-group-navigation__link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04">
+    Ubuntu 16.04
+    <span class="icon-arrow-down versioned-tutorial-group-navigation__link-arrow"></span>
+</a></li>
+<li class="versioned-tutorial-group-navigation__list-item">
+  <a class="versioned-tutorial-group-navigation__link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-14-04">
+    Ubuntu 14.04
+    <span class="icon-arrow-down versioned-tutorial-group-navigation__link-arrow"></span>
+</a></li>
+
+    <li class="versioned-tutorial-group-navigation__list-item">
+  <a data-tutorial-request="" data-distribution-version-id="12" data-versioned-tutorial-group-id="1" href="javascript:;" class="versioned-tutorial-group-navigation__link versioned-tutorial-group-navigation__link--unavailable">
+    Automated: Docker
+    <small class="versioned-tutorial-group-navigation__request" data-tutorial-request-status-indicator="">request</small>
+  </a>
+</li>
+<li class="versioned-tutorial-group-navigation__list-item">
+  <a data-tutorial-request="" data-distribution-version-id="14" data-versioned-tutorial-group-id="1" href="javascript:;" class="versioned-tutorial-group-navigation__link versioned-tutorial-group-navigation__link--unavailable">
+    Automated: Bash
+    <small class="versioned-tutorial-group-navigation__request" data-tutorial-request-status-indicator="">request</small>
+  </a>
+</li>
+<li class="versioned-tutorial-group-navigation__list-item">
+  <a data-tutorial-request="" data-distribution-version-id="13" data-versioned-tutorial-group-id="1" href="javascript:;" class="versioned-tutorial-group-navigation__link versioned-tutorial-group-navigation__link--unavailable">
+    Automated: Ansible
+    <small class="versioned-tutorial-group-navigation__request" data-tutorial-request-status-indicator="">request</small>
+  </a>
+</li>
+<li class="versioned-tutorial-group-navigation__list-item">
+  <a data-tutorial-request="" data-distribution-version-id="6" data-versioned-tutorial-group-id="1" href="javascript:;" class="versioned-tutorial-group-navigation__link versioned-tutorial-group-navigation__link--unavailable">
+    Debian 9
+    <small class="versioned-tutorial-group-navigation__request" data-tutorial-request-status-indicator="">request</small>
+  </a>
+</li>
+<li class="versioned-tutorial-group-navigation__list-item">
+  <a data-tutorial-request="" data-distribution-version-id="7" data-versioned-tutorial-group-id="1" href="javascript:;" class="versioned-tutorial-group-navigation__link versioned-tutorial-group-navigation__link--unavailable">
+    Debian 8
+    <small class="versioned-tutorial-group-navigation__request" data-tutorial-request-status-indicator="">request</small>
+  </a>
+</li>
+
+      <li class="versioned-tutorial-group-navigation__list-item"></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    <div class="content-body tutorial-content" data-growable-markdown="">
+      <h3 id="introduction">Introduction</h3>
+
+<p>A "LAMP" stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web apps.  This term is actually an acronym which represents the <strong>L</strong>inux operating system, with the <strong>A</strong>pache web server.  The site data is stored in a <strong>M</strong>ySQL database (using MariaDB), and dynamic content is processed by <strong>P</strong>HP.</p>
+
+<p>In this guide, we'll get a LAMP stack installed on an CentOS 7 VPS.  CentOS will fulfill our first requirement: a Linux operating system.</p>
+
+<p><span class="note"><strong>Note:</strong> The LAMP stack can be installed automatically on your Droplet by adding <a href="http://do.co/1RQWvnG">this script</a> to its User Data when launching it. Check out <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata">this tutorial</a> to learn more about Droplet User Data.<br></span></p>
+
+<div name="prerequisites" data-unique="prerequisites"></div><h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before you begin with this guide, you should have a separate, non-root user account set up on your server.  You can learn how to do this by completing steps 1-4 in the <a href="https://www.digitalocean.com/community/articles/initial-server-setup-with-centos-7">initial server setup for CentOS 7</a>.</p>
+
+<div name="step-one-—-install-apache" data-unique="step-one-—-install-apache"></div><h2 id="step-one-—-install-apache">Step One — Install Apache</h2>
+
+<p>The Apache web server is currently the most popular web server in the world, which makes it a great default choice for hosting a website.</p>
+
+<p>We can install Apache easily using CentOS's package manager, <code>yum</code>.  A package manager allows us to install most software pain-free from a repository maintained by CentOS.  You can learn more about <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-and-use-yum-repositories-on-a-centos-6-vps">how to use <code>yum</code></a> here.</p>
+
+<p>For our purposes, we can get started by typing these commands:</p>
+<pre class="code-pre "><code langs="">sudo yum install httpd
+</code></pre>
+<p>Since we are using a <code>sudo</code> command, these operations get executed with root privileges.  It will ask you for your regular user's password to verify your intentions.</p>
+
+<p>Afterwards, your web server is installed.</p>
+
+<p>Once it installs, you can start Apache on your VPS:</p>
+<pre class="code-pre "><code langs="">sudo systemctl start httpd.service
+</code></pre>
+<p>You can do a spot check right away to verify that everything went as planned by visiting your server's public IP address in your web browser (see the note under the next heading to find out what your public IP address is if you do not have this information already):</p>
+<pre class="code-pre "><code langs="">http://<span class="highlight">your_server_IP_address</span>/
+</code></pre>
+<p>You will see the default CentOS 7 Apache web page, which is there for informational and testing purposes.  It should look something like this:</p>
+
+<p><img src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/default_apache.png" alt="CentOS 7 Apache default"></p>
+
+<p>If you see this page, then your web server is now correctly installed.</p>
+
+<p>The last thing you will want to do is enable Apache to start on boot. Use the following command to do so:</p>
+<pre class="code-pre "><code langs="">sudo systemctl enable httpd.service
+</code></pre>
+<h3 id="how-to-find-your-server-39-s-public-ip-address">How To Find your Server's Public IP Address</h3>
+
+<p>If you do not know what your server's public IP address is, there are a number of ways you can find it.  Usually, this is the address you use to connect to your server through SSH.</p>
+
+<p>From the command line, you can find this a few ways.  First, you can use the <code>iproute2</code> tools to get your address by typing this:</p>
+<pre class="code-pre "><code langs="">ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+</code></pre>
+<p>This will give you one or two lines back.  They are both correct addresses, but your computer may only be able to use one of them, so feel free to try each one.</p>
+
+<p>An alternative method is to use an outside party to tell you how <em>it</em> sees your server.  You can do this by asking a specific server what your IP address is:</p>
+<pre class="code-pre "><code langs="">curl http://icanhazip.com
+</code></pre>
+<p>Regardless of the method you use to get your IP address, you can type it into your web browser's address bar to get to your server.</p>
+
+<div name="step-two-—-install-mysql-(mariadb)" data-unique="step-two-—-install-mysql-(mariadb)"></div><h2 id="step-two-—-install-mysql-mariadb">Step Two — Install MySQL (MariaDB)</h2>
+
+<p>Now that we have our web server up and running, it is time to install MariaDB, a MySQL drop-in replacement.  MariaDB is a community-developed fork of the MySQL relational database management system. Basically, it will organize and provide access to databases where our site can store information.</p>
+
+<p>Again, we can use <code>yum</code> to acquire and install our software.  This time, we'll also install some other "helper" packages that will assist us in getting our components to communicate with each other:</p>
+<pre class="code-pre "><code langs="">sudo yum install mariadb-server mariadb
+</code></pre>
+<p>When the installation is complete, we need to start MariaDB with the following command:</p>
+<pre class="code-pre "><code langs="">sudo systemctl start mariadb
+</code></pre>
+<p>Now that our MySQL database is running, we want to run a simple security script that will remove some dangerous defaults and lock down access to our database system a little bit.  Start the interactive script by running:</p>
+<pre class="code-pre "><code langs="">sudo mysql_secure_installation
+</code></pre>
+<p>The prompt will ask you for your current root password. Since you just installed MySQL, you most likely won’t have one, so leave it blank by pressing enter. Then the prompt will ask you if you want to set a root password. Go ahead and enter <code>Y</code>, and follow the instructions:</p>
+<pre class="code-pre "><code langs="">Enter current password for root (enter for none):
+OK, successfully used password, moving on...
+
+Setting the root password ensures that nobody can log into the MariaDB
+root user without the proper authorization.
+
+New password: <span class="highlight">password</span>
+Re-enter new password: <span class="highlight">password</span>
+Password updated successfully!
+Reloading privilege tables..
+ ... Success!
+</code></pre>
+<p>For the rest of the questions, you should simply hit the "ENTER" key through each prompt to accept the default values.  This will remove some sample users and databases, disable remote root logins, and load these new rules so that MySQL immediately respects the changes we have made.</p>
+
+<p>The last thing you will want to do is enable MariaDB to start on boot. Use the following command to do so:</p>
+<pre class="code-pre "><code langs="">sudo systemctl enable mariadb.service
+</code></pre>
+<p>At this point, your database system is now set up and we can move on.</p>
+
+<div name="step-three-—-install-php" data-unique="step-three-—-install-php"></div><h2 id="step-three-—-install-php">Step Three — Install PHP</h2>
+
+<p>PHP is the component of our setup that will process code to display dynamic content.  It can run scripts, connect to our MySQL databases to get information, and hand the processed content over to our web server to display.</p>
+
+<p>We can once again leverage the <code>yum</code> system to install our components.  We're going to include the php-mysql package as well:</p>
+<pre class="code-pre "><code langs="">sudo yum install php php-mysql
+</code></pre>
+<p>This should install PHP without any problems. We need to restart the Apache web server in order for it to work with PHP.  You can do this by typing this:</p>
+<pre class="code-pre "><code langs="">sudo systemctl restart httpd.service
+</code></pre>
+<h3 id="install-php-modules">Install PHP Modules</h3>
+
+<p>To enhance the functionality of PHP, we can optionally install some additional modules.</p>
+
+<p>To see the available options for PHP modules and libraries, you can type this into your system:</p>
+<pre class="code-pre "><code langs="">yum search php-
+</code></pre>
+<p>The results are all optional components that you can install.  It will give you a short description for each:</p>
+<pre class="code-pre "><code langs="">php-bcmath.x86_64 : A module for PHP applications for using the bcmath library
+php-cli.x86_64 : Command-line interface for PHP
+php-common.x86_64 : Common files for PHP
+php-dba.x86_64 : A database abstraction layer module for PHP applications
+php-devel.x86_64 : Files needed for building PHP extensions
+php-embedded.x86_64 : PHP library for embedding in applications
+php-enchant.x86_64 : Enchant spelling extension for PHP applications
+php-fpm.x86_64 : PHP FastCGI Process Manager
+php-gd.x86_64 : A module for PHP applications for using the gd graphics library
+. . .
+</code></pre>
+<p>To get more information about what each module does, you can either search the internet, or you can look at the long description in the package by typing:</p>
+<pre class="code-pre "><code langs="">yum info <span class="highlight">package_name</span>
+</code></pre>
+<p>There will be a lot of output, with one field called <code>Description</code> which will have a longer explanation of the functionality that the module provides.</p>
+
+<p>For example, to find out what the <code>php-fpm</code> module does, we could type this:</p>
+<pre class="code-pre "><code langs="">yum info php-fpm
+</code></pre>
+<p>Along with a large amount of other information, you'll find something that looks like this:</p>
+<pre class="code-pre "><code langs="">. . .
+Summary     : PHP FastCGI Process Manager
+URL         : http://www.php.net/
+License     : PHP and Zend and BSD
+Description : PHP-FPM (FastCGI Process Manager) is an alternative PHP FastCGI
+            : implementation with some additional features useful for sites of
+            : any size, especially busier sites.
+</code></pre>
+<p>If, after researching, you decide you would like to install a package, you can do so by using the <code>yum install</code> command like we have been doing for our other software.</p>
+
+<p>If we decided that <code>php-fpm</code> is something that we need, we could type:</p>
+<pre class="code-pre "><code langs="">sudo yum install php-fpm
+</code></pre>
+<p>If you want to install more than one module, you can do that by listing each one, separated by a space, following the <code>yum install</code> command, like this:</p>
+<pre class="code-pre "><code langs="">sudo yum install <span class="highlight">package1</span> <span class="highlight">package2</span> <span class="highlight">...</span>
+</code></pre>
+<p>At this point, your LAMP stack is installed and configured.  We should still test out our PHP though.</p>
+
+<div name="step-four-—-test-php-processing-on-your-web-server" data-unique="step-four-—-test-php-processing-on-your-web-server"></div><h2 id="step-four-—-test-php-processing-on-your-web-server">Step Four — Test PHP Processing on your Web Server</h2>
+
+<p>In order to test that our system is configured properly for PHP, we can create a very basic PHP script.</p>
+
+<p>We will call this script <code>info.php</code>.  In order for Apache to find the file and serve it correctly, it must be saved to a very specific directory, which is called the "web root".</p>
+
+<p>In CentOS 7, this directory is located at <code>/var/www/html/</code>.  We can create the file at that location by typing:</p>
+<pre class="code-pre "><code langs="">sudo vi /var/www/html/info.php
+</code></pre>
+<p>This will open a blank file.  We want to put the following text, which is valid PHP code, inside the file:</p>
+<pre class="code-pre "><code langs="">&lt;?php phpinfo(); ?&gt;
+</code></pre>
+<p>When you are finished, save and close the file.</p>
+
+<p>If you are running a firewall, run the following commands to allow HTTP and HTTPS traffic:</p>
+<pre class="code-pre "><code langs="">sudo firewall-cmd --permanent --zone=public --add-service=http 
+sudo firewall-cmd --permanent --zone=public --add-service=https
+sudo firewall-cmd --reload
+</code></pre>
+<p>Now we can test whether our web server can correctly display content generated by a PHP script.  To try this out, we just have to visit this page in our web browser.  You'll need your server's public IP address again.</p>
+
+<p>The address you want to visit will be:</p>
+<pre class="code-pre "><code langs="">http://<span class="highlight">your_server_IP_address</span>/info.php
+</code></pre>
+<p>The page that you come to should look something like this:</p>
+
+<p><img src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/default_php.png" alt="CentOS 7 default PHP info"></p>
+
+<p>This page basically gives you information about your server from the perspective of PHP.  It is useful for debugging and to ensure that your settings are being applied correctly.</p>
+
+<p>If this was successful, then your PHP is working as expected.</p>
+
+<p>You probably want to remove this file after this test because it could actually give information about your server to unauthorized users.  To do this, you can type this:</p>
+<pre class="code-pre "><code langs="">sudo rm /var/www/html/info.php
+</code></pre>
+<p>You can always recreate this page if you need to access the information again later.</p>
+
+<div name="conclusion" data-unique="conclusion"></div><h2 id="conclusion">Conclusion</h2>
+
+<p>Now that you have a LAMP stack installed, you have many choices for what to do next.  Basically, you've installed a platform that will allow you to install most kinds of websites and web software on your server.</p>
+
+    </div>
+</div>
+
+<div class="tutorial-footer">
+  <div class="tutorial-footer-details">
+
+  <div class="postable-info-bar-container">
+  <div class="postable-info-bar">
+    <div class="author-byline">
+      <div class="postable-info-bar-container">
+  <ul class="postable-info-bar">
+      <li class="author-byline">
+        <a href="https://www.digitalocean.com/community/users/manicas">
+            <div class="tutorial-author-avatar">
+              <div class="mod-avatar mod-avatar-small"><img alt="manicas" class="avatar avatar-small" src="https://secure.gravatar.com/avatar/695da9dd73504edfc622c9be380cb3cb?secure=true&amp;d=identicon" width="80" height="80"><span class="mod-star" title="" data-toggle="tooltip" data-container="body" data-original-title="MOD"><span class="mod-star-icon"></span></span></div>
+            </div>
+
+          <div class="author-and-date">
+            <div class="tutorial-author">
+              <div class="by">By: </div>
+              Mitchell Anicas
+            </div>
+          </div>
+</a>      </li>
+  </ul>
+</div>
+
+    </div>
+    <div class="right-section">
+      <div class="upvote-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="false" data-upvotable-id="1261" data-upvotable-type="Tutorial"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-heart"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-heart"></use></svg></span><span class="new-upvote-text">Upvote</span><span class="new-upvote-count">105</span></button>
+      </div>
+      <div class="section-item section-item-subscribe">
+  <span class="opt-in-switch off signed-out-subscribe">
+    <span class="subscribe-label">
+      <span class="icon icon-subscribe"></span>
+      <span class="subscription-label subscribe">Subscribe</span>
+      <span class="icon icon-subscribed"></span>
+      <span class="subscription-label subscribed">Subscribed</span>
+    </span>
+    <a data-toggle="modal" data-target="#sign-in-modal" class="mini-switch-container" href="javascript:void(0);"><div class="mini-switch off signed-out-subscribe"><div class="switch-handle"></div></div></a>
+  </span>
+</div>
+
+<div class="section-item social-sharing-item">
+  <div class="sharing">
+  <a class="share-button" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#" data-toggle="modal" data-target="#share-modal">
+    <span class="icon icon-share-square"></span>
+    <span class="share-button-text">Share</span>
+  </a>
+</div>
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="section-content tutorial-contributors one">
+
+
+  </div>
+</div>
+
+
+  
+  <div class="tutorial-ctas">
+  <div class="section-content">
+    <div class="cta-description">
+      <h2>Spin up an SSD cloud server in under a minute.</h2>
+
+      <p>Simple setup. Full root access. Straightforward pricing.</p>
+
+      <a class="cloud-tutorial-cta" href="https://www.digitalocean.com/?utm_medium=community&amp;utm_source=community_gencta&amp;utm_campaign=needaserver&amp;utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7">Deploy Server</a>
+    </div>
+  </div>
+</div>
+    <div class="related-tutorials">
+    <div class="section-content">
+      <h2>Related Tutorials</h2>
+
+      <ul>
+        <li><a class="related-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lamp-on-ubuntu-18-04">How To Install WordPress with LAMP on Ubuntu 18.04</a></li>
+<li><a class="related-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04">How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04</a></li>
+<li><a class="related-link" href="https://www.digitalocean.com/community/tutorials/how-to-secure-roundcube-on-ubuntu-16-04">How To Secure Roundcube on Ubuntu 16.04</a></li>
+<li><a class="related-link" href="https://www.digitalocean.com/community/tutorials/how-to-secure-web-server-infrastructure-with-digitalocean-cloud-firewalls-using-doctl">How To Secure Web Server Infrastructure With DigitalOcean Cloud Firewalls Using Doctl</a></li>
+<li><a class="related-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-your-own-webmail-client-with-roundcube-on-ubuntu-16-04">How To Install Your Own Webmail Client with Roundcube on Ubuntu 16.04</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="content-comments">
+  <div class="section-content">
+    <div class="tutorial commentable" id="tutorial_1261">
+
+  <div class="comments-header">
+    <h4 class="comments-count"><span>59 Comments</span></h4>
+  </div>
+
+  <div class="response response-form no-avatar">
+  <div class="js-display-on-error flash error hidden"></div>
+
+
+  <form class="content-form disabled-form" id="new_comment" action="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7/comments" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓" disabled="disabled">
+
+    <div class="meltdown_wrap" style="height: auto;"><div class="meltdown_topmargin"></div><div class="meltdown_bar"><ul class="meltdown_controls meltdown_controls_preview"><li class="meltdown_control-preview meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Toggle Preview"><span>Preview</span></li></ul><div class="preview-header">Markdown Preview</div><ul class="meltdown_controls meltdown_controls_main"><li class="meltdown_control-bold meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Bold"><span unselectable="on">B</span></li><li class="meltdown_control-italics meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Italics"><span unselectable="on">I</span></li><li class="meltdown_control-h1 meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Header 1"><span unselectable="on">H1</span></li><li class="meltdown_control-h2 meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Header 2"><span unselectable="on">H2</span></li><li class="meltdown_control-h3 meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Header 3"><span unselectable="on">H3</span></li><li class="meltdown_control-ul meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Unordered List"><span unselectable="on">UL</span></li><li class="meltdown_control-ol meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Ordered List"><span unselectable="on">OL</span></li><li class="meltdown_control-link meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Link"><span unselectable="on">Link</span></li><li class="meltdown_control-code meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Code"><span unselectable="on">Code</span></li><li class="meltdown_control-highlight meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Highlight"><span unselectable="on">Highlight</span></li><li class="meltdown_control-table meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Table"><span unselectable="on">Table</span></li></ul></div><div class="meltdown_editor-wrap"><div class="meltdown_editor-deco"><textarea name="comment[content]" id="comment_content" placeholder="Leave a comment..." class="js-comment-content tutorial-comment-field meltdown_editor" data-markdown="true" disabled="disabled" style="overflow: hidden; word-wrap: break-word; resize: none; height: 120px;"></textarea></div></div><div class="meltdown_preview-wrap"><div class="meltdown_preview-wrap2"><div class="meltdown_preview-error-message">Could not load preview. <a href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#">Try again</a></div><div class="meltdown_preview-loading-message">Loading preview...</div><div class="meltdown_preview content-body"></div></div></div><div class="meltdown_bottommargin"></div></div>
+
+      <div class="log-in-notice "><a href="https://www.digitalocean.com/community/auth/digitalocean">Log In to Comment</a></div>
+
+    <div class="clearfix"></div>
+</form>
+</div>
+
+
+  <div class="comments">
+    <ul class="response-list">
+          <a class="hidden" rel="nofollow" data-remote="true" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7/comments">Load</a>
+    <li id="comment_15427" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="15427" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/dgonzalez">dgonzalez</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=15427">July 23, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>I can not load the page, if I type</p>
+
+ip addr show | grep inet | awk '{ print $2; }' | sed 's/\/.*                                                    $//'
+
+<p>I received this </p>
+
+<p>127.0.0.1<br>
+::1<br>
+192.168.2.128<br>
+fe80::250:56ff:fe8e:450c</p>
+
+<p>If I try to load 192.168.2.128 never load it</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_15427">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_15427"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_15432" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="15432" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/dgonzalez">dgonzalez</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=15432">July 23, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>And if I type:<br>
+]# ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'<br>
+I get:</p>
+
+<p>Device "eth0" does not exist.</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_15432">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+      <li id="comment_31172" data-level="1" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container comment-reply-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="31172" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/adurga">adurga</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=31172">April 16, 2015</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>I faced exact these two problems.<br>
+Instead of trying the IP Address just type <a href="http://localhost/" rel="nofollow">http://localhost</a> and with info.php try <a href="http://localhost/info.php" rel="nofollow">http://localhost/info.php</a></p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_31172">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_31172"></div>
+</div>
+    </div>
+
+  </li>
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_15432"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_15441" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="15441" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/kamaln7">kamaln7</a></span>
+          <span class="mod-badge">MOD</span>
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=15441">July 23, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p><a href="https://www.digitalocean.com/community/users/dgonzalez" class="username-tag">@dgonzalez</a>: Are you running this on a droplet? What's the output of <code>ip link show</code>?</p>
+
+<p>Is Apache running? Can you post the output of the following two commands?</p>
+<pre class="code-pre "><code langs="">sudo ps wwaux | egrep "apache|http"
+sudo nestat -plutn
+</code></pre></div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_15441">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_15441"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_15537" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="15537" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/mm217457">mm217457</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=15537">July 25, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>I wish there was a Tutorial, that showed me how to add phpmyadmin, imagemagick and mcrypt to Centos 7 after this tut. Does anybody know where can I get that information, appreciate any help</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_15537">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+      <li id="comment_20473" data-level="1" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container comment-reply-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="20473" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/tobybrown">tobybrown</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=20473">October 13, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>You can install imagemagick and mcrypt with the following commands:</p>
+<pre class="code-pre "><code langs="">yum install ImageMagick ImageMagick-devel
+</code></pre><pre class="code-pre "><code langs="">yum install php-mcrypt*
+</code></pre>
+<p>As for phpmyadmin, this <a href="https://www.rosehosting.com/blog/how-to-install-varnish-and-phpmyadmin-on-a-centos-7-vps-with-nginx-mariadb-and-php-fpm/" rel="nofollow">tutorial</a> gave me the right information for installing phpmyadmin on Centos 7.</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_20473">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_20473"></div>
+</div>
+    </div>
+
+  </li>
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_15537"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_15568" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="15568" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">1</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/woebegone">woebegone</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=15568">July 26, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p><strong><span class="highlight">How to install phpMyAdmin on CentOS 7</span></strong></p>
+
+<p>Install epel</p>
+<pre class="code-pre "><code langs="">rpm -ivh http://dl.fedoraproject.org/pub/epel/beta/7/x86_64/epel-release-7-0.2.noarch.rpm
+</code></pre>
+<p>Install phpMyAdmin</p>
+<pre class="code-pre "><code langs="">yum install phpmyadmin
+</code></pre>
+<p>Backup old config file</p>
+<pre class="code-pre "><code langs="">mv /etc/httpd/conf.d/phpMyAdmin.conf /etc/httpd/conf.d/phpMyAdmin.conf.old
+</code></pre>
+<p>Create new one</p>
+<pre class="code-pre "><code langs="">nano /etc/httpd/conf.d/phpMyAdmin.conf
+</code></pre>
+<p>Add these lines in it and save and close nano</p>
+<pre class="code-pre "><code langs="">&lt;Directory "/usr/share/phpMyAdmin"&gt;
+    AllowOverride None
+    Options None
+    Allow from All
+    Require all granted
+&lt;/Directory&gt;
+
+Alias /phpmyadmin /usr/share/phpMyAdmin
+</code></pre>
+<p>Restart apache and mysql</p>
+<pre class="code-pre "><code langs="">systemctl restart mariadb
+service httpd restart
+</code></pre>
+<p>And reach via your server IP</p>
+<pre class="code-pre "><code langs="">http://ip.add.ress/phpmyadmin
+</code></pre></div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_15568">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+      <li id="comment_44899" data-level="1" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container comment-reply-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="44899" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/aymanroshdy">aymanroshdy</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=44899">March 18, 2016</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>I did these exact steps but when I load it in the browser it just shows the phpMyAdmin logo and a welcome message, nothing else. Am I missing something?</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_44899">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_44899"></div>
+</div>
+    </div>
+
+  </li>
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_15568"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_15835" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="15835" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/sc_shepard">sc_shepard</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=15835">July 31, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>Outstanding intro and great resource for research!</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_15835">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_15835"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_16432" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="16432" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/tural-abiyev">Tural Abiyev</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=16432">August 15, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>Thanks. How to change server tokens? OS to Prod.</p>
+
+<p>I want hidden web server name (Apache/2.4.6 (CentOS) PHP/5.4.16).</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_16432">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_16432"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_16622" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="16622" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/k-becker">k.becker</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=16622">August 21, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>Love the guide! But how do i actually USE php-fpm with apache in Centos 7 ? I am using it in Centos 6.5 with apache with mod_fastcgi as the middleman and my boxes are ligtning fast...</p>
+
+<p>But i cant find a guide anywhere on how to get php-fpm running with apache !!</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_16622">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_16622"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_16665" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="16665" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/k-becker">k.becker</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=16665">August 22, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>anyone ?</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_16665">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_16665"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_16803" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="16803" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">1</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/ignacio150270">ignacio150270</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=16803">August 27, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>how change php 5.4 -&gt; 5.5 ??? </p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_16803">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+      <li id="comment_21817" data-level="1" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container comment-reply-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="21817" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/istlabs">istlabs</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=21817">November  3, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>did you ever get a response on the php 5.5.x upgrade on CenOS 7? I'm running into the same challenge. </p>
+
+<p>These steps don't work</p>
+
+<p>wget <a href="http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm" rel="nofollow">http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm</a><br>
+wget <a href="http://rpms.famillecollet.com/enterprise/remi-release-7.rpm" rel="nofollow">http://rpms.famillecollet.com/enterprise/remi-release-7.rpm</a><br>
+rpm -Uvh epel-release-7-2.noarch.rpm remi-release-7.rpm</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_21817">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_21817"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_21818" data-level="1" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container comment-reply-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="21818" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/istlabs">istlabs</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=21818">November  3, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>Did you find a solution to the php 5.5.x upgrade on CentOS 7? </p>
+
+<p>I have the same need. </p>
+
+<p>thanks</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_21818">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_21818"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_27246" data-level="1" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container comment-reply-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="27246" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/ralapunga">ralapunga</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=27246">February  2, 2015</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p><a href="http://www.if-not-true-then-false.com/2010/install-apache-php-on-fedora-centos-red-hat-rhel/comment-page-3/" rel="nofollow">http://www.if-not-true-then-false.com/2010/install-apache-php-on-fedora-centos-red-hat-rhel/comment-page-3/</a></p>
+
+<p>enjoy!</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_27246">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_27246"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_71972" data-level="1" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container comment-reply-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="71972" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/smtrejo">smtrejo</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=71972">July 19, 2018</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>Steps to install PHP 7.x:</p>
+
+<p><a href="https://www.tecmint.com/install-php-7-in-centos-7/" rel="nofollow">https://www.tecmint.com/install-php-7-in-centos-7/</a></p>
+
+<p>Before that you should uninstall previous versions:</p>
+<pre class="code-pre "><code langs="">$ sudo yum -y remove php*
+</code></pre></div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_71972">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_71972"></div>
+</div>
+    </div>
+
+  </li>
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_16803"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_16999" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="16999" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/k-becker">k.becker</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=16999">August 30, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>bump...</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_16999">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_16999"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_17152" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="17152" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/k-becker">k.becker</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=17152">September  1, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>Love the guide! But how do i actually USE php-fpm with apache in Centos 7 ? I am using it in Centos 6.5 with apache with mod_fastcgi as the middleman and my boxes are ligtning fast...</p>
+
+<p>But i cant find a guide anywhere on how to get php-fpm running with apache !!</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_17152">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_17152"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_18152" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="18152" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">2</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/pivinoperable">PIVInoperable</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=18152">September 11, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>Just wanted to point out, as a noob having a hell of a time getting to the default Apache screen, this guide, while otherwise spot on, neglects to point out that CentOS7 has firewall rules on by default that block http/s.</p>
+
+<p>The commands I used to fix this were:</p>
+<pre class="code-pre "><code langs="">firewall-cmd --permanent --zone=public --add-service=http 
+firewall-cmd --permanent --zone=public --add-service=https
+firewall-cmd --reload
+</code></pre>
+<p>Cheers!  </p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_18152">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+      <li id="comment_20156" data-level="1" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container comment-reply-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="20156" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/firefistus">firefistus</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=20156">October  8, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>Please add this to the guide, I didn't even realize this comment was here, if I had read it I would have saved an hour trying to find out why httpd wasn't browsable, and centos 7 uses firewall instead of iptables aparently....</p>
+
+<p>Great guide btw, just realized I probably sounded really cranky in the post.  Sorry about that.</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_20156">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_20156"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_38116" data-level="1" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container comment-reply-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="38116" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/anjerodesu">anjerodesu</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=38116">October  1, 2015</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>I think this should be included to your tutorial <a href="https://www.digitalocean.com/community/users/manicas" class="username-tag">@manicas</a> </p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_38116">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_38116"></div>
+</div>
+    </div>
+
+  </li>
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_18152"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_22448" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="22448" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/dailen">Dailen</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=22448">November 12, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>Great article, very helpful! Thanks!</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_22448">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_22448"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_23261" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="23261" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/info301725">info301725</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=23261">November 26, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>Great article also should i install these</p>
+<pre class="code-pre "><code langs="">mod_autoindex.c (autoindex_module)
+mod_deflate.c (deflate_module)
+mod_expires.c (expires_module)
+mod_filter.c (filter_module)
+mod_headers.c (headers_module)
+mod_include.c (include_module)
+mod_mime.c (mime_module)
+mod_rewrite.c (rewrite_module)
+mod_setenvif.c (setenvif_module)
+</code></pre>
+<p>I read online that it is recommended, How do i install? and then enable?</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_23261">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_23261"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_23263" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="23263" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/info301725">info301725</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=23263">November 26, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>how do you setup php-fpm?</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_23263">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_23263"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_23513" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="23513" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/shyrtex">Shyrtex</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=23513">December  1, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>I get this error trying to start MariaDB.</p>
+
+<p>[root@centos7 lib]# systemctl start mariadb<br>
+Job for mariadb.service failed. See 'systemctl status mariadb.service' and 'journalctl -xn' for details.<br>
+[root@centos7 lib]# systemctl status mariadb.service<br>
+mariadb.service - MariaDB database server<br>
+   Loaded: loaded (/usr/lib/systemd/system/mariadb.service; disabled)<br>
+   Active: failed (Result: exit-code) since Mon 2014-12-01 03:44:59 EST; 4s ago<br>
+  Process: 14703 ExecStartPost=/usr/libexec/mariadb-wait-ready $MAINPID (code=exited, status=1/FAILURE)<br>
+  Process: 14702 ExecStart=/usr/bin/mysqld_safe --basedir=/usr (code=exited, status=0/SUCCESS)<br>
+  Process: 14675 ExecStartPre=/usr/libexec/mariadb-prepare-db-dir %n (code=exited, status=0/SUCCESS)<br>
+ Main PID: 14702 (code=exited, status=0/SUCCESS)</p>
+
+<p>Dec 01 03:44:58 centos7 systemd[1]: Starting MariaDB database server...<br>
+Dec 01 03:44:58 centos7 mysqld<em>safe[14702]: 141201 03:44:58 mysqld</em>safe Logging to '/var/log/mariadb/mariadb.log'.<br>
+Dec 01 03:44:58 centos7 mysqld<em>safe[14702]: 141201 03:44:58 mysqld</em>safe Starting mysqld daemon with databases from /var/lib/mysql<br>
+Dec 01 03:44:58 centos7 mysqld<em>safe[14702]: 141201 03:44:58 mysqld</em>safe mysqld from pid file /var/run/mariadb/mariadb.pid ended<br>
+Dec 01 03:44:59 centos7 systemd[1]: mariadb.service: control process exited, code=exited status=1<br>
+Dec 01 03:44:59 centos7 systemd[1]: Failed to start MariaDB database server.<br>
+Dec 01 03:44:59 centos7 systemd[1]: Unit mariadb.service entered failed state.</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_23513">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+      <li id="comment_23514" data-level="1" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container comment-reply-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="23514" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/shyrtex">Shyrtex</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=23514">December  1, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p><strong>Update</strong>: A full system reboot did the trick.</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_23514">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_23514"></div>
+</div>
+    </div>
+
+  </li>
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_23513"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_24705" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="24705" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/dribblecastle">dribblecastle</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=24705">December 22, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>Great post!  Thanks for writing it.  Everything worked well for me,  now time to install WordPress. </p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_24705">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_24705"></div>
+</div>
+    </div>
+
+  </li>
+
+      <li id="comment_24810" data-level="0" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container ">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="24810" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/bedirhan">bedirhan</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=24810">December 23, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p>"FirewallD is not running" How do I do</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_24810">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+      <li id="comment_24944" data-level="1" class="comment-container">
+    <div class="response comment-body-container    " data-highlight="">
+      <div class="comment-upvote-container comment-reply-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="24944" data-upvotable-type="Comment"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="ox-auto">
+        <div class="comment-header">
+          <span class="response-name"><a class="username" href="https://www.digitalocean.com/community/users/furriephillips">furriephillips</a></span>
+          
+          <span class="response-time"><a rel="nofollow" class="post-time-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7?comment=24944">December 26, 2014</a></span>
+
+          
+        </div>
+
+          <div class="response-body content-body">
+            <div class=""><p><a href="https://www.digitalocean.com/community/users/bedirhan" class="username-tag">@bedirhan</a> try this: -</p>
+
+<p>% sudo systemctl enable firewalld<br>
+% sudo systemctl start firewalld<br>
+% sudo systemctl status firewalld</p>
+
+<p>Then the commands prescribed in the article.</p>
+</div>
+            
+          </div>
+
+        
+
+        <div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+
+
+        <div class="content-actions">
+  <div class="comment-actions">
+
+    
+
+    
+  </div>
+
+  <div class="comment-moderation-actions">
+    <ul class="comment-moderation-actions-list ">
+      
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="response-comments">
+      <div class="response_comment commentable comment" id="response_comment_24944">
+
+
+  <div class="comments">
+    <ul class="response-list">
+      
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_24944"></div>
+</div>
+    </div>
+
+  </li>
+
+
+
+    </ul>
+  </div>
+
+
+  <div id="reply_anchor_comment_24810"></div>
+</div>
+    </div>
+
+  </li></ul><div class="comment-pagination"><span class="previous_page disabled">Previous</span> <em class="current">1</em> <a rel="next nofollow" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7/comments?page=2">2</a> <a rel="nofollow" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7/comments?page=3">3</a> <a class="next_page" rel="next nofollow" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7/comments?page=2">Next</a></div>
+
+      <div class="comments-spinner" style="display: none;"><div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+</div>
+  </div>
+
+  <div class="load-more-container"><a class="load-more" href="javascript:void(0);"><span class="load-more-text">Load More Comments</span><div class="comments-spinner" style="display: none;"><div class="spinner spinner-large">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+  
+</div>
+</div></a></div>
+</div>
+
+
+  </div>
+</div>
+
+<div class="creative-commons">
+  <a class="creative-commons-image" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img rel="license" alt="Creative Commons License" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/creativecommons-08b32a9279fcd47fcd78ac6a26331389.png"></a>
+    <div class="license-text">This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>
+</div>
+
+
+
+
+
+        <div class="clearfix"></div>
+      </div>
+
+
+      <footer class="Footer">
+  <span class="Footer-logo icon-sammy"></span>
+
+  <div>Copyright © 2018 DigitalOcean™ Inc.</div>
+
+  <ul class="Footer-nav">
+    <li><a href="https://www.digitalocean.com/community">Community</a></li>
+    <li><a href="https://www.digitalocean.com/community/tutorials">Tutorials</a></li>
+    <li><a href="https://www.digitalocean.com/community/questions">Questions</a></li>
+    <li><a href="https://www.digitalocean.com/community/projects">Projects</a></li>
+    <li><a href="https://www.digitalocean.com/community/tags">Tags</a></li>
+    <li><a href="https://www.digitalocean.com/community/newsletter">Newsletter</a></li>
+    <li>
+      <a href="https://www.digitalocean.com/community/tutorials/feed">
+        RSS <span class="icon-rss"></span>
+</a>    </li>
+  </ul>
+
+  <br>
+
+  <ul class="Footer-nav Footer-nav--secondary">
+    <li><a href="https://www.digitalocean.com/products/one-click-apps/">Distros &amp; One-Click Apps</a></li>
+    <li><a href="https://www.digitalocean.com/legal/terms/">Terms, Privacy, &amp; Copyright</a></li>
+    <li><a href="https://www.digitalocean.com/security/">Security</a></li>
+      <li><a data-toggle="modal" data-target="#sign-in-modal" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#">Report a Bug</a></li>
+    <li><a href="https://www.digitalocean.com/write-for-donations">Write for DOnations</a></li>
+    <li><a href="http://store.digitalocean.com/">Shop</a></li>
+  </ul>
+</footer>
+
+
+
+
+
+      <div id="sign-in-modal" class="modal fade mini-modal" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1>Almost there!</h1>
+        <a class="close-button" data-dismiss="modal" aria-label="close" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7"><span class="icon icon-close-light"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="sign-in-message">Sign into your account, or create a new one, to start interacting.</div>
+
+        <div class="sign-in-modal-actions">
+          <a class="sign-in-link button blue-button" data-default-url="/community/auth/digitalocean" href="https://www.digitalocean.com/community/auth/digitalocean">Log In</a>
+          <a class="sign-up-link button green-button" data-default-url="/community/auth/digitalocean?display=sessionless+register" href="https://www.digitalocean.com/community/auth/digitalocean?display=sessionless+register">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      <script>
+    $(function() {
+      VTGNavigationDropdown($('[data-versioned-tutorial-group-navigation]'));
+      createTutorialRequest({
+        $tutorialRequestLinks: $("[data-tutorial-request]"),
+        tutorialRequestStatusSelector: "[data-tutorial-request-status-indicator]",
+        tutorialRequestUrl: "/community/api/tutorial_requests",
+      });
+    });
+  </script>
+
+  <script>
+    $(function() {
+      if (!!window.init_sharing) {
+        window.init_sharing();
+      }
+      new window.NewsletterSignup();
+      new window.GrowableMarkdown({ target: '[data-growable-markdown]' });
+
+      window.Bugsnag.beforeNotify = function(payload, metaData) {
+        // custom logic to determine groupingHash
+        metaData.groupingHash = "tutorialShow";
+      }
+    });
+  </script>
+  <script type="application/ld+json">
+    {"@context":"http://schema.org","@type":"Article","name":"How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7","headline":"How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7","alternativeHeadline":"How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7","description":"In this guide, we'll get a LAMP stack installed on an CentOS 7 VPS. A \"LAMP\" stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web apps.  This term is actually an acronym which represents the **L**inux operating system, with the **A**pache web server.  The site data is stored in a **M**ySQL database (using MariaDB), and dynamic content is processed by **P**HP.","keywords":"LAMP Stack,Getting Started","url":"https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7"},"dateModified":"2016-10-13T17:19:01Z","inLanguage":"en","accessMode":"textual","accessModeSufficient":"textual","isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","publishingPrinciples":"https://www.digitalocean.com/community/tutorials/technical-recommendations-and-best-practices-for-digitalocean-s-tutorials","author":[{"@type":"Person","name":"Mitchell Anicas","@id":"https://www.digitalocean.com/community/users/manicas"}],"datePublished":"2014-07-21T16:39:00Z","image":{"@type":"ImageObject","url":"https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/LAMP_tw.png?1430247969","height":375,"width":750},"interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":"105"},{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":"45"}],"sourceOrganization":{"@type":"Organization","name":"DigitalOcean Community","url":"https://www.digitalocean.com/community"},"publisher":{"@type":"Organization","name":"DigitalOcean","url":"https://www.digitalocean.com","logo":{"@type":"ImageObject","url":"https://assets.digitalocean.com/logos/DO_Logo_horizontal_blue.png","width":351,"height":60}}}
+  </script>
+  <script>
+    $(function() {
+      setTimeout(function(){
+        window.cookieConsent.promise.then(function () {
+          $.getJSON(
+            'https://assets.digitalocean.com/labs/btp.json',
+            function(data) {
+              new BelowTutorialPanel(data);
+            }
+          );
+        });
+      }, 2000);
+    });
+  </script>
+
+  <div id="report-a-bug-modal" class="modal fade mini-modal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Report a Bug</h1>
+          <a class="close-button" data-dismiss="modal" aria-label="close" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7"><span class="icon icon-close-light"></span></a>
+        </div>
+        <div class="modal-body">
+          <div class="report-a-bug-message text-center">Use this form to report bugs related to the Community</div>
+          <div class="report-a-bug-actions do-form">
+            <div class="form-wrap">
+              <form class="new_bug_report" id="new_bug_report" action="https://www.digitalocean.com/community/bug_reports" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="3Y1tDFgEC5TJlP9cEx4KXQ2hpwZZ+WHoq1/Pbh8MABxCip0hB9PRzokBM8Ynq8F2mRVeKdle2QdOw3SKZReYeA==">
+                <fieldset name="report-a-bug-info">
+                <legend class="sr-only">Report a bug:</legend>
+                  <div class="field">
+                    <label for="bug_reporter_name" class="sr-only">Name</label>
+                    <input placeholder="Name" id="bug_reporter_name" type="text" name="bug_report[name]">
+                  </div>
+                  <div class="field">
+                    <label for="bug_reporter_email" class="sr-only">Email</label>
+                    <input name="Email" placeholder="Email" id="bug_reporter_email" required="required" type="text">
+                  </div>
+                  <div class="field">
+                    <label for="bug_reporter_message" class="sr-only">Message</label>
+                    <textarea name="Message" placeholder="Message" id="bug_reporter_message" required="required" style="overflow: hidden; word-wrap: break-word; resize: none; height: 125px;"></textarea>
+                  </div>
+
+                  <div class="field actions">
+                    <input type="submit" name="commit" value="Submit" class="button">
+                  </div>
+                </fieldset>
+</form>            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+  
+
+<textarea tabindex="-1" aria-hidden="true" ,="" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; transition: none; height: 0px !important; min-height: 0px !important; font-family: proxima-nova, sans-serif; font-size: 17px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; word-spacing: 0px; text-indent: 0px; line-height: normal; width: 58px;" class="autosizejs" id="autosizejs"></textarea><a id="scrollUp" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#top" style="position: fixed; z-index: 1000; display: none;">Scroll to top</a><div id="scrollUp-active" style="position: absolute; top: 300px; width: 100%; border-top: 1px dotted rgb(0, 255, 255); z-index: 1000;"></div><div id="mktoStyleLoaded" style="display: none; border-top-color: rgb(18, 52, 86);"></div><form novalidate="novalidate" class="mktoForm mktoHasWidth mktoLayoutLeft" style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: rgb(51, 51, 51); visibility: hidden; position: absolute; top: -500px; left: -1000px; width: 1265px;"></form><iframe name="mktoFormsXDIframe0.3866114249820256" id="MktoForms2XDIframe" src="./How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7 _ DigitalOcean_files/XDFrame.html" style="display: none;"></iframe></body></html>
