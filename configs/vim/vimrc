@@ -14,7 +14,7 @@
 :set mouse=a
 :set incsearch
 :set hlsearch
-
+:set spell spelllang=en_us
 
 
 syntax enable
