@@ -3,3 +3,6 @@ meld-1.4.0-1.el6.rf.noarch.rpm
 #http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
 #https://centos.pkgs.org/7/repoforge-x86_64/foremost-1.5.7-1.el7.rf.x86_64.rpm.html
 foremost-1.5.7-1.el7.rf.x86_64.rpm
+
+#http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html
+#wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie http://download.oracle.com/otn-pub/java/jdk/10.0.1+10/fb4372174a714e6b8c52526dc134031e/jdk-10.0.1_linux-x64_bin.tar.gz

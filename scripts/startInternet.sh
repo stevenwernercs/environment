@@ -1,0 +1,1 @@
+/home/swerner/projects/environment/hardware/wireless-interface/ASUS_PCE-N53_rt5592sta/startInternet.sh

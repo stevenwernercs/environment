@@ -77,7 +77,15 @@ randpw_lefthanded() {
 }
 #reqiured for the parameters.config to point to the correct library directory in the Lymba projects.
 export platform=`uname -s -m|tr ' ' '-'`
+export JAVA_HOME8="/usr/java/jdk1.8.0_201"
+export JAVA_HOME10="/usr/java/jdk-10.0.2"
+export JAVA_HOME="/usr/java/latest"
 
+export MALMO_HOME=/home/swerner/projects/3rdParty/malmo
+export MALMO_XSD_PATH=${MALMO_HOME}/Schemas
+export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:/usr/include/python2.7/"
+export BOOST_ROOT="~/apps/boost/latest"
+export BOOST_LIBRARYDIR="~/apps/boost/latest/boost"
 
 # aliases-------------------------------------------------------------------------------
 alias cdw='cd /shared/$USERMACHINE/disk1/work/$USERNAME/projects'
@@ -118,3 +126,5 @@ alias l="readlink -f"
 alias rm="rm -i"
 #alias cp="cp -i"
 #alias mv="mv -i"
+
+alias pip3="/opt/rh/rh-python36/root/usr/bin/pip"
