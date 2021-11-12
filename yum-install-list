@@ -39,3 +39,5 @@ textlive textlive-*.noarch      #Only if needed:
 #scl enable rh-python36 bash
 
 parcellite     #clipboard management and history
+
+snapd #free web cert ##sudo systemctl enable --now snapd.socket; sudo ln -s /var/lib/snapd/snap /snap; ### https://snapcraft.io/docs/installing-snap-on-centos

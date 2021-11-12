@@ -1,0 +1,1000 @@
+   49  sudo gitlab-ctl start
+   50  sudo gitlab-ctl deploy-page down
+   51  sudo gitlab-ctl stop
+   52  sudo gitlab-ctl deploy-page down
+   53  sudo gitlab-ctl stop && sudo gitlab-ctl reconfigure && sudo gitlab-ctl start
+   54  gitlab-ctl status
+   55  sudo gitlab-ctl status
+   56  sudo yum -y update
+   57  sudo yum -y install postfix
+   58  #sudo yum -y install postfix
+   59  mkdir /etc/postfix/ssl
+   60  sudo mkdir /etc/postfix/ssl
+   61  sudo cd /etc/postfix/ssl
+   62  ls
+   63  sudo su
+   64  hostname 
+   65  hostname mail.connect2.earth
+   66  sudo hostname mail.connect2.earth
+   67  ls
+   68  cd
+   69  sudo vim /etc/hosts
+   70  firewall-cmd --add-service=telnet --zone=public
+   71  telnet mail.connect2.earth smtp
+   72  dig connect2.earth MX
+   73  telnet google.com 25
+   74  sudo vim /etc/postfix/virtual 
+   75  cd /etc/postfix/virtual
+   76  cd /etc/postfix/
+   77  LS
+   78  ls
+   79  sudo firewall-cmd --zone=public --permanent --add-service=http
+   80  sudo firewall-cmd --zone=public --permanent --add-service=https
+   81  sudo vim /etc/postfix/main.cf 
+   82  yum remove sendmail
+   83  sudo yum remove sendmail
+   84  sendmail
+   85  sudo yum remove sendmail
+   86  hostnamectl set-hostname mail.connect2.earth
+   87  vim /etc/hosts
+   88  sudo vim /etc/hosts
+   89  sudo vim /etc/postfix/main.cf 
+   90  systemctl restart postfix
+   91  systemctl enable  postfix
+   92  useradd mailuser
+   93  sudo useradd mailuser
+   94  passwd mailuser
+   95  sudo passwd mailuser
+   96  telnet localhost smtp
+   97  cd
+   98  ls
+   99  sudo su mailuser
+  100  ls
+  101  cd
+  102  ls
+  103  telnet localhost smtp
+  104  cd
+  105  ls
+  106  cd Maildir/
+  107  ls
+  108  cd new/
+  109  ls
+  110  cat 1554250170.Vfd03I329d6094M728635.mail.connect2.earth 
+  111  sudo vim /etc/dovecot/dovecot.conf 
+  112  vim /etc/dovecot/conf.d/10-mail.conf 
+  113  sudo vim /etc/dovecot/conf.d/10-mail.conf 
+  114  sudo vim /etc/dovecot/conf.d/10-auth.conf
+  115  sudo vim /etc/dovecot/conf.d/10-master.conf
+  116  systemctl restart dovecot
+  117  systemctl enable dovecot
+  118  telnet localhost POP
+  119  telnet localhost POP3
+  120  telnet localhost pop3
+  121  sudo yum install squirrelmail
+  122  cd /usr/share/squirrelmail/config/
+  123  ./conf.pl 
+  124  sudo ./conf.pl 
+  125  sudo vim /etc/httpd/conf/httpd.conf
+  126  systemctl restart httpd
+  127  sudo vim /etc/httpd/conf/httpd.conf
+  128  systemctl restart httpd
+  129  tail -100 /etc/httpd/conf/httpd.conf
+  130  sudo vim /etc/httpd/conf/httpd.conf
+  131  cd /usr/share/squirrelmail/
+  132  ls
+  133  ls -la
+  134  systemctl restart httpd
+  135  systemctl status httpd
+  136  vim /etc/httpd/conf/httpd.conf
+  137  sudo vim /etc/httpd/conf/httpd.conf
+  138  systemctl status httpd
+  139  systemctl restart httpd
+  140  sudo setsebool -P httpd_can_sendmail=1
+  141  sudo vim /etc/postfix/main.cf 
+  142  sudo vim /etc/postfix/master.cf 
+  143  sudo vim /etc/postfix/main.cf 
+  144  sudo vim /etc/hosts
+  145  sudo vim /etc/postfix/main.cf 
+  146  systemctl restart postfix
+  147  systemctl enable  postfix
+  148  systemctl restart dovecot
+  149  systemctl enable dovecot
+  150  systemctl restart httpd
+  151  sudo vim /etc/postfix/main.cf
+  152  systemctl restart postfix
+  153  systemctl enable  postfix
+  154  cd /usr/share/squirrelmail/
+  155  ls
+  156  sudo ./conf.pl 
+  157  cd config/
+  158  sudo ./conf.pl 
+  159  sudo vim /etc/postfix/main.cf
+  160  systemctl restart postfix
+  161  systemctl enable  postfix
+  162  date
+  163  sudo vim /etc/postfix/main.cf
+  164  ls
+  165  cd ..
+  166  ls
+  167  cd ..
+  168  ls
+  169  cd /var/log/
+  170  ls
+  171  ls maillog
+  172  ls
+  173  tail -f maillog
+  174  sudo tail -f maillog
+  175  grep error /etc/postfix/main.cf
+  176  sudo grep error /etc/postfix/main.cf
+  177  sudo tail -n +1 -f maillog
+  178  ifconfig
+  179  sudo grep -r example.com /etc/postfix/*.cf
+  180  sudo grep -r example.com /etc/postfix/*.cf /etc/dovecot/
+  181  sudo grep -r example.com /etc/postfix/ /etc/dovecot/
+  182  sudo grep -r example.com /etc/postfix/ /etc/dovecot/ 
+  183  ping 173.194.205.26:25
+  184  postsuper -r ALL
+  185  sudo postsuper -r ALL
+  186  #sudo grep -r example.com /etc/postfix/*.cf
+  187  systemctl restart postfix
+  188  vim /etc/postfix/main.cf
+  189  sudo vim /etc/postfix/main.cf
+  190  sudo postsuper -r ALL
+  191  systemctl restart postfix
+  192  sudo postsuper -r ALL
+  193  sudo vim /etc/postfix/main.cf
+  194  telnet tests
+  195  sudo postsuper -d ALL
+  196  sudo vim /etc/sysconfig/network-scripts/ifcfg-eno1 
+  197  sudo service network restart
+  198  apachectl configtest
+  199  systemctl status network.service
+  200  sudo service network stop
+  201  sudo service network restart
+  202  systemctl status network.service
+  203  sudo service network stop
+  204  systemctl status network.service
+  205  sudo service network start
+  206  systemctl status network.service
+  207  journalctl -xe
+  208  systemctl status network.
+  209  sudo service network start
+  210  systemctlsudo service network start
+  211  systemctl network start
+  212  systemctl start network
+  213  sudo systemctl start network
+  214  sudo vim /etc/rc.d/init.d/network
+  215  sudo systemctl start network
+  216  journalctl -xe
+  217  sudo systemctl status network
+  218  cd ./projects/environment/hardware/wireless-interface/ASUS_PCE-N53_rt5592sta/
+  219  ls
+  220  ./startInternet.sh 
+  221  cat ./startInternet.sh 
+  222  ./startInternet.sh 
+  223  ls
+  224  cat startInternet.sh 
+  225  systemctl disable NetworkManager.service
+  226  ./startInternet.sh 
+  227  chkconfig NetworkManager off
+  228  systemctl disable NetworkManager.service
+  229  ./startInternet.sh 
+  230  cd apps/
+  231  ls
+  232  cd IDE/
+  233  ls
+  234  cd intellij/
+  235  ls
+  236  cd idea-IC-183.5912.21/
+  237  ls
+  238  ./bin/idea.sh 
+  239  ps aux | grep idea
+  240  ps aux | grep java
+  241  ps aux | grep intel
+  242  ps aux | grep int
+  243  ./bin/idea.sh 
+  244  ls
+  245  sudo ausearch -c 'local' --raw | sudo audit2allow -M my-local
+  246  telnet mail.connect2.earth 25
+  247  clear
+  248  telnet mail.connect2.earth 25
+  249  sudo vim /etc/postfix/main.cf 
+  250  dig @localhost mail.connect2.earth MX
+  251  dig mail.connect2.earth MX
+  252  sudo vim /etc/postfix/main.cf 
+  253  sudo vim /etc/sasl2/smtpd.conf 
+  254  systemctl restart postfix
+  255  systemctl restart saslauthd
+  256  systemctl enable saslauthd
+  257  ps aux | grep sasl
+  258  telnet localhost 25
+  259  systemctl restart dovecot
+  260      systemctl enable dovecot
+  261  telnet locathost 110
+  262  sudo vim /etc/dovecot/conf.d/10-auth.conf
+  263  telnet locathost 110
+  264  ls -la /home/mailuser/
+  265  openssl s_client -connect mail.connect2.earth:995
+  266  openssl s_client -starttls smtp -connect mail.connect2.earth:587 -crlf
+  267  cd /etc/postfix/
+  268  ls
+  269  cd ssl/
+  270  ls
+  271      openssl req -x509 -nodes -newkey rsa:2048 -keyout server.key -out server.crt -nodes -days 365
+  272  sudo openssl req -x509 -nodes -newkey rsa:2048 -keyout server.key -out server.crt -nodes -days 365
+  273  ls -la
+  274  openssl s_client -starttls smtp -connect mail.connect2.earth:587 -crlf
+  275  systemctl -l status postfix
+  276  sudo vim /etc/postfix/main.cf 
+  277  systemctl restart postfix
+  278  sudo vim /etc/postfix/main.cf 
+  279  systemctl restart postfix
+  280  sudo vim /etc/postfix/main.cf 
+  281  systemctl restart postfix
+  282  sudo vim /etc/postfix/main.cf 
+  283  systemctl restart postfix
+  284  sudo vim /etc/postfix/main.cf 
+  285  systemctl restart postfix
+  286  sudo vim /etc/postfix/main.cf 
+  287  systemctl restart postfix
+  288  ls
+  289  ausearch -c 'local' --raw | audit2allow -M my-local
+  290  sudo ausearch -c 'local' --raw | sudo audit2allow -M my-local
+  291  sudo su
+  292  sudo su root
+  293  sudo echo hi
+  294  #systemctl restart postfix
+  295  #sudo vim /etc/postfix/main.cf
+  296  grep postfix /etc/passwd
+  297  tail -f /var/log/maillog
+  298  sudo tail -f /var/log/maillog
+  299  ./projects/environment/hardware/wireless-interface/ASUS_PCE-N53_rt5592sta/startInternet.sh 
+  300  openssl S_client -showcerts -connect mail.connect2.earth:2525
+  301  openssl s_client -showcerts -connect mail.connect2.earth:2525
+  302  cd /etc/postfix/
+  303  ls
+  304  ls -la
+  305  cd ssl/
+  306  ls
+  307  ls -la
+  308  cd ..
+  309  ls
+  310  sudo vim main.cf 
+  311  systemctl restart postfix
+  312  ls
+  313  sudo vim client_checks
+  314  postmap client_checks 
+  315  sudo 
+  316  sudo postmap client_checks 
+  317  sudo vim main.cf 
+  318  systemctl restart postfix
+  319  sudo vim client_checks
+  320  systemctl restart postfix
+  321  sudo vim client_checks
+  322  sudo postmap client_checks 
+  323  systemctl restart postfix
+  324  sudo vim client_checks
+  325  sudo vim main.cf 
+  326  sudo postmap client_checks 
+  327  systemctl restart postfixasdfasdfadfasdfasdfasdfasdfasdf
+  328  sudo grep -oP "unknown\[.*\]: SASL LOGIN authentication failed" /var/log/maillog | sed 's/.*\[\(.*\)\].*/\1/g' | sort | uniq -c | sort -V | awk '{print $2"\tREJECT"}' | tee /etc/postfix/client_checks; sudo postmap /etc/postfix/client_checks; sudo systemctl restart postfix
+  329  sudo grep -oP "unknown\[.*\]: SASL LOGIN authentication failed" /var/log/maillog | sed 's/.*\[\(.*\)\].*/\1/g' | sort | uniq -c | sort -V | awk '{print $2"\tREJECT"}' | sudo tee /etc/postfix/client_checks; sudo postmap /etc/postfix/client_checks; sudo systemctl restart postfix
+  330  cat .ssh/id_rsa
+  331  cat .ssh/id_rsa.pub 
+  332  cd projects/zulu
+  333  ls
+  334  vim zulu.iml 
+  335  passwd
+  336  sudo passwd swerner
+  337  cd projects/
+  338  ls
+  339  cd zulu
+  340  ls
+  341  vim zulu.iml 
+  342  mv zulu.iml zulu.iml-FUCKYOU
+  343  ls
+  344  mv zulu.iml-FUCKYOU zulu.iml
+  345  gimp
+  346  ls
+  347  ls -la
+  348  cat brain.json 
+  349  cd /drives/
+  350  cd elaine/
+  351  cd vms/
+  352  ls
+  353  cd vader/
+  354  ls -la
+  355  grep dev vader-2018-0.vmdk 
+  356  ls -la /dev/sdc
+  357  chmod 777 /dev/sdc
+  358  sudo chmod 777 /dev/sdc
+  359  ls -la /dev/sdc
+  360  cd Downloads/minecraft-launcher/
+  361  ls
+  362  ls -la
+  363  ./minecraft-launcher 
+  364  sudo yum install libstdc++.x86_64
+  365  ./minecraft-launcher 
+  366  strings /usr/lib64/libstdc++.so.6 | grep GLIBXX
+  367  strings /usr/lib64/libstdc++.so.6 | grep GLIBCXX
+  368  ./minecraft-launcher 
+  369  sudo yum install libstdc++
+  370  sudo find / -name "libstdc++.so.6*"
+  371  locate "libstdc++.so.6*"
+  372  locate "libstdc++.so.6"
+  373  ls
+  374  vim word2vec.ipynb
+  375  pip install genisim
+  376  pip install gensim
+  377  sudo pip install gensim
+  378  pip install --upgrade pop
+  379  pip install --upgrade pip
+  380  sudo pip install --upgrade pip
+  381  pip install --upgrade pip
+  382  sudo pip install gensim
+  383  sudo pip upgrade numpy
+  384  sudo pip install numpy
+  385  sudo pip install gensim --ignore-installed
+  386  sudo pip install gensim 
+  387  sudo pip install logging
+  388  ls
+  389  git clone https://github.com/llSourcell/word_vectors_game_of_thrones-LIVE.git
+  390  ls
+  391  cd word_vectors_game_of_thrones-LIVE/
+  392  ls
+  393  find
+  394  ls
+  395  find -name "req*"
+  396  find -name "pip*"
+  397  sudo pip install -r pip-requirements.txt
+  398  ls
+  399  cat README.md 
+  400  ls
+  401  sudo pip install nltk
+  402  sudo pip install gensim
+  403  sudo pip install gensim.models.word2vec
+  404  sudo pip install gensim
+  405  sudo pip3 install gensim
+  406  sudo pip install gensim
+  407  cd ..
+  408  cd zulu
+  409  ls
+  410  cd src/
+  411  ls
+  412  cd main/
+  413  ls
+  414  cd java/
+  415  ls
+  416  grep System.out * -r
+  417  grep log * -r
+  418  grep System.out * -r
+  419  grep System.out * -rl
+  420  grep System.out * -rl | xargs sed -i 's/System.out.println/log.debug/'
+  421  grep System.out * -rl
+  422  grep System.out * -r
+  423  cd ..
+  424  mvn clean install 
+  425  ps aux | grep java
+  426  kill 10815
+  427  ps aux | grep java
+  428  kill -f 10815
+  429  kill -9 10815
+  430  ls
+  431  ./run.sh 
+  432  ls -la run.sh 
+  433  cd projects/zulu
+  434  ls
+  435  cat brain.json 
+  436  ls
+  437  cat brain.json
+  438  cat brain.json_new 
+  439  cat brain.json
+  440  vim brain.json
+  441  git add -up
+  442  git reset
+  443  git add -up
+  444  git commit -m "json serialize brain and load, plus fix some transmitter and potiential decay issues"
+  445  git fetch
+  446  git push origin master
+  447  git status
+  448  gitk
+  449  bg
+  450  git push origin malmo
+  451  grep brain.out -r *
+  452  vim log4j.properties 
+  453  cd projects/
+  454  ls
+  455   sudo sensors-detect
+  456  sensors
+  457  watch sensors
+  458  cd
+  459  ls
+  460  cd scripts/
+  461  ls
+  462  ln -s ~/projects/environment/hardware/wireless-interface/ASUS_PCE-N53_rt5592sta/startInternet.sh 
+  463  vim sensors.sh
+  464  ls
+  465  chmod 777 sensors.sh 
+  466  git status
+  467  ls
+  468  pwd
+  469  ls
+  470  git status
+  471  git add -up
+  472  git status
+  473  git add sensors.sh startInternet.sh
+  474  git status
+  475  git fetch
+  476  git stataus
+  477  git status
+  478  cdr
+  479  ls
+  480  git statuis
+  481  git status
+  482  git commit -m "updates with sensors"
+  483  git pull --rebase origin master
+  484  git status
+  485  git push origin master
+  486  ls
+  487  cd
+  488  cd projects/
+  489  ls
+  490  cd 3rdParty/
+  491  ls
+  492  cd malmo/
+  493  ls
+  494  cd 
+  495  cd projects/zulu
+  496  ls
+  497  ./run.sh 
+  498  grep brain.out -r *
+  499  grep '>"' -r *
+  500  vim
+  501  git add -up
+  502  git commit -m "Use Logger and hotkey snapshot"
+  503  git status
+  504  git add src/main/java/com/trifidearth/zulu/brain/KeyboardEnvironment.java
+  505  git add src/main/java/com/trifidearth/zulu/brain/Environment.java
+  506  git status
+  507  rm brain_SNAPSHOT_n-41_s-41_d-41_b-*
+  508  rm brain_SNAPSHOT_n-41_s-55_d-0_i-5_r-10_o-26_b-x-0_y-0_z-0_r-2_1560719854021 
+  509  ls -la
+  510  git status
+  511  git add -up
+  512  git commit --amend
+  513  git status
+  514  git add src/main/java/render/sound/SoundUtils.java
+  515  git commit --amend
+  516  git status
+  517  git push origin malmo 
+  518  mv brain_SNAPSHOT_n-41_s-15_d-36_i-5_r-10_o-26_b-x-0_y-0_z-0_r-2_1560719895293 brain_SNAPSHOT_n-41_s-15_d-36_i-5_r-10_o-26_b-x-0_y-0_z-0_r-2_1560719895293.json
+  519  ls
+  520  ls -la
+  521  cd ..
+  522  cd nameSite/
+  523  ls
+  524  vim index.php 
+  525  git add -up 
+  526  git commit -m "fix a type on the front page.. lol"
+  527  git status
+  528  gti push origin master
+  529  git push origin master
+  530  ls
+  531  cat ./package.sh 
+  532  ./package.sh /var/www/html/nameSite/
+  533  ls
+  534  ./package.sh /var/www/html/nameSite/
+  535  git push origin master
+  536  locate Minecraft
+  537  locate Minecraft | grep -v zulu
+  538  locate Minecraft | egrep -v "(zulu|malmo)"
+  539  tip
+  540  top
+  541  sensors
+  542  ls
+  543  cd 
+  544  cd apps/
+  545  ls
+  546  cd IDE/
+  547  ls
+  548  cd id
+  549  cd intellij/
+  550  ls
+  551  cd idea-IC-182.3911.36
+  552  ls
+  553  ./bin/idea.sh 
+  554  ./projects/environment/hardware/wireless-interface/ASUS_PCE-N53_rt5592sta/startInternet.sh 
+  555  pip install jupyter
+  556  sudo pip install jupyter
+  557  cd projects/
+  558  cd 3rdParty/
+  559  ls
+  560  mkdir wordEmbeddings
+  561  cd wordEmbeddings/
+  562  ls
+  563  vim asdf
+  564  mv asdf  understanding-word-vectors.ipynb
+  565  ls
+  566  jupyter notebook --generate-config
+  567  jupyter understanding-word-vectors.ipynb 
+  568  jupyter notebook
+  569  sudo yum install kazam
+  570  sudo yum install epel-release
+  571  sudo -y yum install ffmpeg ffmpeg-devel libX11-devel libXfixes-devel jack-audio-connection-kit-devel mesa-libGL-devel git
+  572  sudo yum -y install ffmpeg ffmpeg-devel libX11-devel libXfixes-devel jack-audio-connection-kit-devel mesa-libGL-devel git
+  573  cd projects/3rdParty/
+  574  ls
+  575  git clone https://github.com/MaartenBaert/ssr
+  576  cd ssr/
+  577  ls
+  578  ./simple-build-and-install 
+  579  alternatives
+  580  alternatives --config cmake
+  581  sudo alternatives --config cmake
+  582  alternatives --config cmake
+  583  ./simple-build-and-install 
+  584  #./simple-build-and-install 
+  585  vim /etc/yum.repos.d/atrpm.repo
+  586  sudo vim /etc/yum.repos.d/atrpm.repo
+  587  sudo yum install ffmpeg ffmpeg-devel libX11-devel libXfixes-devel jack-audio-connection-kit-devel mesa-libGL-devel git
+  588  vim /etc/yum.repos.d/atrpm.repo
+  589  sudo rm /etc/yum.repos.d/atrpm.repo
+  590  rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+  591  sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+  592  yum install simplescreenrecorder
+  593  sudo yum install simplescreenrecorder
+  594  ssr
+  595  simplescreenrecorder 
+  596  cd projects/
+  597  ls
+  598  cd zulu
+  599  ls
+  600  git add -up
+  601  git commit -m "add hotbar observations"
+  602  git status
+  603  git push origin master
+  604  git fetch
+  605  git push origin master
+  606  ls
+  607  cd
+  608  cd projects/
+  609  ls
+  610  cd environment/
+  611  ls
+  612  cd hardware/
+  613  ls
+  614  cd wireless-interface/
+  615  ls
+  616  cd ASUS_PCE-N53_rt5592sta/
+  617  ls
+  618  ./startInternet.sh 
+  619  #./startInternet.sh 
+  620  ls
+  621  cd
+  622  ls
+  623  sudo pacman -S gnome
+  624  sudo vim /etc/sysconfig/selinux 
+  625  sudo restart
+  626  sudo shutdown
+  627  ls
+  628  screen -S ok
+  629  sudo vim /etc/sysconfig/selinux 
+  630  vim /etc/sysconfig/selinux 
+  631  ls
+  632  exec gnome-session
+  633  ls
+  634  vim ~/.cache/gdm/session.log
+  635  yum list installed "*mod-nvidia"
+  636  exec gnome-session
+  637  ls
+  638  lr vim ~/.cache/
+  639  lr vim ~/.cache/abrt/
+  640  lr ~/.cache/abrt/
+  641  cat ~/.cache/abrt/lastnotification 
+  642  ls
+  643  sestatus
+  644  dconf reset -f /org/gnome/
+  645  dconf reset -f /org/gnome
+  646  dconf reset -f /org/gnome/
+  647  sudo dconf reset -f /org/gnome/
+  648  sudo dconf reset -f /org/mate/panel/
+  649  sudo dconf reset -f /org/mate/
+  650  killall gnome-pane
+  651  killall mat
+  652  sudo dconf reset -f /org/mate/terminal/
+  653  dconf reset -f /org/mate/terminal/
+  654  mate-panel
+  655  mate-session
+  656  mate-about
+  657  ps aux
+  658  ps aux | less
+  659  ps aux | grep abt
+  660  ps aux | grep abrt
+  661  tail -f /usr/bin/abrt-watch-log 
+  662  ps aux | grep abrt
+  663  ls
+  664  dconf reset -f /org/mate/terminal/
+  665  echo $DISPLAY
+  666  echo $DIRSTACK 
+  667  ls
+  668  DISPLAY=":0"
+  669  mate-session
+  670  echo $DISPLAY
+  671  mate-session
+  672  ls
+  673  gnome-session
+  674  gnome-session-quit 
+  675  echo $DISPLAY
+  676  DISPLAY=":0"
+  677  echo $DISPLAY
+  678  gnome-session-quit 
+  679  gnome-session-properties 
+  680  mate-session
+  681  gnome-help 
+  682  gnome-shell
+  683  gnome-software 
+  684  gnomevfs-monitor 
+  685  gnome-terminal 
+  686  gnome-session &
+  687  gnome-terminal 
+  688  gnome-session &
+  689  gnome-session -help
+  690  gnome-session --debug
+  691  gnome-session --debug |less
+  692  gnome-session --debug 
+  693  ls
+  694  hostname -i
+  695  service httpd restart
+  696  nslookup stevenwernercs.com
+  697  curl stevenwernercs.com
+  698  nslookup stevenwernercs.com
+  699  ipconfig
+  700  ifconfig
+  701  nslookup stevenwernercs.com
+  702  sudo tail /var/log/httpd/*
+  703  sudo su
+  704  /var/www/html/nameSite/wp-login.php
+  705  /var/www/html/nameSite/
+  706  cd /var/www/html/nameSite/
+  707  ls
+  708  find -n wp-login.php
+  709  find -name "wp-login.php"
+  710  grep -r :wp-login.php:
+  711  grep -r "wp-login.php"
+  712  grep -r "wp-login.php" *
+  713  grep -r "wp-login" *
+  714  grep -r "login" *
+  715  vi /var/www/html/nameSite/footer.inc
+  716  ifconfig
+  717  hostname -i
+  718  ls
+  719  passwd
+  720  ls
+  721  ls -alrt
+  722  vi .xsessionrc
+  723  ls
+  724  cat .xsession
+  725  cat .xsessionrc 
+  726  echo $XDG_CURRENT_DESKTOP 
+  727  echo $XDG_DATA_DIRS 
+  728  ls
+  729  vi ~/.xsessionrc 
+  730  echo $XDG_CURRENT_DESKTOP 
+  731  cd projects/
+  732  ls
+  733  cd resume/
+  734  git pull
+  735  git status
+  736  ls
+  737  cd ..
+  738  cd nameSite/
+  739  ls
+  740  cat package
+  741  cat package.sh 
+  742  cd documents/
+  743  ls
+  744  cp ../../resume/Werner-resume.pdf  Werner-Resume.pdf 
+  745  git status
+  746  cd ..
+  747  ls
+  748  #ls /var/www/html/nameSite/
+  749  cat package.sh 
+  750  ./package.sh /var/www/html/nameSite/
+  751  ls
+  752  cd
+  753  ls
+  754  ls -alrt
+  755  vi ~/.xsessionrc 
+  756  ls
+  757  htop
+  758  docker images
+  759  sudo docker images
+  760  cd /var/www/html/
+  761  ls
+  762  cd nameSite
+  763  ls
+  764  cd /var/log/httpd/
+  765  ls
+  766  sudo su
+  767  ifconfig
+  768  hostname -i
+  769  sudo certbot --apache
+  770  sudo certbot renew --dry-run
+  771  git status
+  772  ls
+  773  cd
+  774  cd projects/
+  775  ls
+  776  cd resume/
+  777  git status
+  778  git pull
+  779  git pull --rebase origin master
+  780  git status
+  781  git pull --rebase origin master
+  782  git status
+  783  git fetch
+  784  git status
+  785  cd ..
+  786  ls
+  787  cp resume/Werner-resume.pdf nameSite/documents/Werner-Resume.pdf 
+  788  cd nameSite/
+  789  ls
+  790  #./package.sh 
+  791  ./package.sh /var/www/html/nameSite/
+  792  sudo yum install -y xrdp
+  793  sudo systemctl enable xrdp
+  794  sudo systemctl start xrdp
+  795  sudo firewall-cmd --add-port=3389/tcp --permanent
+  796  sudo firewall-cmd --reload
+  797  passwd
+  798  locate httpd.conf
+  799  cd /etc/httpd/conf
+  800  ls
+  801  cp httpd.conf httpd.conf.bk-2021
+  802  cp httpd.conf.bk-2021 ~/projects/www/
+  803  cd ~/projects/www/
+  804  ls
+  805  ls -alrtS
+  806  ls -alrS
+  807  diff httpd.conf httpd.conf.bk-2021 
+  808  ls
+  809  cp httpd.conf httpd.conf.bk-2021-beforessl
+  810  mv httpd.conf.bk-2021 httpd.conf
+  811  git add -up
+  812  git status
+  813  git add httpd.conf.bk-2021-beforessl
+  814  git status
+  815  ls
+  816  vi httpd.conf
+  817  git commit -m "update with latest ssl"
+  818  git status
+  819  git push origin master
+  820  ls
+  821  gitk
+  822  ls
+  823  cat package
+  824  cat package.sh 
+  825  cat package-exclude.ctl 
+  826  cp package.sh checkLiveDiff.sh
+  827  vi checkLiveDiff.sh
+  828  chmod 777 checkLiveDiff.sh
+  829  ./checkLiveDiff.sh 
+  830  vi checkLiveDiff.sh
+  831  ./checkLiveDiff.sh 
+  832  cp /etc/httpd/conf.d/ssl.conf ssl.conf
+  833  ./checkLiveDiff.sh 
+  834  vi checkLiveDiff.sh
+  835  cat package.sh 
+  836  diff httpd.conf /etc/httpd/conf/
+  837  diff httpd.conf /etc/httpd/conf/httpd.conf
+  838  diff httpd.conf /etc/httpd/conf
+  839  diff ssl.conf /etc/httpd/conf
+  840  cat package.sh 
+  841  git status
+  842  git add checkLiveDiff.sh
+  843  git add -up
+  844  git staus
+  845  git status
+  846  ls
+  847  echo "google certbot" >> README
+  848  git add README
+  849  git status
+  850  git commit -m "adding check script and note"
+  851  git status
+  852  ls
+  853  cat tuts/
+  854  cat tuts/https
+  855  ls
+  856  cd ..
+  857  ls
+  858  tar czf www.tgz www/
+  859  mutt
+  860  sendEmail
+  861  mailx
+  862  clear
+  863  mailx -a www.tgz -S "www config" stevenwernercs@gmail.com
+  864  mailx -a www.tgz -s "www config" stevenwernercs@gmail.com
+  865  echo 'mailx -a www.tgz -s "www config" stevenwernercs@gmail.com < /dev/null' >> archiveMail.sh
+  866  cat archiveMail.sh 
+  867  ls
+  868  vi archiveMail.sh 
+  869  ls
+  870  chmod archiveMail.sh 
+  871  chmod 777 archiveMail.sh 
+  872  ls
+  873  ./archiveMail.sh 
+  874  vi archiveMail.sh 
+  875  ls
+  876  mv archiveMail.sh www
+  877  ls
+  878  cd www/
+  879  ls
+  880  ./archiveMail.sh 
+  881  git add -up
+  882  ls
+  883  git status
+  884  git add archiveMail.sh
+  885  git status
+  886  git commit -m "add mail script"
+  887  git status
+  888  cd ..
+  889  ls
+  890  rm www.tgz 
+  891  ls
+  892  cd www/
+  893  ls
+  894  ./archiveMail.sh 
+  895  echo $XDG_CURRENT_DESKTOP 
+  896  for each in $(env | grep XDG); do echo $each; done_
+  897  for each in $(env | grep XDG); do echo $each; done
+  898  echo "mate-session" > ~/.Xclients
+  899  chmod a+x ~/.Xclients
+  900  ls -h www.tgz 
+  901  ls -lh www.tgz 
+  902  clear
+  903  vi /etc/xrdp/xrdp.ini 
+  904  sudo vi /etc/xrdp/xrdp.ini
+  905  cd /dev
+  906  ls
+  907  vi /etc/fstab 
+  908  sudo vi /etc/fstab 
+  909  sudo mount -a
+  910  ddd
+  911  d
+  912  cd /drives/
+  913  ls
+  914  ls -lart
+  915  cd elaine/
+  916  ls
+  917  ls -alrt
+  918  ls
+  919  cd ..
+  920  ls
+  921  find
+  922  cat /etc/fstab 
+  923  ls -lrt /etc/fstab 
+  924  ls
+  925  ls -lart
+  926  ls
+  927  vi /etc/xrdp/xrdp.ini 
+  928  sudo vi /etc/xrdp/xrdp.ini 
+  929  cd
+  930  ls
+  931  rm www.tgz 
+  932  ls -arlt
+  933  rm www.tgz 
+  934  ls
+  935  sudo vi /etc/xrdp/xrdp.ini 
+  936  netstat -tlupn | grep xrdp
+  937  netstat -tlupn | grep vnc
+  938  netstat -tlupn | grep 59
+  939  netstat -tlupn 
+  940  sudo netstat -tlupn 
+  941  sudo vi /etc/xrdp/xrdp.ini 
+  942  sudo netstat -tlupn | grep 
+  943  sudo vi /etc/xrdp/xrdp.ini 
+  944  sudo netstat -tlupn
+  945  cd
+  946  sudo vi /etc/xrdp/xrdp.ini 
+  947  cd projects/
+  948  ls
+  949  rm www.tgz 
+  950  ls
+  951  ls -lart
+  952  cd zulu
+  953  ls
+  954  cd malmo/
+  955  ls
+  956  cd ..
+  957  ls
+  958  cat run.sh 
+  959  ./run.sh 
+  960  ps aux
+  961  ps aux | grep mal
+  962  ps aux | grep forg
+  963  ./run.sh 
+  964  docker
+  965  docker pull openworm/openworm
+  966  dockerd
+  967  root dockerd
+  968  sudo dockerd
+  969  #@shi5mar27beauty
+  970  sudo dockerd
+  971  #Bones8185DyVm27310!
+  972  sudo dockerd
+  973  sudo echo
+  974  cd
+  975  cd scripts/
+  976  ls
+  977  cat dimscreens.sh 
+  978  xrandr
+  979  vi dimscreens.sh 
+  980  sudo vi /etc/xrdp/xrdp.ini 
+  981  vi dimscreens.sh 
+  982  xrandr
+  983  ls
+  984  vi malmo/levels/lvl1-Breakfast.xml 
+  985  cat /etc/passwd
+  986  echo fuck you
+  987  sudo echo fuck you
+  988  su root
+  989  sudo dockerd
+  990  docker pull openworm/openworm
+  991  sudo docker pull openworm/openworm
+  992  cd /opt/gitlab/
+  993  ls
+  994  ls a-lrt
+  995  ls -lart
+  996  ./run.sh -d 5000
+  997  sudo ./run.sh -d 5000
+  998  cd 
+  999  cd projects/
+ 1000  ls
+ 1001  cd zulu
+ 1002  ls
+ 1003  git status
+ 1004  git add -up
+ 1005  git checkout -p
+ 1006  git status
+ 1007  cat run.sh 
+ 1008  git add run.sh
+ 1009  git status
+ 1010  cat zulu.iml 
+ 1011  ls
+ 1012  git add zulu.iml
+ 1013  git stuats
+ 1014  git stauts
+ 1015  git status
+ 1016  git commit -m "commiting stash from 2 years of no work on this"
+ 1017  git staits
+ 1018  git status
+ 1019  git fetch
+ 1020  uname -a
+ 1021  ip link
+ 1022  ip addr
+ 1023  curl google.com
+ 1024  ping -c5 google.com
+ 1025  sudo systemctl restart systemd-networkd
+ 1026  sudo systemctl restart network.service 
+ 1027  cd ..
+ 1028  cd environment/
+ 1029  ls
+ 1030  cd hardware/
+ 1031  ls
+ 1032  cd wireless-interface/
+ 1033  ls
+ 1034  cd ASUS_PCE-N53_rt5592sta/
+ 1035  ls
+ 1036  cat startInternet.sh 
+ 1037  ifconfig
+ 1038  service network restart
+ 1039  systemctl status network.service
+ 1040  journalctl -xe
+ 1041  systemctl stop NetworkManager
+ 1042  systemctl disable NetworkManager
+ 1043  systemctl status NetworkManager
+ 1044  systemctl enable NetworkManager
+ 1045  systemctl status NetworkManager
+ 1046  systemctl start NetworkManager
+ 1047  systemctl status NetworkManager
+ 1048  history | tee ../../recycleInternet.sh
